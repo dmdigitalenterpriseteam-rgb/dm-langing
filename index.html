@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>D&amp;M Digital — Home</title>
-  <meta name="description" content="D&amp;M Digital — web dizajn, video reklame, digitalni marketing (SR/DE/EN)." />
-  <meta property="og:title" content="D&amp;M Digital — Web • Video • Marketing" />
+  <title>D&M Digital — Home</title>
+  <meta name="description" content="D&M Digital — web dizajn, video reklame, digitalni marketing (SR/DE/EN)." />
+  <meta property="og:title" content="D&M Digital — Web • Video • Marketing" />
   <meta property="og:description" content="Web stranice, kratke video reklame i pametan marketing — DE/SR/EN." />
   <meta property="og:image" content="hero-robot.png" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="D&amp;M Digital — Web • Video • Marketing" />
+  <meta name="twitter:title" content="D&M Digital — Web • Video • Marketing" />
   <meta name="twitter:description" content="Web stranice, kratke video reklame i pametan marketing — DE/SR/EN." />
   <meta name="twitter:image" content="hero-robot.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -74,10 +74,10 @@
 <body>
   <header>
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="D&amp;M Digital">
+      <a class="brand" href="#top" aria-label="D&M Digital">
         <span class="logo" aria-hidden="true"></span>
-        <img id="brandLogo" src="logo-md.png" srcset="logo-md.png 1x, logo-md@2x.png 2x" alt="D&amp;M logo" width="28" height="28" style="border-radius:6px;display:none" onerror="this.style.display='none'" onload="this.previousElementSibling.style.display='none'; this.style.display='inline-block';" />
-        <span id="brandName">D&amp;M Digital</span>
+        <img id="brandLogo" src="logo-md.png" srcset="logo-md.png 1x, logo-md@2x.png 2x" alt="M&D logo" width="28" height="28" style="border-radius:6px;display:none" onerror="this.style.display='none'" onload="this.previousElementSibling.style.display='none'; this.style.display='inline-block';" />
+        <span id="brandName">D&M Digital</span>
       </a>
       <nav aria-label="Primary">
         <ul>
@@ -203,14 +203,14 @@
 
       <div class="grid">
         <article class="card">
-          <h3>Peterova pekara</h3>
+          <h3 data-i18n="proj_bakery_title"></h3>
           <p class="sub" data-i18n="port1"></p>
           <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
             <button class="cta" onclick="openLB({img:'assets/portfolio/peterova-pekara.jpg', cap:i18n('cap_peter'), pdf:'assets/portfolio/peterova-pekara.pdf'})" data-i18n="btn_preview"></button>
           </div>
         </article>
         <article class="card">
-          <h3>D&amp;M Enterprise video</h3>
+          <h3>D&M Enterprise video</h3>
           <p class="sub" data-i18n="port2"></p>
           <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
             <a class="cta" href="https://example.com/dm-enterprise-video" target="_blank" rel="noopener" data-i18n="btn_open_video"></a>
@@ -233,16 +233,16 @@
       <p class="sub" data-i18n="sec_contact_sub"></p>
       <div class="contact">
         <form action="mailto:dmdigitalenterprise.team@gmail.com" method="post" enctype="text/plain">
-          <input class="input" name="name" placeholder="Ime i prezime" required />
-          <input class="input" type="email" name="email" placeholder="Email" required />
-          <textarea class="input" name="message" rows="6" placeholder="Poruka…" required></textarea>
+          <input class="input" name="name" placeholder="Ime i prezime" required / data-i18n-placeholder="form_name_ph">
+          <input class="input" type="email" name="email" placeholder="Email" required / data-i18n-placeholder="form_email_ph">
+          <textarea class="input" name="message" rows="6" placeholder="Poruka…" required data-i18n-placeholder="form_msg_ph"></textarea>
           <button class="cta" type="submit" data-i18n="cta_send"></button>
           <small class="note" data-i18n="contact_note"></small>
         </form>
         <div class="card">
           <h3 data-i18n="contact_alt_title"></h3>
-          <p class="sub">Email: <a href="mailto:dmdigitalenterprise.team@gmail.com">dmdigitalenterprise.team@gmail.com</a></p>
-          <p class="sub">LinkedIn / WhatsApp / Viber — po zahtevu</p>
+          <p class="sub"><span data-i18n="contact_email_label"></span> <a href="mailto:dmdigitalenterprise.team@gmail.com">dmdigitalenterprise.team@gmail.com</a></p>
+          <p class="sub">LinkedIn / WhatsApp / Viber — <span data-i18n="contact_on_request"></span></p>
           <p class="sub" data-i18n="contact_alt_note"></p>
         </div>
       </div>
@@ -251,16 +251,16 @@
 
   <footer>
     <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-      <small>© <span id="y"></span> D&amp;M Digital — <span data-i18n="foot_rights"></span></small>
-      <small class="sub">Design & code: D&amp;M</small>
+      <small>© <span id="y"></span> D&M Digital — <span data-i18n="foot_rights"></span></small>
+      <small class="sub">Design & code: M&D</small>
     </div>
   </footer>
 
   <script>
     const dict={
-      sr:{nav_services:"Usluge",nav_products:"Paketi",nav_portfolio:"Portfolio",nav_contact:"Kontakt",cta_quote:"Zatraži ponudu",cta_portfolio:"Pogledaj portfolio",cta_services:"Usluge",hero_pill:"Digitalni dizajn • Video • Web",hero_title:"Jednostavno — pravimo da vas pamte.",hero_sub:"Web stranice, kratke video reklame i pametan marketing na nemačkom, srpskom i engleskom.",hero_note:"Transparentan meni je stalno uključen (bez zamračenja). Ako želite poluprovidnu verziju na skrol – javite.",hero_img_note:"Zamenite 'hero-robot.png' vašom slikom/robotom.",hero_video_note:"Klikom na jezik birate verziju videa; zvuk je uključen.",sec_services_title:"Šta radimo (sa fokusom na rezultate)",sec_services_sub:"Tri stuba ponude koji najbrže donose efekat.",s1_chip:"Web",s1_title:"Brze i moderne web stranice",s1_text:"Landing, prezentacije, kontakt forme sa praćenjem konverzije.",s2_chip:"Video",s2_title:"Kratke video reklame",s2_text:"15–45s formati, titlovi na DE/SR/EN, optimizovano za društvene mreže.",s3_chip:"Marketing",s3_title:"Kampanje i oglasi",s3_text:"Facebook/Instagram/Google, kalendar objava, hashtagovi i CTA poruke.",sec_products_title:"Paketi (start – pro – premium)",sec_products_sub:"Fiksne cene po modulu, jasno šta dobijate.",p1_title:"START paket",p2_title:"PRO paket",p3_title:"PREMIUM paket",sec_portfolio_title:"Primeri i prototipi",sec_portfolio_sub:"Uskoro dodajemo žive linkove projekata.",port1:"Jednostavna prezentacija sa transparentnim menijem.",port2:"Brendirani intro video bez watermark-a.",port3:"Minimal logo varijante za menije i hero sekcije.",sec_contact_title:"Kontakt i brza ponuda",sec_contact_sub:"Pišite nam šta želite i dobićete brz predlog i cenu.",cta_send:"Pošalji",contact_note:"Dugme šalje mail preko vašeg klijent-programa (mailto). Ako želite potpuno funkcionalnu formu, ubacićemo backend kada bude spreman hosting.",contact_alt_title:"Direktan kontakt",contact_alt_note:"Možemo komunicirati i na nemačkom (C1) — posebno za DACH klijente.",foot_rights:"Sva prava zadržana",btn_preview:"Pogledaj prikaz",btn_open_pdf:"Otvori PDF",cap_peter:"Naslovna stranica — Peterova pekara",cap_core:"Logo varijante — CoreAlliance"},
-      de:{nav_services:"Leistungen",nav_products:"Pakete",nav_portfolio:"Portfolio",nav_contact:"Kontakt",cta_quote:"Angebot anfragen",cta_portfolio:"Portfolio ansehen",cta_services:"Leistungen",hero_pill:"Digital Design • Video • Web",hero_title:"Wir sorgen dafür, dass man Sie merkt.",hero_sub:"Websites, Kurzvideos und smartes Marketing auf Deutsch, Serbisch und Englisch.",hero_note:"Die Navigationsleiste bleibt transparent. Halbtransparent beim Scrollen ist optional.",hero_img_note:"Ersetzen Sie 'hero-robot.png' mit Ihrem Bild/Render.",hero_video_note:"Mit der Sprachauswahl wählen Sie das Video; der Ton ist eingeschaltet.",sec_services_title:"Was wir liefern",sec_services_sub:"Drei Module mit schnellem Impact.",s1_chip:"Web",s1_title:"Schnelle, moderne Websites",s1_text:"Landingpages, Präsentationen, Kontaktformulare mit Conversion-Tracking.",s2_chip:"Video",s2_title:"Kurzvideo-Ads",s2_text:"15–45s Formate, Untertitel DE/SR/EN, optimiert für Social Media.",s3_chip:"Marketing",s3_title:"Kampagnen & Ads",s3_text:"Facebook/Instagram/Google, Redaktionsplan, Hashtags & CTA.",sec_products_title:"Pakete (Start – Pro – Premium)",sec_products_sub:"Fixpreise je Modul, klarer Umfang.",p1_title:"START Paket",p2_title:"PRO Paket",p3_title:"PREMIUM Paket",sec_portfolio_title:"Beispiele & Prototypen",sec_portfolio_sub:"Live-Links folgen in Kürze.",port1:"Einfache Präsentationsseite mit transparentem Menü.",port2:"Gebrandetes Intro-Video ohne Wasserzeichen.",port3:"Minimal-Logos für Menüs & Hero-Bereiche.",sec_contact_title:"Kontakt & schnelles Angebot",sec_contact_sub:"Schreiben Sie uns Ihr Ziel – wir senden Vorschlag & Preis.",cta_send:"Senden",contact_note:"Der Button öffnet Ihr Mailprogramm (mailto). Für echte Formulare liefern wir Backend, sobald das Hosting steht.",contact_alt_title:"Direktkontakt",contact_alt_note:"Kommunikation auf Deutsch (C1) für DACH-Kunden.",foot_rights:"Alle Rechte vorbehalten",btn_preview:"Vorschau ansehen",btn_open_pdf:"PDF öffnen",cap_peter:"Startseite — Peterova Bäckerei",cap_core:"Logo-Varianten — CoreAlliance"},
-      en:{nav_services:"Services",nav_products:"Packages",nav_portfolio:"Portfolio",nav_contact:"Contact",cta_quote:"Request a quote",cta_portfolio:"See portfolio",cta_services:"Services",hero_pill:"Digital design • Video • Web",hero_title:"We make you memorable.",hero_sub:"Websites, short video ads and smart marketing in German, Serbian and English.",hero_note:"The navbar stays transparent. Optional semi-transparent on scroll.",hero_img_note:"Replace 'hero-robot.png' with your image/render.",hero_video_note:"Click a language to choose the video; audio is ON.",sec_services_title:"What we deliver",sec_services_sub:"Three modules with fast impact.",p1_title:"START package",p2_title:"PRO package",p3_title:"PREMIUM package",sec_portfolio_title:"Examples & prototypes",sec_portfolio_sub:"Live links coming soon.",port1:"Simple presentation site with transparent menu.",port2:"Branded intro video without watermark.",port3:"Minimal logos for menus & hero areas.",sec_contact_title:"Contact & quick quote",sec_contact_sub:"Tell us your goal – we’ll send a proposal & price.",cta_send:"Send",contact_note:"The button opens your mail app (mailto). For a real form we’ll add a backend once hosting is ready.",contact_alt_title:"Direct contact",contact_alt_note:"We can communicate in German (C1) for DACH clients.",foot_rights:"All rights reserved",btn_preview:"View preview",btn_open_pdf:"Open PDF",cap_peter:"Homepage — Peter's Bakery",cap_core:"Logo variations — CoreAlliance"}
+      sr:{nav_services:"Usluge",nav_products:"Paketi",nav_portfolio:"Portfolio",nav_contact:"Kontakt",cta_quote:"Zatraži ponudu",cta_portfolio:"Pogledaj portfolio",cta_services:"Usluge",hero_pill:"Digitalni dizajn • Video • Web",hero_title:"Jednostavno — pravimo da vas pamte.",hero_sub:"Web stranice, kratke video reklame i pametan marketing na nemačkom, srpskom i engleskom.",hero_note:"Transparentan meni je stalno uključen (bez zamračenja). Ako želite poluprovidnu verziju na skrol – javite.",hero_img_note:"Zamenite 'hero-robot.png' vašom slikom/robotom.",hero_video_note:"Klikom na jezik birate verziju videa; zvuk je uključen.",sec_services_title:"Šta radimo (sa fokusom na rezultate)",sec_services_sub:"Tri stuba ponude koji najbrže donose efekat.",s1_chip:"Web",s1_title:"Brze i moderne web stranice",s1_text:"Landing, prezentacije, kontakt forme sa praćenjem konverzije.",s2_chip:"Video",s2_title:"Kratke video reklame",s2_text:"15–45s formati, titlovi na DE/SR/EN, optimizovano za društvene mreže.",s3_chip:"Marketing",s3_title:"Kampanje i oglasi",s3_text:"Facebook/Instagram/Google, kalendar objava, hashtagovi i CTA poruke.",sec_products_title:"Paketi (start – pro – premium)",sec_products_sub:"Fiksne cene po modulu, jasno šta dobijate.",p1_title:"START paket",p2_title:"PRO paket",p3_title:"PREMIUM paket",sec_portfolio_title:"Primeri i prototipi",sec_portfolio_sub:"Uskoro dodajemo žive linkove projekata.",port1:"Jednostavna prezentacija sa transparentnim menijem.",port2:"Brendirani intro video bez watermark-a.",port3:"Minimal logo varijante za menije i hero sekcije.",sec_contact_title:"Kontakt i brza ponuda",sec_contact_sub:"Pišite nam šta želite i dobićete brz predlog i cenu.",cta_send:"Pošalji",contact_note:"Dugme šalje mail preko vašeg klijent-programa (mailto). Ako želite potpuno funkcionalnu formu, ubacićemo backend kada bude spreman hosting.",contact_alt_title:"Direktan kontakt",contact_alt_note:"Možemo komunicirati i na nemačkom (C1) — posebno za DACH klijente.",foot_rights:"Sva prava zadržana",btn_preview:"Pogledaj prikaz",btn_open_pdf:"Otvori PDF",cap_peter:"Naslovna stranica — Peterova pekara",cap_core:"Logo varijante — CoreAlliance",proj_bakery_title:"Peterova pekara",proj_bakery_desc:"Jednostavna prezentaciona stranica sa transparentnim menijem.",proj_preview_btn:"Pogledaj prikaz",proj_bakery_modal_title:"Početna — Peterova pekara",proj_bakery_pdf_btn:"Otvori PDF",form_name_ph:"Ime i prezime",form_email_ph:"Email",form_msg_ph:"Poruka…",contact_email_label:"Email:",contact_on_request:"po zahtevu"},
+      de:{nav_services:"Leistungen",nav_products:"Pakete",nav_portfolio:"Portfolio",nav_contact:"Kontakt",cta_quote:"Angebot anfragen",cta_portfolio:"Portfolio ansehen",cta_services:"Leistungen",hero_pill:"Digital Design • Video • Web",hero_title:"Wir sorgen dafür, dass man Sie merkt.",hero_sub:"Websites, Kurzvideos und smartes Marketing auf Deutsch, Serbisch und Englisch.",hero_note:"Die Navigationsleiste bleibt transparent. Halbtransparent beim Scrollen ist optional.",hero_img_note:"Ersetzen Sie 'hero-robot.png' mit Ihrem Bild/Render.",hero_video_note:"Mit der Sprachauswahl wählen Sie das Video; der Ton ist eingeschaltet.",sec_services_title:"Was wir liefern",sec_services_sub:"Drei Module mit schnellem Impact.",s1_chip:"Web",s1_title:"Schnelle, moderne Websites",s1_text:"Landingpages, Präsentationen, Kontaktformulare mit Conversion-Tracking.",s2_chip:"Video",s2_title:"Kurzvideo-Ads",s2_text:"15–45s Formate, Untertitel DE/SR/EN, optimiert für Social Media.",s3_chip:"Marketing",s3_title:"Kampagnen & Ads",s3_text:"Facebook/Instagram/Google, Redaktionsplan, Hashtags & CTA.",sec_products_title:"Pakete (Start – Pro – Premium)",sec_products_sub:"Fixpreise je Modul, klarer Umfang.",p1_title:"START Paket",p2_title:"PRO Paket",p3_title:"PREMIUM Paket",sec_portfolio_title:"Beispiele & Prototypen",sec_portfolio_sub:"Live-Links folgen in Kürze.",port1:"Einfache Präsentationsseite mit transparentem Menü.",port2:"Gebrandetes Intro-Video ohne Wasserzeichen.",port3:"Minimal-Logos für Menüs & Hero-Bereiche.",sec_contact_title:"Kontakt & schnelles Angebot",sec_contact_sub:"Schreiben Sie uns Ihr Ziel – wir senden Vorschlag & Preis.",cta_send:"Senden",contact_note:"Der Button öffnet Ihr Mailprogramm (mailto). Für echte Formulare liefern wir Backend, sobald das Hosting steht.",contact_alt_title:"Direktkontakt",contact_alt_note:"Kommunikation auf Deutsch (C1) für DACH-Kunden.",foot_rights:"Alle Rechte vorbehalten",btn_preview:"Vorschau ansehen",btn_open_pdf:"PDF öffnen",cap_peter:"Startseite — Peterova Bäckerei",cap_core:"Logo-Varianten — CoreAlliance",proj_bakery_title:"Bäckerei Peter",proj_bakery_desc:"Einfache Präsentationsseite mit transparentem Menü.",proj_preview_btn:"Vorschau ansehen",proj_bakery_modal_title:"Startseite — Bäckerei Peter",proj_bakery_pdf_btn:"PDF öffnen",form_name_ph:"Name und Nachname",form_email_ph:"E-Mail",form_msg_ph:"Nachricht…",contact_email_label:"E-Mail:",contact_on_request:"auf Anfrage"},
+      en:{nav_services:"Services",nav_products:"Packages",nav_portfolio:"Portfolio",nav_contact:"Contact",cta_quote:"Request a quote",cta_portfolio:"See portfolio",cta_services:"Services",hero_pill:"Digital design • Video • Web",hero_title:"We make you memorable.",hero_sub:"Websites, short video ads and smart marketing in German, Serbian and English.",hero_note:"The navbar stays transparent. Optional semi-transparent on scroll.",hero_img_note:"Replace 'hero-robot.png' with your image/render.",hero_video_note:"Click a language to choose the video; audio is ON.",sec_services_title:"What we deliver",sec_services_sub:"Three modules with fast impact.",p1_title:"START package",p2_title:"PRO package",p3_title:"PREMIUM package",sec_portfolio_title:"Examples & prototypes",sec_portfolio_sub:"Live links coming soon.",port1:"Simple presentation site with transparent menu.",port2:"Branded intro video without watermark.",port3:"Minimal logos for menus & hero areas.",sec_contact_title:"Contact & quick quote",sec_contact_sub:"Tell us your goal – we’ll send a proposal & price.",cta_send:"Send",contact_note:"The button opens your mail app (mailto). For a real form we’ll add a backend once hosting is ready.",contact_alt_title:"Direct contact",contact_alt_note:"We can communicate in German (C1) for DACH clients.",foot_rights:"All rights reserved",btn_preview:"View preview",btn_open_pdf:"Open PDF",cap_peter:"Homepage — Peter's Bakery",cap_core:"Logo variations — CoreAlliance",proj_bakery_title:"Peter’s Bakery",proj_bakery_desc:"Simple presentation site with a transparent menu.",proj_preview_btn:"View preview",proj_bakery_modal_title:"Homepage — Peter’s Bakery",proj_bakery_pdf_btn:"Open PDF",form_name_ph:"Full name",form_email_ph:"Email",form_msg_ph:"Message…",contact_email_label:"Email:",contact_on_request:"on request"}
     };
     const lists={
       sr:{p1_list:["Jedna stranica (do 5 sekcija)","Kontakt mailto forma","Osnovna SEO meta polja"],p2_list:["Više stranica + portfolio","Kratak video (do 30s)","Priprema oglasa + 10 hashtagova"],p3_list:["Custom dizajn & animacije","2 video reklame (do 45s)","Kampanja 30 dana + izveštaj"]},
@@ -272,7 +272,13 @@
       document.querySelectorAll('.lang-switch button').forEach(btn=>btn.classList.toggle('active', btn.dataset.lang===lang));
       const map=dict[lang]||dict.en;
       document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n'); if(map[k]) el.textContent=map[k];});
-      const L=lists[lang]||lists.en; const ids=['p1_list','p2_list','p3_list']; ids.forEach(id=>{const ul=document.getElementById(id); if(!ul) return; ul.innerHTML=''; (L[id]||[]).forEach(li=>{const liEl=document.createElement('li'); liEl.textContent=li; ul.appendChild(liEl);});});
+      
+      // update placeholders
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+        const k = el.getAttribute('data-i18n-placeholder');
+        if(map[k]){ el.setAttribute('placeholder', map[k]); el.setAttribute('aria-label', map[k]); }
+      });
+    const L=lists[lang]||lists.en; const ids=['p1_list','p2_list','p3_list']; ids.forEach(id=>{const ul=document.getElementById(id); if(!ul) return; ul.innerHTML=''; (L[id]||[]).forEach(li=>{const liEl=document.createElement('li'); liEl.textContent=li; ul.appendChild(liEl);});});
       document.documentElement.lang=lang; localStorage.setItem('lang', lang);
     }
 
@@ -310,5 +316,32 @@
     const initial=localStorage.getItem('lang')||'en';
     setLang(initial); setVideoForLang(initial);
   </script>
+
+<script>
+// Safety i18n fallback to ensure texts populate even if earlier JS stops.
+(function(){
+  function safeSetLang(lang){
+    try { if (typeof setLang === 'function') { setLang(lang); return; } } catch(e) {}
+    try {
+      var source = (typeof dict !== 'undefined') ? dict : (window.dict || {});
+      var map = source[lang] || source.de || source.en || {};
+      document.querySelectorAll('[data-i18n]').forEach(function(el){
+        var k = el.getAttribute('data-i18n');
+        if (map[k] !== undefined) el.textContent = map[k];
+      });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+        var k = el.getAttribute('data-i18n-placeholder');
+        if (map[k] !== undefined) { el.setAttribute('placeholder', map[k]); el.setAttribute('aria-label', map[k]); }
+      });
+    } catch(err) { /* swallow */ }
+  }
+  var L = (function(){ try { return localStorage.getItem('lang') || 'de'; } catch(e) { return 'de'; } })();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function(){ safeSetLang(L); });
+  } else {
+    safeSetLang(L);
+  }
+})();
+</script>
 </body>
 </html>
