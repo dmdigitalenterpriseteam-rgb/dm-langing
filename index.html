@@ -343,5 +343,93 @@
   }
 })();
 </script>
+
+<!-- LANG ENFORCER: keeps texts in sync even if other scripts overwrite -->
+<script>
+(function(){
+  var FALLBACK = {
+    hero_lead:"Three modules with fast impact.",
+    packages_title:"Packages (start – pro – premium)",
+    packages_sub:"Fixed prices per module, know exactly what you get.",
+    s1_chip:"Web", s1_title:"Fast, modern websites",
+    s1_text:"Landing pages, presentations, contact forms with conversion tracking.",
+    s2_chip:"Video", s2_title:"Short video ads",
+    s2_text:"15–45s formats, subtitles in DE/SR/EN, optimized for social media.",
+    s3_chip:"Marketing", s3_title:"Campaigns & ads",
+    s3_text:"Facebook/Instagram/Google, content calendar, hashtags & CTA messages."
+  };
+  function language(){ try{ return localStorage.getItem('lang') || document.documentElement.getAttribute('lang') || 'en'; }catch(e){return 'en';} }
+  function map(lang){
+    var base=(window.dict&&dict&&dict.en)?dict.en:{};
+    var over=(window.dict&&dict&&dict[lang])?dict[lang]:{};
+    var out={}; Object.keys(FALLBACK).forEach(k=>out[k]=FALLBACK[k]);
+    for (var k in base){ if (Object.prototype.hasOwnProperty.call(base,k)) out[k]=base[k]; }
+    for (var k2 in over){ if (Object.prototype.hasOwnProperty.call(over,k2)) out[k2]=over[k2]; }
+    return out;
+  }
+  function fillFor(lang){
+    var m = map(lang);
+    // Generic i18n spans
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key=el.getAttribute('data-i18n');
+      if (key && Object.prototype.hasOwnProperty.call(m,key)) el.textContent=m[key];
+    });
+    // Cards by position
+    var cards=document.querySelectorAll('.cards article, #services .card, section#services article');
+    if (cards.length>=3){
+      function F(c,chip,title,text){
+        var chipEl=c.querySelector('.chip, span'); if (chipEl) chipEl.textContent=chip;
+        var h3=c.querySelector('h3'); if (h3) h3.textContent=title;
+        var p=c.querySelector('p'); if (p) p.textContent=text;
+      }
+      F(cards[0],m.s1_chip,m.s1_title,m.s1_text);
+      F(cards[1],m.s2_chip,m.s2_title,m.s2_text);
+      F(cards[2],m.s3_chip,m.s3_title,m.s3_text);
+    }
+    // Packages
+    var h2=document.querySelector('[data-i18n="packages_title"]')||document.querySelector('#packages h2, section#packages h2');
+    if (h2) h2.textContent=m.packages_title;
+    var lead=document.querySelector('[data-i18n="packages_sub"]')||document.querySelector('#packages .lead, section#packages .lead');
+    if (lead) lead.textContent=m.packages_sub;
+    // Hero lead
+    var hLead=document.querySelector('.lead:not(#packages .lead)');
+    if (hLead) hLead.textContent=m.hero_lead;
+  }
+  function safeSetLang(lang){
+    try{ if (typeof window.setLang==='function') window.setLang(lang); }catch(e){}
+    try{ localStorage.setItem('lang', lang); }catch(e){}
+    document.documentElement.setAttribute('lang', lang);
+    // fill now and a bit later in case something overwrites
+    fillFor(lang); setTimeout(function(){fillFor(lang);},120); setTimeout(function(){fillFor(lang);},300);
+  }
+  // Hook language buttons by text
+  function hookButtons(){
+    var nodes = Array.from(document.querySelectorAll('a,button,div span,li'));
+    nodes.forEach(function(n){
+      var t = (n.textContent||"").trim().toLowerCase();
+      if (t==='en' || t==='de' || t==='srb'){
+        n.style.cursor='pointer';
+        n.addEventListener('click', function(){
+          var lang=t==='en'?'en':(t==='de'?'de':'srb');
+          safeSetLang(lang);
+        }, {capture:true});
+      }
+    });
+  }
+  // Observe DOM changes and re-apply current language if content drifts
+  var mo = new MutationObserver(function(){
+    var lang = language();
+    setTimeout(function(){ fillFor(lang); }, 50);
+  });
+  function start(){
+    hookButtons();
+    mo.observe(document.body, {childList:true, subtree:true, characterData:true});
+    safeSetLang(language());
+  }
+  if (document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', start); }
+  else { start(); }
+})();
+</script>
+
 </body>
 </html>
