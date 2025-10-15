@@ -224,7 +224,14 @@
           </div>
         </article>
       </div>
-    </div>
+      <article class="card">
+        <h3>Demo – Video Beispiele</h3>
+        <p class="sub">3 kurze Beispiele: Peter, Avatar IV, Sandra.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+          <a class="cta" href="demo.html" target="_blank" rel="noopener">Vorschau ansehen</a>
+        </div>
+      </article>
+</div>
   </section>
 
   <section id="contact">
@@ -343,8 +350,111 @@
   }
 })();
 </script>
+<!-- HARDENED SERVICES FIX (no other code touched) -->
+<script>
+(function(){
+  var EN = {
+    s1_chip:"Web",
+    s1_title:"Fast, modern websites",
+    s1_text:"Landing pages, presentations, contact forms with conversion tracking.",
+    s2_chip:"Video",
+    s2_title:"Short video ads",
+    s2_text:"15–45s formats, subtitles in DE/SR/EN, optimized for social media.",
+    s3_chip:"Marketing",
+    s3_title:"Campaigns & ads",
+    s3_text:"Facebook/Instagram/Google, content calendar, hashtags & CTA messages."
+  };
 
-<!-- LANG ENFORCER: keeps texts in sync even if other scripts overwrite -->
+  // add EN defaults for packages title/sub
+  EN.packages_title = EN.packages_title || "Packages (start – pro – premium)";
+  EN.packages_sub   = EN.packages_sub   || "Fixed prices per module, know exactly what you get.";
+
+  function getMap(lang){
+    var base = (window.dict && dict.en) ? dict.en : EN;
+    var over = (window.dict && dict[lang]) ? dict[lang] : {};
+    var out = {};
+    for (var k in base) if (Object.prototype.hasOwnProperty.call(base,k)) out[k]=base[k];
+    for (var k2 in over) if (Object.prototype.hasOwnProperty.call(over,k2)) out[k2]=over[k2];
+    // ensure the 9 keys exist at least from EN
+    ['s1_chip','s1_title','s1_text','s2_chip','s2_title','s2_text','s3_chip','s3_title','s3_text'].forEach(function(k){
+      if (out[k]==null) out[k]=EN[k];
+    });
+    return out;
+  }
+
+  function applyServices(lang){
+    var map = getMap(lang);
+
+    // fill via data-i18n if present
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.getAttribute('data-i18n');
+      if (k && Object.prototype.hasOwnProperty.call(map,k)) el.textContent = map[k];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+      var k = el.getAttribute('data-i18n-placeholder');
+      if (k && Object.prototype.hasOwnProperty.call(map,k)){
+        el.setAttribute('placeholder', map[k]);
+        el.setAttribute('aria-label', map[k]);
+      }
+    });
+
+    // fill cards by position if no data-i18n on them
+    var cards = document.querySelectorAll('.cards article, #services .card, section#services article');
+    if (cards.length >= 3){
+      function fillCard(cardEl, chipTxt, h3Txt, pTxt){
+        var chip = cardEl.querySelector('.chip, span');
+        if (chip && chipTxt) chip.textContent = chipTxt;
+        var h3 = cardEl.querySelector('h3');
+        if (h3 && h3Txt) h3.textContent = h3Txt;
+        var p = cardEl.querySelector('p');
+        if (p && pTxt) p.textContent = pTxt;
+      }
+      fillCard(cards[0], map.s1_chip, map.s1_title, map.s1_text);
+      fillCard(cards[1], map.s2_chip, map.s2_title, map.s2_text);
+      fillCard(cards[2], map.s3_chip, map.s3_title, map.s3_text);
+    }
+  }
+
+    // Packages title/subtitle (if elements exist and lack data-i18n)
+    try{
+      var h2 = document.querySelector('#packages h2, section#packages h2');
+      if (h2){
+        var t = (map.packages_title || EN.packages_title);
+        if (t) h2.textContent = t;
+      }
+      var lead = document.querySelector('#packages .lead, section#packages .lead');
+      if (lead){
+        var s = (map.packages_sub || EN.packages_sub);
+        if (s) lead.textContent = s;
+      }
+    }catch(e){}
+
+  var _orig = window.setLang;
+  window.setLang = function(lang){
+    try{ if (typeof _orig === 'function') _orig(lang); }catch(e){}
+    try{
+      applyServices(lang);
+      // toggle active state if data-setlang exists
+      document.querySelectorAll('[data-setlang]').forEach(function(btn){
+        btn.classList.toggle('active', btn.getAttribute('data-setlang')===lang);
+      });
+      document.documentElement.setAttribute('lang', lang);
+      try{ localStorage.setItem('lang', lang); }catch(e){}
+    }catch(e){}
+  };
+
+  // apply immediately on load (default EN)
+  var initial = 'en';
+  try{ initial = localStorage.getItem('lang') || document.documentElement.getAttribute('lang') || 'en'; }catch(e){}
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){ window.setLang(initial); });
+  } else {
+    window.setLang(initial);
+  }
+})();
+</script>
+
+<!-- I18N LOCK: atomic language updates + debounced observer -->
 <script>
 (function(){
   var FALLBACK = {
@@ -358,23 +468,27 @@
     s3_chip:"Marketing", s3_title:"Campaigns & ads",
     s3_text:"Facebook/Instagram/Google, content calendar, hashtags & CTA messages."
   };
-  function language(){ try{ return localStorage.getItem('lang') || document.documentElement.getAttribute('lang') || 'en'; }catch(e){return 'en';} }
+  var currentLang = 'en';
+  var updating = false;
+  var rafPending = false;
+  function getLang(){
+    try { return localStorage.getItem('lang') || document.documentElement.getAttribute('lang') || 'en'; }
+    catch(e){ return 'en'; }
+  }
   function map(lang){
     var base=(window.dict&&dict&&dict.en)?dict.en:{};
     var over=(window.dict&&dict&&dict[lang])?dict[lang]:{};
     var out={}; Object.keys(FALLBACK).forEach(k=>out[k]=FALLBACK[k]);
-    for (var k in base){ if (Object.prototype.hasOwnProperty.call(base,k)) out[k]=base[k]; }
-    for (var k2 in over){ if (Object.prototype.hasOwnProperty.call(over,k2)) out[k2]=over[k2]; }
+    for (var k in base) if (Object.prototype.hasOwnProperty.call(base,k)) out[k]=base[k];
+    for (var k2 in over) if (Object.prototype.hasOwnProperty.call(over,k2)) out[k2]=over[k2];
     return out;
   }
-  function fillFor(lang){
+  function fill(lang){
     var m = map(lang);
-    // Generic i18n spans
     document.querySelectorAll('[data-i18n]').forEach(function(el){
-      var key=el.getAttribute('data-i18n');
-      if (key && Object.prototype.hasOwnProperty.call(m,key)) el.textContent=m[key];
+      var key = el.getAttribute('data-i18n');
+      if (key && Object.prototype.hasOwnProperty.call(m,key)) el.textContent = m[key];
     });
-    // Cards by position
     var cards=document.querySelectorAll('.cards article, #services .card, section#services article');
     if (cards.length>=3){
       function F(c,chip,title,text){
@@ -386,45 +500,54 @@
       F(cards[1],m.s2_chip,m.s2_title,m.s2_text);
       F(cards[2],m.s3_chip,m.s3_title,m.s3_text);
     }
-    // Packages
     var h2=document.querySelector('[data-i18n="packages_title"]')||document.querySelector('#packages h2, section#packages h2');
-    if (h2) h2.textContent=m.packages_title;
+    if (h2) h2.textContent = m.packages_title;
     var lead=document.querySelector('[data-i18n="packages_sub"]')||document.querySelector('#packages .lead, section#packages .lead');
-    if (lead) lead.textContent=m.packages_sub;
-    // Hero lead
+    if (lead) lead.textContent = m.packages_sub;
     var hLead=document.querySelector('.lead:not(#packages .lead)');
-    if (hLead) hLead.textContent=m.hero_lead;
+    if (hLead) hLead.textContent = m.hero_lead;
   }
-  function safeSetLang(lang){
-    try{ if (typeof window.setLang==='function') window.setLang(lang); }catch(e){}
-    try{ localStorage.setItem('lang', lang); }catch(e){}
+  function applyLang(lang){
+    if (updating) return;
+    updating = true;
+    currentLang = lang;
+    try { localStorage.setItem('lang', lang); } catch(e){}
     document.documentElement.setAttribute('lang', lang);
-    // fill now and a bit later in case something overwrites
-    fillFor(lang); setTimeout(function(){fillFor(lang);},120); setTimeout(function(){fillFor(lang);},300);
+    requestAnimationFrame(function(){
+      fill(lang);
+      setTimeout(function(){ fill(lang); updating=false; }, 60);
+    });
   }
-  // Hook language buttons by text
-  function hookButtons(){
-    var nodes = Array.from(document.querySelectorAll('a,button,div span,li'));
-    nodes.forEach(function(n){
-      var t = (n.textContent||"").trim().toLowerCase();
+  var _origSet = window.setLang;
+  window.setLang = function(lang){
+    try{ if (typeof _origSet==='function') _origSet(lang); }catch(e){}
+    applyLang(lang);
+  };
+  function hook(){
+    document.querySelectorAll('a,button,span').forEach(function(n){
+      var t=(n.textContent||'').trim().toLowerCase();
       if (t==='en' || t==='de' || t==='srb'){
         n.style.cursor='pointer';
-        n.addEventListener('click', function(){
-          var lang=t==='en'?'en':(t==='de'?'de':'srb');
-          safeSetLang(lang);
+        n.addEventListener('click', function(e){
+          var lang = (t==='en'?'en':(t==='de'?'de':'srb'));
+          applyLang(lang);
         }, {capture:true});
       }
     });
   }
-  // Observe DOM changes and re-apply current language if content drifts
+  var debTimer=null;
   var mo = new MutationObserver(function(){
-    var lang = language();
-    setTimeout(function(){ fillFor(lang); }, 50);
+    if (updating) return;
+    if (debTimer) cancelAnimationFrame(debTimer);
+    debTimer = requestAnimationFrame(function(){
+      fill(currentLang);
+    });
   });
   function start(){
-    hookButtons();
+    currentLang = getLang();
+    hook();
     mo.observe(document.body, {childList:true, subtree:true, characterData:true});
-    safeSetLang(language());
+    applyLang(currentLang);
   }
   if (document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', start); }
   else { start(); }
