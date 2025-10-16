@@ -70,15 +70,6 @@
     .lb__panel{position:relative;z-index:1;margin:6vh auto 0;max-width:min(92vw,980px);background:#0e1422;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px}
     .lb__close{position:absolute;right:10px;top:10px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);color:#fff;border-radius:8px;padding:6px 10px;cursor:pointer}
   </style>
-
-<style>
-/* i18n helpers (safe if you use data-lang spans anywhere) */
-[data-lang]{display:none!important;}
-html[data-current-lang="sr"] [data-lang="sr"]{display:inline!important;}
-html[data-current-lang="de"] [data-lang="de"]{display:inline!important;}
-html[data-current-lang="en"] [data-lang="en"]{display:inline!important;}
-</style>
-
 </head>
 <body>
   <header>
@@ -688,91 +679,6 @@ html[data-current-lang="en"] [data-lang="en"]{display:inline!important;}
       clearInterval(timer);
     }
   }, 100);
-})();
-</script>
-
-
-<!-- i18n LOCK MODE (SAFE): consistent language for service cards & packages, no heavy observers -->
-<script>
-(function(){
-  const MAP = {
-    de:{cards:[["Web","Schnelle, moderne Websites","Landingpages, Präsentationen, Kontaktformulare mit Conversion-Tracking."],
-               ["Video","Kurze Videoanzeigen","15–45‑Sek.-Formate, Untertitel in DE/SR/EN, optimiert für Social Media."],
-               ["Marketing","Kampagnen & Anzeigen","Facebook/Instagram/Google, Content-Kalender, Hashtags & CTA-Botschaften."]],
-        packages_title:"Pakete (Start – Pro – Premium)",
-        packages_sub:"Festpreise pro Modul – Sie wissen genau, was Sie bekommen."},
-    sr:{cards:[["Web","Brze, moderne web stranice","Landing stranice, prezentacije, kontakt forme uz praćenje konverzija."],
-               ["Video","Kratke video reklame","Formati 15–45 s, titlovi na DE/SR/EN, optimizovano za društvene mreže."],
-               ["Marketing","Kampanje i oglasi","Facebook/Instagram/Google, kalendar sadržaja, hashtagovi i CTA poruke."]],
-        packages_title:"Paketi (start – pro – premium)",
-        packages_sub:"Fiksne cene po modulu – tačno znate šta dobijate."},
-    en:{cards:[["Web","Fast, modern websites","Landing pages, presentations, contact forms with conversion tracking."],
-               ["Video","Short video ads","15–45s formats, subtitles in DE/SR/EN, optimized for social media."],
-               ["Marketing","Campaigns & ads","Facebook/Instagram/Google, content calendar, hashtags & CTA messages."]],
-        packages_title:"Packages (start – pro – premium)",
-        packages_sub:"Fixed prices per module, know exactly what you get."}
-  };
-
-  function tc(el,v){ if(el && typeof v==='string'){ el.textContent=v; } }
-  function norm(l){ l=(l||'de').toLowerCase(); if(l.startsWith('de'))return'de'; if(l.startsWith('sr'))return'sr'; if(l.startsWith('en'))return'en'; return 'de'; }
-
-  // Find 3 cards robustly
-  function getCards(){
-    let container = null;
-    document.querySelectorAll('h2,h1').forEach(h=>{
-      const t = (h.textContent||'').toLowerCase();
-      if(!container && (t.includes('šta radimo')||t.includes('sa fokusom')||t.includes('machen')||t.includes('what we do')||t.includes('paketi'))){
-        container = h.closest('section')||h.parentElement;
-      }
-    });
-    let cards=[];
-    if(container){ cards = Array.from(container.querySelectorAll('h3')).slice(0,3).map(h=>h.closest('div,article,section')).filter(Boolean); }
-    if(cards.length<3){ cards = Array.from(document.querySelectorAll('h3')).slice(0,3).map(h=>h.closest('div,article,section')).filter(Boolean); }
-    return cards.slice(0,3);
-  }
-
-  let APPLYING=false;
-  function fill(lang){
-    if(APPLYING) return; // guard against re-entry
-    APPLYING=true;
-    try{
-      lang = norm(lang);
-      document.documentElement.setAttribute('lang', lang);
-      document.documentElement.setAttribute('data-current-lang', lang);
-      const L = MAP[lang] || MAP.de;
-      const cards = getCards();
-      for(let i=0;i<cards.length && i<3;i++){
-        const c=cards[i];
-        const badge = c.querySelector('.badge span, .chip span, .badge, .chip, span');
-        const title = c.querySelector('h3');
-        const desc  = c.querySelector('p');
-        const [b,t,d] = L.cards[i];
-        tc(badge,b); tc(title,t); tc(desc,d);
-      }
-      const pkTitle = document.querySelector('#packages h2, section#packages h2, [data-i18n="packages_title"]');
-      const pkLead  = document.querySelector('#packages .lead, section#packages .lead, [data-i18n="packages_sub"]');
-      tc(pkTitle, L.packages_title); tc(pkLead, L.packages_sub);
-      try{ localStorage.setItem('lang', lang);}catch(e){}
-    } finally {
-      APPLYING=false;
-    }
-  }
-
-  window.setLang = fill;
-
-  document.addEventListener('click', function(e){
-    const t=e.target.closest('[data-setlang], .lang-switch button');
-    if(!t) return;
-    const code=(t.getAttribute('data-setlang')||t.dataset.lang||t.textContent).trim().toLowerCase();
-    fill(code);
-  });
-
-  // Initialize once DOM is ready and then once after other scripts have run
-  const initial = (function(){ try{return localStorage.getItem('lang')||document.documentElement.getAttribute('lang')||'de';}catch(e){return'de';} })();
-  const init = ()=>{ fill(initial); };
-  if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', init); } else { init(); }
-  // Run a second pass after load to win any late script writes—without watchers
-  window.addEventListener('load', function(){ setTimeout(()=>fill( localStorage.getItem('lang')||initial ), 50); });
 })();
 </script>
 
