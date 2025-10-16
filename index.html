@@ -597,5 +597,25 @@
 })();
 </script>
 
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  try {
+    var map = { EN: 'en', DE: 'de', SRB: 'sr', en:'en', de:'de', srb:'sr' };
+    document.querySelectorAll('[data-lang], .lang-toggle button').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var raw = (btn.getAttribute('data-lang') || btn.textContent || '').trim();
+        var lang = map[raw] || 'en';
+        if (typeof setLanguage === 'function') setLanguage(lang);
+        document.documentElement.setAttribute('lang', lang);
+        try { localStorage.setItem('lang', lang); } catch(e){}
+      });
+    });
+    var initial = localStorage.getItem('lang');
+    if (initial && typeof setLanguage === 'function') setLanguage(initial);
+  } catch(e){ console.warn('Lang map safe patch:', e); }
+});
+</script>
+
 </body>
 </html>
