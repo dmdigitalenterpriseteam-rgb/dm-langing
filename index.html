@@ -72,6 +72,7 @@
   </style>
 
 <style>
+/* i18n helpers (safe if you use data-lang spans anywhere) */
 [data-lang]{display:none!important;}
 html[data-current-lang="sr"] [data-lang="sr"]{display:inline!important;}
 html[data-current-lang="de"] [data-lang="de"]{display:inline!important;}
@@ -691,7 +692,7 @@ html[data-current-lang="en"] [data-lang="en"]{display:inline!important;}
 </script>
 
 
-<!-- i18n LOCK MODE: prevents mixed languages in service cards & packages -->
+<!-- i18n LOCK MODE (SAFE): consistent language for service cards & packages, no heavy observers -->
 <script>
 (function(){
   const MAP = {
@@ -711,48 +712,67 @@ html[data-current-lang="en"] [data-lang="en"]{display:inline!important;}
         packages_title:"Packages (start – pro – premium)",
         packages_sub:"Fixed prices per module, know exactly what you get."}
   };
+
   function tc(el,v){ if(el && typeof v==='string'){ el.textContent=v; } }
   function norm(l){ l=(l||'de').toLowerCase(); if(l.startsWith('de'))return'de'; if(l.startsWith('sr'))return'sr'; if(l.startsWith('en'))return'en'; return 'de'; }
+
+  // Find 3 cards robustly
   function getCards(){
     let container = null;
     document.querySelectorAll('h2,h1').forEach(h=>{
       const t = (h.textContent||'').toLowerCase();
-      if(!container && (t.includes('šta radimo')||t.includes('sa fokusom')||t.includes('machen')||t.includes('what we do'))) container = h.closest('section')||h.parentElement;
+      if(!container && (t.includes('šta radimo')||t.includes('sa fokusom')||t.includes('machen')||t.includes('what we do')||t.includes('paketi'))){
+        container = h.closest('section')||h.parentElement;
+      }
     });
     let cards=[];
     if(container){ cards = Array.from(container.querySelectorAll('h3')).slice(0,3).map(h=>h.closest('div,article,section')).filter(Boolean); }
     if(cards.length<3){ cards = Array.from(document.querySelectorAll('h3')).slice(0,3).map(h=>h.closest('div,article,section')).filter(Boolean); }
     return cards.slice(0,3);
   }
+
+  let APPLYING=false;
   function fill(lang){
-    lang = norm(lang);
-    document.documentElement.setAttribute('lang', lang);
-    document.documentElement.setAttribute('data-current-lang', lang);
-    const L = MAP[lang] || MAP.de;
-    const cards = getCards();
-    for(let i=0;i<cards.length && i<3;i++){
-      const c=cards[i];
-      const badge = c.querySelector('.badge span, .chip span, .badge, .chip, span');
-      const title = c.querySelector('h3');
-      const desc  = c.querySelector('p');
-      const [b,t,d] = L.cards[i];
-      tc(badge,b); tc(title,t); tc(desc,d);
+    if(APPLYING) return; // guard against re-entry
+    APPLYING=true;
+    try{
+      lang = norm(lang);
+      document.documentElement.setAttribute('lang', lang);
+      document.documentElement.setAttribute('data-current-lang', lang);
+      const L = MAP[lang] || MAP.de;
+      const cards = getCards();
+      for(let i=0;i<cards.length && i<3;i++){
+        const c=cards[i];
+        const badge = c.querySelector('.badge span, .chip span, .badge, .chip, span');
+        const title = c.querySelector('h3');
+        const desc  = c.querySelector('p');
+        const [b,t,d] = L.cards[i];
+        tc(badge,b); tc(title,t); tc(desc,d);
+      }
+      const pkTitle = document.querySelector('#packages h2, section#packages h2, [data-i18n="packages_title"]');
+      const pkLead  = document.querySelector('#packages .lead, section#packages .lead, [data-i18n="packages_sub"]');
+      tc(pkTitle, L.packages_title); tc(pkLead, L.packages_sub);
+      try{ localStorage.setItem('lang', lang);}catch(e){}
+    } finally {
+      APPLYING=false;
     }
-    const pkTitle = document.querySelector('#packages h2, section#packages h2, [data-i18n="packages_title"]');
-    const pkLead  = document.querySelector('#packages .lead, section#packages .lead, [data-i18n="packages_sub"]');
-    tc(pkTitle, L.packages_title); tc(pkLead, L.packages_sub);
-    try{ localStorage.setItem('lang', lang);}catch(e){}
   }
+
   window.setLang = fill;
+
   document.addEventListener('click', function(e){
-    const t=e.target.closest('[data-setlang], .lang-switch button'); if(!t) return;
+    const t=e.target.closest('[data-setlang], .lang-switch button');
+    if(!t) return;
     const code=(t.getAttribute('data-setlang')||t.dataset.lang||t.textContent).trim().toLowerCase();
     fill(code);
   });
+
+  // Initialize once DOM is ready and then once after other scripts have run
   const initial = (function(){ try{return localStorage.getItem('lang')||document.documentElement.getAttribute('lang')||'de';}catch(e){return'de';} })();
-  if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', ()=>fill(initial)); } else { fill(initial); }
-  const mo=new MutationObserver(()=>{ fill(localStorage.getItem('lang')||'de'); });
-  mo.observe(document.body,{childList:true,subtree:true,characterData:true});
+  const init = ()=>{ fill(initial); };
+  if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', init); } else { init(); }
+  // Run a second pass after load to win any late script writes—without watchers
+  window.addEventListener('load', function(){ setTimeout(()=>fill( localStorage.getItem('lang')||initial ), 50); });
 })();
 </script>
 
