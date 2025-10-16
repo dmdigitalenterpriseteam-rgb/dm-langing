@@ -641,25 +641,44 @@
 
 
 <script>
-// SR language patch: add missing i18n keys without touching existing ones
+/* SR i18n robust patch: čeka i dopunjava dict.sr pa re‑aplicira jezik */
 (function(){
-  try {
-    var add = {
-      cta_consult: "Besplatna kratka konsultacija",
-      claim_title: "Više kupaca za vašu pekaru",
-      claim_sub: "Jasna početna strana + 30-sekundni video, spremno za 2–4 nedelje.",
-      faq1_q: "Koliko brzo isporučujete?",
-      faq1_a: "Za 2–4 nedelje — u zavisnosti od dostavljenog materijala i odobrenja.",
-      faq2_q: "Šta je potrebno sa vaše strane?",
-      faq2_a: "Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.",
-      faq3_q: "Koliko okvirno košta?",
-      faq3_a: "Start od X €; tačnu procenu šaljemo nakon naše 24-časovne procene."
-    };
-    // dictionary is usually 'dict' or 'window.dict'
-    var dict = (typeof window !== 'undefined' && (window.dict || window.i18n || {})) || {};
-    var sr = dict.sr || (dict['sr'] = {});
-    Object.keys(add).forEach(function(k){ if (sr[k] == null) sr[k] = add[k]; });
-  } catch(e) { console.warn("SR patch failed", e); }
+  var add = {
+    cta_consult: "Besplatna kratka konsultacija",
+    claim_title: "Više kupaca za vašu pekaru",
+    claim_sub: "Jasna početna strana + 30-sekundni video, spremno za 2–4 nedelje.",
+    faq1_q: "Koliko brzo isporučujete?",
+    faq1_a: "Za 2–4 nedelje — u zavisnosti od dostavljenog materijala i odobrenja.",
+    faq2_q: "Šta je potrebno sa vaše strane?",
+    faq2_a: "Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.",
+    faq3_q: "Koliko okvirno košta?",
+    faq3_a: "Start od X €; tačnu procenu šaljemo nakon naše 24-časovne procene."
+  };
+
+  function mergeSR(dict){
+    if (!dict) return false;
+    if (!dict.sr) dict.sr = {};
+    var changed = false;
+    Object.keys(add).forEach(function(k){
+      if (dict.sr[k] == null) { dict.sr[k] = add[k]; changed = true; }
+    });
+    return changed;
+  }
+
+  var tries = 0, maxTries = 60; // ~6s
+  var timer = setInterval(function(){
+    var dict = window.dict || window.i18n || window.DICT || null;
+    var hasSetLang = (typeof window.setLanguage === 'function');
+    if (dict && (dict.de || dict.en || dict.sr) && hasSetLang){
+      var changed = mergeSR(dict);
+      // re-apliciraj trenutni jezik (ili last choice)
+      var cur = document.documentElement.getAttribute('lang') || (localStorage.getItem('lang') || 'de');
+      try { window.setLanguage(cur); } catch(e){}
+      clearInterval(timer);
+    } else if (++tries >= maxTries) {
+      clearInterval(timer);
+    }
+  }, 100);
 })();
 </script>
 
