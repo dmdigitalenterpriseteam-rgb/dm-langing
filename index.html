@@ -70,13 +70,6 @@
     .lb__panel{position:relative;z-index:1;margin:6vh auto 0;max-width:min(92vw,980px);background:#0e1422;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px}
     .lb__close{position:absolute;right:10px;top:10px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);color:#fff;border-radius:8px;padding:6px 10px;cursor:pointer}
   </style>
-<style>
-/* FINAL i18n override: ensure only one language shows if data-lang spans exist */
-[data-lang]{display:none!important;}
-html[data-current-lang="sr"] [data-lang="sr"]{display:inline!important;}
-html[data-current-lang="de"] [data-lang="de"]{display:inline!important;}
-html[data-current-lang="en"] [data-lang="en"]{display:inline!important;}
-</style>
 </head>
 <body>
   <header>
@@ -686,107 +679,6 @@ html[data-current-lang="en"] [data-lang="en"]{display:inline!important;}
       clearInterval(timer);
     }
   }, 100);
-})();
-</script>
-
-
-<!-- FINAL I18N CONSOLIDATION (last-in wins, avoids race conditions) -->
-<script>
-(function(){
-  var MAP = {
-    en: { s1_chip:"Web", s1_title:"Fast, modern websites", s1_text:"Landing pages, presentations, contact forms with conversion tracking.",
-          s2_chip:"Video", s2_title:"Short video ads", s2_text:"15–45s formats, subtitles in DE/SR/EN, optimized for social media.",
-          s3_chip:"Marketing", s3_title:"Campaigns & ads", s3_text:"Facebook/Instagram/Google, content calendar, hashtags & CTA messages.",
-          packages_title:"Packages (start – pro – premium)", packages_sub:"Fixed prices per module, know exactly what you get.",
-          hero_lead:"Three modules with fast impact." },
-    de: { s1_chip:"Web", s1_title:"Schnelle, moderne Websites", s1_text:"Landingpages, Präsentationen, Kontaktformulare mit Conversion-Tracking.",
-          s2_chip:"Video", s2_title:"Kurze Videoanzeigen", s2_text:"15–45‑Sek.-Formate, Untertitel in DE/SR/EN, optimiert für Social Media.",
-          s3_chip:"Marketing", s3_title:"Kampagnen & Anzeigen", s3_text:"Facebook/Instagram/Google, Content-Kalender, Hashtags & CTA-Botschaften.",
-          packages_title:"Pakete (Start – Pro – Premium)", packages_sub:"Festpreise pro Modul – Sie wissen genau, was Sie bekommen.",
-          hero_lead:"Drei Module mit schneller Wirkung." },
-    sr: { s1_chip:"Web", s1_title:"Brze, moderne web stranice", s1_text:"Landing stranice, prezentacije, kontakt forme uz praćenje konverzija.",
-          s2_chip:"Video", s2_title:"Kratke video reklame", s2_text:"Formati 15–45 s, titlovi na DE/SR/EN, optimizovano za društvene mreže.",
-          s3_chip:"Marketing", s3_title:"Kampanje i oglasi", s3_text:"Facebook/Instagram/Google, kalendar sadržaja, hashtagovi i CTA poruke.",
-          packages_title:"Paketi (start – pro – premium)", packages_sub:"Fiksne cene po modulu – tačno znate šta dobijate.",
-          hero_lead:"Tri modula sa brzim efektom." }
-  };
-
-  function T(el, val){ if (el && typeof val==='string') el.textContent = val; }
-
-  function fillCards(lang){
-    var m = MAP[lang] || MAP.de;
-    var cards = document.querySelectorAll('#services .card, section#services .card, .cards article, section#services article');
-    if (cards.length>=3){
-      var c0 = cards[0]; T(c0.querySelector('.chip, .badge span, .chip span, span'), m.s1_chip); T(c0.querySelector('h3'), m.s1_title); T(c0.querySelector('p'), m.s1_text);
-      var c1 = cards[1]; T(c1.querySelector('.chip, .badge span, .chip span, span'), m.s2_chip); T(c1.querySelector('h3'), m.s2_title); T(c1.querySelector('p'), m.s2_text);
-      var c2 = cards[2]; T(c2.querySelector('.chip, .badge span, .chip span, span'), m.s3_chip); T(c2.querySelector('h3'), m.s3_title); T(c2.querySelector('p'), m.s3_text);
-    }
-  }
-
-  function fillPackages(lang){
-    var m = MAP[lang] || MAP.de;
-    T(document.querySelector('[data-i18n="packages_title"], #packages h2, section#packages h2'), m.packages_title);
-    T(document.querySelector('[data-i18n="packages_sub"], #packages .lead, section#packages .lead'), m.packages_sub);
-  }
-
-  function fillHeroLead(lang){
-    var m = MAP[lang] || MAP.de;
-    var heroLead = document.querySelector('.lead:not(#packages .lead)');
-    if (heroLead) T(heroLead, m.hero_lead);
-  }
-
-  function fillDataI18n(lang){
-    var m = MAP[lang] || MAP.de;
-    document.querySelectorAll('[data-i18n]').forEach(function(el){
-      var k = el.getAttribute('data-i18n'); if (k && m[k]) el.textContent = m[k];
-    });
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
-      var k = el.getAttribute('data-i18n-placeholder');
-      if (k && m[k]){ el.setAttribute('placeholder', m[k]); el.setAttribute('aria-label', m[k]); }
-    });
-  }
-
-  function applyFinal(lang){
-    try{
-      lang = (lang||'de').toLowerCase();
-      if (lang==='sr' || lang==='sr-rs' || lang==='rs') lang='sr';
-      if (lang.indexOf('de')===0) lang='de';
-      if (['sr','de','en'].indexOf(lang)===-1) lang='de';
-
-      document.documentElement.setAttribute('lang', lang);
-      document.documentElement.setAttribute('data-current-lang', lang);
-
-      document.querySelectorAll('.lang-switch [data-setlang], .lang-switch button').forEach(function(btn){
-        var code = (btn.getAttribute('data-setlang') || btn.dataset.lang || btn.textContent).trim().toLowerCase();
-        btn.classList.toggle('active', code===lang);
-      });
-
-      fillDataI18n(lang);
-      fillCards(lang);
-      fillPackages(lang);
-      fillHeroLead(lang);
-
-      try{ localStorage.setItem('lang', lang); }catch(e){}
-    }catch(e){}
-  }
-
-  window.setLang = applyFinal;
-
-  document.addEventListener('click', function(e){
-    var t = e.target.closest('[data-setlang], .lang-switch button');
-    if(t){
-      var code = (t.getAttribute('data-setlang') || t.dataset.lang || t.textContent).trim().toLowerCase();
-      applyFinal(code);
-    }
-  });
-
-  var initial = 'de';
-  try{ initial = localStorage.getItem('lang') || document.documentElement.getAttribute('lang') || 'de'; }catch(e){}
-  if (document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', function(){ applyFinal(initial); });
-  } else {
-    applyFinal(initial);
-  }
 })();
 </script>
 
