@@ -13,6 +13,9 @@
     *{box-sizing:border-box}
     html,body{margin:0;height:100%;background:var(--bg);color:var(--text);
       font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+    /* FIX: glatko skrolovanje i offset za sticky header */
+    html{scroll-behavior:smooth}
+    section{padding:44px 0; scroll-margin-top:90px;}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1180px;margin:0 auto;padding:20px}
     header{position:sticky;top:0;background:rgba(14,17,22,.72);
@@ -22,12 +25,11 @@
     .nav a{opacity:.9} .nav a:hover{opacity:1}
     .spacer{flex:1}
     .btn{display:inline-block;padding:10px 16px;border-radius:999px;border:1px solid var(--line);
-      background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;font-weight:700}
+      background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;font-weight:700;cursor:pointer}
     .ghost{background:transparent;color:var(--text)}
     .lang button{padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:#0f141b;color:var(--text);cursor:pointer}
     .lang button.active{background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;border-color:transparent;font-weight:800}
     /* blocks */
-    section{padding:44px 0}
     .badge{display:inline-block;background:#0d131a;border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:#c3ccd7;font-size:13px}
     h1{font-size:54px;line-height:1.1;margin:12px 0 8px}
     h2{font-size:34px;margin:0 0 8px}
@@ -92,7 +94,7 @@
           <a class="btn" href="#portfolio" data-i18n="cta_portfolio">View portfolio</a>
           <a class="btn ghost" href="#services" data-i18n="cta_services">Services</a>
         </div>
-        <p class="note" data-i18n="note_menu">Transparent menu is always on; semi-transparent on scroll on request.</p>
+        <p class="note" data-i18n="note_menu">Transparent nav is always on; semi-transparent on scroll on request.</p>
       </div>
       <div>
         <video id="heroVideo" class="vid" controls preload="metadata" aria-label="Hero video">
@@ -162,7 +164,8 @@
     <section id="claim">
       <h2 data-i18n="claim_title">More foot traffic for your bakery</h2>
       <p class="sub" data-i18n="claim_sub">Clear landing page + 30-second video, ready in 2–4 weeks.</p>
-      <a class="btn btn-grad" href="#contact" data-i18n="cta_consult">Free quick consultation</a>
+      <!-- FIX: jasan link + role=button -->
+      <a class="btn btn-grad" href="#contact" role="button" data-i18n="cta_consult">Free quick consultation</a>
     </section>
 
     <!-- =============== PORTFOLIO CARDS =============== -->
@@ -229,7 +232,7 @@
       </div>
     </section>
 
-    <!-- =============== FAQ (kratko) =============== -->
+    <!-- =============== FAQ =============== -->
     <section id="faq" class="faq">
       <h2>FAQ</h2>
       <div class="cards">
@@ -248,7 +251,7 @@
       </div>
     </section>
 
-    <!-- =============== CONTACT (kratko) =============== -->
+    <!-- =============== CONTACT =============== -->
     <section id="contact">
       <h2 data-i18n="contact_title">Contact</h2>
       <p class="sub">dmdigitalenterprise.team@gmail.com · +381 606890072</p>
@@ -269,206 +272,132 @@
   </footer>
 
   <script>
-    // ---------- TEXT DICTIONARY ----------
     const T = {
-      en:{
-        nav_services:"Services", nav_packages:"Packages", nav_portfolio:"Portfolio", nav_contact:"Contact",
-        cta_top:"Request a quote", badge_stack:"Digital design • Video • Web",
+      en:{nav_services:"Services",nav_packages:"Packages",nav_portfolio:"Portfolio",nav_contact:"Contact",
+        cta_top:"Request a quote",badge_stack:"Digital design • Video • Web",
         hero_title:"Simple — so people remember you.",
         hero_sub:"Websites, short video ads and smart marketing in German, Serbian and English.",
-        cta_portfolio:"View portfolio", cta_services:"Services",
+        cta_portfolio:"View portfolio",cta_services:"Services",
         note_menu:"Transparent nav is always on; semi-transparent on scroll on request.",
         note_video:"Language also selects the video version; sound is on.",
-
-        services_title:"What we do (focused on results)", services_sub:"Three pillars that deliver fast impact.",
+        services_title:"What we do (focused on results)",services_sub:"Three pillars that deliver fast impact.",
         cards:[["Web","Fast, modern websites","Landing pages, presentations, contact forms with conversion tracking."],
                ["Video","Short video ads","15–45s formats, subtitles in DE/SR/EN, optimized for social media."],
                ["Marketing","Campaigns & ads","Facebook/Instagram/Google, content calendar, hashtags & CTA messages."]],
-
-        sec_products_title:"Packages (Start — Pro — Premium)",
-        sec_products_sub:"Fixed prices by module, clear scope.",
-        p1_title:"START package", p2_title:"PRO package", p3_title:"PREMIUM package",
-        lists:{
-          p1:["One-pager (up to 5 sections)","Contact (mailto)","Basic SEO meta tags"],
-          p2:["Multi-page + portfolio","Short video (up to 30s)","Ad prep + 10 hashtags"],
-          p3:["Custom design & animations","2 video ads (up to 45s)","30-day campaign + report"]
-        },
-
-        claim_title:"More foot traffic for your bakery",
-        claim_sub:"Clear landing page + 30-second video, ready in 2–4 weeks.",
-        cta_consult:"Free quick consultation",
-
-        sec_portfolio_title:"Examples & prototypes",
-        sec_portfolio_sub:"Live links coming soon.",
-        btn_open_pdf:"Open PDF",
-        cap_peter:"Peter’s Bakery", cap_peter_sub:"Simple presentation site with transparent menu.",
-        cap_dmvideo:"D&M Enterprise video", cap_dmvideo_sub:"Branded intro video without watermark.",
-        cap_core:"CoreAlliance logo", cap_core_sub:"Minimal logos for menus & hero areas.",
-
-        dv_title:"Demo — Video samples", dv_sub:"3 short samples: Peter, Avatar IV, Sandra.",
-        dv_c1_t:"Peter’s bakery", dv_c1_s:"Seasonal short ad (social format).",
-        dv_c2_t:"Avatar IV — digital greeting", dv_c2_s:"Short intro to the service / landing page.",
-        dv_c3_t:"Sandra — marketing advantages", dv_c3_s:"Short pitch about the benefits of good marketing.",
-
-        faq1_q:"How fast do you deliver?", faq1_a:"2–4 weeks — depending on collaboration and approvals.",
-        faq2_q:"What do you need from us?", faq2_a:"Logo, 5–8 photos and 3–4 key points — we handle the rest.",
-        faq3_q:"Roughly how much does it cost?", faq3_a:"Starting price from X €; we send an exact quote after our 24-hour assessment.",
-
-        contact_title:"Contact", rights:"All rights reserved"
-      },
-      de:{
-        nav_services:"Leistungen", nav_packages:"Pakete", nav_portfolio:"Portfolio", nav_contact:"Kontakt",
-        cta_top:"Angebot anfragen", badge_stack:"Digitales Design • Video • Web",
+        sec_products_title:"Packages (Start — Pro — Premium)",sec_products_sub:"Fixed prices by module, clear scope.",
+        p1_title:"START package",p2_title:"PRO package",p3_title:"PREMIUM package",
+        lists:{p1:["One-pager (up to 5 sections)","Contact (mailto)","Basic SEO meta tags"],
+               p2:["Multi-page + portfolio","Short video (up to 30s)","Ad prep + 10 hashtags"],
+               p3:["Custom design & animations","2 video ads (up to 45s)","30-day campaign + report"]},
+        claim_title:"More foot traffic for your bakery",claim_sub:"Clear landing page + 30-second video, ready in 2–4 weeks.",cta_consult:"Free quick consultation",
+        sec_portfolio_title:"Examples & prototypes",sec_portfolio_sub:"Live links coming soon.",btn_open_pdf:"Open PDF",
+        cap_peter:"Peter’s Bakery",cap_peter_sub:"Simple presentation site with transparent menu.",
+        cap_dmvideo:"D&M Enterprise video",cap_dmvideo_sub:"Branded intro video without watermark.",
+        cap_core:"CoreAlliance logo",cap_core_sub:"Minimal logos for menus & hero areas.",
+        dv_title:"Demo — Video samples",dv_sub:"3 short samples: Peter, Avatar IV, Sandra.",
+        dv_c1_t:"Peter’s bakery",dv_c1_s:"Seasonal short ad (social format).",
+        dv_c2_t:"Avatar IV — digital greeting",dv_c2_s:"Short intro to the service / landing page.",
+        dv_c3_t:"Sandra — marketing advantages",dv_c3_s:"Short pitch about the benefits of good marketing.",
+        faq1_q:"How fast do you deliver?",faq1_a:"2–4 weeks — depending on collaboration and approvals.",
+        faq2_q:"What do you need from us?",faq2_a:"Logo, 5–8 photos and 3–4 key points — we handle the rest.",
+        faq3_q:"Roughly how much does it cost?",faq3_a:"Starting price from X €; we send an exact quote after our 24-hour assessment.",
+        contact_title:"Contact",rights:"All rights reserved"},
+      de:{nav_services:"Leistungen",nav_packages:"Pakete",nav_portfolio:"Portfolio",nav_contact:"Kontakt",
+        cta_top:"Angebot anfragen",badge_stack:"Digitales Design • Video • Web",
         hero_title:"Einfach – damit man sich an Sie erinnert.",
         hero_sub:"Websites, kurze Videoanzeigen und smartes Marketing auf Deutsch, Serbisch und Englisch.",
-        cta_portfolio:"Portfolio ansehen", cta_services:"Leistungen",
+        cta_portfolio:"Portfolio ansehen",cta_services:"Leistungen",
         note_menu:"Transparente Navigation ist immer sichtbar. Halbtransparent beim Scrollen gern auf Wunsch.",
         note_video:"Mit der Sprache wählen Sie die Videoversion; Ton ist aktiv.",
-
-        services_title:"Was wir machen (mit Fokus auf Ergebnisse)", services_sub:"Drei Module, die schnell Wirkung zeigen.",
+        services_title:"Was wir machen (mit Fokus auf Ergebnisse)",services_sub:"Drei Module, die schnell Wirkung zeigen.",
         cards:[["Web","Schnelle, moderne Websites","Landingpages, Präsentationen, Kontaktformulare mit Conversion-Tracking."],
                ["Video","Kurze Videoanzeigen","15–45-Sek.-Formate, Untertitel in DE/SR/EN, optimiert für Social Media."],
                ["Marketing","Kampagnen & Anzeigen","Facebook/Instagram/Google, Content-Kalender, Hashtags & CTA-Botschaften."]],
-
-        sec_products_title:"Pakete (Start — Pro — Premium)",
-        sec_products_sub:"Festpreise pro Modul – klarer Umfang.",
-        p1_title:"START-Paket", p2_title:"PRO-Paket", p3_title:"PREMIUM-Paket",
-        lists:{
-          p1:["One-Pager (bis 5 Sektionen)","Kontakt (mailto)","Basis-SEO-Metatags"],
-          p2:["Mehrseitig + Portfolio","Kurzvideo (bis 30 s)","Ads-Vorbereitung + 10 Hashtags"],
-          p3:["Individuelles Design & Animationen","2 Videoanzeigen (bis 45 s)","30-Tage-Kampagne + Report"]
-        },
-
-        claim_title:"Mehr Laufkundschaft für Ihre Bäckerei",
-        claim_sub:"Klare Landingpage + 30-Sekunden-Video, fertig in 2–4 Wochen.",
-        cta_consult:"Kostenlose Kurzberatung",
-
-        sec_portfolio_title:"Beispiele & Prototypen",
-        sec_portfolio_sub:"Live-Links folgen in Kürze.",
-        btn_open_pdf:"PDF öffnen",
-        cap_peter:"Bäckerei Peter", cap_peter_sub:"Einfache Präsentationsseite mit transparenter Navigation.",
-        cap_dmvideo:"D&M Enterprise Video", cap_dmvideo_sub:"Gebrandetes Intro-Video ohne Wasserzeichen.",
-        cap_core:"CoreAlliance Logo", cap_core_sub:"Minimale Logos für Menüs & Hero-Bereiche.",
-
-        dv_title:"Demo — Video-Beispiele", dv_sub:"3 kurze Beispiele: Peter, Avatar IV, Sandra.",
-        dv_c1_t:"Bäckerei Peter", dv_c1_s:"Saisonale Kurz-Anzeige (Social-Format).",
-        dv_c2_t:"Avatar IV — digitaler Gruß", dv_c2_s:"Kurzes Intro zum Service / zur Landingpage.",
-        dv_c3_t:"Sandra — Marketing-Vorteile", dv_c3_s:"Kurzpitch über die Vorteile guten Marketings.",
-
-        faq1_q:"Wie schnell liefern Sie?", faq1_a:"2–4 Wochen — abhängig von Zusammenarbeit und Freigaben.",
-        faq2_q:"Was benötigen Sie von uns?", faq2_a:"Logo, 5–8 Fotos und 3–4 Kernpunkte — den Rest erledigen wir.",
-        faq3_q:"Was kostet es ungefähr?", faq3_a:"Startpreis ab X €; das genaue Angebot senden wir nach unserer 24-Stunden-Einschätzung.",
-
-        contact_title:"Kontakt", rights:"Alle Rechte vorbehalten"
-      },
-      sr:{
-        nav_services:"Usluge", nav_packages:"Paketi", nav_portfolio:"Portfolio", nav_contact:"Kontakt",
-        cta_top:"Zatraži ponudu", badge_stack:"Digitalni dizajn • Video • Web",
+        sec_products_title:"Pakete (Start — Pro — Premium)",sec_products_sub:"Festpreise pro Modul – klarer Umfang.",
+        p1_title:"START-Paket",p2_title:"PRO-Paket",p3_title:"PREMIUM-Paket",
+        lists:{p1:["One-Pager (bis 5 Sektionen)","Kontakt (mailto)","Basis-SEO-Metatags"],
+               p2:["Mehrseitig + Portfolio","Kurzvideo (bis 30 s)","Ads-Vorbereitung + 10 Hashtags"],
+               p3:["Individuelles Design & Animationen","2 Videoanzeigen (bis 45 s)","30-Tage-Kampagne + Report"]},
+        claim_title:"Mehr Laufkundschaft für Ihre Bäckerei",claim_sub:"Klare Landingpage + 30-Sekunden-Video, fertig in 2–4 Wochen.",cta_consult:"Kostenlose Kurzberatung",
+        sec_portfolio_title:"Beispiele & Prototypen",sec_portfolio_sub:"Live-Links folgen in Kürze.",btn_open_pdf:"PDF öffnen",
+        cap_peter:"Bäckerei Peter",cap_peter_sub:"Einfache Präsentationsseite mit transparenter Navigation.",
+        cap_dmvideo:"D&M Enterprise Video",cap_dmvideo_sub:"Gebrandetes Intro-Video ohne Wasserzeichen.",
+        cap_core:"CoreAlliance Logo",cap_core_sub:"Minimale Logos für Menüs & Hero-Bereiche.",
+        dv_title:"Demo — Video-Beispiele",dv_sub:"3 kurze Beispiele: Peter, Avatar IV, Sandra.",
+        dv_c1_t:"Bäckerei Peter",dv_c1_s:"Saisonale Kurz-Anzeige (Social-Format).",
+        dv_c2_t:"Avatar IV — digitaler Gruß",dv_c2_s:"Kurzes Intro zum Service / zur Landingpage.",
+        dv_c3_t:"Sandra — Marketing-Vorteile",dv_c3_s:"Kurzpitch über die Vorteile guten Marketings.",
+        faq1_q:"Wie schnell liefern Sie?",faq1_a:"2–4 Wochen — abhängig von Zusammenarbeit und Freigaben.",
+        faq2_q:"Was benötigen Sie von uns?",faq2_a:"Logo, 5–8 Fotos und 3–4 Kernpunkte — den Rest erledigen wir.",
+        faq3_q:"Was kostet es ungefähr?",faq3_a:"Startpreis ab X €; das genaue Angebot senden wir nach unserer 24-Stunden-Einschätzung.",
+        contact_title:"Kontakt",rights:"Alle Rechte vorbehalten"},
+      sr:{nav_services:"Usluge",nav_packages:"Paketi",nav_portfolio:"Portfolio",nav_contact:"Kontakt",
+        cta_top:"Zatraži ponudu",badge_stack:"Digitalni dizajn • Video • Web",
         hero_title:"Jednostavno — pravimo da vas pamte.",
         hero_sub:"Web stranice, kratke video reklame i pametan marketing na nemačkom, srpskom i engleskom.",
-        cta_portfolio:"Pogledaj portfolio", cta_services:"Usluge",
+        cta_portfolio:"Pogledaj portfolio",cta_services:"Usluge",
         note_menu:"Transparentan meni je stalno uključen; poluprovidan na skrol po želji.",
         note_video:"Jezik menja verziju videa; zvuk je uključen.",
-
-        services_title:"Šta radimo (sa fokusom na rezultate)", services_sub:"Tri stuba ponude koji najbrže donose efekat.",
+        services_title:"Šta radimo (sa fokusom na rezultate)",services_sub:"Tri stuba ponude koji najbrže donose efekat.",
         cards:[["Web","Brze, moderne web stranice","Landing stranice, prezentacije, kontakt forme uz praćenje konverzija."],
                ["Video","Kratke video reklame","Formati 15–45 s, titlovi na DE/SR/EN, optimizovano za društvene mreže."],
                ["Marketing","Kampanje i oglasi","Facebook/Instagram/Google, kalendar sadržaja, hashtagovi i CTA poruke."]],
-
-        sec_products_title:"Paketi (start — pro — premium)",
-        sec_products_sub:"Fiksne cene po modulu — jasno šta dobijate.",
-        p1_title:"START paket", p2_title:"PRO paket", p3_title:"PREMIUM paket",
-        lists:{
-          p1:["One-page (do 5 sekcija)","Kontakt (mailto)","Osnovni SEO meta tagovi"],
-          p2:["Višestrana + portfolio","Kratak video (do 30 s)","Priprema oglasa + 10 hashtagova"],
-          p3:["Prilagođen dizajn & animacije","2 video oglasa (do 45 s)","Kampanja 30 dana + izveštaj"]
-        },
-
-        claim_title:"Više kupaca za vašu pekaru",
-        claim_sub:"Jasna landing stranica + 30-sekundni video, spremno za 2–4 nedelje.",
-        cta_consult:"Besplatno brzo savetovanje",
-
-        sec_portfolio_title:"Primeri i prototipi",
-        sec_portfolio_sub:"Linkovi uživo uskoro.",
-        btn_open_pdf:"Otvori PDF",
-        cap_peter:"Pekar Peter", cap_peter_sub:"Jednostavan sajt sa transparentnim menijem.",
-        cap_dmvideo:"D&M intro video", cap_dmvideo_sub:"Brendirani uvodni video bez vodenog žiga.",
-        cap_core:"CoreAlliance logo", cap_core_sub:"Minimal logotipi za menije i hero sekcije.",
-
-        dv_title:"Demo — Video primeri", dv_sub:"3 kratka primera: Peter, Avatar IV, Sandra.",
-        dv_c1_t:"Pekar Peter", dv_c1_s:"Sezonska kratka reklama (social format).",
-        dv_c2_t:"Avatar IV — digitalni pozdrav", dv_c2_s:"Kratak uvod u uslugu / landing stranicu.",
-        dv_c3_t:"Sandra — prednosti marketinga", dv_c3_s:"Kratak pitch o benefitima dobrog marketinga.",
-
-        faq1_q:"Koliko brzo isporučujete?", faq1_a:"2–4 nedelje — u zavisnosti od saradnje i odobrenja.",
-        faq2_q:"Šta je potrebno sa vaše strane?", faq2_a:"Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.",
-        faq3_q:"Koliko okvirno košta?", faq3_a:"Početna cena od X €; tačnu procenu šaljemo nakon naše 24-časovne procene.",
-
-        contact_title:"Kontakt", rights:"Sva prava zadržana"
-      }
+        sec_products_title:"Paketi (start — pro — premium)",sec_products_sub:"Fiksne cene po modulu — jasno šta dobijate.",
+        p1_title:"START paket",p2_title:"PRO paket",p3_title:"PREMIUM paket",
+        lists:{p1:["One-page (do 5 sekcija)","Kontakt (mailto)","Osnovni SEO meta tagovi"],
+               p2:["Višestrana + portfolio","Kratak video (do 30 s)","Priprema oglasa + 10 hashtagova"],
+               p3:["Prilagođen dizajn & animacije","2 video oglasa (do 45 s)","Kampanja 30 dana + izveštaj"]},
+        claim_title:"Više kupaca za vašu pekaru",claim_sub:"Jasna landing stranica + 30-sekundni video, spremno za 2–4 nedelje.",cta_consult:"Besplatno brzo savetovanje",
+        sec_portfolio_title:"Primeri i prototipi",sec_portfolio_sub:"Linkovi uživo uskoro.",btn_open_pdf:"Otvori PDF",
+        cap_peter:"Pekar Peter",cap_peter_sub:"Jednostavan sajt sa transparentnim menijem.",
+        cap_dmvideo:"D&M intro video",cap_dmvideo_sub:"Brendirani uvodni video bez vodenog žiga.",
+        cap_core:"CoreAlliance logo",cap_core_sub:"Minimal logotipi za menije i hero sekcije.",
+        dv_title:"Demo — Video primeri",dv_sub:"3 kratka primera: Peter, Avatar IV, Sandra.",
+        dv_c1_t:"Pekar Peter",dv_c1_s:"Sezonska kratka reklama (social format).",
+        dv_c2_t:"Avatar IV — digitalni pozdrav",dv_c2_s:"Kratak uvod u uslugu / landing stranicu.",
+        dv_c3_t:"Sandra — prednosti marketinga",dv_c3_s:"Kratak pitch o benefitima dobrog marketinga.",
+        faq1_q:"Koliko brzo isporučujete?",faq1_a:"2–4 nedelje — u zavisnosti od saradnje i odobrenja.",
+        faq2_q:"Šta je potrebno sa vaše strane?",faq2_a:"Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.",
+        faq3_q:"Koliko okvirno košta?",faq3_a:"Početna cena od X €; tačnu procenu šaljemo nakon naše 24-časovne procene.",
+        contact_title:"Kontakt",rights:"Sva prava zadržana"}
     };
 
-    // ---------- MEDIA SOURCES ----------
     const GH = "https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/";
     const HERO = { de: GH+"Avatar%20de.mp4", en: GH+"Avatar%20eng.mp4", sr: GH+"Avatar%20srb.mp4" };
 
-    // ---------- RENDER ----------
     function setLang(lang){
-      lang = (lang||'sr').toLowerCase();
-      if(lang.startsWith('de')) lang='de';
-      else if(lang.startsWith('en')) lang='en';
-      else lang='sr';
+      lang=(lang||'sr').toLowerCase();
+      if(lang.startsWith('de')) lang='de'; else if(lang.startsWith('en')) lang='en'; else lang='sr';
+      const D=T[lang]; document.documentElement.lang=lang;
 
-      const D = T[lang];
-      document.documentElement.lang = lang;
-
-      // text nodes
       document.querySelectorAll('[data-i18n]').forEach(el=>{
-        const key = el.getAttribute('data-i18n');
-        if(D[key]) el.textContent = D[key];
+        const k=el.getAttribute('data-i18n'); if(D[k]) el.textContent=D[k];
       });
 
-      // services cards (chips/titles/descriptions)
       const cards = Array.from(document.querySelectorAll('#serviceCards .card'));
-      for(let i=0;i<cards.length && i<3;i++){
-        const [chip,title,desc] = D.cards[i];
-        cards[i].querySelector('.chip').textContent = chip;
-        cards[i].querySelector('h3').textContent   = title;
-        cards[i].querySelector('.sub').textContent = desc;
+      for(let i=0;i<cards.length&&i<3;i++){
+        const [chip,title,desc]=D.cards[i];
+        cards[i].querySelector('.chip').textContent=chip;
+        cards[i].querySelector('h3').textContent=title;
+        cards[i].querySelector('.sub').textContent=desc;
       }
 
-      // packages lists
-      const fillList = (id, arr)=>{
-        const ul = document.getElementById(id);
-        ul.innerHTML = arr.map(li=>`<li>${li}</li>`).join('');
-      };
-      fillList('p1_list', D.lists.p1);
-      fillList('p2_list', D.lists.p2);
-      fillList('p3_list', D.lists.p3);
+      const fill=(id,arr)=>{const ul=document.getElementById(id); ul.innerHTML=arr.map(x=>`<li>${x}</li>`).join('');};
+      fill('p1_list',D.lists.p1); fill('p2_list',D.lists.p2); fill('p3_list',D.lists.p3);
 
-      // hero video by lang
-      const hv = document.getElementById('heroVideo');
-      const src = HERO[lang] || HERO.sr;
-      const s = hv.querySelector('source');
-      if(s.getAttribute('src')!==src){ hv.pause(); s.src = src; hv.load(); }
+      const hv=document.getElementById('heroVideo'), s=hv.querySelector('source'), url=HERO[lang]||HERO.sr;
+      if(s.getAttribute('src')!==url){ try{hv.pause();}catch(e){} s.src=url; hv.load(); }
 
-      // lang buttons active
-      document.querySelectorAll('.lang button').forEach(b=>{
-        b.classList.toggle('active', (b.dataset.setlang||'')===lang);
-      });
-
-      // remember
-      try{ localStorage.setItem('lang', lang); }catch(e){}
+      document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',(b.dataset.setlang||'')===lang));
+      try{localStorage.setItem('lang',lang);}catch(e){}
     }
 
-    document.addEventListener('click', (e)=>{
-      const b = e.target.closest('[data-setlang]'); if(!b) return;
+    document.addEventListener('click',(e)=>{
+      const b=e.target.closest('[data-setlang]'); if(!b) return;
       setLang(b.dataset.setlang);
     });
 
-    // init
-    const initial = localStorage.getItem('lang') || document.documentElement.lang || 'sr';
-    setLang(initial);
+    setLang(localStorage.getItem('lang')||document.documentElement.lang||'sr');
   </script>
 </body>
 </html>
