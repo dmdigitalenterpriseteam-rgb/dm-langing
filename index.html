@@ -13,7 +13,6 @@
     *{box-sizing:border-box}
     html,body{margin:0;height:100%;background:var(--bg);color:var(--text);
       font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-    /* FIX: glatko skrolovanje i offset za sticky header */
     html{scroll-behavior:smooth}
     section{padding:44px 0; scroll-margin-top:90px;}
     a{color:inherit;text-decoration:none}
@@ -29,7 +28,6 @@
     .ghost{background:transparent;color:var(--text)}
     .lang button{padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:#0f141b;color:var(--text);cursor:pointer}
     .lang button.active{background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;border-color:transparent;font-weight:800}
-    /* blocks */
     .badge{display:inline-block;background:#0d131a;border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:#c3ccd7;font-size:13px}
     h1{font-size:54px;line-height:1.1;margin:12px 0 8px}
     h2{font-size:34px;margin:0 0 8px}
@@ -60,7 +58,6 @@
   </style>
 </head>
 <body>
-  <!-- =============== HEADER =============== -->
   <header>
     <div class="wrap nav">
       <div class="brand">
@@ -84,7 +81,6 @@
   </header>
 
   <main class="wrap">
-    <!-- =============== HERO =============== -->
     <section class="grid-2" id="hero">
       <div>
         <span class="badge" data-i18n="badge_stack">Digital design • Video • Web</span>
@@ -104,7 +100,6 @@
       </div>
     </section>
 
-    <!-- =============== SERVICES =============== -->
     <section id="services">
       <h2 data-i18n="services_title">What we do (focused on results)</h2>
       <p class="sub" data-i18n="services_sub">Three pillars that deliver fast impact.</p>
@@ -127,7 +122,6 @@
       </div>
     </section>
 
-    <!-- =============== PACKAGES =============== -->
     <section id="products">
       <h2 data-i18n="sec_products_title">Packages (Start — Pro — Premium)</h2>
       <p class="sub" data-i18n="sec_products_sub">Fixed prices by module, clear scope.</p>
@@ -160,15 +154,12 @@
       </div>
     </section>
 
-    <!-- =============== CLAIM / CTA =============== -->
     <section id="claim">
       <h2 data-i18n="claim_title">More foot traffic for your bakery</h2>
       <p class="sub" data-i18n="claim_sub">Clear landing page + 30-second video, ready in 2–4 weeks.</p>
-      <!-- FIX: jasan link + role=button -->
       <a class="btn btn-grad" href="#contact" role="button" data-i18n="cta_consult">Free quick consultation</a>
     </section>
 
-    <!-- =============== PORTFOLIO CARDS =============== -->
     <section id="portfolio">
       <h2 data-i18n="sec_portfolio_title">Examples & prototypes</h2>
       <p class="sub" data-i18n="sec_portfolio_sub">Live links coming soon.</p>
@@ -178,29 +169,28 @@
           <h3 data-i18n="cap_peter">Peter’s Bakery</h3>
           <p class="sub" data-i18n="cap_peter_sub">Simple presentation site with transparent menu.</p>
           <div class="stack">
-            <a class="btn-min btn-grad" href="https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/assets/portfolio/peterova-pekara.pdf" target="_blank" rel="noopener" data-i18n="btn_open_pdf">Open PDF</a>
+            <!-- UPDATED: relativna putanja -->
+            <a class="btn-min btn-grad" href="./assets/portfolio/peterova-pekara.pdf" target="_blank" rel="noopener" data-i18n="btn_open_pdf">Open PDF</a>
           </div>
         </article>
 
         <article class="card">
           <h3 data-i18n="cap_dmvideo">D&M Enterprise video</h3>
           <p class="sub" data-i18n="cap_dmvideo_sub">Branded intro video without watermark.</p>
-          <div class="stack">
-            <span class="badge">MP4</span>
-          </div>
+          <div class="stack"><span class="badge">MP4</span></div>
         </article>
 
         <article class="card">
           <h3 data-i18n="cap_core">CoreAlliance logo</h3>
           <p class="sub" data-i18n="cap_core_sub">Minimal logos for menus & hero areas.</p>
           <div class="stack">
-            <a class="btn-min btn-grad" href="https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/assets/portfolio/corealliance-logo.pdf" target="_blank" rel="noopener" data-i18n="btn_open_pdf">Open PDF</a>
+            <!-- UPDATED: relativna putanja -->
+            <a class="btn-min btn-grad" href="./assets/portfolio/corealliance-logo.pdf" target="_blank" rel="noopener" data-i18n="btn_open_pdf">Open PDF</a>
           </div>
         </article>
       </div>
     </section>
 
-    <!-- =============== DEMO VIDEOS =============== -->
     <section id="demo-videos">
       <h2 data-i18n="dv_title">Demo — Video samples</h2>
       <p class="sub" data-i18n="dv_sub">3 short samples: Peter, Avatar IV, Sandra.</p>
@@ -232,7 +222,6 @@
       </div>
     </section>
 
-    <!-- =============== FAQ =============== -->
     <section id="faq" class="faq">
       <h2>FAQ</h2>
       <div class="cards">
@@ -251,14 +240,12 @@
       </div>
     </section>
 
-    <!-- =============== CONTACT =============== -->
     <section id="contact">
       <h2 data-i18n="contact_title">Contact</h2>
       <p class="sub">dmdigitalenterprise.team@gmail.com · +381 606890072</p>
     </section>
   </main>
 
-  <!-- =============== FOOTER =============== -->
   <footer>
     <div class="wrap">
       <div>© 2025 D&M Digital — <span data-i18n="rights">All rights reserved</span></div>
