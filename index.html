@@ -107,8 +107,8 @@
         <a href="#services" data-i18n="nav_services">Services</a>
         <a href="#products" data-i18n="nav_packages">Packages</a>
         <a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a>
-        <a href="#goldschmiede">Goldschmiede</a>   <!-- novo -->
-        <a href="#optik">Optik</a>                 <!-- novo -->
+        <a href="#goldschmiede" data-i18n="nav_gold">Zlatar</a>
+        <a href="#optik" data-i18n="nav_optik">Optika</a>
         <a href="#contact" data-i18n="nav_contact">Contact</a>
       </nav>
       <div class="spacer"></div>
@@ -288,7 +288,7 @@
         </div>
 
         <div class="zl-ctas">
-          <a class="zl-btn primary" href="https://wa.me/491721234567?text=Hallo!%20Ich%20m%C3%B6chte%20Ringberatung%20(3%20Vorschl%C3%A4ge)." target="_blank" rel="noopener" data-i18n="gold_whatsapp">WhatsApp Savet</a>
+          <a class="zl-btn primary" data-wa="gold" href="https://wa.me/381606890072" target="_blank" rel="noopener" data-i18n="gold_whatsapp">WhatsApp Savet</a>
           <a class="zl-btn" href="#contact" data-i18n="gold_book">Zakaži termin</a>
         </div>
       </div>
@@ -312,28 +312,28 @@
         </div>
 
         <div class="op-ctas">
-          <a class="op-btn primary" href="https://wa.me/491721234567?text=Hallo!%20Ich%20m%C3%B6chte%20eine%20kostenlose%20Anprobe%20buchen." target="_blank" rel="noopener" data-i18n="opt_whatsapp">WhatsApp / Proba</a>
+          <a class="op-btn primary" data-wa="optik" href="https://wa.me/381606890072" target="_blank" rel="noopener" data-i18n="opt_whatsapp">WhatsApp / Proba</a>
           <a class="op-btn" href="#contact" data-i18n="opt_book">Zakaži termin</a>
         </div>
       </div>
     </section>
 
-    <!-- ============= NOVO: TRUST blok ============= -->
+    <!-- ============= NOVO: TRUST blok (i18n) ============= -->
     <section id="trust">
-      <h2>Zašto nama veruju</h2>
-      <p class="sub">Tri stvari koje najviše znače klijentu.</p>
+      <h2 data-i18n="trust_title">Zašto nama veruju</h2>
+      <p class="sub" data-i18n="trust_sub">Tri stvari koje najviše znače klijentu.</p>
       <div class="cards">
         <article class="card">
-          <h3>Trojezično (DE · EN · SR)</h3>
-          <p class="sub">Bez vodenih žigova, titlovi i skripte na tri jezika.</p>
+          <h3 data-i18n="trust1_t">Trojezično (DE · EN · SR)</h3>
+          <p class="sub" data-i18n="trust1_s">Bez vodenih žigova, titlovi i skripte na tri jezika.</p>
         </article>
         <article class="card">
-          <h3>Brza isporuka</h3>
-          <p class="sub">Prvi nacrt u 3–5 dana, final u 2–4 nedelje (uz redovne povratne).</p>
+          <h3 data-i18n="trust2_t">Brza isporuka</h3>
+          <p class="sub" data-i18n="trust2_s">Prvi nacrt u 3–5 dana, final u 2–4 nedelje (uz redovne povratne).</p>
         </article>
         <article class="card">
-          <h3>Video + web = rezultat</h3>
-          <p class="sub">Kratki avatar-klip + landing → jasno objašnjenje i više upita.</p>
+          <h3 data-i18n="trust3_t">Video + web = rezultat</h3>
+          <p class="sub" data-i18n="trust3_s">Kratki avatar-klip + landing → jasno objašnjenje i više upita.</p>
         </article>
       </div>
     </section>
@@ -375,8 +375,7 @@
   </footer>
 
   <!-- Sticky WhatsApp FAB -->
-  <a href="https://wa.me/491721234567?text=Hallo!%20Ich%20m%C3%B6chte%20eine%20Kurzberatung."
-     class="wa-fab" aria-label="WhatsApp chat" target="_blank" rel="noopener" title="WhatsApp">
+  <a href="https://wa.me/381606890072" class="wa-fab" data-wa="fab" aria-label="WhatsApp chat" target="_blank" rel="noopener" title="WhatsApp">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M20.5 12a8.5 8.5 0 0 1-12 7.6L4 20l.5-4.4A8.5 8.5 0 1 1 20.5 12Z" stroke="currentColor"/>
       <path d="M9.5 9.3c.2-.6.6-.6.9-.6.3 0 .8 0 .9.8.1.5 0 .7 0 .8 0 .1-.2.4-.3.5-.2.2-.3.3-.1.6.2.3.8 1.3 1.9 1.8 1 .5 1.2.3 1.5 0 .3-.3.6-.8.7-.9.1-.1.2-.1.4 0 .2.1 1 .5 1.2.6.2.1.3.2.3.3 0 .2-.1 1.1-.8 1.8-.8.7-1.7.7-2.4.6-.8-.1-1.8-.5-2.9-1.4-1.1-.9-2.1-2.5-2.3-2.9-.2-.4-.5-1.2-.5-1.7 0-.5.3-.8.5-1Z" fill="currentColor"/>
@@ -414,7 +413,8 @@
         faq2_q:"What do you need from us?",faq2_a:"Logo, 5–8 photos and 3–4 key points — we handle the rest.",
         faq3_q:"Roughly how much does it cost?",faq3_a:"Starting price from X €; we send an exact quote after our 24-hour assessment.",
         contact_title:"Contact",rights:"All rights reserved",
-        /* NOVO: Zlatar/Optika */
+        /* NOVO: Zlatar/Optika + Trust + WA poruke */
+        nav_gold:"Jewelry", nav_optik:"Optics",
         gold_title:"Jewelry – Personal Advice",
         gold_sub:"4C explained + 3 suggestions. WhatsApp or book in 1 click.",
         zl_cap_4c:"4C in 30s – clarity & price made simple.",
@@ -423,7 +423,14 @@
         opt_title:"Optics – Lenses & Frames in 30s",
         opt_sub:"AR, blue-light, thinning + 2–3 frames for you.",
         opt_cap_main:"Lenses explained + frame picks.",
-        opt_whatsapp:"WhatsApp / Try-on", opt_book:"Book appointment"
+        opt_whatsapp:"WhatsApp / Try-on", opt_book:"Book appointment",
+        trust_title:"Why clients trust us", trust_sub:"Three short proof points.",
+        trust1_t:"Trilingual (DE · EN · SR)", trust1_s:"No watermarks; scripts/subtitles in three languages.",
+        trust2_t:"Fast delivery", trust2_s:"First draft in 3–5 days, final in 2–4 weeks (with regular feedback).",
+        trust3_t:"Video + web = results", trust3_s:"Short avatar clip + landing → clearer message and more inquiries.",
+        whatsapp_prefill:"Hi! I'd like a quick consultation.",
+        gold_prefill:"Hi! I'm interested in ring advice (3 suggestions).",
+        opt_prefill:"Hi! I'd like to book a free try-on."
       },
       de:{nav_services:"Leistungen",nav_packages:"Pakete",nav_portfolio:"Portfolio",nav_contact:"Kontakt",
         cta_top:"Angebot anfragen",badge_stack:"Digitales Design • Video • Web",
@@ -454,7 +461,8 @@
         faq2_q:"Was benötigen Sie von uns?",faq2_a:"Logo, 5–8 Fotos und 3–4 Kernpunkte — den Rest erledigen wir.",
         faq3_q:"Was kostet es ungefähr?",faq3_a:"Startpreis ab X €; das genaue Angebot senden wir nach unserer 24-Stunden-Einschätzung.",
         contact_title:"Kontakt",rights:"Alle Rechte vorbehalten",
-        /* NEU: Gold/Optik */
+        /* NEU: Gold/Optik + Trust + WA poruke */
+        nav_gold:"Goldschmiede", nav_optik:"Optik",
         gold_title:"Goldschmiede – Persönliche Beratung",
         gold_sub:"4C Erklärung + 3 Vorschläge. WhatsApp oder Termin in 1 Klick.",
         zl_cap_4c:"4C in 30 Sek. – Glanz & Preis verständlich.",
@@ -463,7 +471,14 @@
         opt_title:"Optik – Gläser & Rahmen in 30 Sek.",
         opt_sub:"Entspiegelung, Blaulicht, Dünnung + 2–3 Rahmen nach Maß.",
         opt_cap_main:"Gläser erklärt + Rahmen-Empfehlung.",
-        opt_whatsapp:"WhatsApp / Anprobe", opt_book:"Termin buchen"
+        opt_whatsapp:"WhatsApp / Anprobe", opt_book:"Termin buchen",
+        trust_title:"Warum man uns vertraut", trust_sub:"Drei kurze Vertrauensbeweise.",
+        trust1_t:"Dreisprachig (DE · EN · SR)", trust1_s:"Keine Wasserzeichen; Skripte/Untertitel in drei Sprachen.",
+        trust2_t:"Schnelle Lieferung", trust2_s:"Erster Entwurf in 3–5 Tagen, final in 2–4 Wochen (mit Feedback).",
+        trust3_t:"Video + Web = Ergebnis", trust3_s:"Kurzer Avatar-Clip + Landing → klarere Botschaft und mehr Anfragen.",
+        whatsapp_prefill:"Hallo! Ich möchte eine Kurzberatung.",
+        gold_prefill:"Hallo! Ich möchte Ringberatung (3 Vorschläge).",
+        opt_prefill:"Hallo! Ich möchte eine kostenlose Anprobe buchen."
       },
       sr:{nav_services:"Usluge",nav_packages:"Paketi",nav_portfolio:"Portfolio",nav_contact:"Kontakt",
         cta_top:"Zatraži ponudu",badge_stack:"Digitalni dizajn • Video • Web",
@@ -491,7 +506,8 @@
         faq2_q:"Šta je potrebno sa vaše strane?",faq2_a:"Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.",
         faq3_q:"Koliko okvirno košta?",faq3_a:"Početna cena od X €; tačnu procenu šaljemo nakon naše 24-časovne procene.",
         contact_title:"Kontakt",rights:"Sva prava zadržana",
-        /* NOVO: Zlatar/Optika */
+        /* NOVO: Zlatar/Optika + Trust + WA poruke */
+        nav_gold:"Zlatar", nav_optik:"Optika",
         gold_title:"Zlatar – lična pomoć",
         gold_sub:"4C objašnjenje + 3 predloga. WhatsApp ili termin u 1 kliku.",
         zl_cap_4c:"4C za 30 sek — jasno & kratko.",
@@ -500,7 +516,14 @@
         opt_title:"Optika – sočiva & okviri za 30s",
         opt_sub:"Antirefleks, plavi filter, tančenje + 2–3 okvira po meri.",
         opt_cap_main:"Sočiva objašnjena + predlog okvira.",
-        opt_whatsapp:"WhatsApp / Proba", opt_book:"Zakaži termin"
+        opt_whatsapp:"WhatsApp / Proba", opt_book:"Zakaži termin",
+        trust_title:"Zašto nama veruju", trust_sub:"Tri kratka dokaza poverenja.",
+        trust1_t:"Trojezično (DE · EN · SR)", trust1_s:"Bez vodenih žigova; skripte/titlovi na tri jezika.",
+        trust2_t:"Brza isporuka", trust2_s:"Prvi nacrt za 3–5 dana, final za 2–4 nedelje (uz povratne).",
+        trust3_t:"Video + web = rezultat", trust3_s:"Kratak avatar + landing → jasna poruka i više upita.",
+        whatsapp_prefill:"Zdravo! Želim brzu konsultaciju.",
+        gold_prefill:"Zdravo! Zanimaju me saveti za prsten (3 predloga).",
+        opt_prefill:"Zdravo! Želim da zakažem besplatnu probu."
       }
     };
 
@@ -529,6 +552,22 @@
 
       const hv=document.getElementById('heroVideo'), s=hv.querySelector('source'), url=HERO[lang]||HERO.sr;
       if(s.getAttribute('src')!==url){ try{hv.pause();}catch(e){} s.src=url; hv.load(); }
+
+      // === WhatsApp linkovi po jeziku (tvoj broj) ===
+      const num = "381606890072"; // bez plusa
+      const enc = s => encodeURIComponent(s || "");
+      // FAB
+      document.querySelectorAll('a[data-wa="fab"]').forEach(a=>{
+        a.href = `https://wa.me/${num}?text=${enc(D.whatsapp_prefill)}`;
+      });
+      // Zlatar CTA
+      document.querySelectorAll('a[data-wa="gold"]').forEach(a=>{
+        a.href = `https://wa.me/${num}?text=${enc(D.gold_prefill||D.whatsapp_prefill)}`;
+      });
+      // Optika CTA
+      document.querySelectorAll('a[data-wa="optik"]').forEach(a=>{
+        a.href = `https://wa.me/${num}?text=${enc(D.opt_prefill||D.whatsapp_prefill)}`;
+      });
 
       document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',(b.dataset.setlang||'')===lang));
       try{localStorage.setItem('lang',lang);}catch(e){}
