@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>D&M Digital</title>
   <meta name="description" content="Web, video i marketing — DE/SR/EN." />
+
+  <!-- OG / Share preview -->
+  <meta property="og:title" content="D&M Digital — Video & Web (DE/SR/EN)">
+  <meta property="og:description" content="Kratki video-avatari + landing stranice. Brzo, jasno, trojezično.">
+  <meta property="og:image" content="https://tvoja-domena/assets/assets/zlatar/poster-4C.jpg">
+  <meta property="og:type" content="website">
+
   <style>
     :root{
       --bg:#0e1116;--card:#151a22;--line:rgba(255,255,255,.08);
@@ -77,6 +84,16 @@
     .op-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
     .op-grid{display:grid;grid-template-columns:1fr;gap:18px}
     @media(max-width:900px){ .zl-grid{grid-template-columns:1fr} }
+
+    /* ====== NOVO: sticky WhatsApp FAB ====== */
+    .wa-fab{
+      position:fixed; right:16px; bottom:16px; z-index:50;
+      width:56px; height:56px; display:grid; place-items:center;
+      border-radius:999px; color:#0b0b0b; background:#22c55e;
+      border:1px solid rgba(255,255,255,.15); box-shadow:0 12px 28px rgba(0,0,0,.35)
+    }
+    .wa-fab:hover{filter:brightness(1.05)}
+    @media (min-width: 980px){ .wa-fab{bottom:22px; right:22px} }
   </style>
 </head>
 <body>
@@ -90,6 +107,8 @@
         <a href="#services" data-i18n="nav_services">Services</a>
         <a href="#products" data-i18n="nav_packages">Packages</a>
         <a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a>
+        <a href="#goldschmiede">Goldschmiede</a>   <!-- novo -->
+        <a href="#optik">Optik</a>                 <!-- novo -->
         <a href="#contact" data-i18n="nav_contact">Contact</a>
       </nav>
       <div class="spacer"></div>
@@ -299,6 +318,26 @@
       </div>
     </section>
 
+    <!-- ============= NOVO: TRUST blok ============= -->
+    <section id="trust">
+      <h2>Zašto nama veruju</h2>
+      <p class="sub">Tri stvari koje najviše znače klijentu.</p>
+      <div class="cards">
+        <article class="card">
+          <h3>Trojezično (DE · EN · SR)</h3>
+          <p class="sub">Bez vodenih žigova, titlovi i skripte na tri jezika.</p>
+        </article>
+        <article class="card">
+          <h3>Brza isporuka</h3>
+          <p class="sub">Prvi nacrt u 3–5 dana, final u 2–4 nedelje (uz redovne povratne).</p>
+        </article>
+        <article class="card">
+          <h3>Video + web = rezultat</h3>
+          <p class="sub">Kratki avatar-klip + landing → jasno objašnjenje i više upita.</p>
+        </article>
+      </div>
+    </section>
+
     <section id="faq" class="faq">
       <h2>FAQ</h2>
       <div class="cards">
@@ -334,6 +373,15 @@
       <div class="right">Design & code: M&D</div>
     </div>
   </footer>
+
+  <!-- Sticky WhatsApp FAB -->
+  <a href="https://wa.me/491721234567?text=Hallo!%20Ich%20m%C3%B6chte%20eine%20Kurzberatung."
+     class="wa-fab" aria-label="WhatsApp chat" target="_blank" rel="noopener" title="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M20.5 12a8.5 8.5 0 0 1-12 7.6L4 20l.5-4.4A8.5 8.5 0 1 1 20.5 12Z" stroke="currentColor"/>
+      <path d="M9.5 9.3c.2-.6.6-.6.9-.6.3 0 .8 0 .9.8.1.5 0 .7 0 .8 0 .1-.2.4-.3.5-.2.2-.3.3-.1.6.2.3.8 1.3 1.9 1.8 1 .5 1.2.3 1.5 0 .3-.3.6-.8.7-.9.1-.1.2-.1.4 0 .2.1 1 .5 1.2.6.2.1.3.2.3.3 0 .2-.1 1.1-.8 1.8-.8.7-1.7.7-2.4.6-.8-.1-1.8-.5-2.9-1.4-1.1-.9-2.1-2.5-2.3-2.9-.2-.4-.5-1.2-.5-1.7 0-.5.3-.8.5-1Z" fill="currentColor"/>
+    </svg>
+  </a>
 
   <script>
     const T = {
@@ -439,9 +487,6 @@
         cap_dmvideo:"D&M intro video",cap_dmvideo_sub:"Brendirani uvodni video bez vodenog žiga.",
         cap_core:"CoreAlliance logo",cap_core_sub:"Minimal logotipi za menije i hero sekcije.",
         dv_title:"Demo — Video primeri",dv_sub:"3 kratka primera: Peter, Avatar IV, Sandra.",
-        dv_c1_t:"Pekar Peter",dv_c1_s:"Sezonska kratka reklama (social format).",
-        dv_c2_t:"Avatar IV — digitalni pozdrav",dv_c2_s:"Kratak uvod u uslugu / landing stranicu.",
-        dv_c3_t:"Sandra — prednosti marketinga",dv_c3_s:"Kratak pitch o benefitima dobrog marketinga.",
         faq1_q:"Koliko brzo isporučujete?",faq1_a:"2–4 nedelje — u zavisnosti od saradnje i odobrenja.",
         faq2_q:"Šta je potrebno sa vaše strane?",faq2_a:"Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.",
         faq3_q:"Koliko okvirno košta?",faq3_a:"Početna cena od X €; tačnu procenu šaljemo nakon naše 24-časovne procene.",
