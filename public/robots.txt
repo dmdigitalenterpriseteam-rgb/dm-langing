@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dmdigitalenterprise.vercel.app/sitemap.xml
