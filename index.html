@@ -229,14 +229,9 @@
         <article class="card">
           <h3 data-i18n="cap_dmvideo">D&M Enterprise video</h3>
           <p class="sub" data-i18n="cap_dmvideo_sub">Branded intro video without watermark.</p>
-  <div class="video-wrap" style="margin-top:12px;border-radius:16px;overflow:hidden;background:#000;">
-    <video controls preload="metadata" playsinline style="width:100%;height:auto;display:block;">
-      <source src="/assets/enterprise/sandra-enterprise.mp4" type="video/mp4"/>
-      Vaš pregledač ne podržava HTML5 video.
-    </video>
-  </div>
-
-          
+          <div class="stack">
+  <a class="badge" href="https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/assets/assets/enterprise/sandra-enterprise.mp4?v=1" target="_blank" rel="noopener">MP4</a>
+</div>
         </article>
 
         <article class="card">
@@ -396,7 +391,32 @@
       <h2 data-i18n="contact_title">Contact</h2>
       <p class="sub">dmdigitalenterprise.team@gmail.com · +381 606890072</p>
     </section>
-  </main>
+  <section id="enterprise-video" style="max-width:980px;margin:64px auto;padding:0 16px;">
+  <h2 style="margin:0 0 12px;">Enterprise showcase (Sandra)</h2>
+  <p style="margin:0 0 16px;color:#9aa7b6;font-size:14px;">Kratki demo – klikni da učita video.</p>
+
+  <div id="dm-enterprise-wrap" style="position:relative;width:100%;max-width:980px;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000;">
+    <button id="dm-enterprise-play" aria-label="Pusti video"
+      style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border:0;background:transparent;cursor:pointer;">
+      <span style="position:absolute; width:84px; height:84px; border-radius:50%; background:rgba(255,255,255,.9); display:inline-flex; align-items:center; justify-content:center; font-size:28px;">
+        ▶
+      </span>
+    </button>
+  </div>
+</section>
+
+<script>
+  (function(){
+    var btn = document.getElementById('dm-enterprise-play');
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      var shell = document.getElementById('dm-enterprise-wrap');
+      if(!shell) return;
+      shell.innerHTML = '<video controls autoplay playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;border-radius:16px;"><source src="/assets/enterprise/sandra-enterprise.mp4" type="video/mp4" />Vaš pregledač ne podržava HTML5 video.</video>';
+    }, { once: true });
+  })();
+</script>
+</main>
 
   <footer>
     <div class="wrap">
