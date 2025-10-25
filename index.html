@@ -12,9 +12,10 @@
   <!-- <link rel="preload" href="assets/fonts/YourFont.woff2" as="font" type="font/woff2" crossorigin> -->
 
   <style>
-    /* SAFE mod: ništa “teško” ne renderujemo */
+    /* SAFE mod: sakrij samo elemente sa oznakom .heavy,
+       ali NE sakrivamo <video> jer želimo da se vidi. */
     .heavy, [data-heavy] { display: none !important; }
-    video { display:none !important; }
+
     /* Minimalna tipografija da sve izgleda čitljivo i “čisto” */
     :root{ --bg:#0e1116; --text:#e7eef7; --muted:#9aa7b6; --card:#141922; --accent:#D07A2D; }
     html,body{height:100%;}
@@ -33,19 +34,19 @@
     footer{color:var(--muted); font-size:14px; margin:48px 0 12px}
     ul{padding-left:18px}
     .note{font-size:14px; color:var(--muted)}
+
+    /* Video blok – samo malo stila da izgleda uredno */
+    .video-frame{width:100%; max-width:980px; border-radius:16px; background:#000; display:block}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header class="hero">
       <h1 class="title">SAFE — D&M Digital (DE/EN/SR)</h1>
-      <p class="sub">Ovo je bezbedna varijanta tvoje početne strane: bez <strong>JS</strong> i bez <strong>video</strong>. Služi kao osnova koja se nikad ne “smrzava”.</p>
+      <p class="sub">Ovo je bezbedna varijanta tvoje početne strane: bez nepotrebnog JS-a. Video je sada dozvoljen i učitava se direktno.</p>
       <a class="btn" href="#kontakt">Zatraži ponudu</a>
-      <p class="note">NAPOMENA: Ovaj fajl NIJE zamena za tvoj index, već sigurnosna verzija za test i hitne situacije.</p>
+      <p class="note">NAPOMENA: Ranija SAFE verzija je skrivala video; to pravilo je uklonjeno.</p>
     </header>
-
-    <!-- *** OVDE PRELEPI POSTOJEĆE SEKCIJE — ČIST HTML, BEZ <script> tagova I BEZ <video> *** -->
-    <!-- Primeri “placeholdera” koje možeš zameniti svojim sadržajem: -->
 
     <section id="services">
       <h2>Usluge</h2>
@@ -59,22 +60,32 @@
     <section id="packages">
       <h2>Paketi</h2>
       <ul>
-        <li>Start — One‑pager / Landing</li>
+        <li>Start — One-pager / Landing</li>
         <li>Pro — 5–7 stranica + blog/sekcije</li>
         <li>Premium — custom + kampanja 30 dana</li>
       </ul>
     </section>
 
+    <!-- ▶ Enterprise showcase (Sandra) – čisti HTML, bez JS-a
+         Putanja odgovara tvojoj strukturi: /public/assets/enterprise/sandra-enterprise.mp4 -->
+    <section id="enterprise-video">
+      <h2>Enterprise showcase (Sandra)</h2>
+      <p class="note">Direktno ugrađen test (bez preloada/JS). Ako se ovaj video pusti, putanja je ispravna.</p>
+
+      <video controls playsinline preload="metadata" class="video-frame">
+        <source src="/public/assets/enterprise/sandra-enterprise.mp4" type="video/mp4">
+        Vaš pregledač ne podržava HTML5 video.
+      </video>
+    </section>
+
     <section id="kontakt">
       <h2>Kontakt</h2>
-      <p>WhatsApp / E‑mail: dodajte ovde vaše dugme/link.</p>
+      <p>WhatsApp / E-mail: dodajte ovde vaše dugme/link.</p>
     </section>
 
     <footer>
       <div>© D&M Digital — Impressum · Datenschutz</div>
     </footer>
   </div>
-
-  <!-- U SAFE varijanti NAMERNO nema nikakvih <script> tagova -->
 </body>
 </html>
