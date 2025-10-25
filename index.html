@@ -21,8 +21,6 @@
 
   <!-- OG / Share preview -->
 
-
-
 <style>
     :root{
       --bg:#0e1116;--card:#151a22;--line:rgba(255,255,255,.08);
@@ -146,7 +144,8 @@
         <p class="note" data-i18n="note_menu">Transparent nav is always on; semi-transparent on scroll on request.</p>
       </div>
       <div>
-        <video playsinline id="heroVideo" class="vid" controls preload="metadata" aria-label="Hero video">
+        <!-- HERO video sa guard atributima -->
+        <video playsinline id="heroVideo" class="vid" controls preload="none" onerror="this.remove()" data-heavy aria-label="Hero video">
           <source src="" type="video/mp4"/>
         </video>
         <p class="note" data-i18n="note_video">Language also selects the video version; sound is on.</p>
@@ -230,8 +229,8 @@
           <h3 data-i18n="cap_dmvideo">D&M Enterprise video</h3>
           <p class="sub" data-i18n="cap_dmvideo_sub">Branded intro video without watermark.</p>
           <div class="stack">
-  <a class="badge" href="https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/assets/assets/enterprise/sandra-enterprise.mp4?v=1" target="_blank" rel="noopener">MP4</a>
-</div>
+            <a class="badge" href="https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/assets/assets/enterprise/sandra-enterprise.mp4?v=1" target="_blank" rel="noopener">MP4</a>
+          </div>
         </article>
 
         <article class="card">
@@ -252,7 +251,7 @@
         <article class="card">
           <h3 data-i18n="dv_c1_t">Peter’s bakery</h3>
           <p class="sub" data-i18n="dv_c1_s">Seasonal short ad (social format).</p>
-          <video playsinline class="vid" controls preload="metadata">
+          <video playsinline class="vid" controls preload="none" onerror="this.remove()" data-heavy>
             <source src="https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/peters-baeckerei.mp4" type="video/mp4"/>
           </video>
         </article>
@@ -260,7 +259,7 @@
         <article class="card">
           <h3 data-i18n="dv_c2_t">Avatar IV — digital greeting</h3>
           <p class="sub" data-i18n="dv_c2_s">Short intro to the service / landing page.</p>
-          <video playsinline class="vid" controls preload="metadata">
+          <video playsinline class="vid" controls preload="none" onerror="this.remove()" data-heavy>
             <source src="https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/avatar-iv.mp4" type="video/mp4"/>
           </video>
         </article>
@@ -268,7 +267,7 @@
         <article class="card">
           <h3 data-i18n="dv_c3_t">Sandra — marketing advantages</h3>
           <p class="sub" data-i18n="dv_c3_s">Short pitch about the benefits of good marketing.</p>
-          <video playsinline class="vid" controls preload="metadata">
+          <video playsinline class="vid" controls preload="none" onerror="this.remove()" data-heavy>
             <source src="https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/sandra-avatar-de.mp4" type="video/mp4"/>
           </video>
         </article>
@@ -285,14 +284,14 @@
 
         <div class="zl-grid">
           <figure class="zl-card">
-            <video playsinline controls preload="metadata" poster="assets/assets/zlatar/poster-4C.jpg">
+            <video playsinline controls preload="none" onerror="this.remove()" data-heavy poster="assets/assets/zlatar/poster-4C.jpg">
               <source src="assets/assets/zlatar/zlatarAVATAR_4C.mp4" type="video/mp4" />
             </video>
             <figcaption data-i18n="zl_cap_4c">4C za 30 sek — jasno & kratko.</figcaption>
           </figure>
 
           <figure class="zl-card">
-            <video playsinline controls preload="metadata" poster="assets/assets/zlatar/poster-ringwahl.jpg">
+            <video playsinline controls preload="none" onerror="this.remove()" data-heavy poster="assets/assets/zlatar/poster-ringwahl.jpg">
               <source src="assets/assets/zlatar/zlatarAVATAR_Ringwahl.mp4" type="video/mp4" />
             </video>
             <figcaption data-i18n="zl_cap_style">Koji stil: Solitaire, Halo ili Classic?</figcaption>
@@ -316,10 +315,10 @@
 
         <div class="op-grid">
           <figure class="op-card">
-            <video playsinline controls preload="metadata">
+            <video playsinline controls preload="none" onerror="this.remove()" data-heavy>
               <source src="assets/assets/optika/optikaAVATAR_Glaeser.mp4" type="video/mp4" />
             </video>
-            </figure>
+          </figure>
         </div>
 
         <div class="op-ctas">
@@ -348,7 +347,6 @@
         </article>
       </div>
     </section>
-
 
 <section id="testimonials">
   <h2 data-i18n="testi_title">Šta klijenti kažu</h2>
@@ -391,6 +389,7 @@
       <h2 data-i18n="contact_title">Contact</h2>
       <p class="sub">dmdigitalenterprise.team@gmail.com · +381 606890072</p>
     </section>
+
   <section id="enterprise-video" style="max-width:980px;margin:64px auto;padding:0 16px;">
   <h2 style="margin:0 0 12px;">Enterprise showcase (Sandra)</h2>
   <p style="margin:0 0 16px;color:#9aa7b6;font-size:14px;">Kratki demo – klikni da učita video.</p>
@@ -412,7 +411,7 @@
     btn.addEventListener('click', function(){
       var shell = document.getElementById('dm-enterprise-wrap');
       if(!shell) return;
-      shell.innerHTML = '<video controls autoplay playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;border-radius:16px;"><source src="/assets/enterprise/sandra-enterprise.mp4" type="video/mp4" />Vaš pregledač ne podržava HTML5 video.</video>';
+      shell.innerHTML = '<video controls autoplay playsinline preload="none" onerror="this.remove()" data-heavy style="width:100%;height:100%;object-fit:cover;border-radius:16px;"><source src="/assets/enterprise/sandra-enterprise.mp4" type="video/mp4" />Vaš pregledač ne podržava HTML5 video.</video>';
     }, { once: true });
   })();
 </script>
@@ -672,5 +671,8 @@ opt_book:"Zakaži termin"
 
     setLang(localStorage.getItem('lang')||document.documentElement.lang||'sr');
   </script>
+
+  <!-- ✅ Uključujemo guard skriptu (defer) pred zatvaranje body -->
+  <script src="assets/js/error-guard.js" defer></script>
 </body>
 </html>
