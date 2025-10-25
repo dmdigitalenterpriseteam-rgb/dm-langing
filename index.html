@@ -641,8 +641,26 @@ opt_book:"Zakaži termin"
       const fill=(id,arr)=>{const ul=document.getElementById(id); ul.innerHTML=arr.map(x=>`<li>${x}</li>`).join('');};
       fill('p1_list',D.lists.p1); fill('p2_list',D.lists.p2); fill('p3_list',D.lists.p3);
 
-      const hv=document.getElementById('heroVideo'), s=hv.querySelector('source'), url=HERO[lang]||HERO.sr;
-      if(s.getAttribute('src')!==url){ try{hv.pause();}catch(e){} s.src=url; hv.load(); }
+      // === HERO video: lazy load tek na prvi "Play"
+      const hv = document.getElementById('heroVideo');
+      const s  = hv ? hv.querySelector('source') : null;
+      const url = HERO[lang] || HERO.sr;
+
+      if (hv && s) {
+        if (s.getAttribute('src')) { try { hv.pause(); } catch(_){} s.removeAttribute('src'); hv.load(); }
+        if (!hv.dataset.lazyBound) {
+          hv.addEventListener('play', function onFirstPlay(){
+            if (!s.getAttribute('src')) {
+              s.src = url;
+              hv.load();
+              const p = hv.play();
+              if (p && typeof p.catch === 'function') { p.catch(()=>{}); }
+            }
+            hv.removeEventListener('play', onFirstPlay);
+          }, { once:true });
+          hv.dataset.lazyBound = "1";
+        }
+      }
 
       // === WhatsApp linkovi po jeziku (tvoj broj) ===
       const num = "381606890072"; // bez plusa
