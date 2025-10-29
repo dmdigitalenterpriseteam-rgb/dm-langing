@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beispiele – D&M Digital</title>
+  <style>
+    :root{--bg:#0e1116;--card:#151a22;--line:rgba(255,255,255,.08);--muted:#9aa7b6;--text:#e7eef7;--brand1:#62e9bd;--brand2:#9aa7ff}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    .wrap{max-width:1080px;margin:0 auto;padding:24px}
+    h1{font-size:clamp(24px,4vw,36px);margin:0 0 8px}
+    p.muted{color:var(--muted);margin:0 0 16px}
+    .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+    .card h3{margin:0 0 8px;font-size:18px}
+    video{display:block;width:100%;height:auto;border-radius:12px;background:#000}
+    .btn{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:999px;background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#0b0f15;font-weight:700;text-decoration:none}
+    a.back{display:inline-block;margin:12px 0 0;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Beispiele & Prototypen</h1>
+    <p class="muted">Durchschnittliche mobile Ladezeit unserer Demos: 1,9 s.</p>
+
+    <div class="grid">
+      <article class="card">
+        <h3>Bäckerei „Peter“ — 8s Social Ad</h3>
+        <video controls preload="metadata" playsinline muted width="640" height="360">
+          <source src="/sandra-enterprise.mp4" type="video/mp4">
+        </video>
+        <a class="btn" href="/">Zurück zur Startseite</a>
+      </article>
+
+      <article class="card">
+        <h3>D&M Intro — 34s Branding</h3>
+        <video controls preload="metadata" playsinline muted width="640" height="360">
+          <source src="/sandra-enterprise.mp4" type="video/mp4">
+        </video>
+        <a class="btn" href="/">Zurück zur Startseite</a>
+      </article>
+    </div>
+
+    <a class="back" href="/">← Startseite</a>
+  </div>
+</body>
+</html>
