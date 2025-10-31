@@ -1,207 +1,156 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>D&M Digital — Jednostavno, da vas pamte</title>
-  <meta name="description" content="Web, video i marketing — DE/SR/EN." />
-  <style>
-    :root{
-      --bg:#0e1116;--card:#151a22;--line:rgba(255,255,255,.08);
-      --muted:#9aa7b6;--text:#e7eef7;--brand1:#62e0c6;--brand2:#9fa8fe;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);
-      font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-    img,video{max-width:100%;height:auto;display:block}
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:1180px;margin:0 auto;padding:20px}
-    header{position:sticky;top:0;background:rgba(14,17,22,.72);
-      backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line);z-index:10}
-    .nav{display:flex;align-items:center;gap:24px;padding:12px 0;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-    .spacer{flex:1}
-    .btn{display:inline-block;min-height:44px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);
-      background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;font-weight:700}
-    .ghost{background:transparent;color:var(--text)}
-    .badge{display:inline-block;background:#0d131a;border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:#c3ccd7;font-size:13px}
-    h1{font-size:clamp(1.6rem,4.8vw,3.2rem);line-height:1.12;margin:12px 0 8px}
-    h2{font-size:clamp(1.25rem,3.8vw,2.125rem);margin:0 0 8px}
-    .sub{color:var(--muted);margin:0 0 20px}
-    .lead{color:var(--muted);max-width:720px}
-    .row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-    .note{margin-top:14px;background:#0d131a;border:1px solid var(--line);padding:12px 16px;border-radius:14px;color:#c7d0dc}
-    video.vid{width:100%;aspect-ratio:16/9;height:auto;background:#0a0f14;border:1px solid var(--line);border-radius:18px;object-fit:cover}
-    .grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
-    .card h3{margin:10px 0 8px}
-    .list{color:#cfd8e3;margin:0;padding-left:18px}
-    footer{padding:30px 0;border-top:1px solid var(--line);color:#aeb9c8}
-    footer .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px}
-    footer .right{text-align:right}
-    @media (max-width:980px){
-      .grid-2{grid-template-columns:1fr}
-      .cards{grid-template-columns:1fr}
-      footer .wrap{grid-template-columns:1fr;text-align:center}
-      footer .right{text-align:center}
-    }
-    /* WhatsApp FAB */
-    .wa-fab{
-      position:fixed; right:16px; bottom:16px; z-index:50;
-      width:56px; height:56px; display:grid; place-items:center;
-      border-radius:999px; color:#0b0b0b; background:#22c55e;
-      border:1px solid rgba(255,255,255,.15); box-shadow:0 12px 28px rgba(0,0,0,.35)
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>D&M Digital Enterprise</title>
+
+  <!-- SEO osnovni tagovi -->
+  <meta name="description" content="D&M Digital Enterprise – izrada web sajtova, brendiranje i digitalni marketing za mala i srednja preduzeća." />
+  <meta name="keywords" content="web dizajn, digitalni marketing, brendiranje, izrada sajta, SEO, video reklame" />
+  <meta name="author" content="D&M Digital Enterprise" />
+
+  <!-- Open Graph za deljenje na društvenim mrežama -->
+  <meta property="og:title" content="D&M Digital Enterprise" />
+  <meta property="og:description" content="Vaš digitalni partner za rast i prepoznatljivost." />
+  <meta property="og:image" content="https://tvoj-domen.com/og-image.jpg" />
+  <meta property="og:url" content="https://tvoj-domen.com" />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="lang.js"></script>
 </head>
 <body>
   <header>
-    <div class="wrap nav">
-      <div class="brand">
-        <span style="width:18px;height:18px;display:inline-block;background:#9fa8fe;border-radius:4px"></span>
-        D&M Digital
-      </div>
-      <nav class="row" style="gap:16px">
-        <a href="#services">Services</a>
-        <a href="#products">Packages</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="spacer"></div>
-      <a class="btn" href="#contact">Request a quote</a>
-    </div>
+    <div class="logo">D&M Digital</div>
+    <nav>
+      <ul>
+        <li><a href="#hero" data-key="nav-home">Početna</a></li>
+        <li><a href="#services" data-key="nav-services">Usluge</a></li>
+        <li><a href="#portfolio" data-key="nav-portfolio">Portfolio</a></li>
+        <li><a href="#contact" data-key="nav-contact">Kontakt</a></li>
+      </ul>
+      <select id="language-switcher">
+        <option value="sr">SR</option>
+        <option value="en">EN</option>
+        <option value="de">DE</option>
+      </select>
+    </nav>
   </header>
 
-  <main class="wrap">
-    <!-- HERO -->
-    <section class="grid-2" id="hero">
-      <div>
-        <span class="badge">Digital design • Video • Web</span>
-        <h1>Jednostavno — pravimo da vas pamte.</h1>
-        <p class="lead">Web stranice, kratke video reklame i pametan marketing na nemačkom, srpskom i engleskom.</p>
-        <div class="row">
-          <a class="btn" href="#portfolio">View portfolio</a>
-          <a class="btn ghost" href="#services">Services</a>
-        </div>
-        <p class="note">Transparent nav is always on; semi-transparent on scroll on request.</p>
-      </div>
-      <div>
-        <!-- Direktan izvor iz /public (OVAJ FAJL MORA POSTOJATI): Avatar srb.mp4 -->
-        <video class="vid" controls preload="metadata" aria-label="Hero video">
-          <source src="/Avatar%20srb.mp4" type="video/mp4">
-        </video>
-        <p class="note">Stabilno: bez skripti, samo direktan video.</p>
-      </div>
-    </section>
+  <section id="hero">
+    <h1 data-key="hero-title">Jednostavno — pravimo da vas pamte.</h1>
+    <p data-key="hero-sub">Web stranice, video reklame i pametan marketing.</p>
+    <div class="cta">
+      <a href="#contact" class="btn" data-key="cta-quote">Zatraži ponudu</a>
+      <a href="#portfolio" class="btn secondary" data-key="cta-portfolio">Pogledaj portfolio</a>
+    </div>
+  </section>
 
-    <!-- SERVICES -->
-    <section id="services">
-      <h2>What we do (focused on results)</h2>
-      <p class="sub">Three pillars that deliver fast impact.</p>
-      <div class="cards">
-        <article class="card">
-          <span class="badge">Web</span>
-          <h3>Fast, modern websites</h3>
-          <p class="sub">Landing pages, presentations, contact forms with conversion tracking.</p>
-        </article>
-        <article class="card">
-          <span class="badge">Video</span>
-          <h3>Short video ads</h3>
-          <p class="sub">15–45s formats, subtitles in DE/SR/EN, optimized for social media.</p>
-        </article>
-        <article class="card">
-          <span class="badge">Marketing</span>
-          <h3>Campaigns & ads</h3>
-          <p class="sub">Facebook/Instagram/Google, content calendar, hashtags & CTA messages.</p>
-        </article>
-      </div>
-    </section>
+  <section id="intro-video">
+    <h2>D&M Intro Video</h2>
+    <video width="100%" height="auto" controls>
+      <source src="https://github.com/dmdigitalenterpriseteam-rgb/dm-langing/raw/main/public/sandra-enterprise.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
 
-    <!-- DEMO VIDEOS (svi ovi fajlovi treba da su u /public rootu) -->
-    <section id="demo-videos">
-      <h2>Demo — Video samples</h2>
-      <p class="sub">3 short samples: Peter, Avatar IV, Sandra.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Peter’s bakery</h3>
-          <p class="sub">Seasonal short ad (social format).</p>
-          <video class="vid" controls preload="metadata">
-            <source src="/peters-baeckerei.mp4" type="video/mp4">
-          </video>
-        </article>
+  <section id="services">
+    <h2 data-key="services-title">Usluge</h2>
+    <ul>
+      <li data-key="service-1">Izrada web sajtova</li>
+      <li data-key="service-2">Brendiranje i dizajn</li>
+      <li data-key="service-3">Digitalni marketing</li>
+    </ul>
+  </section>
 
-        <article class="card">
-          <h3>Avatar IV — digital greeting</h3>
-          <p class="sub">Short intro to the service / landing page.</p>
-          <video class="vid" controls preload="metadata">
-            <source src="/avatar-iv.mp4" type="video/mp4">
-          </video>
-        </article>
+  <section id="portfolio">
+    <h2 data-key="portfolio-title">Portfolio</h2>
+    <p data-key="portfolio-desc">Pogledajte naše prethodne projekte:</p>
+    <a href="projekti.pdf" target="_blank">Preuzmi PDF</a>
+  </section>
 
-        <article class="card">
-          <h3>Sandra — marketing advantages</h3>
-          <p class="sub">Short pitch about the benefits of good marketing.</p>
-          <video class="vid" controls preload="metadata">
-            <source src="/sandra-avatar-de.mp4" type="video/mp4">
-          </video>
-        </article>
-      </div>
-    </section>
-
-    <!-- ENTERPRISE SHOWCASE (Sandra) — bez ikakvog JS-a -->
-    <section id="enterprise-video" style="max-width:980px;margin:64px auto;">
-      <h2 style="margin:0 0 12px;">Enterprise showcase (Sandra)</h2>
-      <p class="sub" style="margin:0 0 16px;">Direktan video (bez skripti). Fajl: <code>/sandra-enterprise.mp4</code></p>
-      <video class="vid" controls preload="metadata" poster="">
-        <source src="/sandra-enterprise.mp4" type="video/mp4">
-      </video>
-    </section>
-
-    <!-- PORTFOLIO (PDF-ovi moraju biti u /public/assets/portfolio/) -->
-    <section id="portfolio">
-      <h2>Examples & prototypes</h2>
-      <p class="sub">Live links coming soon.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Peter’s Bakery</h3>
-          <p class="sub">Simple presentation site with transparent menu.</p>
-          <a class="btn" href="/assets/portfolio/peterova-pekara.pdf" target="_blank" rel="noopener">Open PDF</a>
-        </article>
-        <article class="card">
-          <h3>CoreAlliance logo</h3>
-          <p class="sub">Minimal logos for menus & hero areas.</p>
-          <a class="btn" href="/assets/portfolio/corealliance-logo.pdf" target="_blank" rel="noopener">Open PDF</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p class="sub">dmdigitalenterprise.team@gmail.com · +381 606890072</p>
-      <a class="btn" href="https://wa.me/381606890072" target="_blank" rel="noopener">WhatsApp</a>
-    </section>
-  </main>
+  <section id="contact">
+    <h2 data-key="contact-title">Kontakt</h2>
+    <form>
+      <input type="text" placeholder="Vaše ime" required />
+      <input type="email" placeholder="Email adresa" required />
+      <textarea placeholder="Poruka" required></textarea>
+      <button type="submit" data-key="contact-button">Pošaljite</button>
+    </form>
+  </section>
 
   <footer>
-    <div class="wrap">
-      <div>© 2025 D&M Digital — All rights reserved</div>
-      <div class="center">
-        <a href="/impressum.html">Impressum</a> ·
-        <a href="/datenschutz.html">Datenschutzerklärung</a> ·
-        <a href="/konditionen.html">Konditionen & Preise</a>
-      </div>
-      <div class="right">Design & code: M&D</div>
-    </div>
+    <p>&copy; 2025 D&M Digital Enterprise</p>
   </footer>
 
-  <!-- WhatsApp FAB -->
-  <a href="https://wa.me/381606890072" class="wa-fab" aria-label="WhatsApp chat" target="_blank" rel="noopener" title="WhatsApp">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M20.5 12a8.5 8.5 0 0 1-12 7.6L4 20l.5-4.4A8.5 8.5 0 1 1 20.5 12Z" stroke="currentColor"/>
-      <path d="M9.5 9.3c.2-.6.6-.6.9-.6.3 0 .8 0 .9.8.1.5 0 .7 0 .8 0 .1-.2.4-.3.5-.2.2-.3.3-.1.6.2.3.8 1.3 1.9 1.8 1 .5 1.2.3 1.5 0 .3-.3.6-.8.7-.9.1-.1.2-.1.4 0 .2.1 1 .5 1.2.6.2.1.3.2.3.3 0 .2-.1 1.1-.8 1.8-.8.7-1.7.7-2.4.6-.8-.1-1.8-.5-2.9-1.4-1.1-.9-2.1-2.5-2.3-2.9-.2-.4-.5-1.2-.5-1.7 0-.5.3-.8.5-1Z" fill="currentColor"/>
-    </svg>
-  </a>
+  <script>
+    const translations = {
+      sr: {
+        "nav-home": "Početna",
+        "nav-services": "Usluge",
+        "nav-portfolio": "Portfolio",
+        "nav-contact": "Kontakt",
+        "hero-title": "Jednostavno — pravimo da vas pamte.",
+        "hero-sub": "Web stranice, video reklame i pametan marketing.",
+        "cta-quote": "Zatraži ponudu",
+        "cta-portfolio": "Pogledaj portfolio",
+        "services-title": "Usluge",
+        "service-1": "Izrada web sajtova",
+        "service-2": "Brendiranje i dizajn",
+        "service-3": "Digitalni marketing",
+        "portfolio-title": "Portfolio",
+        "portfolio-desc": "Pogledajte naše prethodne projekte:",
+        "contact-title": "Kontakt",
+        "contact-button": "Pošaljite"
+      },
+      en: {
+        "nav-home": "Home",
+        "nav-services": "Services",
+        "nav-portfolio": "Portfolio",
+        "nav-contact": "Contact",
+        "hero-title": "Simply — we make you memorable.",
+        "hero-sub": "Websites, video ads, and smart marketing.",
+        "cta-quote": "Request a quote",
+        "cta-portfolio": "View portfolio",
+        "services-title": "Services",
+        "service-1": "Website development",
+        "service-2": "Branding and design",
+        "service-3": "Digital marketing",
+        "portfolio-title": "Portfolio",
+        "portfolio-desc": "Check out our previous projects:",
+        "contact-title": "Contact",
+        "contact-button": "Send"
+      },
+      de: {
+        "nav-home": "Startseite",
+        "nav-services": "Leistungen",
+        "nav-portfolio": "Portfolio",
+        "nav-contact": "Kontakt",
+        "hero-title": "Einfach — wir machen Sie unvergesslich.",
+        "hero-sub": "Webseiten, Videowerbung und intelligentes Marketing.",
+        "cta-quote": "Angebot anfordern",
+        "cta-portfolio": "Portfolio ansehen",
+        "services-title": "Leistungen",
+        "service-1": "Webseiten-Erstellung",
+        "service-2": "Branding und Design",
+        "service-3": "Digitales Marketing",
+        "portfolio-title": "Portfolio",
+        "portfolio-desc": "Sehen Sie sich unsere bisherigen Projekte an:",
+        "contact-title": "Kontakt",
+        "contact-button": "Senden"
+      }
+    };
+
+    document.getElementById("language-switcher").addEventListener("change", function () {
+      const lang = this.value;
+      document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+    });
+  </script>
 </body>
 </html>
