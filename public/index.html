@@ -71,19 +71,15 @@
       footer .right{text-align:center}
     }
 
-    /* Zlatar & Optika */
+    /* Zlatar */
     .zl-sec{padding:44px 0;background:#0b0f14}
     .zl-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
     .zl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .zl-card video,.op-card video{width:100%;border-radius:16px;border:1px solid var(--line);background:#0a0f14;box-shadow:0 10px 26px rgba(0,0,0,.35)}
-    .zl-card figcaption,.op-card figcaption{font-size:14px;opacity:.85;margin-top:8px}
-    .zl-ctas,.op-ctas{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
-    .zl-btn,.op-btn{padding:10px 16px;border-radius:999px;border:1px solid var(--line);text-decoration:none}
-    .zl-btn.primary,.op-btn.primary{background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;border-color:transparent;font-weight:700}
-    .op-sec{padding:44px 0;background:#0e1116}
-    .op-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-    .op-grid{display:grid;grid-template-columns:1fr;gap:18px}
-    @media(max-width:900px){ .zl-grid{grid-template-columns:1fr} }
+    .zl-card video{width:100%;border-radius:16px;border:1px solid var(--line);background:#0a0f14;box-shadow:0 10px 26px rgba(0,0,0,.35)}
+    .zl-card figcaption{font-size:14px;opacity:.85;margin-top:8px}
+    .zl-ctas{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
+    .zl-btn{padding:10px 16px;border-radius:999px;border:1px solid var(--line);text-decoration:none}
+    .zl-btn.primary{background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;border-color:transparent;font-weight:700}
 
     /* WhatsApp FAB */
     .wa-fab{
@@ -107,7 +103,6 @@
         <a href="#services" data-i18n="nav_services">Services</a>
         <a href="#products" data-i18n="nav_packages">Packages</a>
         <a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a>
-        <!-- Optika uklonjena iz menija po želji -->
         <a href="#contact" data-i18n="nav_contact">Contact</a>
       </nav>
       <div class="spacer"></div>
@@ -134,14 +129,14 @@
         <p class="note" data-i18n="note_menu">Transparent nav is always on; semi-transparent on scroll on request.</p>
       </div>
       <div>
-        <video playsinline id="heroVideo" class="vid" controls preload="metadata" aria-label="Hero video">
-          <source src="/Avatar%20srb.mp4" type="video/mp4"/>
+        <video playsinline id="heroVideo" class="vid" controls preload="metadata" poster="/hero-robot.png" aria-label="Hero video">
+          <source src="" type="video/mp4"/>
         </video>
         <p class="note" data-i18n="note_video">Language also selects the video version; sound is on.</p>
       </div>
     </section>
 
-    <!-- SERVICES -->
+    <!-- Services -->
     <section id="services">
       <h2 data-i18n="services_title">What we do (focused on results)</h2>
       <p class="sub" data-i18n="services_sub">Three pillars that deliver fast impact.</p>
@@ -164,10 +159,11 @@
       </div>
     </section>
 
-    <!-- PACKAGES -->
+    <!-- Packages -->
     <section id="products">
       <h2 data-i18n="sec_products_title">Packages (Start — Pro — Premium)</h2>
       <p class="sub" data-i18n="sec_products_sub">Fixed prices by module, clear scope.</p>
+
       <div class="cards">
         <article class="card">
           <h3 data-i18n="p1_title">START package</h3>
@@ -196,23 +192,24 @@
       </div>
     </section>
 
-    <!-- CLAIM -->
+    <!-- Claim -->
     <section id="claim">
       <h2 data-i18n="claim_title">More foot traffic for your bakery</h2>
       <p class="sub" data-i18n="claim_sub">Clear landing page + 30-second video, ready in 2–4 weeks.</p>
       <a class="btn btn-grad" href="#contact" role="button" data-i18n="cta_consult">Free quick consultation</a>
     </section>
 
-    <!-- PORTFOLIO (DM VIDEO INLINE) -->
+    <!-- Portfolio -->
     <section id="portfolio">
       <h2 data-i18n="sec_portfolio_title">Examples & prototypes</h2>
       <p class="sub" data-i18n="sec_portfolio_sub">Live links coming soon.</p>
+
       <div class="cards">
         <article class="card">
           <h3 data-i18n="cap_dmvideo">D&M Enterprise video</h3>
           <p class="sub" data-i18n="cap_dmvideo_sub">Branded intro video without watermark.</p>
           <video playsinline class="vid" controls preload="metadata">
-            <source src="/sandra-enterprise.mp4" type="video/mp4"/>
+            <source src="/sandra-enterprise.mp4?v=1" type="video/mp4"/>
           </video>
         </article>
 
@@ -220,21 +217,26 @@
           <h3 data-i18n="cap_peter">Peter’s Bakery</h3>
           <p class="sub" data-i18n="cap_peter_sub">Simple presentation site with transparent menu.</p>
           <video playsinline class="vid" controls preload="metadata">
-            <source src="/peters-baeckerei.mp4" type="video/mp4"/>
+            <source src="/peters-baeckerei.mp4?v=1" type="video/mp4"/>
           </video>
+          <!-- Ako dodaš PDF u /public/portfolio/peterova-pekara.pdf, odkomentariši dugme ispod:
+          <div class="stack" style="margin-top:10px">
+            <a class="btn-min btn-grad" href="/portfolio/peterova-pekara.pdf" target="_blank" rel="noopener" data-i18n="btn_open_pdf">Open PDF</a>
+          </div>
+          -->
         </article>
 
         <article class="card">
-          <h3>Avatar IV</h3>
-          <p class="sub">Short intro to the service / landing page.</p>
+          <h3 data-i18n="cap_core">Avatar IV</h3>
+          <p class="sub" data-i18n="dv_c2_s">Short intro to the service / landing page.</p>
           <video playsinline class="vid" controls preload="metadata">
-            <source src="/avatar-iv.mp4" type="video/mp4"/>
+            <source src="/avatar-iv.mp4?v=1" type="video/mp4"/>
           </video>
         </article>
       </div>
     </section>
 
-    <!-- ZLATAR -->
+    <!-- ZLATARA -->
     <section id="goldschmiede" class="zl-sec">
       <div class="zl-wrap">
         <header class="zl-head">
@@ -245,14 +247,14 @@
         <div class="zl-grid">
           <figure class="zl-card">
             <video playsinline controls preload="metadata" poster="/zlatar/poster-4C.jpg">
-              <source src="/zlatar/zlatarAVATAR_4C.mp4" type="video/mp4" />
+              <source src="/zlatar/zlatarAVATAR_4C.mp4?v=1" type="video/mp4" />
             </video>
             <figcaption data-i18n="zl_cap_4c">4C za 30 sek — jasno & kratko.</figcaption>
           </figure>
 
           <figure class="zl-card">
             <video playsinline controls preload="metadata" poster="/zlatar/poster-ringwahl.jpg">
-              <source src="/zlatar/zlatarAVATAR_Ringwahl.mp4" type="video/mp4" />
+              <source src="/zlatar/zlatarAVATAR_Ringwahl.mp4?v=1" type="video/mp4" />
             </video>
             <figcaption data-i18n="zl_cap_style">Koji stil: Solitaire, Halo ili Classic?</figcaption>
           </figure>
@@ -265,50 +267,7 @@
       </div>
     </section>
 
-    <!-- OPTIKA (ostaje na stranici, ali nije u meniju) -->
-    <section id="optik" class="op-sec">
-      <div class="op-wrap">
-        <header class="op-head">
-          <h2 data-i18n="opt_title">Optika – sočiva & okviri za 30s</h2>
-          <p class="sub" data-i18n="opt_sub">Antirefleks, plavi filter, tančenje + 2–3 okvira po meri.</p>
-        </header>
-
-        <div class="op-grid">
-          <figure class="op-card">
-            <video playsinline controls preload="metadata">
-              <source src="/optika/optikaAVATAR_Glaeser.mp4" type="video/mp4" />
-            </video>
-          </figure>
-        </div>
-
-        <div class="op-ctas">
-          <a class="op-btn primary" data-wa="optik" href="https://wa.me/381606890072" target="_blank" rel="noopener" data-i18n="opt_whatsapp">WhatsApp / Proba</a>
-          <a class="op-btn" href="#contact" data-i18n="opt_book">Zakaži termin</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- TRUST -->
-    <section id="trust">
-      <h2 data-i18n="trust_title">Zašto nama veruju</h2>
-      <p class="sub" data-i18n="trust_sub">Tri stvari koje najviše znače klijentu.</p>
-      <div class="cards">
-        <article class="card">
-          <h3 data-i18n="trust1_t">Trojezično (DE · EN · SR)</h3>
-          <p class="sub" data-i18n="trust1_s">Bez vodenih žigova, titlovi i skripte na tri jezika.</p>
-        </article>
-        <article class="card">
-          <h3 data-i18n="trust2_t">Brza isporuka</h3>
-          <p class="sub" data-i18n="trust2_s">Prvi nacrt u 3–5 dana, final u 2–4 nedelje (uz redovne povratne).</p>
-        </article>
-        <article class="card">
-          <h3 data-i18n="trust3_t">Video + web = rezultat</h3>
-          <p class="sub" data-i18n="trust3_s">Kratki avatar-klip + landing → jasno objašnjenje i više upita.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
+    <!-- Testimonials -->
     <section id="testimonials">
       <h2 data-i18n="testi_title">Šta klijenti kažu</h2>
       <p class="sub" data-i18n="testi_sub">Kratko i konkretno.</p>
@@ -347,7 +306,7 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- Contact -->
     <section id="contact">
       <h2 data-i18n="contact_title">Contact</h2>
       <p class="sub">dmdigitalenterprise.team@gmail.com · +381 606890072</p>
@@ -366,7 +325,7 @@
     </div>
   </footer>
 
-  <!-- WhatsApp FAB -->
+  <!-- Sticky WhatsApp FAB -->
   <a href="https://wa.me/381606890072" class="wa-fab" data-wa="fab" aria-label="WhatsApp chat" target="_blank" rel="noopener" title="WhatsApp">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M20.5 12a8.5 8.5 0 0 1-12 7.6L4 20l.5-4.4A8.5 8.5 0 1 1 20.5 12Z" stroke="currentColor"/>
@@ -375,7 +334,7 @@
   </a>
 
   <script>
-    // I18N DICTIONARY (from your previous working version, condensed to needed keys)
+    /* i18n rečnik (iskraćen iz tvoje verzije – ključne fraze ostaju) */
     const T = {
       en:{nav_services:"Services",nav_packages:"Packages",nav_portfolio:"Portfolio",nav_contact:"Contact",
         cta_top:"Request a quote",badge_stack:"Digital design • Video • Web",
@@ -394,31 +353,23 @@
                p2:["Multi-page + portfolio","Short video (up to 30s)","Ad prep + 10 hashtags"],
                p3:["Custom design & animations","2 video ads (up to 45s)","30-day campaign + report"]},
         claim_title:"More foot traffic for your bakery",claim_sub:"Clear landing page + 30-second video, ready in 2–4 weeks.",cta_consult:"Free quick consultation",
-        sec_portfolio_title:"Examples & prototypes",sec_portfolio_sub:"Live links coming soon.",btn_open_pdf:"Open PDF",
+        sec_portfolio_title:"Examples & prototypes",sec_portfolio_sub:"Live links coming soon.",
         cap_peter:"Peter’s Bakery",cap_peter_sub:"Simple presentation site with transparent menu.",
         cap_dmvideo:"D&M Enterprise video",cap_dmvideo_sub:"Branded intro video without watermark.",
-        trust_title:"Why clients trust us", trust_sub:"Three short proof points.",
-        trust1_t:"Trilingual (DE · EN · SR)", trust1_s:"No watermarks; scripts/subtitles in three languages.",
-        trust2_t:"Fast delivery", trust2_s:"First draft in 3–5 days, final in 2–4 weeks (with regular feedback).",
-        trust3_t:"Video + web = results", trust3_s:"Short avatar clip + landing → clearer message and more inquiries.",
-        whatsapp_prefill:"Hi! I'd like a quick consultation.",
-        gold_title:"Jewelry – Personal Advice",
-        gold_sub:"4C explained + 3 suggestions. WhatsApp or book in 1 click.",
-        zl_cap_4c:"4C in 30s – clarity & price made simple.",
-        zl_cap_style:"Which style? Solitaire, Halo or Classic?",
+        cap_core:"Avatar IV",dv_c2_s:"Short intro to the service / landing page.",
+        faq1_q:"How fast do you deliver?",faq1_a:"2–4 weeks — depending on collaboration and approvals.",
+        faq2_q:"What do you need from us?",faq2_a:"Logo, 5–8 photos and 3–4 key points — we handle the rest.",
+        faq3_q:"Roughly how much does it cost?",faq3_a:"Starting price from X €; we send an exact quote after our 24-hour assessment.",
+        contact_title:"Contact",rights:"All rights reserved",
+        gold_title:"Jewelry – Personal Advice",gold_sub:"4C explained + 3 suggestions. WhatsApp or book in 1 click.",
+        zl_cap_4c:"4C in 30s – clarity & price made simple.", zl_cap_style:"Which style? Solitaire, Halo or Classic?",
         gold_whatsapp:"WhatsApp Advice", gold_book:"Book appointment",
-        opt_title:"Optics – Lenses & Frames in 30s",
-        opt_sub:"AR, blue-light, thinning + 2–3 frames for you.",
-        opt_whatsapp:"WhatsApp / Try-on", opt_book:"Book appointment",
         testi_title:"What clients say", testi_sub:"Short and concrete.",
         testi_1_q:"“Live in 10 days. Clear communication, clean execution.”", testi_1_a:"Anna K., Optik Müller",
         testi_2_q:"“The avatar video doubled our inquiries in the first month.”", testi_2_a:"M. Petrovic, Goldsmith Nova",
         testi_3_q:"“Three languages, one contact. Stress-free.”", testi_3_a:"Peter L., Bakery Lenz",
-        faq_title:"FAQ",faq1_q:"How fast do you deliver?",faq1_a:"2–4 weeks — depending on collaboration and approvals.",
-        faq2_q:"What do you need from us?",faq2_a:"Logo, 5–8 photos and 3–4 key points — we handle the rest.",
-        faq3_q:"Roughly how much does it cost?",faq3_a:"Starting price from X €; we send an exact quote after our 24-hour assessment.",
-        contact_title:"Contact",rights:"All rights reserved"
-      },
+        faq_title:"FAQ"},
+
       de:{nav_services:"Leistungen",nav_packages:"Pakete",nav_portfolio:"Portfolio",nav_contact:"Kontakt",
         cta_top:"Angebot anfragen",badge_stack:"Digitales Design • Video • Web",
         hero_title:"Einfach – damit man sich an Sie erinnert.",
@@ -436,31 +387,23 @@
                p2:["Mehrseitig + Portfolio","Kurzvideo (bis 30 s)","Ads-Vorbereitung + 10 Hashtags"],
                p3:["Individuelles Design & Animationen","2 Videoanzeigen (bis 45 s)","30-Tage-Kampagne + Report"]},
         claim_title:"Mehr Laufkundschaft für Ihre Bäckerei",claim_sub:"Klare Landingpage + 30-Sekunden-Video, fertig in 2–4 Wochen.",cta_consult:"Kostenlose Kurzberatung",
-        sec_portfolio_title:"Beispiele & Prototypen",sec_portfolio_sub:"Live-Links folgen in Kürze.",btn_open_pdf:"PDF öffnen",
+        sec_portfolio_title:"Beispiele & Prototypen",sec_portfolio_sub:"Live-Links folgen in Kürze.",
         cap_peter:"Bäckerei Peter",cap_peter_sub:"Einfache Präsentationsseite mit transparenter Navigation.",
         cap_dmvideo:"D&M Enterprise Video",cap_dmvideo_sub:"Gebrandetes Intro-Video ohne Wasserzeichen.",
-        trust_title:"Warum man uns vertraut", trust_sub:"Drei kurze Vertrauensbeweise.",
-        trust1_t:"Dreisprachig (DE · EN · SR)", trust1_s:"Keine Wasserzeichen; Skripte/Untertitel in drei Sprachen.",
-        trust2_t:"Schnelle Lieferung", trust2_s:"Erster Entwurf in 3–5 Tagen, final in 2–4 Wochen (mit Feedback).",
-        trust3_t:"Video + Web = Ergebnis", trust3_s:"Kurzer Avatar-Clip + Landing → klarere Botschaft und mehr Anfragen.",
-        whatsapp_prefill:"Hallo! Ich möchte eine Kurzberatung.",
-        gold_title:"Goldschmiede – Persönliche Beratung",
-        gold_sub:"4C Erklärung + 3 Vorschläge. WhatsApp oder Termin in 1 Klick.",
-        zl_cap_4c:"4C in 30 Sek. – Glanz & Preis verständlich.",
-        zl_cap_style:"Welcher Stil? Solitaire, Halo oder Classic.",
+        cap_core:"Avatar IV",dv_c2_s:"Kurzes Intro zum Service / zur Landingpage.",
+        faq1_q:"Wie schnell liefern Sie?",faq1_a:"2–4 Wochen — abhängig von Zusammenarbeit und Freigaben.",
+        faq2_q:"Was benötigen Sie von uns?",faq2_a:"Logo, 5–8 Fotos und 3–4 Kernpunkte — den Rest erledigen wir.",
+        faq3_q:"Was kostet es ungefähr?",faq3_a:"Startpreis ab X €; das genaue Angebot senden wir nach unserer 24-Stunden-Einschätzung.",
+        contact_title:"Kontakt",rights:"Alle Rechte vorbehalten",
+        gold_title:"Goldschmiede – Persönliche Beratung",gold_sub:"4C Erklärung + 3 Vorschläge. WhatsApp oder Termin in 1 Klick.",
+        zl_cap_4c:"4C in 30 Sek. – Glanz & Preis verständlich.", zl_cap_style:"Welcher Stil? Solitaire, Halo oder Classic.",
         gold_whatsapp:"WhatsApp Beratung", gold_book:"Termin buchen",
-        opt_title:"Optik – Gläser & Fassungen in 30s",
-        opt_sub:"Entspiegelung, Blaulicht, Dünnung + 2–3 Fassungs-Empfehlungen.",
-        opt_whatsapp:"WhatsApp / Anprobe", opt_book:"Termin buchen",
         testi_title:"Was Kunden sagen", testi_sub:"Kurz und konkret.",
         testi_1_q:"„In 10 Tagen live. Klare Kommunikation, saubere Umsetzung.“", testi_1_a:"Anna K., Optik Müller",
         testi_2_q:"„Das Avatar-Video hat unsere Anfragen im ersten Monat verdoppelt.“", testi_2_a:"M. Petrović, Goldschmiede Nova",
         testi_3_q:"„Drei Sprachen, ein Ansprechpartner. Stressfrei.“", testi_3_a:"Peter L., Bäckerei Lenz",
-        faq_title:"FAQ",faq1_q:"Wie schnell liefern Sie?",faq1_a:"2–4 Wochen — abhängig von Zusammenarbeit und Freigaben.",
-        faq2_q:"Was benötigen Sie von uns?",faq2_a:"Logo, 5–8 Fotos und 3–4 Kernpunkte — den Rest erledigen wir.",
-        faq3_q:"Was kostet es ungefähr?",faq3_a:"Startpreis ab X €; das genaue Angebot senden wir nach unserer 24-Stunden-Einschätzung.",
-        contact_title:"Kontakt",rights:"Alle Rechte vorbehalten"
-      },
+        faq_title:"FAQ"},
+
       sr:{nav_services:"Usluge",nav_packages:"Paketi",nav_portfolio:"Portfolio",nav_contact:"Kontakt",
         cta_top:"Zatraži ponudu",badge_stack:"Digitalni dizajn • Video • Web",
         hero_title:"Jednostavno — pravimo da vas pamte.",
@@ -478,47 +421,40 @@
                p2:["Višestrana + portfolio","Kratak video (do 30 s)","Priprema oglasa + 10 hashtagova"],
                p3:["Prilagođen dizajn & animacije","2 video oglasa (do 45 s)","Kampanja 30 dana + izveštaj"]},
         claim_title:"Više kupaca za vašu pekaru",claim_sub:"Jasna landing stranica + 30-sekundni video, spremno za 2–4 nedelje.",cta_consult:"Besplatno brzo savetovanje",
-        sec_portfolio_title:"Primeri i prototipi",sec_portfolio_sub:"Linkovi uživo uskoro.",btn_open_pdf:"Otvori PDF",
+        sec_portfolio_title:"Primeri i prototipi",sec_portfolio_sub:"Linkovi uživo uskoro.",
         cap_peter:"Pekar Peter",cap_peter_sub:"Jednostavan sajt sa transparentnim menijem.",
         cap_dmvideo:"D&M intro video",cap_dmvideo_sub:"Brendirani uvodni video bez vodenog žiga.",
-        trust_title:"Zašto nama veruju", trust_sub:"Tri kratka dokaza poverenja.",
-        trust1_t:"Trojezično (DE · EN · SR)", trust1_s:"Bez vodenih žigova; skripte/titlovi na tri jezika.",
-        trust2_t:"Brza isporuka", trust2_s:"Prvi nacrt za 3–5 dana, final za 2–4 nedelje (uz povratne).",
-        trust3_t:"Video + web = rezultat", trust3_s:"Kratak avatar + landing → jasna poruka i više upita.",
-        whatsapp_prefill:"Zdravo! Želim brzu konsultaciju.",
-        gold_title:"Zlatar – lična pomoć",
-        gold_sub:"4C objašnjenje + 3 predloga. WhatsApp ili termin u 1 kliku.",
-        zl_cap_4c:"4C za 30 sek — jasno & kratko.",
-        zl_cap_style:"Koji stil: Solitaire, Halo ili Classic?",
+        cap_core:"Avatar IV",dv_c2_s:"Kratak uvod u uslugu / landing stranicu.",
+        faq1_q:"Koliko brzo isporučujete?",faq1_a:"2–4 nedelje — u zavisnosti od saradnje i odobrenja.",
+        faq2_q:"Šta je potrebno sa vaše strane?",faq2_a:"Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.",
+        faq3_q:"Koliko okvirno košta?",faq3_a:"Početna cena od X €; tačnu procenu šaljemo nakon naše 24-časovne procene.",
+        contact_title:"Kontakt",rights:"Sva prava zadržana",
+        gold_title:"Zlatar – lična pomoć",gold_sub:"4C objašnjenje + 3 predloga. WhatsApp ili termin u 1 kliku.",
+        zl_cap_4c:"4C za 30 sek — jasno & kratko.", zl_cap_style:"Koji stil: Solitaire, Halo ili Classic?",
         gold_whatsapp:"WhatsApp Savet", gold_book:"Zakaži termin",
-        opt_title:"Optika – Stakla & Ramovi za 30s",
-        opt_sub:"AR, plavo svetlo, stanjenje + 2–3 predloga ramova.",
-        opt_whatsapp:"WhatsApp / Proba", opt_book:"Zakaži termin",
         testi_title:"Šta klijenti kažu", testi_sub:"Kratko i konkretno.",
         testi_1_q:"„Za 10 dana sve je bilo onlajn. Jasna komunikacija, čista realizacija.”", testi_1_a:"Anna K., Optik Müller",
         testi_2_q:"„Avatar video nam je duplirao upite u prvom mesecu.”", testi_2_a:"M. Petrović, Goldschmiede Nova",
         testi_3_q:"„Tri jezika, jedan kontakt. Bez stresa.”", testi_3_a:"Peter L., Bäckerei Lenz",
-        faq_title:"Česta pitanja",faq1_q:"Koliko brzo isporučujete?",faq1_a:"2–4 nedelje — u zavisnosti od saradnje i odobrenja.",
-        faq2_q:"Šta je potrebno sa vaše strane?",faq2_a:"Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.",
-        faq3_q:"Koliko okvirno košta?",faq3_a:"Početna cena od X €; tačnu procenu šaljemo nakon naše 24-časovne procene.",
-        contact_title:"Kontakt",rights:"Sva prava zadržana"
-      }
+        faq_title:"Česta pitanja"}
     };
 
-    // HERO video fajlovi iz /public (sa space encodingom)
-    const HERO = { de: "/Avatar%20de.mp4", en: "/Avatar%20eng.mp4", sr: "/Avatar%20srb.mp4" };
+    /* HERO video mape (cache-buster ?v=1) */
+    const HERO = {
+      de: "/avatar-de.mp4?v=1",
+      en: "/avatar-eng.mp4?v=1",
+      sr: "/avatar-srb.mp4?v=1"
+    };
 
     function setLang(lang){
       lang=(lang||'sr').toLowerCase();
       if(lang.startsWith('de')) lang='de'; else if(lang.startsWith('en')) lang='en'; else lang='sr';
       const D=T[lang]; document.documentElement.lang=lang;
 
-      // i18n text
       document.querySelectorAll('[data-i18n]').forEach(el=>{
         const k=el.getAttribute('data-i18n'); if(D[k]) el.textContent=D[k];
       });
 
-      // service cards
       const cards = Array.from(document.querySelectorAll('#serviceCards .card'));
       for(let i=0;i<cards.length&&i<3;i++){
         const [chip,title,desc]=D.cards[i];
@@ -527,26 +463,18 @@
         cards[i].querySelector('.sub').textContent=desc;
       }
 
-      // lists
-      const fill=(id,arr)=>{const ul=document.getElementById(id); if(ul){ ul.innerHTML=arr.map(x=>`<li>${x}</li>`).join(''); }};
+      const fill=(id,arr)=>{const ul=document.getElementById(id); ul.innerHTML=arr.map(x=>`<li>${x}</li>`).join('');};
       fill('p1_list',D.lists.p1); fill('p2_list',D.lists.p2); fill('p3_list',D.lists.p3);
 
-      // hero video src
       const hv=document.getElementById('heroVideo'), s=hv.querySelector('source'), url=HERO[lang]||HERO.sr;
       if(s.getAttribute('src')!==url){ try{hv.pause();}catch(e){} s.src=url; hv.load(); }
 
-      // WhatsApp prefill
-      const num = "381606890072"; // bez plusa
-      const enc = s => encodeURIComponent(s || "");
-      document.querySelectorAll('a[data-wa="fab"]').forEach(a=>{
-        a.href = `https://wa.me/${num}?text=${enc(D.whatsapp_prefill)}`;
-      });
-      document.querySelectorAll('a[data-wa="gold"]').forEach(a=>{
-        a.href = `https://wa.me/${num}?text=${enc(D.gold_prefill||D.whatsapp_prefill||"")}`;
-      });
-      document.querySelectorAll('a[data-wa="optik"]').forEach(a=>{
-        a.href = `https://wa.me/${num}?text=${enc(D.opt_prefill||D.whatsapp_prefill||"")}`;
-      });
+      // WhatsApp poruke po jeziku
+      const num = "381606890072";
+      const enc = t => encodeURIComponent(t||"");
+      const waText = (D.whatsapp_prefill || "Hi! I'd like a quick consultation.");
+      document.querySelectorAll('a[data-wa="fab"]').forEach(a=>{ a.href=`https://wa.me/${num}?text=${enc(waText)}`; });
+      document.querySelectorAll('a[data-wa="gold"]').forEach(a=>{ a.href=`https://wa.me/${num}?text=${enc(D.gold_prefill||waText)}`; });
 
       document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',(b.dataset.setlang||'')===lang));
       try{localStorage.setItem('lang',lang);}catch(e){}
