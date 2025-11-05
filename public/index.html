@@ -176,6 +176,19 @@
     </div>
   </section>
 
+  <!-- Optika (Glaeser) -->
+  <section id="optika">
+    <h2>Optika — kratki demo</h2>
+    <p class="sub">AVATAR_Glaeser — intro klip za optiku.</p>
+    <div class="cards">
+      <article class="card" style="grid-column: span 3;">
+        <video playsinline class="vid" controls preload="metadata" poster="/optika/poster-glaeser.jpg">
+          <source src="/optika/optikaAVATAR_Glaeser.mp4?v=20251105" type="video/mp4"/>
+        </video>
+      </article>
+    </div>
+  </section>
+
   <!-- Zlatar -->
   <section id="goldschmiede" class="zl-sec">
     <div class="zl-wrap">
@@ -227,113 +240,10 @@
 </a>
 
 <script>
-  // ————— I18N minimal —————
-  var T={
-    en:{nav_services:"Services",nav_packages:"Packages",nav_portfolio:"Portfolio",nav_contact:"Contact",
-      cta_top:"Request a quote",badge_stack:"Digital design • Video • Web",
-      hero_title:"Simple — so people remember you.",
-      hero_sub:"Websites, short video ads and smart marketing in German, Serbian and English.",
-      cta_portfolio:"View portfolio",cta_services:"Services",
-      note_menu:"Transparent nav is always on; semi-transparent on scroll on request.",
-      note_video:"Language also selects the video version; sound is on.",
-      services_title:"What we do (focused on results)",services_sub:"Three pillars that deliver fast impact.",
-      sec_products_title:"Packages (Start — Pro — Premium)",sec_products_sub:"Fixed prices by module, clear scope.",
-      sec_portfolio_title:"Examples & prototypes",sec_portfolio_sub:"Live links coming soon.",
-      cap_dmvideo:"D&M Enterprise video",cap_dmvideo_sub:"Branded intro video without watermark.",
-      cap_peter:"Peter’s Bakery",cap_peter_sub:"Simple presentation site with transparent menu.",
-      gold_title:"Jewelry — Personal Advice",gold_sub:"4C explained + 3 suggestions. WhatsApp or 1-click appointment.",
-      zl_cap_4c:"4C in 30s — clarity & price made simple.",zl_cap_style:"Which style? Solitaire, Halo or Classic?",
-      contact_title:"Contact",rights:"All rights reserved"},
-    de:{nav_services:"Leistungen",nav_packages:"Pakete",nav_portfolio:"Portfolio",nav_contact:"Kontakt",
-      cta_top:"Angebot anfragen",badge_stack:"Digitales Design • Video • Web",
-      hero_title:"Einfach – damit man sich an Sie erinnert.",
-      hero_sub:"Websites, kurze Videoanzeigen und smartes Marketing auf Deutsch, Serbisch und Englisch.",
-      cta_portfolio:"Portfolio ansehen",cta_services:"Leistungen",
-      note_menu:"Transparente Navigation ist immer sichtbar. Halbtransparent beim Scrollen gern auf Wunsch.",
-      note_video:"Mit der Sprache wählen Sie die Videoversion; Ton ist aktiv.",
-      services_title:"Was wir machen (mit Fokus auf Ergebnisse)",services_sub:"Drei Module, die schnell Wirkung zeigen.",
-      sec_products_title:"Pakete (Start — Pro — Premium)",sec_products_sub:"Festpreise pro Modul – klarer Umfang.",
-      sec_portfolio_title:"Beispiele & Prototypen",sec_portfolio_sub:"Live-Links folgen in Kürze.",
-      cap_dmvideo:"D&M Enterprise Video",cap_dmvideo_sub:"Gebrandetes Intro-Video ohne Wasserzeichen.",
-      cap_peter:"Bäckerei Peter",cap_peter_sub:"Einfache Präsentationsseite mit transparenter Navigation.",
-      gold_title:"Goldschmiede – persönliche Beratung",gold_sub:"4C erklärt + 3 Vorschläge. WhatsApp oder Termin mit 1 Klick.",
-      zl_cap_4c:"4C in 30 Sek. — klar & kurz.",zl_cap_style:"Welcher Stil: Solitaire, Halo oder Classic?",
-      contact_title:"Kontakt",rights:"Alle Rechte vorbehalten"},
-    sr:{nav_services:"Usluge",nav_packages:"Paketi",nav_portfolio:"Portfolio",nav_contact:"Kontakt",
-      cta_top:"Zatraži ponudu",badge_stack:"Digitalni dizajn • Video • Web",
-      hero_title:"Jednostavno — pravimo da vas pamte.",
-      hero_sub:"Web stranice, kratke video reklame i pametan marketing na nemačkom, srpskom i engleskom.",
-      cta_portfolio:"Pogledaj portfolio",cta_services:"Usluge",
-      note_menu:"Transparentan meni je stalno uključen; poluprovidan na skrol po želji.",
-      note_video:"Jezik menja verziju videa; zvuk je uključen.",
-      services_title:"Šta radimo (sa fokusom na rezultate)",services_sub:"Tri stuba ponude koji najbrže donose efekat.",
-      sec_products_title:"Primeri i prototipi",sec_portfolio_sub:"Linkovi uživo uskoro.",
-      cap_dmvideo:"D&M intro video",cap_dmvideo_sub:"Brendirani uvodni video bez vodenog žiga.",
-      cap_peter:"Pekar Peter",cap_peter_sub:"Jednostavan sajt sa transparentnim menijem.",
-      gold_title:"Zlatar – lična pomoć",gold_sub:"4C objašnjenje + 3 predloga. WhatsApp ili termin u 1 kliku.",
-      zl_cap_4c:"4C za 30 sek — jasno & kratko.",zl_cap_style:"Koji stil: Solitaire, Halo ili Classic?",
-      contact_title:"Kontakt",rights:"Sva prava zadržana"}
-  };
-
-  // ——— Jezik & HERO video ———
+  // ————— Jezik & HERO video —————
   var HERO={"/avatar-de.mp4":"de","/avatar-eng.mp4":"en","/avatar-srb.mp4":"sr"}; // mape radi kontrole
   var HERO_SRC={de:"/avatar-de.mp4",en:"/avatar-eng.mp4",sr:"/avatar-srb.mp4"};
   var VERSION="20251105";
 
   function qs(name){
-    var m=location.search.match(new RegExp('[?&]'+name+'=([^&]+)')); return m?decodeURIComponent(m[1]):null;
-  }
-  function normalizeLang(x){
-    if(!x) return "sr";
-    x=x.toLowerCase();
-    if(x.indexOf("de")===0) return "de";
-    if(x.indexOf("en")===0) return "en";
-    return "sr";
-  }
-  function applyI18n(lang){
-    var D=T[lang]||T.sr;
-    var nodes=document.querySelectorAll("[data-i18n]");
-    for(var i=0;i<nodes.length;i++){
-      var k=nodes[i].getAttribute("data-i18n");
-      if(D[k]) nodes[i].textContent=D[k];
-    }
-    var btns=document.querySelectorAll(".lang button");
-    for(var j=0;j<btns.length;j++){
-      btns[j].classList.toggle("active",(btns[j].getAttribute("data-setlang")===lang));
-    }
-  }
-  function setHero(lang){
-    var hv=document.getElementById("heroVideo");
-    var s=document.getElementById("heroSrc");
-    var url=(HERO_SRC[lang]||HERO_SRC.sr)+"?v="+VERSION;
-    if(s.getAttribute("src")!==url){
-      try{hv.pause();}catch(e){}
-      s.setAttribute("src",url);
-      hv.load();
-    }
-  }
-  function setLangAll(lang){
-    lang=normalizeLang(lang);
-    applyI18n(lang);
-    setHero(lang);
-    try{ localStorage.setItem("lang",lang); }catch(e){}
-    document.documentElement.lang=lang;
-  }
-
-  // init: iz URL-a > iz LS > iz <html>
-  (function(){
-    var L=normalizeLang(qs("lang") || (function(){try{return localStorage.getItem("lang");}catch(e){return null;}})() || document.documentElement.lang);
-    setLangAll(L);
-  })();
-
-  // klik na jezik
-  document.addEventListener("click",function(e){
-    var b=e.target.closest ? e.target.closest("[data-setlang]") : null;
-    if(!b) return;
-    var L=b.getAttribute("data-setlang");
-    history.replaceState(null,"",location.pathname+"?lang="+L); // da uvek imamo jasan parametar
-    setLangAll(L);
-  });
-</script>
-</body>
-</html>
+    var m=location.search.match(new RegExp('[?&]'+name+'=([^&]+)
