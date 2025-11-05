@@ -6,6 +6,8 @@
   <title>D&M Digital</title>
   <meta name="description" content="Web, video i marketing — DE/SR/EN." />
 
+  <!-- build v2025-11-05-01 -->
+
   <!-- Share preview -->
   <meta property="og:title" content="D&M Digital — Video & Web (DE/SR/EN)">
   <meta property="og:description" content="Kratki video-avatari + landing stranice. Brzo, jasno, trojezično.">
@@ -13,23 +15,21 @@
   <meta property="og:type" content="website">
 
   <style>
-    :root{
-      --bg:#0e1116;--card:#151a22;--line:rgba(255,255,255,.08);
-      --muted:#9aa7b6;--text:#e7eef7;--brand1:#62e0c6;--brand2:#9fa8fe;
-    }
+    :root{--bg:#0e1116;--card:#151a22;--line:rgba(255,255,255,.08);
+      --muted:#9aa7b6;--text:#e7eef7;--brand1:#62e0c6;--brand2:#9fa8fe;}
     *{box-sizing:border-box}
     html,body{margin:0;height:100%;background:var(--bg);color:var(--text);
       font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
     img,video{max-width:100%;height:auto;display:block}
     html{scroll-behavior:smooth}
-    section{padding:44px 0; scroll-margin-top:90px;}
+    section{padding:44px 0;scroll-margin-top:90px}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1180px;margin:0 auto;padding:20px}
     header{position:sticky;top:0;background:rgba(14,17,22,.72);
       backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line);z-index:10}
     .nav{display:flex;align-items:center;gap:24px;padding:12px 0;flex-wrap:wrap}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-    .nav a{opacity:.9} .nav a:hover{opacity:1}
+    .nav a{opacity:.9}.nav a:hover{opacity:1}
     .spacer{flex:1}
     .btn{display:inline-block;min-height:44px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);
       background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;font-weight:700;cursor:pointer}
@@ -43,7 +43,7 @@
     .lead{color:var(--muted);max-width:720px}
     .row{display:flex;gap:12px;margin-top:18px}
     .note{margin-top:14px;background:#0d131a;border:1px solid var(--line);padding:12px 16px;border-radius:14px;color:#c7d0dc}
-    video.vid{width:100%;aspect-ratio:16/9;height:auto;background:#0a0f14;border:1px solid var(--line);border-radius:18px;display:block;object-fit:cover}
+    video.vid{width:100%;aspect-ratio:16/9;height:auto;background:#0a0f14;border:1px solid var(--line);border-radius:18px;object-fit:cover}
     .grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
@@ -55,11 +55,11 @@
     .btn-grad{border:none;background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;font-weight:700}
     footer{padding:30px 0;border-top:1px solid var(--line);color:#aeb9c8}
     footer .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
-    footer .center a{color:#c3ccd7;opacity:.9} footer .center a:hover{opacity:1}
+    footer .center a{color:#c3ccd7;opacity:.9}footer .center a:hover{opacity:1}
     footer .right{text-align:right}
     @media (max-width:768px){
       .row{justify-content:center;flex-wrap:wrap}
-      .grid-2{grid-template-columns:1fr; text-align:center}
+      .grid-2{grid-template-columns:1fr;text-align:center}
       .wrap{padding:16px}
       .nav{gap:12px}
       .cards{gap:14px}
@@ -70,7 +70,6 @@
       footer .wrap{grid-template-columns:1fr;text-align:center}
       footer .right{text-align:center}
     }
-
     /* Zlatar */
     .zl-sec{padding:44px 0;background:#0b0f14}
     .zl-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
@@ -80,16 +79,11 @@
     .zl-ctas{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
     .zl-btn{padding:10px 16px;border-radius:999px;border:1px solid var(--line);text-decoration:none}
     .zl-btn.primary{background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;border-color:transparent;font-weight:700}
-
     /* WhatsApp FAB */
-    .wa-fab{
-      position:fixed; right:16px; bottom:16px; z-index:50;
-      width:56px; height:56px; display:grid; place-items:center;
-      border-radius:999px; color:#0b0b0b; background:#22c55e;
-      border:1px solid rgba(255,255,255,.15); box-shadow:0 12px 28px rgba(0,0,0,.35)
-    }
+    .wa-fab{position:fixed;right:16px;bottom:16px;z-index:50;width:56px;height:56px;display:grid;place-items:center;
+      border-radius:999px;color:#0b0b0b;background:#22c55e;border:1px solid rgba(255,255,255,.15);box-shadow:0 12px 28px rgba(0,0,0,.35)}
     .wa-fab:hover{filter:brightness(1.05)}
-    @media (min-width: 980px){ .wa-fab{bottom:22px; right:22px} }
+    @media (min-width:980px){.wa-fab{bottom:22px;right:22px}}
   </style>
 </head>
 <body>
@@ -163,7 +157,6 @@
     <section id="products">
       <h2 data-i18n="sec_products_title">Packages (Start — Pro — Premium)</h2>
       <p class="sub" data-i18n="sec_products_sub">Fixed prices by module, clear scope.</p>
-
       <div class="cards">
         <article class="card">
           <h3 data-i18n="p1_title">START package</h3>
@@ -209,7 +202,7 @@
           <h3 data-i18n="cap_dmvideo">D&M Enterprise video</h3>
           <p class="sub" data-i18n="cap_dmvideo_sub">Branded intro video without watermark.</p>
           <video playsinline class="vid" controls preload="metadata">
-            <source src="/sandra-enterprise.mp4" type="video/mp4"/>
+            <source src="/sandra-enterprise.mp4?v=20251105" type="video/mp4"/>
           </video>
         </article>
 
@@ -217,7 +210,7 @@
           <h3 data-i18n="cap_peter">Peter’s Bakery</h3>
           <p class="sub" data-i18n="cap_peter_sub">Simple presentation site with transparent menu.</p>
           <video playsinline class="vid" controls preload="metadata">
-            <source src="/peters-baeckerei.mp4" type="video/mp4"/>
+            <source src="/peters-baeckerei.mp4?v=20251105" type="video/mp4"/>
           </video>
         </article>
 
@@ -225,7 +218,7 @@
           <h3>Avatar IV</h3>
           <p class="sub">Short intro to the service / landing page.</p>
           <video playsinline class="vid" controls preload="metadata">
-            <source src="/avatar-iv.mp4" type="video/mp4"/>
+            <source src="/avatar-iv.mp4?v=20251105" type="video/mp4"/>
           </video>
         </article>
       </div>
@@ -242,14 +235,14 @@
         <div class="zl-grid">
           <figure class="zl-card">
             <video playsinline controls preload="metadata" poster="/zlatar/poster-4C.jpg">
-              <source src="/zlatar/zlatarAVATAR_4C.mp4" type="video/mp4" />
+              <source src="/zlatar/zlatarAVATAR_4C.mp4?v=20251105" type="video/mp4" />
             </video>
             <figcaption data-i18n="zl_cap_4c">4C za 30 sek — jasno & kratko.</figcaption>
           </figure>
 
           <figure class="zl-card">
-            <video playsinline controls preload="metadata" poster="/zlatar/poster-ringwahl.jpg">
-              <source src="/zlatar/zlatarAVATAR_Ringwahl.mp4" type="video/mp4" />
+            <video playsinline controls preload="metadata" poster="/zlatar/poster-4C.jpg">
+              <source src="/zlatar/zlatarAVATAR_Ringwahl.mp4?v=20251105" type="video/mp4" />
             </video>
             <figcaption data-i18n="zl_cap_style">Koji stil: Solitaire, Halo ili Classic?</figcaption>
           </figure>
@@ -419,8 +412,12 @@
         contact_title:"Kontakt",rights:"Sva prava zadržana"}
     };
 
-    /* Lokalni video fajlovi iz /public */
-    const HERO = { de:"/avatar-de.mp4", en:"/avatar-eng.mp4", sr:"/avatar-srb.mp4" };
+    /* Lokalni hero video fajlovi (sa cache-busting parametrom) */
+    const HERO = {
+      de: "/avatar-de.mp4?v=20251105",
+      en: "/avatar-eng.mp4?v=20251105",
+      sr: "/avatar-srb.mp4?v=20251105"
+    };
 
     function setLang(lang){
       lang=(lang||'sr').toLowerCase();
@@ -449,7 +446,7 @@
       const hv=document.getElementById('heroVideo'), s=hv?.querySelector('source'), url=HERO[lang]||HERO.sr;
       if(s && s.getAttribute('src')!==url){ try{hv.pause();}catch{} s.src=url; hv.load(); }
 
-      // WhatsApp tekst po jeziku (ako postoji u T)
+      // WhatsApp prefill tekst
       const num="381606890072", enc=t=>encodeURIComponent(t||"");
       const wa=D?.whatsapp_prefill||"Hi! I'd like a quick consultation.";
       document.querySelectorAll('a[data-wa="fab"]').forEach(a=>a.href=`https://wa.me/${num}?text=${enc(wa)}`);
@@ -464,6 +461,7 @@
       setLang(b.dataset.setlang);
     });
 
+    // inicijalni jezik
     setLang(localStorage.getItem('lang')||document.documentElement.lang||'sr');
   </script>
 </body>
