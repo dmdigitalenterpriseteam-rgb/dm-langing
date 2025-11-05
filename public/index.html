@@ -6,8 +6,6 @@
   <title>D&M Digital</title>
   <meta name="description" content="Web, video i marketing — DE/SR/EN." />
 
-  <!-- build v2025-11-05-01 -->
-
   <!-- Share preview -->
   <meta property="og:title" content="D&M Digital — Video & Web (DE/SR/EN)">
   <meta property="og:description" content="Kratki video-avatari + landing stranice. Brzo, jasno, trojezično.">
@@ -15,75 +13,36 @@
   <meta property="og:type" content="website">
 
   <style>
-    :root{--bg:#0e1116;--card:#151a22;--line:rgba(255,255,255,.08);
-      --muted:#9aa7b6;--text:#e7eef7;--brand1:#62e0c6;--brand2:#9fa8fe;}
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);
-      font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-    img,video{max-width:100%;height:auto;display:block}
-    html{scroll-behavior:smooth}
-    section{padding:44px 0;scroll-margin-top:90px}
-    a{color:inherit;text-decoration:none}
+    :root{--bg:#0e1116;--card:#151a22;--line:rgba(255,255,255,.08);--muted:#9aa7b6;--text:#e7eef7;--brand1:#62e0c6;--brand2:#9fa8fe;}
+    *{box-sizing:border-box} html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+    img,video{max-width:100%;height:auto;display:block} html{scroll-behavior:smooth}
+    section{padding:44px 0;scroll-margin-top:90px} a{color:inherit;text-decoration:none}
     .wrap{max-width:1180px;margin:0 auto;padding:20px}
-    header{position:sticky;top:0;background:rgba(14,17,22,.72);
-      backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line);z-index:10}
-    .nav{display:flex;align-items:center;gap:24px;padding:12px 0;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-    .nav a{opacity:.9}.nav a:hover{opacity:1}
-    .spacer{flex:1}
-    .btn{display:inline-block;min-height:44px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);
+    header{position:sticky;top:0;background:rgba(14,17,22,.72);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line);z-index:10}
+    .nav{display:flex;align-items:center;gap:24px;padding:12px 0;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .spacer{flex:1}.btn{display:inline-block;min-height:44px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);
       background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;font-weight:700;cursor:pointer}
-    .ghost{background:transparent;color:var(--text)}
-    .lang button{padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:#0f141b;color:#fff;cursor:pointer}
+    .ghost{background:transparent;color:var(--text)} .lang button{padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:#0f141b;color:#fff;cursor:pointer}
     .lang button.active{background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;border-color:transparent;font-weight:800}
     .badge{display:inline-block;background:#0d131a;border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:#c3ccd7;font-size:13px}
-    h1{font-size:clamp(1.6rem,4.8vw,3.2rem);line-height:1.12;margin:12px 0 8px}
-    h2{font-size:clamp(1.25rem,3.8vw,2.125rem);margin:0 0 8px}
-    .sub{color:var(--muted);margin:0 0 20px}
-    .lead{color:var(--muted);max-width:720px}
-    .row{display:flex;gap:12px;margin-top:18px}
+    h1{font-size:clamp(1.6rem,4.8vw,3.2rem);line-height:1.12;margin:12px 0 8px} h2{font-size:clamp(1.25rem,3.8vw,2.125rem);margin:0 0 8px}
+    .sub{color:var(--muted);margin:0 0 20px}.lead{color:var(--muted);max-width:720px}.row{display:flex;gap:12px;margin-top:18px}
     .note{margin-top:14px;background:#0d131a;border:1px solid var(--line);padding:12px 16px;border-radius:14px;color:#c7d0dc}
-    video.vid{width:100%;aspect-ratio:16/9;height:auto;background:#0a0f14;border:1px solid var(--line);border-radius:18px;object-fit:cover}
+    video.vid{width:100%;aspect-ratio:16/9;background:#0a0f14;border:1px solid var(--line);border-radius:18px;object-fit:cover}
     .grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
-    .card h3{margin:10px 0 8px}
-    .list{color:#cfd8e3;margin:0;padding-left:18px}
-    .list li{margin:6px 0}
-    .stack{display:flex;gap:12px;flex-wrap:wrap}
-    .btn-min{padding:8px 12px;border-radius:999px;border:1px solid var(--line);color:#e7eef7;background:#0f141b}
-    .btn-grad{border:none;background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;font-weight:700}
-    footer{padding:30px 0;border-top:1px solid var(--line);color:#aeb9c8}
-    footer .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
-    footer .center a{color:#c3ccd7;opacity:.9}footer .center a:hover{opacity:1}
-    footer .right{text-align:right}
-    @media (max-width:768px){
-      .row{justify-content:center;flex-wrap:wrap}
-      .grid-2{grid-template-columns:1fr;text-align:center}
-      .wrap{padding:16px}
-      .nav{gap:12px}
-      .cards{gap:14px}
-    }
-    @media (max-width:980px){
-      .grid-2{grid-template-columns:1fr}
-      .cards{grid-template-columns:1fr}
-      footer .wrap{grid-template-columns:1fr;text-align:center}
-      footer .right{text-align:center}
-    }
-    /* Zlatar */
-    .zl-sec{padding:44px 0;background:#0b0f14}
-    .zl-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-    .zl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .zl-card video{width:100%;border-radius:16px;border:1px solid var(--line);background:#0a0f14;box-shadow:0 10px 26px rgba(0,0,0,.35)}
-    .zl-card figcaption{font-size:14px;opacity:.85;margin-top:8px}
-    .zl-ctas{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
-    .zl-btn{padding:10px 16px;border-radius:999px;border:1px solid var(--line);text-decoration:none}
-    .zl-btn.primary{background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;border-color:transparent;font-weight:700}
-    /* WhatsApp FAB */
-    .wa-fab{position:fixed;right:16px;bottom:16px;z-index:50;width:56px;height:56px;display:grid;place-items:center;
-      border-radius:999px;color:#0b0b0b;background:#22c55e;border:1px solid rgba(255,255,255,.15);box-shadow:0 12px 28px rgba(0,0,0,.35)}
-    .wa-fab:hover{filter:brightness(1.05)}
-    @media (min-width:980px){.wa-fab{bottom:22px;right:22px}}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
+    .card h3{margin:10px 0 8px}.list{color:#cfd8e3;margin:0;padding-left:18px}.list li{margin:6px 0}.stack{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-min{padding:8px 12px;border-radius:999px;border:1px solid var(--line);color:#e7eef7;background:#0f141b}.btn-grad{border:none;background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;font-weight:700}
+    footer{padding:30px 0;border-top:1px solid var(--line);color:#aeb9c8} footer .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+    footer .center a{color:#c3ccd7;opacity:.9} footer .center a:hover{opacity:1} footer .right{text-align:right}
+    @media (max-width:768px){.row{justify-content:center;flex-wrap:wrap}.grid-2{grid-template-columns:1fr;text-align:center}.wrap{padding:16px}.cards{gap:14px}}
+    @media (max-width:980px){.grid-2{grid-template-columns:1fr}.cards{grid-template-columns:1fr}footer .wrap{grid-template-columns:1fr;text-align:center}footer .right{text-align:center}}
+    .zl-sec{padding:44px 0;background:#0b0f14}.zl-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+    .zl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.zl-card video{width:100%;border-radius:16px;border:1px solid var(--line);background:#0a0f14;box-shadow:0 10px 26px rgba(0,0,0,.35)}
+    .zl-card figcaption{font-size:14px;opacity:.85;margin-top:8px}.zl-ctas{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
+    .zl-btn{padding:10px 16px;border-radius:999px;border:1px solid var(--line);text-decoration:none}.zl-btn.primary{background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;border-color:transparent;font-weight:700}
+    .wa-fab{position:fixed;right:16px;bottom:16px;z-index:50;width:56px;height:56px;display:grid;place-items:center;border-radius:999px;color:#0b0b0b;background:#22c55e;border:1px solid rgba(255,255,255,.15);box-shadow:0 12px 28px rgba(0,0,0,.35)}
+    .wa-fab:hover{filter:brightness(1.05)} @media (min-width:980px){.wa-fab{bottom:22px;right:22px}}
   </style>
 </head>
 <body>
@@ -110,7 +69,6 @@
   </header>
 
   <main class="wrap">
-    <!-- HERO -->
     <section class="grid-2" id="hero">
       <div>
         <span class="badge" data-i18n="badge_stack">Digital design • Video • Web</span>
@@ -123,89 +81,50 @@
         <p class="note" data-i18n="note_menu">Transparent nav is always on; semi-transparent on scroll on request.</p>
       </div>
       <div>
-        <video playsinline id="heroVideo" class="vid" controls preload="metadata" aria-label="Hero video" poster="/hero-robot.png">
+        <video playsinline id="heroVideo" class="vid" controls preload="metadata" poster="/hero-robot.png">
           <source src="" type="video/mp4"/>
         </video>
         <p class="note" data-i18n="note_video">Language also selects the video version; sound is on.</p>
       </div>
     </section>
 
-    <!-- Services -->
     <section id="services">
       <h2 data-i18n="services_title">What we do (focused on results)</h2>
       <p class="sub" data-i18n="services_sub">Three pillars that deliver fast impact.</p>
       <div class="cards" id="serviceCards">
-        <article class="card">
-          <span class="badge chip">Web</span>
-          <h3>Fast, modern websites</h3>
-          <p class="sub">Landing pages, presentations, contact forms with conversion tracking.</p>
-        </article>
-        <article class="card">
-          <span class="badge chip">Video</span>
-          <h3>Short video ads</h3>
-          <p class="sub">15–45s formats, subtitles in DE/SR/EN, optimized for social media.</p>
-        </article>
-        <article class="card">
-          <span class="badge chip">Marketing</span>
-          <h3>Campaigns & ads</h3>
-          <p class="sub">Facebook/Instagram/Google, content calendar, hashtags & CTA messages.</p>
-        </article>
+        <article class="card"><span class="badge chip">Web</span><h3>Fast, modern websites</h3><p class="sub">Landing pages, presentations, contact forms with conversion tracking.</p></article>
+        <article class="card"><span class="badge chip">Video</span><h3>Short video ads</h3><p class="sub">15–45s formats, subtitles in DE/SR/EN, optimized for social media.</p></article>
+        <article class="card"><span class="badge chip">Marketing</span><h3>Campaigns & ads</h3><p class="sub">Facebook/Instagram/Google, content calendar, hashtags & CTA messages.</p></article>
       </div>
     </section>
 
-    <!-- Packages -->
     <section id="products">
       <h2 data-i18n="sec_products_title">Packages (Start — Pro — Premium)</h2>
       <p class="sub" data-i18n="sec_products_sub">Fixed prices by module, clear scope.</p>
       <div class="cards">
-        <article class="card">
-          <h3 data-i18n="p1_title">START package</h3>
-          <ul class="list" id="p1_list">
-            <li>One-pager (up to 5 sections)</li>
-            <li>Contact (mailto)</li>
-            <li>Basic SEO meta tags</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3 data-i18n="p2_title">PRO package</h3>
-          <ul class="list" id="p2_list">
-            <li>Multi-page + portfolio</li>
-            <li>Short video (up to 30s)</li>
-            <li>Ad prep + 10 hashtags</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3 data-i18n="p3_title">PREMIUM package</h3>
-          <ul class="list" id="p3_list">
-            <li>Custom design & animations</li>
-            <li>2 video ads (up to 45s)</li>
-            <li>30-day campaign + report</li>
-          </ul>
-        </article>
+        <article class="card"><h3 data-i18n="p1_title">START package</h3><ul class="list" id="p1_list"><li>One-pager (up to 5 sections)</li><li>Contact (mailto)</li><li>Basic SEO meta tags</li></ul></article>
+        <article class="card"><h3 data-i18n="p2_title">PRO package</h3><ul class="list" id="p2_list"><li>Multi-page + portfolio</li><li>Short video (up to 30s)</li><li>Ad prep + 10 hashtags</li></ul></article>
+        <article class="card"><h3 data-i18n="p3_title">PREMIUM package</h3><ul class="list" id="p3_list"><li>Custom design & animations</li><li>2 video ads (up to 45s)</li><li>30-day campaign + report</li></ul></article>
       </div>
     </section>
 
-    <!-- Claim -->
     <section id="claim">
       <h2 data-i18n="claim_title">More foot traffic for your bakery</h2>
       <p class="sub" data-i18n="claim_sub">Clear landing page + 30-second video, ready in 2–4 weeks.</p>
       <a class="btn btn-grad" href="#contact" role="button" data-i18n="cta_consult">Free quick consultation</a>
     </section>
 
-    <!-- Portfolio -->
     <section id="portfolio">
       <h2 data-i18n="sec_portfolio_title">Examples & prototypes</h2>
       <p class="sub" data-i18n="sec_portfolio_sub">Live links coming soon.</p>
-
       <div class="cards">
         <article class="card">
-          <h3 data-i18n="cap_dmvideo">D&M Enterprise video</h3>
-          <p class="sub" data-i18n="cap_dmvideo_sub">Branded intro video without watermark.</p>
+          <h3>Avatar intro</h3>
+          <p class="sub">Short branded intro without watermark.</p>
           <video playsinline class="vid" controls preload="metadata">
-            <source src="/sandra-enterprise.mp4?v=20251105" type="video/mp4"/>
+            <source src="/avatar-eng.mp4?v=20251105" type="video/mp4"/>
           </video>
         </article>
-
         <article class="card">
           <h3 data-i18n="cap_peter">Peter’s Bakery</h3>
           <p class="sub" data-i18n="cap_peter_sub">Simple presentation site with transparent menu.</p>
@@ -213,7 +132,6 @@
             <source src="/peters-baeckerei.mp4?v=20251105" type="video/mp4"/>
           </video>
         </article>
-
         <article class="card">
           <h3>Avatar IV</h3>
           <p class="sub">Short intro to the service / landing page.</p>
@@ -224,14 +142,12 @@
       </div>
     </section>
 
-    <!-- Zlatar -->
     <section id="goldschmiede" class="zl-sec">
       <div class="zl-wrap">
         <header class="zl-head">
           <h2 data-i18n="gold_title">Zlatar – lična pomoć</h2>
           <p class="sub" data-i18n="gold_sub">4C objašnjenje + 3 predloga. WhatsApp ili termin u 1 kliku.</p>
         </header>
-
         <div class="zl-grid">
           <figure class="zl-card">
             <video playsinline controls preload="metadata" poster="/zlatar/poster-4C.jpg">
@@ -239,7 +155,6 @@
             </video>
             <figcaption data-i18n="zl_cap_4c">4C za 30 sek — jasno & kratko.</figcaption>
           </figure>
-
           <figure class="zl-card">
             <video playsinline controls preload="metadata" poster="/zlatar/poster-4C.jpg">
               <source src="/zlatar/zlatarAVATAR_Ringwahl.mp4?v=20251105" type="video/mp4" />
@@ -247,7 +162,6 @@
             <figcaption data-i18n="zl_cap_style">Koji stil: Solitaire, Halo ili Classic?</figcaption>
           </figure>
         </div>
-
         <div class="zl-ctas">
           <a class="zl-btn primary" data-wa="gold" href="https://wa.me/381606890072" target="_blank" rel="noopener" data-i18n="gold_whatsapp">WhatsApp Savet</a>
           <a class="zl-btn" href="#contact" data-i18n="gold_book">Zakaži termin</a>
@@ -255,46 +169,25 @@
       </div>
     </section>
 
-    <!-- Trust -->
     <section id="trust">
       <h2 data-i18n="trust_title">Zašto nama veruju</h2>
       <p class="sub" data-i18n="trust_sub">Tri stvari koje najviše znače klijentu.</p>
       <div class="cards">
-        <article class="card">
-          <h3 data-i18n="trust1_t">Trojezično (DE · EN · SR)</h3>
-          <p class="sub" data-i18n="trust1_s">Bez vodenih žigova, titlovi i skripte na tri jezika.</p>
-        </article>
-        <article class="card">
-          <h3 data-i18n="trust2_t">Brza isporuka</h3>
-          <p class="sub" data-i18n="trust2_s">Prvi nacrt u 3–5 dana, final u 2–4 nedelje (uz redovne povratne).</p>
-        </article>
-        <article class="card">
-          <h3 data-i18n="trust3_t">Video + web = rezultat</h3>
-          <p class="sub" data-i18n="trust3_s">Kratki avatar-klip + landing → jasno objašnjenje i više upita.</p>
-        </article>
+        <article class="card"><h3 data-i18n="trust1_t">Trojezično (DE · EN · SR)</h3><p class="sub" data-i18n="trust1_s">Bez vodenih žigova, titlovi i skripte na tri jezika.</p></article>
+        <article class="card"><h3 data-i18n="trust2_t">Brza isporuka</h3><p class="sub" data-i18n="trust2_s">Prvi nacrt u 3–5 dana, final u 2–4 nedelje (uz redovne povratne).</p></article>
+        <article class="card"><h3 data-i18n="trust3_t">Video + web = rezultat</h3><p class="sub" data-i18n="trust3_s">Kratki avatar-klip + landing → jasno objašnjenje i više upita.</p></article>
       </div>
     </section>
 
-    <!-- FAQ -->
     <section id="faq" class="faq">
       <h2 data-i18n="faq_title">FAQ</h2>
       <div class="cards">
-        <article class="card">
-          <h3 data-i18n="faq1_q">How fast do you deliver?</h3>
-          <p class="sub" data-i18n="faq1_a">2–4 weeks — depending on collaboration and approvals.</p>
-        </article>
-        <article class="card">
-          <h3 data-i18n="faq2_q">What do you need from us?</h3>
-          <p class="sub" data-i18n="faq2_a">Logo, 5–8 photos and 3–4 key points — we handle the rest.</p>
-        </article>
-        <article class="card">
-          <h3 data-i18n="faq3_q">Roughly how much does it cost?</h3>
-          <p class="sub" data-i18n="faq3_a">Starting price from X €; we send an exact quote after our 24-hour assessment.</p>
-        </article>
+        <article class="card"><h3 data-i18n="faq1_q">How fast do you deliver?</h3><p class="sub" data-i18n="faq1_a">2–4 weeks — depending on collaboration and approvals.</p></article>
+        <article class="card"><h3 data-i18n="faq2_q">What do you need from us?</h3><p class="sub" data-i18n="faq2_a">Logo, 5–8 photos and 3–4 key points — we handle the rest.</p></article>
+        <article class="card"><h3 data-i18n="faq3_q">Roughly how much does it cost?</h3><p class="sub" data-i18n="faq3_a">Starting price from X €; we send an exact quote after our 24-hour assessment.</p></article>
       </div>
     </section>
 
-    <!-- Contact -->
     <section id="contact">
       <h2 data-i18n="contact_title">Contact</h2>
       <p class="sub">dmdigitalenterprise.team@gmail.com · +381 606890072</p>
@@ -313,7 +206,6 @@
     </div>
   </footer>
 
-  <!-- WhatsApp FAB -->
   <a href="https://wa.me/381606890072" class="wa-fab" data-wa="fab" aria-label="WhatsApp chat" target="_blank" rel="noopener" title="WhatsApp">
     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path d="M20.5 12a8.5 8.5 0 0 1-12 7.6L4 20l.5-4.4A8.5 8.5 0 1 1 20.5 12Z" stroke="currentColor"/>
@@ -322,16 +214,12 @@
   </a>
 
   <script defer>
-    /* Minimalni i18n – samo ključevi koji se koriste na stranici */
     const T = {
       en:{nav_services:"Services",nav_packages:"Packages",nav_portfolio:"Portfolio",nav_contact:"Contact",
         cta_top:"Request a quote",badge_stack:"Digital design • Video • Web",
-        hero_title:"Simple — so people remember you.",
-        hero_sub:"Websites, short video ads and smart marketing in German, Serbian and English.",
-        cta_portfolio:"View portfolio",cta_services:"Services",
-        note_menu:"Transparent nav is always on; semi-transparent on scroll on request.",
-        note_video:"Language also selects the video version; sound is on.",
-        services_title:"What we do (focused on results)",services_sub:"Three pillars that deliver fast impact.",
+        hero_title:"Simple — so people remember you.",hero_sub:"Websites, short video ads and smart marketing in German, Serbian and English.",
+        cta_portfolio:"View portfolio",cta_services:"Services",note_menu:"Transparent nav is always on; semi-transparent on scroll on request.",
+        note_video:"Language also selects the video version; sound is on.",services_title:"What we do (focused on results)",services_sub:"Three pillars that deliver fast impact.",
         cards:[["Web","Fast, modern websites","Landing pages, presentations, contact forms with conversion tracking."],
                ["Video","Short video ads","15–45s formats, subtitles in DE/SR/EN, optimized for social media."],
                ["Marketing","Campaigns & ads","Facebook/Instagram/Google, content calendar, hashtags & CTA messages."]],
@@ -342,7 +230,6 @@
                p3:["Custom design & animations","2 video ads (up to 45s)","30-day campaign + report"]},
         claim_title:"More foot traffic for your bakery",claim_sub:"Clear landing page + 30-second video, ready in 2–4 weeks.",
         sec_portfolio_title:"Examples & prototypes",sec_portfolio_sub:"Live links coming soon.",
-        cap_dmvideo:"D&M Enterprise video",cap_dmvideo_sub:"Branded intro video without watermark.",
         cap_peter:"Peter’s Bakery",cap_peter_sub:"Simple presentation site with transparent menu.",
         trust_title:"Why clients trust us",trust_sub:"Three short proof points.",
         trust1_t:"Trilingual (DE · EN · SR)",trust1_s:"No watermarks; scripts/subtitles in three languages.",
@@ -352,7 +239,6 @@
         faq2_q:"What do you need from us?",faq2_a:"Logo, 5–8 photos and 3–4 key points — we handle the rest.",
         faq3_q:"Roughly how much does it cost?",faq3_a:"Starting price from X €; we send an exact quote after our 24-hour assessment.",
         contact_title:"Contact",rights:"All rights reserved"},
-
       de:{nav_services:"Leistungen",nav_packages:"Pakete",nav_portfolio:"Portfolio",nav_contact:"Kontakt",
         cta_top:"Angebot anfragen",badge_stack:"Digitales Design • Video • Web",
         hero_title:"Einfach – damit man sich an Sie erinnert.",
@@ -371,7 +257,6 @@
                p3:["Individuelles Design & Animationen","2 Videoanzeigen (bis 45 s)","30-Tage-Kampagne + Report"]},
         claim_title:"Mehr Laufkundschaft für Ihre Bäckerei",claim_sub:"Klare Landingpage + 30-Sekunden-Video, fertig in 2–4 Wochen.",
         sec_portfolio_title:"Beispiele & Prototypen",sec_portfolio_sub:"Live-Links folgen in Kürze.",
-        cap_dmvideo:"D&M Enterprise Video",cap_dmvideo_sub:"Gebrandetes Intro-Video ohne Wasserzeichen.",
         cap_peter:"Bäckerei Peter",cap_peter_sub:"Einfache Präsentationsseite mit transparenter Navigation.",
         trust_title:"Warum man uns vertraut",trust_sub:"Drei kurze Vertrauensbeweise.",
         trust1_t:"Dreisprachig (DE · EN · SR)",trust1_s:"Keine Wasserzeichen; Skripte/Untertitel in drei Sprachen.",
@@ -381,7 +266,6 @@
         faq2_q:"Was benötigen Sie von uns?",faq2_a:"Logo, 5–8 Fotos und 3–4 Kernpunkte — den Rest erledigen wir.",
         faq3_q:"Was kostet es ungefähr?",faq3_a:"Startpreis ab X €; das genaue Angebot senden wir nach unserer 24-Stunden-Einschätzung.",
         contact_title:"Kontakt",rights:"Alle Rechte vorbehalten"},
-
       sr:{nav_services:"Usluge",nav_packages:"Paketi",nav_portfolio:"Portfolio",nav_contact:"Kontakt",
         cta_top:"Zatraži ponudu",badge_stack:"Digitalni dizajn • Video • Web",
         hero_title:"Jednostavno — pravimo da vas pamte.",
@@ -400,7 +284,6 @@
                p3:["Prilagođen dizajn & animacije","2 video oglasa (do 45 s)","Kampanja 30 dana + izveštaj"]},
         claim_title:"Više kupaca za vašu pekaru",claim_sub:"Jasna landing stranica + 30-sekundni video, spremno za 2–4 nedelje.",
         sec_portfolio_title:"Primeri i prototipi",sec_portfolio_sub:"Linkovi uživo uskoro.",
-        cap_dmvideo:"D&M intro video",cap_dmvideo_sub:"Brendirani uvodni video bez vodenog žiga.",
         cap_peter:"Pekar Peter",cap_peter_sub:"Jednostavan sajt sa transparentnim menijem.",
         trust_title:"Zašto nama veruju",trust_sub:"Tri kratka dokaza poverenja.",
         trust1_t:"Trojezično (DE · EN · SR)",trust1_s:"Bez vodenih žigova; skripte/titlovi na tri jezika.",
@@ -412,12 +295,7 @@
         contact_title:"Kontakt",rights:"Sva prava zadržana"}
     };
 
-    /* Lokalni hero video fajlovi (sa cache-busting parametrom) */
-    const HERO = {
-      de: "/avatar-de.mp4?v=20251105",
-      en: "/avatar-eng.mp4?v=20251105",
-      sr: "/avatar-srb.mp4?v=20251105"
-    };
+    const HERO = { de:"/avatar-de.mp4?v=20251105", en:"/avatar-eng.mp4?v=20251105", sr:"/avatar-srb.mp4?v=20251105" };
 
     function setLang(lang){
       lang=(lang||'sr').toLowerCase();
@@ -438,15 +316,12 @@
         }
       }
 
-      if (D?.lists){
-        const fill=(id,arr)=>{const ul=document.getElementById(id); if(ul) ul.innerHTML=arr.map(x=>`<li>${x}</li>`).join('');};
-        fill('p1_list',D.lists.p1); fill('p2_list',D.lists.p2); fill('p3_list',D.lists.p3);
-      }
+      const fill=(id,arr)=>{const ul=document.getElementById(id); if(ul&&arr) ul.innerHTML=arr.map(x=>`<li>${x}</li>`).join('');};
+      if (D?.lists){ fill('p1_list',D.lists.p1); fill('p2_list',D.lists.p2); fill('p3_list',D.lists.p3); }
 
       const hv=document.getElementById('heroVideo'), s=hv?.querySelector('source'), url=HERO[lang]||HERO.sr;
       if(s && s.getAttribute('src')!==url){ try{hv.pause();}catch{} s.src=url; hv.load(); }
 
-      // WhatsApp prefill tekst
       const num="381606890072", enc=t=>encodeURIComponent(t||"");
       const wa=D?.whatsapp_prefill||"Hi! I'd like a quick consultation.";
       document.querySelectorAll('a[data-wa="fab"]').forEach(a=>a.href=`https://wa.me/${num}?text=${enc(wa)}`);
@@ -461,7 +336,6 @@
       setLang(b.dataset.setlang);
     });
 
-    // inicijalni jezik
     setLang(localStorage.getItem('lang')||document.documentElement.lang||'sr');
   </script>
 </body>
