@@ -1,163 +1,63 @@
-<!DOCTYPE html>
-<html lang="sr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>D&M Digital Enterprise</title>
 
-  <!-- SEO osnovni tagovi -->
-  <meta name="description" content="D&M Digital Enterprise – izrada web sajtova, brendiranje i digitalni marketing za mala i srednja preduzeća." />
-  <meta name="keywords" content="web dizajn, digitalni marketing, brendiranje, izrada sajta, SEO, video reklame" />
-  <meta name="author" content="D&M Digital Enterprise" />
-
-  <!-- Open Graph za deljenje na društvenim mrežama -->
-  <meta property="og:title" content="D&M Digital Enterprise" />
-  <meta property="og:description" content="Vaš digitalni partner za rast i prepoznatljivost." />
-  <meta property="og:image" content="https://tvoj-domen.com/og-image.jpg" />
-  <meta property="og:url" content="https://tvoj-domen.com" />
-  <meta property="og:type" content="website" />
-
-  <link rel="stylesheet" href="style.css" />
-  <script src="lang.js"></script>
-</head>
-<body>
-  <header>
-    <div class="logo">D&M Digital</div>
-    <nav>
-      <ul>
-        <li><a href="#hero" data-key="nav-home">Početna</a></li>
-        <li><a href="#services" data-key="nav-services">Usluge</a></li>
-        <li><a href="#portfolio" data-key="nav-portfolio">Portfolio</a></li>
-        <li><a href="#contact" data-key="nav-contact">Kontakt</a></li>
-      </ul>
-      <select id="language-switcher">
-        <option value="sr">SR</option>
-        <option value="en">EN</option>
-        <option value="de">DE</option>
-      </select>
-    </nav>
-  </header>
-
-  <section id="hero">
-    <h1 data-key="hero-title">Jednostavno — pravimo da vas pamte.</h1>
-    <p data-key="hero-sub">Web stranice, video reklame i pametan marketing.</p>
-    <div class="cta">
-      <a href="#contact" class="btn" data-key="cta-quote">Zatraži ponudu</a>
-      <a href="#portfolio" class="btn secondary" data-key="cta-portfolio">Pogledaj portfolio</a>
+<header>
+    <div class="wrap nav">
+        <div class="brand">
+            <img src="https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/logo-md%402x.png" alt="D&M Digital" style="height:24px" />
+            D&M Digital
+        </div>
+        <nav class="stack">
+            <a href="#services" data-i18n="nav_services">Services</a>
+            <a href="#products" data-i18n="nav_packages">Packages</a>
+            <a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a>
+            <a href="#contact" data-i18n="nav_contact">Contact</a>
+        </nav>
+        <div class="spacer"></div>
+        <div class="lang">
+            <button data-setlang="en">EN</button>
+            <button data-setlang="de">DE</button>
+            <button data-setlang="sr" class="active">SRB</button>
+        </div>
+        <a class="btn" href="#contact" data-i18n="cta_top">Request a quote</a>
     </div>
-  </section>
+</header>
 
-  <!-- D&M Intro Video Sekcija -->
-  <section id="jewelry-advice">
-    <h2>Jewelry – Personal Advice</h2>
-    <div class="video-wrapper">
-      <video width="100%" height="auto" controls>
-        <source src="https://github.com/dmdigitalenterpriseteam-rgb/dm-langing/raw/main/public/sandra-enterprise.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="cta-buttons">
-      <a href="https://wa.me/..." class="btn">WhatsApp Advice</a>
-      <a href="#appointment" class="btn">Book appointment</a>
-    </div>
-  </section>
+<main class="wrap">
+    <section id="demo-videos">
+        <h2 data-i18n="dv_title">Demo — Video samples</h2>
+        <p class="sub" data-i18n="dv_sub">3 short samples: Peter, Avatar IV, Sandra.</p>
+        <div class="cards">
+            <article class="card">
+                <h3 data-i18n="dv_c1_t">Peter’s bakery</h3>
+                <p class="sub" data-i18n="dv_c1_s">Seasonal short ad (social format).</p>
+                <video playsinline class="vid" controls preload="metadata">
+                    <source src="https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/peters-baeckerei.mp4" type="video/mp4"/>
+                </video>
+            </article>
 
-  <section id="services">
-    <h2 data-key="services-title">Usluge</h2>
-    <ul>
-      <li data-key="service-1">Izrada web sajtova</li>
-      <li data-key="service-2">Brendiranje i dizajn</li>
-      <li data-key="service-3">Digitalni marketing</li>
-    </ul>
-  </section>
+            <article class="card">
+                <h3 data-i18n="dv_c2_t">Avatar IV — digital greeting</h3>
+                <p class="sub" data-i18n="dv_c2_s">Short intro to the service / landing page.</p>
+                <video playsinline class="vid" controls preload="metadata">
+                    <source src="https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/avatar-iv.mp4" type="video/mp4"/>
+                </video>
+            </article>
 
-  <section id="portfolio">
-    <h2 data-key="portfolio-title">Portfolio</h2>
-    <p data-key="portfolio-desc">Pogledajte naše prethodne projekte:</p>
-    <a href="projekti.pdf" target="_blank">Preuzmi PDF</a>
-  </section>
+            <article class="card">
+                <h3 data-i18n="dv_c3_t">Sandra — marketing advantages</h3>
+                <p class="sub" data-i18n="dv_c3_s">Short pitch about the benefits of good marketing.</p>
+                <video playsinline class="vid" controls preload="metadata">
+                    <source src="https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/sandra-avatar-de.mp4" type="video/mp4"/>
+                </video>
+            </article>
 
-  <section id="contact">
-    <h2 data-key="contact-title">Kontakt</h2>
-    <form>
-      <input type="text" placeholder="Vaše ime" required />
-      <input type="email" placeholder="Email adresa" required />
-      <textarea placeholder="Poruka" required></textarea>
-      <button type="submit" data-key="contact-button">Pošaljite</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 D&M Digital Enterprise</p>
-  </footer>
-
-  <script>
-    const translations = {
-      sr: {
-        "nav-home": "Početna",
-        "nav-services": "Usluge",
-        "nav-portfolio": "Portfolio",
-        "nav-contact": "Kontakt",
-        "hero-title": "Jednostavno — pravimo da vas pamte.",
-        "hero-sub": "Web stranice, video reklame i pametan marketing.",
-        "cta-quote": "Zatraži ponudu",
-        "cta-portfolio": "Pogledaj portfolio",
-        "services-title": "Usluge",
-        "service-1": "Izrada web sajtova",
-        "service-2": "Brendiranje i dizajn",
-        "service-3": "Digitalni marketing",
-        "portfolio-title": "Portfolio",
-        "portfolio-desc": "Pogledajte naše prethodne projekte:",
-        "contact-title": "Kontakt",
-        "contact-button": "Pošaljite"
-      },
-      en: {
-        "nav-home": "Home",
-        "nav-services": "Services",
-        "nav-portfolio": "Portfolio",
-        "nav-contact": "Contact",
-        "hero-title": "Simply — we make you memorable.",
-        "hero-sub": "Websites, video ads, and smart marketing.",
-        "cta-quote": "Request a quote",
-        "cta-portfolio": "View portfolio",
-        "services-title": "Services",
-        "service-1": "Website development",
-        "service-2": "Branding and design",
-        "service-3": "Digital marketing",
-        "portfolio-title": "Portfolio",
-        "portfolio-desc": "Check out our previous projects:",
-        "contact-title": "Contact",
-        "contact-button": "Send"
-      },
-      de: {
-        "nav-home": "Startseite",
-        "nav-services": "Leistungen",
-        "nav-portfolio": "Portfolio",
-        "nav-contact": "Kontakt",
-        "hero-title": "Einfach — wir machen Sie unvergesslich.",
-        "hero-sub": "Webseiten, Videowerbung und intelligentes Marketing.",
-        "cta-quote": "Angebot anfordern",
-        "cta-portfolio": "Portfolio ansehen",
-        "services-title": "Leistungen",
-        "service-1": "Webseiten-Erstellung",
-        "service-2": "Branding und Design",
-        "service-3": "Digitales Marketing",
-        "portfolio-title": "Portfolio",
-        "portfolio-desc": "Sehen Sie sich unsere bisherigen Projekte an:",
-        "contact-title": "Kontakt",
-        "contact-button": "Senden"
-      }
-    };
-
-    document.getElementById("language-switcher").addEventListener("change", function () {
-      const lang = this.value;
-      document.querySelectorAll("[data-key]").forEach(el => {
-        const key = el.getAttribute("data-key");
-        if (translations[lang][key]) {
-          el.textContent = translations[lang][key];
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+            <!-- Novo: DM Intro Video -->
+            <article class="card">
+                <h3 data-i18n="dv_c4_t">D&M Intro Video</h3>
+                <p class="sub" data-i18n="dv_c4_s">Introduction to D&M Digital Enterprise.</p>
+                <video playsinline class="vid" controls preload="metadata">
+                    <source src="https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/public/sandra-enterprise.mp4" type="video/mp4"/>
+                </video>
+            </article>
+        </div>
+    </section>
+</main>
