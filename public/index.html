@@ -75,7 +75,7 @@
     .video-grid .row-port{display:grid;grid-template-columns:1fr 1fr;gap:18px}
     .video-grid .row-land-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 
-    /* >>> NOVO: 3× 9:16 jedan pored drugog (mobil 1, tablet 2, desktop 3) */
+    /* >>> NOVO: 3× 9:16 ispod HERO-a */
     .reels{display:grid;gap:16px;grid-template-columns:1fr;margin:26px 0 8px}
     @media (min-width:640px){.reels{grid-template-columns:repeat(2,1fr)}}
     @media (min-width:1024px){.reels{grid-template-columns:repeat(3,1fr)}}
@@ -147,18 +147,17 @@
     </div>
   </section>
 
-  <!-- >>> NOVO: 3 × 9:16 (jedan pored drugog) -->
+  <!-- NOVO: 3 × 9:16 posle HERO-a -->
   <section id="reels" aria-label="Video prezentacije 9:16">
     <div class="reels">
-      <video src="/Avatar_musko_de1.mp4" preload="metadata" muted playsinline autoplay loop
+      <video src="/Avatar_musko_de1.mp4?v=20251107" preload="metadata" muted playsinline autoplay loop
              disablepictureinpicture controlslist="nodownload noplaybackrate"></video>
-      <video src="/Avatar_musko_de2.mp4" preload="metadata" muted playsinline autoplay loop
+      <video src="/Avatar_musko_de2.mp4?v=20251107" preload="metadata" muted playsinline autoplay loop
              disablepictureinpicture controlslist="nodownload noplaybackrate"></video>
-      <video src="/avatar_iv_video_de.mp4" preload="metadata" muted playsinline autoplay loop
+      <video src="/avatar_iv_video_de.mp4?v=20251107" preload="metadata" muted playsinline autoplay loop
              disablepictureinpicture controlslist="nodownload noplaybackrate"></video>
     </div>
   </section>
-  <!-- <<< KRAJ NOVOG BLOKA -->
 
   <!-- SERVICES -->
   <section id="services">
@@ -183,9 +182,200 @@
     </div>
   </section>
 
-  <!-- OSTATAK TVOG FAJLA JE ISTI (portfolio, demo-videos, zlatar, optika, trust, faq, contact) -->
-  <!-- ... (ostaje identično onome što si poslao) ... -->
+  <!-- PRODUCTS -->
+  <section id="products">
+    <h2 data-i18n="sec_products_title">Paketi (Start — Pro — Premium)</h2>
+    <p class="sub" data-i18n="sec_products_sub">Fiksne cene po modulu – jasan obim.</p>
+    <div class="cards">
+      <article class="card">
+        <h3 data-i18n="p_start_t">START paket</h3>
+        <ul class="list">
+          <li data-i18n="p_start_li1">One-page (do 5 sekcija)</li>
+          <li data-i18n="p_start_li2">Kontakt (mailto)</li>
+          <li data-i18n="p_start_li3">Osnovni SEO meta tagovi</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3 data-i18n="p_pro_t">PRO paket</h3>
+        <ul class="list">
+          <li data-i18n="p_pro_li1">Višestrana + portfolio</li>
+          <li data-i18n="p_pro_li2">Kratak video (do 30 s)</li>
+          <li data-i18n="p_pro_li3">Priprema oglasa + 10 hashtagova</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3 data-i18n="p_premium_t">PREMIUM paket</h3>
+        <ul class="list">
+          <li data-i18n="p_prem_li1">Prilagođen dizajn & animacije</li>
+          <li data-i18n="p_prem_li2">2 video oglasa (do 45 s)</li>
+          <li data-i18n="p_prem_li3">Kampanja 30 dana + izveštaj</li>
+        </ul>
+      </article>
+    </div>
+  </section>
 
+  <!-- CLAIM -->
+  <section id="claim">
+    <h2 data-i18n="claim_title">Više kupaca za vašu pekaru</h2>
+    <p class="sub" data-i18n="claim_sub">Jasna landing stranica + 30-sekundni video, spremno za 2–4 nedelje.</p>
+    <a class="btn btn-grad" href="#contact" data-i18n="claim_cta">Besplatno brzo savetovanje</a>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <h2 data-i18n="port_title">Primeri i prototipi</h2>
+    <p class="sub" data-i18n="port_sub">Linkovi uživo uskoro.</p>
+
+    <div class="cards">
+      <article class="card">
+        <h3 data-i18n="port_c1_t">Peter’s Bakery</h3>
+        <p class="sub" data-i18n="port_c1_s">Simple site with transparent menu.</p>
+        <div class="stack">
+          <a class="btn-min btn-grad"
+             href="/assets/portfolio/peters-bakery.pdf?v=20251107"
+             target="_blank" rel="noopener"
+             data-i18n="port_btn_pdf">Open PDF</a>
+        </div>
+      </article>
+
+      <!-- D&M intro video -->
+      <article class="card">
+        <h3 data-i18n="port_c2_t">D&M intro video</h3>
+        <p class="sub" data-i18n="port_c2_s">Branded intro without watermark.</p>
+
+        <div class="video-grid">
+          <div class="row-land">
+            <video playsinline class="vid" controls preload="metadata">
+              <source src="/Avatar_musko_de.mp4?v=20251107" type="video/mp4"/>
+            </video>
+          </div>
+
+          <div class="row-port">
+            <video playsinline class="vid vid-916" controls preload="metadata">
+              <source src="/Avatar_musko_de1.mp4?v=20251107" type="video/mp4"/>
+            </video>
+
+            <video playsinline class="vid vid-916" controls preload="metadata">
+              <source src="/avatar_iv_video_de.mp4?v=20251107" type="video/mp4"/>
+            </video>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h3 data-i18n="port_c3_t">CoreAlliance logo</h3>
+        <p class="sub" data-i18n="port_c3_s">Minimal logos for menus & hero.</p>
+        <div class="stack">
+          <a class="btn-min btn-grad" href="/assets/portfolio/corealliance-logo.pdf" target="_blank" rel="noopener" data-i18n="port_btn_pdf">Open PDF</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- DEMO VIDEOS -->
+  <section id="demo-videos">
+    <h2 data-i18n="dv_title">Demo — Video samples</h2>
+    <p class="sub" data-i18n="dv_sub">2 kratka primera: Peter i Sandra.</p>
+
+    <div class="video-grid">
+      <div class="row-land-2">
+        <article class="card">
+          <h3 data-i18n="dv_c1_t">Peter’s bakery</h3>
+          <p class="sub" data-i18n="dv_c1_s">Seasonal short ad (social format).</p>
+          <video playsinline class="vid" controls preload="metadata">
+            <source src="/peters-baeckerei.mp4?v=20251107" type="video/mp4"/>
+          </video>
+        </article>
+
+        <article class="card">
+          <h3 data-i18n="dv_c3_t">Sandra — marketing advantages</h3>
+          <p class="sub" data-i18n="dv_c3_s">Short pitch about the benefits of good marketing.</p>
+          <video playsinline class="vid" controls preload="metadata">
+            <source src="/sandra-enterprise.mp4?v=20251107" type="video/mp4"/>
+          </video>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZLATAR -->
+  <section id="goldschmiede" class="zl-sec">
+    <div class="zl-wrap">
+      <header class="zl-head">
+        <h2 data-i18n="gold_title">Zlatar – lična pomoć</h2>
+        <p class="sub" data-i18n="gold_sub">4C objašnjenje + 3 predloga. WhatsApp ili termin u 1 kliku.</p>
+      </header>
+
+      <div class="zl-grid">
+        <figure class="zl-card">
+          <video playsinline controls preload="metadata" poster="/zlatar/poster-4C.jpg">
+            <source src="/zlatar/zlatarAVATAR_4C.mp4?v=20251107" type="video/mp4"/>
+          </video>
+          <figcaption data-i18n="zl_cap_4c">4C za 30 sek — jasno & kratko.</figcaption>
+        </figure>
+
+        <figure class="zl-card">
+          <video playsinline controls preload="metadata" poster="/zlatar/poster-ringwahl.jpg">
+            <source src="/zlatar/zlatarAVATAR_Ringwahl.mp4?v=20251107" type="video/mp4"/>
+          </video>
+          <figcaption data-i18n="zl_cap_style">Koji stil: Solitaire, Halo ili Classic?</figcaption>
+        </figure>
+      </div>
+
+      <div class="zl-ctas">
+        <a class="zl-btn primary" href="https://wa.me/381606890072" target="_blank" rel="noopener" data-i18n="gold_whatsapp">WhatsApp Savet</a>
+        <a class="zl-btn" href="#contact" data-i18n="gold_book">Zakaži termin</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPTIKA -->
+  <section id="optik" class="op-sec">
+    <div class="op-wrap">
+      <header class="op-head">
+        <h2 data-i18n="opt_title">Optika — kratki demo</h2>
+        <p class="sub" data-i18n="opt_sub">AVATAR_Glaeser — intro klip za optiku.</p>
+      </header>
+      <div class="op-grid">
+        <figure class="op-card">
+          <video playsinline class="vid" controls preload="metadata" poster="/optika/poster-glaeser.jpg">
+            <source src="/optika/optikaAVATAR_Glaeser.mp4?v=20251105" type="video/mp4"/>
+          </video>
+        </figure>
+      </div>
+      <div class="op-ctas">
+        <a class="op-btn primary" href="https://wa.me/381606890072" target="_blank" rel="noopener" data-i18n="opt_whatsapp">WhatsApp / Proba</a>
+        <a class="op-btn" href="#contact" data-i18n="opt_book">Zakaži termin</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section id="trust">
+    <h2 data-i18n="trust_title">Zašto nama veruju</h2>
+    <p class="sub" data-i18n="trust_sub">Tri kratka dokaza poverenja.</p>
+    <div class="cards">
+      <article class="card"><h3 data-i18n="trust1_t">Trojezično (DE · EN · SR)</h3><p class="sub" data-i18n="trust1_s">Bez vodenih žigova; skripte/titlovi na tri jezika.</p></article>
+      <article class="card"><h3 data-i18n="trust2_t">Brza isporuka</h3><p class="sub" data-i18n="trust2_s">Prvi nacrt u 3–5 dana, final u 2–4 nedelje.</p></article>
+      <article class="card"><h3 data-i18n="trust3_t">Video + web = rezultat</h3><p class="sub" data-i18n="trust3_s">Kratki avatar + landing → jasna poruka i više upita.</p></article>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq">
+    <h2 data-i18n="faq_title">Česta pitanja</h2>
+    <div class="cards">
+      <article class="card"><h3 data-i18n="faq1_q">Koliko brzo isporučujete?</h3><p class="sub" data-i18n="faq1_a">2–4 nedelje — u zavisnosti od saradnje i odobrenja.</p></article>
+      <article class="card"><h3 data-i18n="faq2_q">Šta je potrebno sa vaše strane?</h3><p class="sub" data-i18n="faq2_a">Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.</p></article>
+      <article class="card"><h3 data-i18n="faq3_q">Koliko okvirno košta?</h3><p class="sub" data-i18n="faq3_a">Početna cena od X €; tačnu procenu šaljemo nakon 24-časovne procene.</p></article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 data-i18n="contact_title">Kontakt</h2>
+    <p class="sub">dmdigitalenterprise.team@gmail.com · +381 606890072</p>
+  </section>
 </main>
 
 <footer>
