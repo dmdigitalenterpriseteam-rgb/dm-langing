@@ -9,7 +9,7 @@
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="D&M Digital Enterprise – Webdesign & Video für DACH">
-  <meta property="og:description" content="Boutique-Integrator: Landingpages, kurze Videos, Google-Profile. Schnelle Umsetzung, messbare Ergebnisse.">
+  <meta property="og:description" content="Landing stranice, kratki video-avatari, Google profili. Brza isporuka i merljivi rezultati.">
   <meta property="og:url" content="https://dmdigitalenterprise.vercel.app/">
   <meta property="og:image" content="https://dmdigitalenterprise.vercel.app/og-image.png">
 
@@ -43,7 +43,7 @@
 
     /* Video */
     video.vid{width:100%;aspect-ratio:16/9;background:#0a0f14;border:1px solid var(--line);border-radius:18px;object-fit:cover}
-    video.vid-916{aspect-ratio:9/16;object-fit:cover} /* 9:16 samo za portrete */
+    video.vid-916{aspect-ratio:9/16;object-fit:cover}
 
     .grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -69,11 +69,12 @@
     .op-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
     .op-grid{display:grid;grid-template-columns:1fr;gap:18px}
 
-    /* Video layout helper za Portfolio/Demo */
+    /* Video layout helper */
     .video-grid{display:grid;gap:18px}
     .video-grid .row-land{display:grid;grid-template-columns:1fr;gap:18px}
     .video-grid .row-port{display:grid;grid-template-columns:1fr 1fr;gap:18px}
     .video-grid .row-land-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
     @media (max-width:980px){
       .grid-2{grid-template-columns:1fr}
       .cards{grid-template-columns:1fr}
@@ -209,29 +210,35 @@
 
     <div class="cards">
       <article class="card">
-        <h3 data-i18n="port_c1_t">Pekar Peter</h3>
-        <p class="sub" data-i18n="port_c1_s">Jednostavan sajt sa transparentnim menijem.</p>
+        <h3 data-i18n="port_c1_t">Peter’s Bakery</h3>
+        <p class="sub" data-i18n="port_c1_s">Simple site with transparent menu.</p>
         <div class="stack">
-          <a class="btn-min btn-grad" href="/assets/portfolio/peterova-pekara.pdf" target="_blank" rel="noopener" data-i18n="port_btn_pdf">Otvori PDF</a>
+          <a class="btn-min btn-grad"
+             href="/assets/portfolio/peters-bakery.pdf?v=20251107"
+             target="_blank" rel="noopener"
+             data-i18n="port_btn_pdf">Open PDF</a>
         </div>
       </article>
 
-      <!-- D&M intro video: 16:9 iznad, dva 9:16 ispod -->
+      <!-- D&M intro video: 16:9 gore, dva 9:16 ispod (bez postera) -->
       <article class="card">
         <h3 data-i18n="port_c2_t">D&M intro video</h3>
-        <p class="sub" data-i18n="port_c2_s">Brendirani uvodni video bez vodenog žiga.</p>
+        <p class="sub" data-i18n="port_c2_s">Branded intro without watermark.</p>
+
         <div class="video-grid">
           <div class="row-land">
-            <video playsinline class="vid" controls preload="metadata" poster="/hero-robot.png">
-              <source src="/Avatar_musko_de.mp4?v=20251106" type="video/mp4"/>
+            <video playsinline class="vid" controls preload="metadata">
+              <source src="/Avatar_musko_de.mp4?v=20251107" type="video/mp4"/>
             </video>
           </div>
+
           <div class="row-port">
-            <video playsinline class="vid vid-916" controls preload="metadata" poster="/hero-robot.png">
-              <source src="/Avatar_musko_de1.mp4?v=20251106" type="video/mp4"/>
+            <video playsinline class="vid vid-916" controls preload="metadata">
+              <source src="/Avatar_musko_de1.mp4?v=20251107" type="video/mp4"/>
             </video>
-            <video playsinline class="vid vid-916" controls preload="metadata" poster="/hero-robot.png">
-              <source src="/avatar_iv_video_de.mp4?v=20251106" type="video/mp4"/>
+
+            <video playsinline class="vid vid-916" controls preload="metadata">
+              <source src="/avatar_iv_video_de.mp4?v=20251107" type="video/mp4"/>
             </video>
           </div>
         </div>
@@ -239,35 +246,35 @@
 
       <article class="card">
         <h3 data-i18n="port_c3_t">CoreAlliance logo</h3>
-        <p class="sub" data-i18n="port_c3_s">Minimal logotipi za menije i hero sekcije.</p>
+        <p class="sub" data-i18n="port_c3_s">Minimal logos for menus & hero.</p>
         <div class="stack">
-          <a class="btn-min btn-grad" href="/assets/portfolio/corealliance-logo.pdf" target="_blank" rel="noopener" data-i18n="port_btn_pdf">Otvori PDF</a>
+          <a class="btn-min btn-grad" href="/assets/portfolio/corealliance-logo.pdf" target="_blank" rel="noopener" data-i18n="port_btn_pdf">Open PDF</a>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- DEMO VIDEOS (ulepšan raspored) -->
+  <!-- DEMO VIDEOS -->
   <section id="demo-videos">
-    <h2 data-i18n="dv_title">Demo — Video uzorci</h2>
-    <p class="sub" data-i18n="dv_sub">3 kratka primera: Peter, Avatar IV, Sandra.</p>
+    <h2 data-i18n="dv_title">Demo — Video samples</h2>
+    <p class="sub" data-i18n="dv_sub">3 short samples: Peter, Avatar IV, Sandra.</p>
 
     <div class="video-grid">
       <!-- RED 1: dva 16:9 (Peter + Sandra) -->
       <div class="row-land-2">
         <article class="card">
-          <h3 data-i18n="dv_c1_t">Pekara Peter</h3>
-          <p class="sub" data-i18n="dv_c1_s">Sezonska kratka reklama (social format).</p>
-          <video playsinline class="vid" controls preload="metadata" poster="/hero-robot.png">
-            <source src="https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/peters-baeckerei.mp4" type="video/mp4"/>
+          <h3 data-i18n="dv_c1_t">Peter’s bakery</h3>
+          <p class="sub" data-i18n="dv_c1_s">Seasonal short ad (social format).</p>
+          <video playsinline class="vid" controls preload="metadata">
+            <source src="/peters-baeckerei.mp4?v=20251107" type="video/mp4"/>
           </video>
         </article>
 
         <article class="card">
-          <h3 data-i18n="dv_c3_t">Sandra — marketinške prednosti</h3>
-          <p class="sub" data-i18n="dv_c3_s">Kratak pitch o benefitima dobrog marketinga.</p>
-          <video playsinline class="vid" controls preload="metadata" poster="/hero-robot.png">
-            <source src="https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/sandra-avatar-de.mp4" type="video/mp4"/>
+          <h3 data-i18n="dv_c3_t">Sandra — marketing advantages</h3>
+          <p class="sub" data-i18n="dv_c3_s">Short pitch about the benefits of good marketing.</p>
+          <video playsinline class="vid" controls preload="metadata">
+            <source src="/sandra-enterprise.mp4?v=20251107" type="video/mp4"/>
           </video>
         </article>
       </div>
@@ -275,10 +282,10 @@
       <!-- RED 2: jedan 9:16 (Avatar IV) -->
       <div class="row-port" style="justify-items:center">
         <article class="card" style="width:100%;max-width:560px">
-          <h3 data-i18n="dv_c2_t">Avatar IV — digitalni pozdrav</h3>
-          <p class="sub" data-i18n="dv_c2_s">Kratak uvod u uslugu / landing stranu.</p>
-          <video playsinline class="vid vid-916" controls preload="metadata" poster="/hero-robot.png">
-            <source src="/avatar_iv_video_de.mp4?v=20251106" type="video/mp4"/>
+          <h3 data-i18n="dv_c2_t">Avatar IV — digital greeting</h3>
+          <p class="sub" data-i18n="dv_c2_s">Short intro to the service / landing page.</p>
+          <video playsinline class="vid vid-916" controls preload="metadata">
+            <source src="/avatar_iv_video_de.mp4?v=20251107" type="video/mp4"/>
           </video>
         </article>
       </div>
@@ -292,20 +299,23 @@
         <h2 data-i18n="gold_title">Zlatar – lična pomoć</h2>
         <p class="sub" data-i18n="gold_sub">4C objašnjenje + 3 predloga. WhatsApp ili termin u 1 kliku.</p>
       </header>
+
       <div class="zl-grid">
         <figure class="zl-card">
           <video playsinline controls preload="metadata" poster="/zlatar/poster-4C.jpg">
-            <source src="/zlatar/zlatarAVATAR_4C.mp4?v=20251106" type="video/mp4"/>
+            <source src="/zlatar/zlatarAVATAR_4C.mp4?v=20251107" type="video/mp4"/>
           </video>
           <figcaption data-i18n="zl_cap_4c">4C za 30 sek — jasno & kratko.</figcaption>
         </figure>
+
         <figure class="zl-card">
-          <video playsinline controls preload="metadata" poster="/zlatar/poster-ringwah.jpg">
-            <source src="/zlatar/zlatarAVATAR_Ringwahl.mp4?v=20251106" type="video/mp4"/>
+          <video playsinline controls preload="metadata" poster="/zlatar/poster-ringwahl.jpg">
+            <source src="/zlatar/zlatarAVATAR_Ringwahl.mp4?v=20251107" type="video/mp4"/>
           </video>
           <figcaption data-i18n="zl_cap_style">Koji stil: Solitaire, Halo ili Classic?</figcaption>
         </figure>
       </div>
+
       <div class="zl-ctas">
         <a class="zl-btn primary" href="https://wa.me/381606890072" target="_blank" rel="noopener" data-i18n="gold_whatsapp">WhatsApp Savet</a>
         <a class="zl-btn" href="#contact" data-i18n="gold_book">Zakaži termin</a>
