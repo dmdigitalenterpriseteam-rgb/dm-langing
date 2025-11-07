@@ -7,18 +7,18 @@
   <link rel="canonical" href="https://dmdigitalenterprise.vercel.app/">
   <meta name="description" content="Web, video i marketing — DE/SR/EN."/>
 
-  <!-- OG / Share preview -->
+  <!-- OG -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="D&M Digital Enterprise – Webdesign & Video für DACH">
   <meta property="og:description" content="Landing stranice, kratki video-avatari, Google profili. Brza isporuka i merljivi rezultati.">
   <meta property="og:url" content="https://dmdigitalenterprise.vercel.app/">
-  <meta property="og:image" content="https://dmdigitalenterprise.vercel.app/hero-robot.png">
-  <meta property="og:image:alt" content="D&M Digital — video & web u tri jezika">
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:image" content="https://dmdigitalenterprise.vercel.app/og-image.png">
 
   <style>
-    :root{--bg:#0e1116;--card:#151a22;--line:rgba(255,255,255,.08);
-      --muted:#9aa7b6;--text:#e7eef7;--brand1:#62e0c6;--brand2:#9fa8fe}
+    :root{
+      --bg:#0e1116;--card:#151a22;--line:rgba(255,255,255,.08);
+      --muted:#9aa7b6;--text:#e7eef7;--brand1:#62e0c6;--brand2:#9fa8fe
+    }
     *{box-sizing:border-box}
     html,body{margin:0;height:100%;background:var(--bg);color:var(--text);
       font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
@@ -27,6 +27,7 @@
     section{padding:44px 0;scroll-margin-top:90px}
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1180px;margin:0 auto;padding:20px}
+
     header{position:sticky;top:0;background:rgba(14,17,22,.72);
       backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line);z-index:10}
     .nav{display:flex;align-items:center;gap:24px;padding:12px 0;flex-wrap:wrap}
@@ -75,17 +76,17 @@
     /* Video layout helper */
     .video-grid{display:grid;gap:18px}
     .video-grid .row-land{display:grid;grid-template-columns:1fr;gap:18px}
-    .video-grid .row-port{display:grid;grid-template-columns:1fr 1fr;gap:18px}
     .video-grid .row-land-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .video-grid .row-three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
 
     @media (max-width:980px){
       .grid-2{grid-template-columns:1fr}
       .cards{grid-template-columns:1fr}
+      .video-grid .row-land-2{grid-template-columns:1fr}
+      .video-grid .row-three{grid-template-columns:1fr}
+      .zl-grid{grid-template-columns:1fr}
       footer .wrap{grid-template-columns:1fr;text-align:center}
       footer .right{text-align:center}
-      .zl-grid{grid-template-columns:1fr}
-      .video-grid .row-port{grid-template-columns:1fr}
-      .video-grid .row-land-2{grid-template-columns:1fr}
     }
 
     footer{padding:30px 0;border-top:1px solid var(--line);color:#aeb9c8}
@@ -137,7 +138,8 @@
       <p class="note" data-i18n="note_menu">Transparent nav is always on; semi-transparent on scroll on request.</p>
     </div>
     <div>
-      <video playsinline id="heroVideo" class="vid" controls preload="metadata" poster="/hero-robot.png" aria-label="Hero video">
+      <!-- HERO: bez postera -->
+      <video playsinline id="heroVideo" class="vid" controls preload="metadata" aria-label="Hero video">
         <source id="heroSrc" src="/avatar-srb.mp4?v=20251105" type="video/mp4"/>
       </video>
       <p class="note" data-i18n="note_video">Language also selects the video version; sound is on.</p>
@@ -223,25 +225,29 @@
         </div>
       </article>
 
-      <!-- D&M intro video: 16:9 gore, dva 9:16 ispod (sada svi imaju poster) -->
+      <!-- D&M intro video: 16:9 gore + tri 9:16 ispod -->
       <article class="card">
         <h3 data-i18n="port_c2_t">D&M intro video</h3>
         <p class="sub" data-i18n="port_c2_s">Brendirani uvodni video bez vodenog žiga.</p>
 
         <div class="video-grid">
           <div class="row-land">
-            <video playsinline class="vid" controls preload="metadata" poster="/hero-robot.png">
+            <video playsinline class="vid" controls preload="metadata">
               <source src="/Avatar_musko_de.mp4?v=20251107" type="video/mp4"/>
             </video>
           </div>
 
-          <div class="row-port">
-            <video playsinline class="vid vid-916" controls preload="metadata" poster="/hero-robot.png">
+          <div class="row-three">
+            <video playsinline class="vid vid-916" controls preload="metadata" poster="/posters/vert-3.jpg">
               <source src="/Avatar_musko_de1.mp4?v=20251107" type="video/mp4"/>
             </video>
 
-            <video playsinline class="vid vid-916" controls preload="metadata" poster="/hero-robot.png">
+            <video playsinline class="vid vid-916" controls preload="metadata" poster="/posters/vert-3.jpg">
               <source src="/avatar_iv_video_de.mp4?v=20251107" type="video/mp4"/>
+            </video>
+
+            <video playsinline class="vid vid-916" controls preload="metadata" poster="/posters/vert-3.jpg">
+              <source src="/Avatar_musko_de2.mp4?v=20251107" type="video/mp4"/>
             </video>
           </div>
         </div>
@@ -267,7 +273,7 @@
         <article class="card">
           <h3 data-i18n="dv_c1_t">Peter’s bakery</h3>
           <p class="sub" data-i18n="dv_c1_s">Seasonal short ad (social format).</p>
-          <video playsinline class="vid" controls preload="metadata" poster="/hero-robot.png">
+          <video playsinline class="vid" controls preload="metadata">
             <source src="/peters-baeckerei.mp4?v=20251107" type="video/mp4"/>
           </video>
         </article>
@@ -275,7 +281,7 @@
         <article class="card">
           <h3 data-i18n="dv_c3_t">Sandra — marketing advantages</h3>
           <p class="sub" data-i18n="dv_c3_s">Short pitch about the benefits of good marketing.</p>
-          <video playsinline class="vid" controls preload="metadata" poster="/hero-robot.png">
+          <video playsinline class="vid" controls preload="metadata">
             <source src="/sandra-enterprise.mp4?v=20251107" type="video/mp4"/>
           </video>
         </article>
@@ -401,7 +407,7 @@
       dv_title:"Demo — Video samples",dv_sub:"2 short samples: Peter, Sandra.",dv_c1_t:"Peter’s bakery",dv_c1_s:"Seasonal short ad (social format).",dv_c3_t:"Sandra — marketing advantages",dv_c3_s:"Short pitch about the benefits of good marketing.",
       gold_title:"Jewelry — Personal Advice",gold_sub:"4C explained + 3 suggestions. WhatsApp or 1-click appointment.",zl_cap_4c:"4C in 30s — clear & short.",zl_cap_style:"Which style: Solitaire, Halo or Classic?",gold_whatsapp:"WhatsApp Advice",gold_book:"Book appointment",
       opt_title:"Optics — short demo",opt_sub:"AVATAR_Glaeser — intro clip for an optics store.",opt_whatsapp:"WhatsApp / Try-on",opt_book:"Book appointment",
-      trust_title:"Why clients trust us",trust_sub:"Three short proof points.",trust1_t:"Trilingual (DE · EN · SR)",trust1_s:"No watermarks; scripts/subtitles in three languages.",trust2_t:"Fast delivery",trust2_s:"First draft in 3–5 days, final in 2–4 weeks.",trust3_t:"Video + web = results",trust3_s:"Short avatar + landing → clearer message & more inquiries.",
+      trust_title:"Why clients trust us",trust_sub:"Three short proof points.",testi_title:"What clients say",testi_sub:"Short and concrete.",
       faq_title:"FAQ",faq1_q:"How fast do you deliver?",faq1_a:"2–4 weeks — depending on collaboration and approvals.",faq2_q:"What do you need from us?",faq2_a:"Logo, 5–8 photos and 3–4 key points — we handle the rest.",faq3_q:"Roughly how much does it cost?",faq3_a:"Starting price from X €; exact quote after our 24-hour assessment.",
       contact_title:"Contact",rights:"All rights reserved"},
     de:{nav_services:"Leistungen",nav_packages:"Pakete",nav_portfolio:"Portfolio",nav_optik:"Optik",nav_contact:"Kontakt",cta_top:"Angebot anfragen",
@@ -420,7 +426,7 @@
       dv_title:"Demo — Video-Beispiele",dv_sub:"2 kurze Beispiele: Peter, Sandra.",dv_c1_t:"Bäckerei Peter",dv_c1_s:"Saisonaler Kurz-Spot (Social-Format).",dv_c3_t:"Sandra — Marketing-Vorteile",dv_c3_s:"Kurzpitch über die Vorteile guten Marketings.",
       gold_title:"Goldschmiede – persönliche Beratung",gold_sub:"4C erklärt + 3 Vorschläge. WhatsApp oder Termin mit 1 Klick.",zl_cap_4c:"4C in 30 Sek. — klar & kurz.",zl_cap_style:"Welcher Stil: Solitaire, Halo oder Classic?",gold_whatsapp:"WhatsApp-Beratung",gold_book:"Termin buchen",
       opt_title:"Optik — kurzer Demo-Clip",opt_sub:"AVATAR_Glaeser — Intro für ein Optik-Geschäft.",opt_whatsapp:"WhatsApp / Anprobe",opt_book:"Termin buchen",
-      trust_title:"Warum man uns vertraut",trust_sub:"Drei kurze Belege.",trust1_t:"Dreisprachig (DE · EN · SR)",trust1_s:"Keine Wasserzeichen; Skripte/Untertitel in drei Sprachen.",trust2_t:"Schnelle Lieferung",trust2_s:"Erster Entwurf in 3–5 Tagen, final in 2–4 Wochen.",trust3_t:"Video + web = Ergebnis",trust3_s:"Kurzer Avatar + Landing → klarere Botschaft, mehr Anfragen.",
+      trust_title:"Warum man uns vertraut",trust_sub:"Drei kurze Belege.",testi_title:"Was Kunden sagen",testi_sub:"Kurz und konkret.",
       faq_title:"FAQ",faq1_q:"Wie schnell liefern Sie?",faq1_a:"2–4 Wochen — abhängig von Zusammenarbeit und Freigaben.",faq2_q:"Was benötigen Sie von uns?",faq2_a:"Logo, 5–8 Fotos und 3–4 Kernpunkte — den Rest übernehmen wir.",faq3_q:"Was kostet es ungefähr?",faq3_a:"Ab X €; exaktes Angebot nach unserer 24-h-Einschätzung.",
       contact_title:"Kontakt",rights:"Alle Rechte vorbehalten"},
     sr:{nav_services:"Usluge",nav_packages:"Paketi",nav_portfolio:"Portfolio",nav_optik:"Optika",nav_contact:"Kontakt",cta_top:"Zatraži ponudu",
@@ -439,14 +445,14 @@
       dv_title:"Demo — Video uzorci",dv_sub:"2 kratka primera: Peter i Sandra.",dv_c1_t:"Pekara Peter",dv_c1_s:"Sezonska kratka reklama (social format).",dv_c3_t:"Sandra — marketinške prednosti",dv_c3_s:"Kratak pitch o benefitima dobrog marketinga.",
       gold_title:"Zlatar – lična pomoć",gold_sub:"4C objašnjenje + 3 predloga. WhatsApp ili termin u 1 kliku.",zl_cap_4c:"4C za 30 sek — jasno & kratko.",zl_cap_style:"Koji stil: Solitaire, Halo ili Classic?",gold_whatsapp:"WhatsApp Savet",gold_book:"Zakaži termin",
       opt_title:"Optika — kratki demo",opt_sub:"AVATAR_Glaeser — intro klip za optiku.",opt_whatsapp:"WhatsApp / Proba",opt_book:"Zakaži termin",
-      trust_title:"Zašto nama veruju",trust_sub:"Tri kratka dokaza poverenja.",trust1_t:"Trojezično (DE · EN · SR)",trust1_s:"Bez vodenih žigova; skripte/titlovi na tri jezika.",trust2_t:"Brza isporuka",trust2_s:"Prvi nacrt u 3–5 dana, final u 2–4 nedelje.",trust3_t:"Video + web = rezultat",trust3_s:"Kratki avatar + landing → jasna poruka i više upita.",
+      trust_title:"Zašto nama veruju",trust_sub:"Tri kratka dokaza poverenja.",testi_title:"Šta klijenti kažu",testi_sub:"Kratko i konkretno.",
       faq_title:"Česta pitanja",faq1_q:"Koliko brzo isporučujete?",faq1_a:"2–4 nedelje — u zavisnosti od saradnje i odobrenja.",faq2_q:"Šta je potrebno sa vaše strane?",faq2_a:"Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.",faq3_q:"Koliko okvirno košta?",faq3_a:"Početna cena od X €; tačnu procenu šaljemo nakon 24-časovne procene.",
       contact_title:"Kontakt",rights:"Sva prava zadržana"}
   };
 
   // HERO (tri jezika)
   var HERO_SRC={de:"/avatar-de.mp4",en:"/avatar-eng.mp4",sr:"/avatar-srb.mp4"};
-  var VERSION="20251105";
+  var VERSION="20251107";
 
   function qs(name){var m=location.search.match(new RegExp('[?&]'+name+'=([^&]+)'));return m?decodeURIComponent(m[1]):null}
   function normalizeLang(x){if(!x)return"sr";x=x.toLowerCase();if(x.indexOf("de")===0)return"de";if(x.indexOf("en")===0)return"en";return"sr"}
