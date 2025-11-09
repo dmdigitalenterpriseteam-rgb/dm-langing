@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Konditionen & Preise – D&M Digital Enterprise</title>
   <meta name="robots" content="index,follow" />
+  <!-- VERSION 2025-12-15 -->
   <style>
-    :root{--bg:#0e1116;--text:#e7eef7;--muted:#aeb9c8;--card:#151a22;--line:rgba(255,255,255,.08)}
+    :root{--bg:#0e1116;--text:#e7eef7;--muted:#aeb9c8;--card:#151a22;--line:rgba(255,255,255,.08);--blue:#2f7af6}
     *{box-sizing:border-box}
     body{margin:0;background:var(--bg);color:var(--text);
          font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
@@ -18,9 +19,16 @@
     ul{padding-left:20px}
     .badge{display:inline-block;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:#cfd7e3;font-size:13px}
     .note{background:#101620;border:1px solid var(--line);border-radius:10px;padding:12px;margin-top:10px}
+    /* Back button (preserved) */
+    .backbtn{display:inline-block;margin:18px 0 0 18px;padding:10px 14px;background:var(--blue);color:#fff;
+             text-decoration:none;border-radius:10px;font-weight:600}
+    .backbtn:focus,.backbtn:hover{text-decoration:none;opacity:.95}
   </style>
 </head>
 <body>
+  <!-- preserved back link -->
+  <a class="backbtn" href="/index.html">← Zurück zur Startseite</a>
+
   <main class="wrap">
     <h1>Konditionen & Preise</h1>
     <span class="badge">Stand: 07.11.2025</span>
@@ -56,7 +64,7 @@
 
     <section class="card">
       <h2>Geplante Aktion / Promotion</h2>
-      <p><em>Aktionspreise gültig bis <strong>15.12.2025</strong>.</p>
+      <p><em>Aktionspreise gültig bis <strong>15.12.2025</strong>.</em></p>
       <p>Details (Rabatte, Umfang, Teilnahmebedingungen) werden vor dem Start separat veröffentlicht
          und gelten ausschließlich für den genannten Aktionszeitraum.</p>
     </section>
