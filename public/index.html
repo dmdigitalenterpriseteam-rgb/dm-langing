@@ -56,32 +56,34 @@
     .btn-min{padding:8px 12px;border-radius:999px;border:1px solid var(--line);color:#e7eef7;background:#0f141b}
     .btn-grad{border:none;background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;font-weight:700}
 
-    /* 🔵 Social icons (header) */
+    /* 🔵 Social icons (HEADER) – POJAČANO */
     .social{
       display:flex;
       align-items:center;
-      gap:8px;
-      margin-right:8px;
+      gap:10px;
+      margin-right:10px;
     }
     .social a{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      width:32px;
-      height:32px;
+      width:38px;
+      height:38px;
       border-radius:999px;
-      border:1px solid var(--line);
-      background:#0f141b;
-      opacity:.85;
-      transition:opacity .2s, transform .2s;
+      border:1px solid rgba(255,255,255,.35);
+      background:linear-gradient(135deg,rgba(157,178,255,0.18),rgba(98,224,198,0.22));
+      box-shadow:0 0 0 1px rgba(0,0,0,.4);
+      color:#e7eef7;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
     }
     .social a:hover{
-      opacity:1;
-      transform:translateY(-1px);
+      transform:translateY(-1px) scale(1.05);
+      box-shadow:0 8px 18px rgba(0,0,0,.55);
+      background:linear-gradient(135deg,rgba(157,178,255,0.3),rgba(98,224,198,0.35));
     }
     .social svg{
-      width:16px;
-      height:16px;
+      width:18px;
+      height:18px;
     }
 
     /* Zlatar & Optika */
@@ -142,7 +144,7 @@
     </nav>
     <div class="spacer"></div>
 
-    <!-- 🔵 FB + IG ikone u headeru -->
+    <!-- FB + IG ikone u headeru (POJAČANO) -->
     <div class="social">
       <a href="https://www.facebook.com/profile.php?id=61583547136843" target="_blank" rel="noopener" aria-label="Facebook">
         <svg viewBox="0 0 24 24" aria-hidden="true">
