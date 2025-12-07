@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="sr">
 <head>
@@ -57,6 +56,36 @@
     .btn-min{padding:8px 12px;border-radius:999px;border:1px solid var(--line);color:#e7eef7;background:#0f141b}
     .btn-grad{border:none;background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;font-weight:700}
 
+    /* 🔵 Social icons (HEADER) – POJAČANO */
+    .social{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin-right:10px;
+    }
+    .social a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:38px;
+      height:38px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.35);
+      background:linear-gradient(135deg,rgba(157,178,255,0.18),rgba(98,224,198,0.22));
+      box-shadow:0 0 0 1px rgba(0,0,0,.4);
+      color:#e7eef7;
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .social a:hover{
+      transform:translateY(-1px) scale(1.05);
+      box-shadow:0 8px 18px rgba(0,0,0,.55);
+      background:linear-gradient(135deg,rgba(157,178,255,0.3),rgba(98,224,198,0.35));
+    }
+    .social svg{
+      width:18px;
+      height:18px;
+    }
+
     /* Zlatar & Optika */
     .zl-sec{padding:44px 0;background:#0b0f14}
     .zl-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
@@ -69,7 +98,62 @@
 
     .op-sec{padding:44px 0;background:#0e1116}
     .op-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-    .op-grid{display:grid;grid-template-columns:1fr;gap:18px}
+    .op-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1.45fr);gap:18px}
+
+    .op-carousel{
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:#05070b;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .op-carousel-title{
+      font-size:16px;
+      font-weight:600;
+      padding:12px 16px 4px;
+    }
+
+    .op-carousel-inner{position:relative;}
+
+    .op-carousel-track{
+      display:flex;
+      transition:transform .5s ease-in-out;
+    }
+
+    .op-carousel-slide{min-width:100%;}
+
+    .op-carousel-slide img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .op-carousel-dots{
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      padding:8px 0 12px;
+      background:#05070b;
+    }
+
+    .op-carousel-dot{
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      border:1px solid var(--muted);
+      background:transparent;
+      cursor:pointer;
+      opacity:.6;
+    }
+
+    .op-carousel-dot.active{
+      background:var(--brand1);
+      border-color:var(--brand1);
+      opacity:1;
+    }
 
     /* Video layout helper */
     .video-grid{display:grid;gap:18px}
@@ -78,32 +162,6 @@
 
     /* TOP trio 9:16 */
     .trio-916{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .social{
-      display:flex;
-      gap:8px;
-      margin-right:16px;
-    }
-    .social a{
-      width:32px;
-      height:32px;
-      border-radius:999px;
-      display:grid;
-      place-items:center;
-      border:1px solid var(--line);
-      opacity:.9;
-      text-decoration:none;
-      color:var(--text);
-      font-size:14px;
-    }
-    .social a:hover{
-      opacity:1;
-      transform:translateY(-1px);
-    }
-    .social svg{
-      width:16px;
-      height:16px;
-    }
-
     @media (max-width:980px){
       .grid-2{grid-template-columns:1fr}
       .cards{grid-template-columns:1fr}
@@ -112,6 +170,7 @@
       .zl-grid{grid-template-columns:1fr}
       .video-grid .row-land-2{grid-template-columns:1fr}
       .trio-916{grid-template-columns:1fr}
+      .op-grid{grid-template-columns:1fr}
     }
 
     footer{padding:30px 0;border-top:1px solid var(--line);color:#aeb9c8}
@@ -141,31 +200,18 @@
     </nav>
     <div class="spacer"></div>
 
+    <!-- FB + IG ikone u headeru (POJAČANO) -->
     <div class="social">
-      <a href="https://www.facebook.com/profile.php?id=61583547136843"
-         target="_blank" rel="noopener" aria-label="Facebook">
+      <a href="https://www.facebook.com/profile.php?id=61583547136843" target="_blank" rel="noopener" aria-label="Facebook">
         <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path fill="currentColor"
-                d="M13.5 8H16V5h-2.5C10.9 5 9 6.9 9 9.6V11H7v3h2v5h3v-5h2.3l.7-3H12v-1.4C12 8.8 12.4 8 13.5 8Z"/>
+          <path fill="currentColor" d="M13.5 8H16V5h-2.5C10.9 5 9 6.9 9 9.6V11H7v3h2v5h3v-5h2.3l.7-3H12v-1.4C12 8.8 12.4 8 13.5 8Z"/>
         </svg>
       </a>
-
-      <a href="https://www.instagram.com/d_mdigitalenterpriseteam/"
-         target="_blank" rel="noopener" aria-label="Instagram">
+      <a href="https://www.instagram.com/d_mdigitalenterpriseteam/" target="_blank" rel="noopener" aria-label="Instagram">
         <svg viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="4" y="4" width="16" height="16" rx="4" ry="4"
-                fill="none" stroke="currentColor" stroke-width="1.6"/>
-          <circle cx="12" cy="12" r="4"
-                  fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <rect x="4" y="4" width="16" height="16" rx="4" ry="4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/>
           <circle cx="17" cy="7" r="1.1" fill="currentColor"/>
-        </svg>
-      </a>
-
-      <a href="https://www.linkedin.com/in/dejan-veljovic-3a2478374/"
-         target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path fill="currentColor"
-                d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.32 8.16h4.35V23H.32zM8.34 8.16h4.17v2.02h.06c.58-1.1 2-2.26 4.12-2.26 4.4 0 5.21 2.9 5.21 6.67V23h-4.35v-7.16c0-1.71-.03-3.92-2.39-3.92-2.39 0-2.76 1.86-2.76 3.8V23H8.34z"/>
         </svg>
       </a>
     </div>
@@ -370,7 +416,7 @@
     </div>
   </section>
 
-  <!-- OPTIKA -->
+  <!-- OPTIKA + BÄCKEREI KARUSEL -->
   <section id="optik" class="op-sec">
     <div class="op-wrap">
       <header class="op-head">
@@ -383,6 +429,36 @@
             <source src="/optika/optikaAVATAR_Glaeser.mp4?v=20251105" type="video/mp4"/>
           </video>
         </figure>
+
+        <div class="op-carousel" aria-label="D&M Bäckerei – foto primeri">
+          <h3 class="op-carousel-title" data-i18n="bakery_carousel_title">D&M Bäckerei – foto primeri</h3>
+          <div class="op-carousel-inner">
+            <div class="op-carousel-track" id="bakeryCarouselTrack">
+              <div class="op-carousel-slide">
+                <img src="/carousel-baeckerei-01-front.jpg.png" alt="D&M Bäckerei – 3D logo i pekar">
+              </div>
+              <div class="op-carousel-slide">
+                <img src="/carousel-baeckerei-02-front.jpg.jpg" alt="Peciva na tamnom mermeru – D&M Bäckerei">
+              </div>
+              <div class="op-carousel-slide">
+                <img src="/carousel-baeckerei-03-front.jpg.jpg" alt="Božićni hleb i kolači – D&M Bäckerei">
+              </div>
+              <div class="op-carousel-slide">
+                <img src="/carousel-baeckerei-04-front.jpg.jpg" alt="Pekarka u pekari – D&M Bäckerei">
+              </div>
+              <div class="op-carousel-slide">
+                <img src="/carousel-baeckerei-05-front.jpg.png" alt="Pekar posipa brašno – D&M Bäckerei">
+              </div>
+            </div>
+          </div>
+          <div class="op-carousel-dots" id="bakeryCarouselDots">
+            <button class="op-carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
+            <button class="op-carousel-dot" data-slide="1" aria-label="Slide 2"></button>
+            <button class="op-carousel-dot" data-slide="2" aria-label="Slide 3"></button>
+            <button class="op-carousel-dot" data-slide="3" aria-label="Slide 4"></button>
+            <button class="op-carousel-dot" data-slide="4" aria-label="Slide 5"></button>
+          </div>
+        </div>
       </div>
       <div class="op-ctas">
         <a class="op-btn primary" href="https://wa.me/381606890072" target="_blank" rel="noopener" data-i18n="opt_whatsapp">WhatsApp / Proba</a>
@@ -459,7 +535,7 @@
       opt_title:"Optics — short demo",opt_sub:"AVATAR_Glaeser — intro clip for an optics store.",opt_whatsapp:"WhatsApp / Try-on",opt_book:"Book appointment",
       trust_title:"Why clients trust us",trust_sub:"Three short proof points.",trust1_t:"Trilingual (DE · EN · SR)",trust1_s:"No watermarks; scripts/subtitles in three languages.",trust2_t:"Fast delivery",trust2_s:"First draft in 3–5 days, final in 2–4 weeks.",trust3_t:"Video + web = results",trust3_s:"Short avatar + landing → clearer message & more inquiries.",
       faq_title:"FAQ",faq1_q:"How fast do you deliver?",faq1_a:"2–4 weeks — depending on collaboration and approvals.",faq2_q:"What do you need from us?",faq2_a:"Logo, 5–8 photos and 3–4 key points — we handle the rest.",faq3_q:"Roughly how much does it cost?",faq3_a:"Starting price from X €; exact quote after our 24-hour assessment.",
-      contact_title:"Contact",rights:"All rights reserved"},
+      bakery_carousel_title:"D&M Bakery – photo examples",contact_title:"Contact",rights:"All rights reserved"},
     de:{nav_services:"Leistungen",nav_packages:"Pakete",nav_portfolio:"Portfolio",nav_optik:"Optik",nav_contact:"Kontakt",cta_top:"Angebot anfragen",
       badge_stack:"Digitales Design • Video • Web",hero_title:"Einfach – damit man sich an Sie erinnert.",hero_sub:"Websites, kurze Videoanzeigen und smartes Marketing auf Deutsch, Serbisch und Englisch.",cta_portfolio:"Portfolio ansehen",cta_services:"Leistungen",note_menu:"Transparente Navigation ist immer sichtbar. Halbtransparent beim Scrollen gern auf Wunsch.",note_video:"Mit der Sprache wählen Sie die Videoversion; Ton ist aktiv.",
       services_title:"Was wir machen (mit Fokus auf Ergebnisse)",services_sub:"Drei Module, die schnell Wirkung zeigen.",
@@ -478,7 +554,7 @@
       opt_title:"Optik — kurzer Demo-Clip",opt_sub:"AVATAR_Glaeser — Intro für ein Optik-Geschäft.",opt_whatsapp:"WhatsApp / Anprobe",opt_book:"Termin buchen",
       trust_title:"Warum man uns vertraut",trust_sub:"Drei kurze Belege.",trust1_t:"Dreisprachig (DE · EN · SR)",trust1_s:"Keine Wasserzeichen; Skripte/Untertitel in drei Sprachen.",trust2_t:"Schnelle Lieferung",trust2_s:"Erster Entwurf in 3–5 Tagen, final in 2–4 Wochen.",trust3_t:"Video + web = Ergebnis",trust3_s:"Kurzer Avatar + Landing → klarere Botschaft, mehr Anfragen.",
       faq_title:"FAQ",faq1_q:"Wie schnell liefern Sie?",faq1_a:"2–4 Wochen — abhängig von Zusammenarbeit und Freigaben.",faq2_q:"Was benötigen Sie von uns?",faq2_a:"Logo, 5–8 Fotos und 3–4 Kernpunkte — den Rest übernehmen wir.",faq3_q:"Was kostet es ungefähr?",faq3_a:"Ab X €; exaktes Angebot nach unserer 24-h-Einschätzung.",
-      contact_title:"Kontakt",rights:"Alle Rechte vorbehalten"},
+      bakery_carousel_title:"D&M Bäckerei – Bildbeispiele",contact_title:"Kontakt",rights:"Alle Rechte vorbehalten"},
     sr:{nav_services:"Usluge",nav_packages:"Paketi",nav_portfolio:"Portfolio",nav_optik:"Optika",nav_contact:"Kontakt",cta_top:"Zatraži ponudu",
       badge_stack:"Digitalni dizajn • Video • Web",hero_title:"Jednostavno — pravimo da vas pamte.",hero_sub:"Web stranice, kratke video reklame i pametan marketing na nemačkom, srpskom i engleskom.",cta_portfolio:"Pogledaj portfolio",cta_services:"Usluge",note_menu:"Transparentan meni je stalno uključen; poluprovidan na skrol po želji.",note_video:"Jezik menja verziju videa; zvuk je uključen.",
       services_title:"Šta radimo (sa fokusom na rezultate)",services_sub:"Tri stuba ponude koji najbrže donose efekat.",
@@ -497,7 +573,7 @@
       opt_title:"Optika — kratki demo",opt_sub:"AVATAR_Glaeser — intro klip za optiku.",opt_whatsapp:"WhatsApp / Proba",opt_book:"Zakaži termin",
       trust_title:"Zašto nama veruju",trust_sub:"Tri kratka dokaza poverenja.",trust1_t:"Trojezično (DE · EN · SR)",trust1_s:"Bez vodenih žigova; skripte/titlovi na tri jezika.",trust2_t:"Brza isporuka",trust2_s:"Prvi nacrt u 3–5 dana, final u 2–4 nedelje.",trust3_t:"Video + web = rezultat",trust3_s:"Kratki avatar + landing → jasna poruka i više upita.",
       faq_title:"Česta pitanja",faq1_q:"Koliko brzo isporučujete?",faq1_a:"2–4 nedelje — u zavisnosti od saradnje i odobrenja.",faq2_q:"Šta je potrebno sa vaše strane?",faq2_a:"Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.",faq3_q:"Koliko okvirno košta?",faq3_a:"Početna cena od X €; tačnu procenu šaljemo nakon 24-časovne procene.",
-      contact_title:"Kontakt",rights:"Sva prava zadržana"}
+      bakery_carousel_title:"D&M Bäckerei – foto primeri",contact_title:"Kontakt",rights:"Sva prava zadržana"}
   };
 
   // HERO (tri jezika)
@@ -519,6 +595,43 @@
   function setLangAll(lang){lang=normalizeLang(lang);applyI18n(lang);setHero(lang);try{localStorage.setItem("lang",lang)}catch(e){};document.documentElement.lang=lang}
   (function(){var L=normalizeLang(qs("lang")||(function(){try{return localStorage.getItem("lang")}catch(e){return null}})()||document.documentElement.lang);setLangAll(L)})();
   document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-setlang]");if(!b)return;var L=b.getAttribute("data-setlang");history.replaceState(null,"",location.pathname+"?lang="+L);setLangAll(L);});
+
+  (function () {
+    var track = document.getElementById('bakeryCarouselTrack');
+    var dotsWrap = document.getElementById('bakeryCarouselDots');
+    if (!track || !dotsWrap) return;
+    var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('.op-carousel-dot'));
+    if (!dots.length) return;
+
+    var index = 0;
+
+    function update() {
+      track.style.transform = 'translateX(-' + (index * 100) + '%)';
+      dots.forEach(function(dot, i){
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    function next() {
+      index = (index + 1) % dots.length;
+      update();
+    }
+
+    var timer = setInterval(next, 5000);
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(next, 5000);
+    }
+
+    dots.forEach(function(dot, i){
+      dot.addEventListener('click', function(){
+        index = i;
+        update();
+        resetTimer();
+      });
+    });
+  })();
 </script>
 </body>
 </html>
