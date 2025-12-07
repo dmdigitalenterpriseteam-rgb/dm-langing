@@ -1,647 +1,618 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>D&M Digital</title>
-  <link rel="canonical" href="https://dmdigitalenterprise.vercel.app/">
-  <meta name="description" content="Web, video i marketing — DE/SR/EN."/>
+  <meta charset="utf-8">
+  <title>D&M Digital Enterprise – Web dizajn & video za DACH</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Moderne web stranice, kratki video oglasi i pametan marketing na nemačkom, srpskom i engleskom jeziku. D&M Digital Enterprise – dizajn, sadržaj i strategija za lokale u DACH regionu.">
+  <meta name="robots" content="index,follow">
 
-  <!-- OG -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="D&M Digital Enterprise – Webdesign & Video für DACH">
-  <meta property="og:description" content="Landing stranice, kratki video-avatari, Google profili. Brza isporuka i merljivi rezultati.">
+  <meta property="og:description" content="Moderne Websites, kurze Video-Ads und smartes Marketing auf Deutsch, Serbisch und Englisch.">
   <meta property="og:url" content="https://dmdigitalenterprise.vercel.app/">
-  <meta property="og:image" content="https://dmdigitalenterprise.vercel.app/og-image.png">
+  <meta property="og:image" content="https://dmdigitalenterprise.vercel.app/hero-robot.png">
+
+  <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/favicon-180.png" sizes="180x180" type="image/png">
+  <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="icon" href="/favicon-512.png" sizes="512x512" type="image/png">
 
   <style>
-    :root{--bg:#0e1116;--card:#151a22;--line:rgba(255,255,255,.08);
-      --muted:#9aa7b6;--text:#e7eef7;--brand1:#62e0c6;--brand2:#9fa8fe}
-    *{box-sizing:border-box}
-    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);
-      font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-    html{scroll-behavior:smooth}
-    img,video{max-width:100%;height:auto;display:block}
-    section{padding:44px 0;scroll-margin-top:90px}
+    :root{
+      --bg:#0e1116;
+      --text:#e7eef7;
+      --muted:#aeb9c8;
+      --card:#151a22;
+      --line:rgba(255,255,255,.08);
+      --blue:#27af8b;
+      --blue-soft:#1f8d72;
+      --accent:#f6a500;
+      --danger:#ff4b5c;
+      --badge:#202636;
+      --shadow-soft:0 18px 60px rgba(0,0,0,.55)
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:var(--bg);color:var(--text);font-family:-apple-system,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    body{display:flex;flex-direction:column}
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:1180px;margin:0 auto;padding:20px}
-    header{position:sticky;top:0;background:rgba(14,17,22,.72);
-      backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--line);z-index:10}
-    .nav{display:flex;align-items:center;gap:24px;padding:12px 0;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-    .nav a{opacity:.9}.nav a:hover{opacity:1}
-    .spacer{flex:1}
-    .btn{display:inline-block;min-height:44px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);
-      background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;font-weight:700;cursor:pointer}
-    .ghost{background:transparent;color:var(--text)}
-    .badge{display:inline-block;background:#0d131a;border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:#c3ccd7;font-size:13px}
-    h1{font-size:clamp(1.6rem,4.8vw,3.2rem);line-height:1.12;margin:12px 0 8px}
-    h2{font-size:clamp(1.25rem,3.8vw,2.125rem);margin:0 0 8px}
-    .sub{color:var(--muted);margin:0 0 20px}
-    .lead{color:var(--muted);max-width:720px}
-    .row{display:flex;gap:12px;margin-top:18px}
-    .note{margin-top:14px;background:#0d131a;border:1px solid var(--line);padding:12px 16px;border-radius:14px;color:#c7d0dc}
-
-    /* Video */
-    video.vid{width:100%;aspect-ratio:16/9;background:#0a0f14;border:1px solid var(--line);border-radius:18px;object-fit:cover}
-    video.vid-916{aspect-ratio:9/16;object-fit:cover;border-radius:18px;border:1px solid var(--line);background:#0a0f14}
-
-    .grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px}
-    .card h3{margin:10px 0 8px}
-    .list{color:#cfd8e3;margin:0;padding-left:18px}
-    .list li{margin:6px 0}
-    .stack{display:flex;gap:12px;flex-wrap:wrap}
-    .btn-min{padding:8px 12px;border-radius:999px;border:1px solid var(--line);color:#e7eef7;background:#0f141b}
-    .btn-grad{border:none;background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;font-weight:700}
-
-    /* 🔵 Social icons (HEADER) – POJAČANO */
-    .social{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin-right:10px;
-    }
-    .social a{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:38px;
-      height:38px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.35);
-      background:linear-gradient(135deg,rgba(157,178,255,0.18),rgba(98,224,198,0.22));
-      box-shadow:0 0 0 1px rgba(0,0,0,.4);
-      color:#e7eef7;
-      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
-    }
-    .social a:hover{
-      transform:translateY(-1px) scale(1.05);
-      box-shadow:0 8px 18px rgba(0,0,0,.55);
-      background:linear-gradient(135deg,rgba(157,178,255,0.3),rgba(98,224,198,0.35));
-    }
-    .social svg{
-      width:18px;
-      height:18px;
-    }
-
-    /* Zlatar & Optika */
-    .zl-sec{padding:44px 0;background:#0b0f14}
-    .zl-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-    .zl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .zl-card video,.op-card video{width:100%;border-radius:16px;border:1px solid var(--line);background:#0a0f14;box-shadow:0 10px 26px rgba(0,0,0,.35)}
-    .zl-card figcaption,.op-card figcaption{font-size:14px;opacity:.85;margin-top:8px}
-    .zl-ctas,.op-ctas{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
-    .zl-btn,.op-btn{padding:10px 16px;border-radius:999px;border:1px solid var(--line);text-decoration:none}
-    .zl-btn.primary,.op-btn.primary{background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;border-color:transparent;font-weight:700}
-
-    .op-sec{padding:44px 0;background:#0e1116}
-    .op-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-    .op-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1.45fr);gap:18px}
-
-    .op-carousel{
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      background:#05070b;
-      display:flex;
-      flex-direction:column;
-    }
-
-    .op-carousel-title{
-      font-size:16px;
-      font-weight:600;
-      padding:12px 16px 4px;
-    }
-
-    .op-carousel-inner{position:relative;}
-
-    .op-carousel-track{
-      display:flex;
-      transition:transform .5s ease-in-out;
-    }
-
-    .op-carousel-slide{min-width:100%;}
-
-    .op-carousel-slide img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    .op-carousel-dots{
-      display:flex;
-      justify-content:center;
-      gap:8px;
-      padding:8px 0 12px;
-      background:#05070b;
-    }
-
-    .op-carousel-dot{
-      width:10px;
-      height:10px;
-      border-radius:999px;
-      border:1px solid var(--muted);
-      background:transparent;
-      cursor:pointer;
-      opacity:.6;
-    }
-
-    .op-carousel-dot.active{
-      background:var(--brand1);
-      border-color:var(--brand1);
-      opacity:1;
-    }
-
-    /* Video layout helper */
-    .video-grid{display:grid;gap:18px}
-    .video-grid .row-land{display:grid;grid-template-columns:1fr;gap:18px}
-    .video-grid .row-land-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-
-    /* TOP trio 9:16 */
-    .trio-916{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    @media (max-width:980px){
-      .grid-2{grid-template-columns:1fr}
-      .cards{grid-template-columns:1fr}
-      footer .wrap{grid-template-columns:1fr;text-align:center}
-      footer .right{text-align:center}
+    img{max-width:100%;display:block}
+    video{max-width:100%;display:block;border-radius:18px;box-shadow:var(--shadow-soft);background:#000}
+    .page{flex:1;min-height:0;display:flex;flex-direction:column}
+    .wrap{max-width:1200px;margin:0 auto;padding:28px 20px 80px}
+    .header{position:sticky;top:0;z-index:40;background:linear-gradient(to bottom,rgba(14,17,22,.98),rgba(14,17,22,.92),rgba(14,17,22,.75),transparent);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.04)}
+    .header-inner{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:18px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:18px}
+    .brand-logo{width:26px;height:26px;border-radius:999px;background:radial-gradient(circle at 30% 20%,#fff, #fdf5d0 24%, #f9e38b 36%,#f7d66b 48%,#f5c848 60%,#f1b52b 75%,#e89a11 88%,#a36505 100%);display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 1px rgba(0,0,0,.35),0 8px 25px rgba(0,0,0,.65);font-size:16px;color:#13151b}
+    .brand span small{display:block;font-size:11px;font-weight:400;color:var(--muted)}
+    .nav{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:14px}
+    .nav a{opacity:.78}
+    .nav a:hover{opacity:1}
+    .lang-switch{display:flex;gap:6px;background:#11151f;border-radius:999px;padding:2px}
+    .lang-switch button{border:0;background:transparent;color:var(--muted);font-size:11px;padding:4px 7px;border-radius:999px;cursor:pointer;min-width:36px}
+    .lang-switch button.active{background:#273245;color:#fff}
+    .cta-small{padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.12);font-size:12px;background:linear-gradient(135deg,#13b47b,#1ad198);box-shadow:0 10px 30px rgba(0,0,0,.65)}
+    .cta-small span{font-weight:600}
+    .badge{display:inline-flex;align-items:center;gap:8px;padding:4px 10px;border-radius:999px;font-size:11px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);color:var(--muted)}
+    .badge-dot{width:8px;height:8px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 4px rgba(246,165,0,.18)}
+    .hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.05fr);gap:34px;align-items:center;padding:40px 0 60px}
+    .hero h1{font-size:40px;line-height:1.1;margin:14px 0 12px}
+    .hero h1 span{color:#fff}
+    .hero p.lead{color:var(--muted);font-size:15px;max-width:480px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:18px}
+    .hero-actions .primary{background:linear-gradient(135deg,#13b47b,#1ad198);border-radius:999px;padding:11px 22px;font-size:14px;font-weight:600;box-shadow:0 16px 40px rgba(0,0,0,.7);border:0;color:#04120f;display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+    .hero-actions .secondary{background:#151a22;border-radius:999px;padding:10px 18px;font-size:13px;border:1px solid rgba(255,255,255,.08);display:inline-flex;align-items:center;gap:8px;color:var(--muted);cursor:pointer}
+    .hero-footnote{margin-top:18px;font-size:12px;color:var(--muted);display:flex;align-items:center;gap:10px}
+    .hero-footnote svg{width:14px;height:14px;flex:0 0 auto}
+    .hero-media{position:relative}
+    .hero-tag{position:absolute;top:16px;left:16px;background:rgba(8,10,16,.82);backdrop-filter:blur(16px);border-radius:999px;padding:6px 10px;font-size:11px;color:var(--muted);display:flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.05)}
+    .hero-tag strong{font-size:11px;color:#fff}
+    .hero-tag small{font-size:10px}
+    .hero-video{border-radius:22px;overflow:hidden;box-shadow:0 22px 70px rgba(0,0,0,.8);position:relative}
+    .hero-video video{display:block;width:100%;height:auto}
+    .hero-note{position:absolute;right:16px;bottom:16px;background:rgba(8,10,16,.9);backdrop-filter:blur(18px);border-radius:16px;padding:9px 11px;font-size:11px;color:var(--muted);max-width:220px;border:1px solid rgba(255,255,255,.08)}
+    .hero-note strong{display:block;color:#fff;font-size:11px;margin-bottom:4px}
+    .section{padding:18px 0 40px;border-top:1px solid rgba(255,255,255,.04);margin-top:18px}
+    .section h2{font-size:26px;margin:0 0 10px}
+    .section p.sub{margin:0 0 18px;color:var(--muted);font-size:14px}
+    .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 0}
+    .pill{display:inline-flex;align-items:center;gap:6px;font-size:11px;padding:5px 9px;border-radius:999px;background:#151a22;color:var(--muted);border:1px solid rgba(255,255,255,.05)}
+    .pill svg{width:12px;height:12px;flex:0 0 auto}
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:20px}
+    .card{background:var(--card);border-radius:18px;padding:16px 16px 15px;border:1px solid rgba(255,255,255,.04);box-shadow:0 14px 50px rgba(0,0,0,.6)}
+    .card h3{font-size:17px;margin:0 0 6px}
+    .card p{margin:0 0 8px;font-size:13px;color:var(--muted)}
+    .card ul{margin:8px 0 0;padding-left:16px;font-size:13px;color:var(--muted)}
+    .card ul li{margin-bottom:4px}
+    .badge-small{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:999px;background:#20263a;border:1px solid rgba(255,255,255,.06);font-size:10px;color:var(--muted);margin-bottom:8px}
+    .badge-small strong{color:#fff;font-size:10px}
+    .price{font-size:20px;font-weight:600;margin-top:6px}
+    .price span{font-size:13px;font-weight:400;color:var(--muted)}
+    .highlight{color:var(--accent)}
+    .claim{margin-top:10px;font-size:13px;color:var(--muted);border-radius:14px;background:rgba(22,27,38,.9);padding:9px 12px;border:1px solid rgba(255,255,255,.06)}
+    .zl-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:flex-start}
+    .zl-col{background:var(--card);border-radius:18px;padding:16px 16px 18px;border:1px solid rgba(255,255,255,.04);box-shadow:0 14px 50px rgba(0,0,0,.6)}
+    .zl-col h3{font-size:18px;margin:0 0 6px}
+    .zl-col p{margin:0 0 8px;font-size:13px;color:var(--muted)}
+    .zl-list{margin:10px 0 0;padding-left:18px;font-size:13px;color:var(--muted)}
+    .zl-list li{margin-bottom:4px}
+    .zl-note{margin-top:10px;font-size:12px;color:var(--muted);border-radius:14px;background:#151a22;padding:9px 11px;border:1px dashed rgba(255,255,255,.12)}
+    .zl-btn-row{margin-top:12px;display:flex;flex-wrap:wrap;gap:10px}
+    .zl-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 15px;border-radius:999px;font-size:13px;border:1px solid rgba(255,255,255,.1);background:#151a22;color:var(--muted);cursor:pointer}
+    .zl-btn.primary{background:linear-gradient(135deg,#13b47b,#1ad198);color:#061311;box-shadow:0 12px 32px rgba(0,0,0,.8)}
+    .zl-btn svg{width:14px;height:14px}
+    .trust-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:flex-start}
+    .trust-card{background:var(--card);border-radius:18px;padding:16px 16px 18px;border:1px solid rgba(255,255,255,.04);box-shadow:0 14px 50px rgba(0,0,0,.6)}
+    .trust-card h3{font-size:18px;margin:0 0 6px}
+    .trust-card p{margin:0 0 8px;font-size:13px;color:var(--muted)}
+    .logos{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .logo-pill{padding:6px 12px;border-radius:999px;background:#151a22;border:1px solid rgba(255,255,255,.06);font-size:11px;color:var(--muted)}
+    .faq-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;align-items:flex-start}
+    .faq-list{background:var(--card);border-radius:18px;padding:16px 16px 18px;border:1px solid rgba(255,255,255,.04);box-shadow:0 14px 50px rgba(0,0,0,.6)}
+    .faq-item{margin-bottom:10px;border-bottom:1px dashed rgba(255,255,255,.06);padding-bottom:8px}
+    .faq-item:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+    .faq-q{font-size:13px;font-weight:600}
+    .faq-a{font-size:13px;color:var(--muted);margin-top:4px}
+    .contact-section{padding:30px 0 50px;border-top:1px solid rgba(255,255,255,.04);margin-top:18px}
+    .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:flex-start}
+    .contact-card{background:var(--card);border-radius:18px;padding:16px 16px 18px;border:1px solid rgba(255,255,255,.04);box-shadow:0 14px 50px rgba(0,0,0,.6)}
+    .contact-card h2{font-size:24px;margin:0 0 10px}
+    .contact-card p{margin:0 0 8px;font-size:14px;color:var(--muted)}
+    .contact-list{margin:10px 0 0;padding-left:16px;font-size:13px;color:var(--muted)}
+    .contact-list li{margin-bottom:4px}
+    .contact-actions{margin-top:12px;display:flex;flex-wrap:wrap;gap:10px}
+    .contact-actions a{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;font-size:13px;border:1px solid rgba(255,255,255,.08);color:var(--muted);background:#151a22}
+    .contact-actions a svg{width:14px;height:14px}
+    .footnote{margin-top:10px;font-size:11px;color:var(--muted)}
+    .foot{border-top:1px solid rgba(255,255,255,.06);padding:14px 20px 20px;background:#080b11;font-size:12px;color:var(--muted);display:flex;justify-content:center}
+    .foot-inner{max-width:1200px;width:100%;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px}
+    .foot-links{display:flex;flex-wrap:wrap;gap:12px}
+    .whatsapp-fab{position:fixed;right:22px;bottom:22px;width:52px;height:52px;border-radius:999px;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 18px 45px rgba(0,0,0,.75);z-index:50}
+    .whatsapp-fab svg{width:26px;height:26px;fill:#041b0e}
+    .social{display:flex;gap:10px}
+    .social a{width:30px;height:30px;border-radius:999px;background:#141925;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.08)}
+    .social svg{width:14px;height:14px;fill:#e5ecff}
+    .op-sec{padding:32px 0 46px;border-top:1px solid rgba(255,255,255,.04);margin-top:12px}
+    .op-wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+    .op-head{display:flex;flex-direction:column;gap:4px;margin-bottom:16px}
+    .op-head h2{font-size:24px;margin:0}
+    .op-head p.sub{margin:0;font-size:14px;color:var(--muted)}
+    .op-grid{display:grid;grid-template-columns:minmax(0,1.03fr) minmax(0,1.1fr);gap:24px;align-items:flex-start}
+    .op-card{background:transparent;border-radius:18px}
+    .op-carousel{background:var(--card);border-radius:20px;padding:12px 12px 16px;border:1px solid rgba(255,255,255,.05);box-shadow:0 18px 60px rgba(0,0,0,.75);display:flex;flex-direction:column;gap:10px}
+    .op-carousel header{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .op-carousel header h3{font-size:16px;margin:0}
+    .op-carousel header p{font-size:12px;color:var(--muted);margin:0}
+    .op-carousel main{position:relative;border-radius:16px;overflow:hidden}
+    .op-carousel main img{width:100%;height:auto;display:block}
+    .op-dots{display:flex;justify-content:center;gap:7px;margin-top:8px}
+    .op-dots button{width:7px;height:7px;border-radius:999px;border:0;background:rgba(255,255,255,.18);cursor:pointer}
+    .op-dots button.active{background:#fff}
+    .op-caption{font-size:11px;color:var(--muted);margin-top:6px}
+    .op-caption strong{color:#fff}
+    .badge-stack{display:inline-flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .badge-stack .pill{background:#151a22;border-color:rgba(255,255,255,.06)}
+    @media (max-width:960px){
+      .hero{grid-template-columns:1fr;gap:26px}
+      .hero-media{order:-1}
       .zl-grid{grid-template-columns:1fr}
-      .video-grid .row-land-2{grid-template-columns:1fr}
-      .trio-916{grid-template-columns:1fr}
+      .trust-grid{grid-template-columns:1fr}
+      .faq-grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
       .op-grid{grid-template-columns:1fr}
+      .header-inner{padding-inline:16px}
+      .wrap{padding-inline:16px}
+      .op-wrap{padding-inline:16px}
     }
-
-    footer{padding:30px 0;border-top:1px solid var(--line);color:#aeb9c8}
-    footer .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
-    footer .center a{color:#c3ccd7;opacity:.9} footer .center a:hover{opacity:1}
-    footer .right{text-align:right}
-
-    /* WhatsApp FAB */
-    .wa-fab{position:fixed;right:16px;bottom:16px;z-index:50;width:56px;height:56px;display:grid;place-items:center;border-radius:999px;color:#0b0b0b;background:#22c55e;border:1px solid rgba(255,255,255,.15);box-shadow:0 12px 28px rgba(0,0,0,.35)}
-    .wa-fab:hover{filter:brightness(1.05)}
-    @media (min-width:980px){.wa-fab{bottom:22px;right:22px}}
+    @media (max-width:680px){
+      .hero h1{font-size:30px}
+      .hero-actions{flex-direction:column;align-items:flex-start}
+      .nav{display:none}
+      .header-inner{justify-content:space-between}
+    }
   </style>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <div class="brand">
-      <img src="https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/logo-md%402x.png" alt="D&M Digital" style="height:24px"/>
-      D&M Digital
-    </div>
-    <nav class="stack">
-      <a href="#services" data-i18n="nav_services">Services</a>
-      <a href="#products" data-i18n="nav_packages">Packages</a>
-      <a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a>
-      <a href="#optik" data-i18n="nav_optik">Optics</a>
-      <a href="#contact" data-i18n="nav_contact">Contact</a>
-    </nav>
-    <div class="spacer"></div>
-
-    <!-- FB + IG ikone u headeru (POJAČANO) -->
-    <div class="social">
-      <a href="https://www.facebook.com/profile.php?id=61583547136843" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path fill="currentColor" d="M13.5 8H16V5h-2.5C10.9 5 9 6.9 9 9.6V11H7v3h2v5h3v-5h2.3l.7-3H12v-1.4C12 8.8 12.4 8 13.5 8Z"/>
-        </svg>
-      </a>
-      <a href="https://www.instagram.com/d_mdigitalenterpriseteam/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="4" y="4" width="16" height="16" rx="4" ry="4" fill="none" stroke="currentColor" stroke-width="1.6"/>
-          <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/>
-          <circle cx="17" cy="7" r="1.1" fill="currentColor"/>
-        </svg>
-              <a href="https://www.linkedin.com/in/dejan-veljovic-3a2478374/"
-         target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"
-                fill="none" stroke="currentColor" stroke-width="1.6"/>
-          <path d="M8 17h2V10H8v7zm1-8.5A1.25 1.25 0 1 0 9 7a1.25 1.25 0 0 0 0 2.5zm3 8.5h2v-3.6c0-1 .6-1.4 1.3-1.4.7 0 1.2.4 1.2 1.4V17h2v-4c0-2-1.1-3-2.7-3-1.2 0-1.8.6-2.1 1.2h-.1V10h-2V17z"
-                fill="currentColor"/>
-        </svg>
-      </a>
-
-      </a>
-    </div>
-
-    <div class="lang">
-      <button data-setlang="en">EN</button>
-      <button data-setlang="de">DE</button>
-      <button data-setlang="sr" class="active">SRB</button>
-    </div>
-    <a class="btn" href="#contact" data-i18n="cta_top">Request a quote</a>
-  </div>
-</header>
-
-<main class="wrap">
-  <!-- HERO -->
-  <section class="grid-2" id="hero">
-    <div>
-      <span class="badge" data-i18n="badge_stack">Digital design • Video • Web</span>
-      <h1 data-i18n="hero_title">Jednostavno — pravimo da vas pamte.</h1>
-      <p class="lead" data-i18n="hero_sub">Web stranice, kratke video reklame i pametan marketing na nemačkom, srpskom i engleskom.</p>
-      <div class="row">
-        <a class="btn" href="#portfolio" data-i18n="cta_portfolio">View portfolio</a>
-        <a class="btn ghost" href="#services" data-i18n="cta_services">Services</a>
-      </div>
-      <p class="note" data-i18n="note_menu">Transparent nav is always on; semi-transparent on scroll on request.</p>
-    </div>
-    <div>
-      <video playsinline id="heroVideo" class="vid" controls preload="metadata" poster="/hero-robot.png" aria-label="Hero video">
-        <source id="heroSrc" src="/avatar-srb.mp4?v=20251105" type="video/mp4"/>
-      </video>
-      <p class="note" data-i18n="note_video">Language also selects the video version; sound is on.</p>
-    </div>
-  </section>
-
-  <!-- TOP 3x 9:16 (traženo da stoji GORE) -->
-  <section id="top-trio">
-    <div class="trio-916">
-      <video playsinline class="vid-916" controls preload="metadata" poster="/posters/Avatar_musko_de1.jpg" aria-label="Avatar 9:16 #1">
-        <source src="/Avatar_musko_de1.mp4?v=20251107" type="video/mp4"/>
-      </video>
-      <video playsinline class="vid-916" controls preload="metadata" poster="/posters/avatar_iv_video_de.jpg" aria-label="Avatar 9:16 #2">
-        <source src="/avatar_iv_video_de.mp4?v=20251107" type="video/mp4"/>
-      </video>
-      <video playsinline class="vid-916" controls preload="metadata" poster="/posters/Avatar_musko_de2%20(1).jpg" aria-label="Avatar 9:16 #3">
-        <source src="/Avatar_musko_de2.mp4?v=20251107" type="video/mp4"/>
-      </video>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section id="services">
-    <h2 data-i18n="services_title">What we do (focused on results)</h2>
-    <p class="sub" data-i18n="services_sub">Three pillars that deliver fast impact.</p>
-    <div class="cards">
-      <article class="card">
-        <span class="badge" data-i18n="s_tag_web">Web</span>
-        <h3 data-i18n="s_card1_t">Brze, moderne web stranice</h3>
-        <p class="sub" data-i18n="s_card1_s">Landing stranice, prezentacije, kontakt forme uz praćenje konverzija.</p>
-      </article>
-      <article class="card">
-        <span class="badge" data-i18n="s_tag_video">Video</span>
-        <h3 data-i18n="s_card2_t">Kratke video reklame</h3>
-        <p class="sub" data-i18n="s_card2_s">Formati 15–45 s, titlovi na DE/SR/EN, optimizovano za društvene mreže.</p>
-      </article>
-      <article class="card">
-        <span class="badge" data-i18n="s_tag_marketing">Marketing</span>
-        <h3 data-i18n="s_card3_t">Kampanje i oglasi</h3>
-        <p class="sub" data-i18n="s_card3_s">Facebook/Instagram/Google, kalendar sadržaja, hashtagovi i CTA poruke.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- PRODUCTS -->
-  <section id="products">
-    <h2 data-i18n="sec_products_title">Paketi (Start — Pro — Premium)</h2>
-    <p class="sub" data-i18n="sec_products_sub">Fiksne cene po modulu – jasan obim.</p>
-    <div class="cards">
-      <article class="card">
-        <h3 data-i18n="p_start_t">START paket</h3>
-        <ul class="list">
-          <li data-i18n="p_start_li1">One-page (do 5 sekcija)</li>
-          <li data-i18n="p_start_li2">Kontakt (mailto)</li>
-          <li data-i18n="p_start_li3">Osnovni SEO meta tagovi</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h3 data-i18n="p_pro_t">PRO paket</h3>
-        <ul class="list">
-          <li data-i18n="p_pro_li1">Višestrana + portfolio</li>
-          <li data-i18n="p_pro_li2">Kratak video (do 30 s)</li>
-          <li data-i18n="p_pro_li3">Priprema oglasa + 10 hashtagova</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h3 data-i18n="p_premium_t">PREMIUM paket</h3>
-        <ul class="list">
-          <li data-i18n="p_prem_li1">Prilagođen dizajn & animacije</li>
-          <li data-i18n="p_prem_li2">2 video oglasa (do 45 s)</li>
-          <li data-i18n="p_prem_li3">Kampanja 30 dana + izveštaj</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <!-- CLAIM -->
-  <section id="claim">
-    <h2 data-i18n="claim_title">Više kupaca za vašu pekaru</h2>
-    <p class="sub" data-i18n="claim_sub">Jasna landing stranica + 30-sekundni video, spremno za 2–4 nedelje.</p>
-    <a class="btn btn-grad" href="#contact" data-i18n="claim_cta">Besplatno brzo savetovanje</a>
-  </section>
-
-  <!-- PORTFOLIO -->
-  <section id="portfolio">
-    <h2 data-i18n="port_title">Primeri i prototipi</h2>
-    <p class="sub" data-i18n="port_sub">Linkovi uživo uskoro.</p>
-
-    <div class="cards">
-      <article class="card">
-        <h3 data-i18n="port_c1_t">Peter’s Bakery</h3>
-        <p class="sub" data-i18n="port_c1_s">Simple site with transparent menu.</p>
-        <div class="stack">
-          <a class="btn-min btn-grad"
-             href="/assets/portfolio/peters-bakery.pdf?v=20251107"
-             target="_blank" rel="noopener"
-             data-i18n="port_btn_pdf">Open PDF</a>
+  <div class="page">
+    <header class="header">
+      <div class="header-inner">
+        <a href="#top" class="brand">
+          <div class="brand-logo">D</div>
+          <span>D&M Digital Enterprise<small>Web & Video · DACH</small></span>
+        </a>
+        <nav class="nav">
+          <a href="#services" data-i18n="nav_services">Usluge</a>
+          <a href="#packages" data-i18n="nav_packages">Paketi</a>
+          <a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a>
+          <a href="#optik" data-i18n="nav_optik">Optika</a>
+          <a href="#contact" data-i18n="nav_contact">Kontakt</a>
+        </nav>
+        <div class="lang-switch" id="langSwitch">
+          <button data-setlang="en">EN</button>
+          <button data-setlang="de">DE</button>
+          <button data-setlang="sr" class="active">SRB</button>
         </div>
-      </article>
+        <a href="#contact" class="cta-small" data-i18n="cta_top"><span>Zatraži ponudu</span></a>
+      </div>
+    </header>
 
-      <!-- D&M intro video – SAMO 16:9 -->
-      <article class="card">
-        <h3 data-i18n="port_c2_t">D&M intro video</h3>
-        <p class="sub" data-i18n="port_c2_s">Brendirani uvodni video bez vodenog žiga.</p>
-        <video playsinline class="vid" controls preload="metadata">
-          <source src="/Avatar_musko_de.mp4?v=20251107" type="video/mp4"/>
-        </video>
-      </article>
-
-      <article class="card">
-        <h3 data-i18n="port_c3_t">CoreAlliance logo</h3>
-        <p class="sub" data-i18n="port_c3_s">Minimal logos for menus & hero.</p>
-        <div class="stack">
-          <a class="btn-min btn-grad" href="/assets/portfolio/corealliance-logo.pdf" target="_blank" rel="noopener" data-i18n="port_btn_pdf">Open PDF</a>
+    <main class="wrap" id="top">
+      <section class="hero" id="hero">
+        <div>
+          <span class="badge">
+            <span class="badge-dot"></span>
+            <span data-i18n="badge_stack">Digitalni dizajn • Video • Web</span>
+          </span>
+          <h1 data-i18n="hero_title">
+            Jednostavno — pravimo <span>da vas pamte.</span>
+          </h1>
+          <p class="lead" data-i18n="hero_sub">
+            Web stranice, kratke video reklame i pametan marketing na nemačkom, srpskom i engleskom.
+          </p>
+          <div class="hero-actions">
+            <a href="#packages" class="primary">
+              <span data-i18n="services_title">Šta mi to (stvarno) radimo.</span>
+            </a>
+            <a href="#portfolio" class="secondary">
+              <span data-i18n="services_sub">Tri stuba koji donose prvi rezultat.</span>
+            </a>
+          </div>
+          <div class="hero-footnote">
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M10 1.5A8.5 8.5 0 1 0 18.5 10 8.51 8.51 0 0 0 10 1.5Zm0 2a6.5 6.5 0 1 1-6.5 6.5A6.51 6.51 0 0 1 10 3.5Zm-.75 2.75a.75.75 0 0 0-1.5 0v5a.75.75 0 0 0 .44.68l3.5 1.75a.75.75 0 1 0 .67-1.34L9.25 10.3Z"/>
+            </svg>
+            <span data-i18n="s_tag_web">Web</span> • <span data-i18n="s_tag_video">Video</span> • <span data-i18n="s_tag_marketing">Marketing</span> — sve na jednom mestu.
+          </div>
         </div>
-      </article>
-    </div>
-  </section>
 
-  <!-- DEMO VIDEOS -->
-  <section id="demo-videos">
-    <h2 data-i18n="dv_title">Demo — Video samples</h2>
-    <p class="sub" data-i18n="dv_sub">2 kratka primera: Peter i Sandra.</p>
+        <div class="hero-media">
+          <div class="hero-tag">
+            <span class="badge-dot"></span>
+            <div>
+              <strong data-i18n="s_card1_t">Brze, moderne stranice</strong>
+              <small data-i18n="s_card1_s">Landing stranice, prezentacije, kontakt forme...</small>
+            </div>
+          </div>
+          <div class="hero-video">
+            <video playsinline autoplay muted loop>
+              <source src="/avatar-iv_video_de.mp4" type="video/mp4">
+            </video>
+            <div class="hero-note">
+              <strong data-i18n="s_card2_t">Kratki video oglasi</strong>
+              <span data-i18n="s_card2_s">15–45 sekundi, DE/EN/SR titlovi, optimizovano za društvene mreže.</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <div class="video-grid">
-      <div class="row-land-2">
-        <article class="card">
-          <h3 data-i18n="dv_c1_t">Peter’s bakery</h3>
-          <p class="sub" data-i18n="dv_c1_s">Seasonal short ad (social format).</p>
-          <video playsinline class="vid" controls preload="metadata">
-            <source src="/peters-baeckerei.mp4?v=20251107" type="video/mp4"/>
-          </video>
-        </article>
+      <section class="section" id="services">
+        <h2 data-i18n="services_title">Šta mi to (stvarno) radimo.</h2>
+        <p class="sub" data-i18n="services_sub">Tri stuba koja grade rezultat – sadržaj, dizajn i pametan marketing.</p>
 
-        <article class="card">
-          <h3 data-i18n="dv_c3_t">Sandra — marketing advantages</h3>
-          <p class="sub" data-i18n="dv_c3_s">Short pitch about the benefits of good marketing.</p>
-          <video playsinline class="vid" controls preload="metadata">
-            <source src="/sandra-enterprise.mp4?v=20251107" type="video/mp4"/>
-          </video>
-        </article>
-      </div>
-    </div>
-  </section>
+        <div class="badge-stack">
+          <span class="pill">
+            <svg viewBox="0 0 20 20"><path d="M3 4.5A2.5 2.5 0 0 1 5.5 2h9A2.5 2.5 0 0 1 17 4.5v11a.5.5 0 0 1-.79.4L13 13H5.5A2.5 2.5 0 0 1 3 10.5Z"/></svg>
+            <span data-i18n="s_card1_s">Landing stranice, prezentacije, kontakt forme...</span>
+          </span>
+          <span class="pill">
+            <svg viewBox="0 0 20 20"><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2h7A2.5 2.5 0 0 1 16 4.5v11a.5.5 0 0 1-.79.4L12 13H6.5A2.5 2.5 0 0 1 4 10.5Z"/></svg>
+            <span data-i18n="s_card2_s">Kratki video oglasi 15–45 sekundi, titlovi, formati za feed & story.</span>
+          </span>
+          <span class="pill">
+            <svg viewBox="0 0 20 20"><path d="M10 2a4 4 0 0 1 4 4v2h1.5A1.5 1.5 0 0 1 17 9.5v6a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 15.5v-6A1.5 1.5 0 0 1 4.5 8H6V6a4 4 0 0 1 4-4Z"/></svg>
+            <span data-i18n="s_card3_s">Facebook / Instagram / Google, osnovna analitika i praćenje.</span>
+          </span>
+        </div>
 
-  <!-- ZLATAR -->
-  <section id="goldschmiede" class="zl-sec">
-    <div class="zl-wrap">
-      <header class="zl-head">
-        <h2 data-i18n="gold_title">Zlatar – lična pomoć</h2>
-        <p class="sub" data-i18n="gold_sub">4C objašnjenje + 3 predloga. WhatsApp ili termin u 1 kliku.</p>
-      </header>
+        <div class="grid-3">
+          <article class="card">
+            <div class="badge-small">
+              <span>01</span>
+              <strong data-i18n="s_card1_t">Brze, moderne stranice</strong>
+            </div>
+            <p data-i18n="s_card1_s">Landing stranice, prezentacije, kontakt forme, blogovi i ponude – sve što malom biznisu treba da izgleda ozbiljno i jasno.</p>
+            <ul>
+              <li data-i18n="s_card1_li1">Jasan meni, sekcije po meri, mobilna optimizacija.</li>
+              <li data-i18n="s_card1_li2">Tekstovi i fotografije prilagođeni domaćem tržištu.</li>
+              <li data-i18n="s_card1_li3">Kontakt forme, Google mapa, CTA dugmad.</li>
+            </ul>
+          </article>
 
-      <div class="zl-grid">
-        <figure class="zl-card">
-          <video playsinline controls preload="metadata" poster="/zlatar/poster-4C.jpg">
-            <source src="/zlatar/zlatarAVATAR_4C.mp4?v=20251107" type="video/mp4"/>
-          </video>
-          <figcaption data-i18n="zl_cap_4c">4C za 30 sek — jasno & kratko.</figcaption>
-        </figure>
+          <article class="card">
+            <div class="badge-small">
+              <span>02</span>
+              <strong data-i18n="s_card2_t">Kratki video oglasi</strong>
+            </div>
+            <p data-i18n="s_card2_s">15–45 sekundi, DE/EN/SR titlovi, optimizovano za Reels, Shorts, Story i feed.</p>
+            <ul>
+              <li data-i18n="s_card2_li1">Scenario i montaža po meri vaše delatnosti.</li>
+              <li data-i18n="s_card2_li2">Možemo da koristimo i vaš materijal, i AI video.</li>
+              <li data-i18n="s_card2_li3">Priprema više formata iz jednog klipa.</li>
+            </ul>
+          </article>
 
-        <figure class="zl-card">
-          <video playsinline controls preload="metadata" poster="/zlatar/poster-ringwahl.jpg">
-            <source src="/zlatar/zlatarAVATAR_Ringwahl.mp4?v=20251107" type="video/mp4"/>
-          </video>
-          <figcaption data-i18n="zl_cap_style">Koji stil: Solitaire, Halo ili Classic?</figcaption>
-        </figure>
-      </div>
+          <article class="card">
+            <div class="badge-small">
+              <span>03</span>
+              <strong data-i18n="s_card3_t">Kampanje & oglasi</strong>
+            </div>
+            <p data-i18n="s_card3_s">Facebook / Instagram / Google, osnovna podešavanja, piksel, katalog, hashtagovi i „temelji“ za dalje oglašavanje.</p>
+            <ul>
+              <li data-i18n="s_card3_li1">Osnovna struktura kampanja i publika.</li>
+              <li data-i18n="s_card3_li2">Praćenje klikova i kontakt formulara.</li>
+              <li data-i18n="s_card3_li3">Jednostavan izveštaj sa predlozima.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-      <div class="zl-ctas">
-        <a class="zl-btn primary" href="https://wa.me/381606890072" target="_blank" rel="noopener" data-i18n="gold_whatsapp">WhatsApp Savet</a>
-        <a class="zl-btn" href="#contact" data-i18n="gold_book">Zakaži termin</a>
-      </div>
-    </div>
-  </section>
+      <section class="section" id="packages">
+        <h2 data-i18n="sec_products_title">Paketi (Start – Pro – Premium)</h2>
+        <p class="sub" data-i18n="sec_products_sub">Fiksne cene po modulu, čist obim i jasna podela posla.</p>
 
-  <!-- OPTIKA + BÄCKEREI KARUSEL -->
-  <section id="optik" class="op-sec">
-    <div class="op-wrap">
-      <header class="op-head">
-        <h2 data-i18n="opt_title">Optika — kratki demo</h2>
-        <p class="sub" data-i18n="opt_sub">AVATAR_Glaeser — intro klip za optiku.</p>
-      </header>
-      <div class="op-grid">
-        <figure class="op-card">
-          <video playsinline class="vid" controls preload="metadata" poster="/optika/poster-glaeser.jpg">
-            <source src="/optika/optikaAVATAR_Glaeser.mp4?v=20251105" type="video/mp4"/>
-          </video>
-        </figure>
+        <div class="zl-grid">
+          <article class="zl-col">
+            <h3 data-i18n="p_start_t">„START“ paket</h3>
+            <p data-i18n="p_start_l1">Jednostavan one-page (do 5 sekcija) sa jasnim menijem i CTA dugmadima.</p>
+            <ul class="zl-list">
+              <li data-i18n="p_start_li1">Stranica na nemačkom + srpskom ili engleskom (po potrebi).</li>
+              <li data-i18n="p_start_li2">Osnovni SEO meta-tagovi, naslov i opis.</li>
+              <li data-i18n="p_start_li3">Kontakt forma, mapa, WhatsApp dugme.</li>
+            </ul>
+            <div class="price">
+              850&nbsp;€ <span data-i18n="claim_simple">— jednostavno, jasno, bez skrivenih troškova.</span>
+            </div>
+            <div class="zl-note" data-i18n="claim_title">
+              Više kupaca za vašu pekaru, salon, zlataru ili optiku – uz modernu stranicu koja radi 24/7.
+            </div>
+            <div class="zl-btn-row">
+              <a class="zl-btn primary" href="https://wa.me/381606890072" target="_blank" rel="noopener" data-i18n="p_start_l1c">Pošalji WhatsApp poruku</a>
+              <a class="zl-btn" href="#contact" data-i18n="claim_cta">Zatraži ponudu</a>
+            </div>
+          </article>
 
-        <div class="op-carousel" aria-label="D&M Bäckerei – foto primeri">
-          <h3 class="op-carousel-title" data-i18n="bakery_carousel_title">D&M Bäckerei – foto primeri</h3>
-          <div class="op-carousel-inner">
-            <div class="op-carousel-track" id="bakeryCarouselTrack">
-              <div class="op-carousel-slide">
-                <img src="/carousel-baeckerei-01-front.jpg.png" alt="D&M Bäckerei – 3D logo i pekar">
+          <article class="zl-col">
+            <h3 data-i18n="p_pro_t">„PRO“ paket</h3>
+            <p data-i18n="p_pro_l1">Multi-page sa portfoliom, dodatnim stranicama i jednim video klipom.</p>
+            <ul class="zl-list">
+              <li data-i18n="p_pro_li1">Do 3–4 stranice (po delatnostima ili jezicima).</li>
+              <li data-i18n="p_pro_li2">Jedan video do 30 sekundi (Reels/Story format).</li>
+              <li data-i18n="p_pro_li3">Priprema do 10 hashtagova i naslov/tekst za objavu.</li>
+            </ul>
+            <div class="price">
+              1.990&nbsp;€ <span>— <span data-i18n="port_title">Primeri & prototipovi</span> uključeni.</span>
+            </div>
+            <div class="zl-note" data-i18n="port_sub">
+              Live linkovi tokom izrade — možete gledati i komentarisati dok gradimo.
+            </div>
+            <div class="zl-btn-row">
+              <a class="zl-btn primary" href="https://wa.me/381606890072" target="_blank" rel="noopener" data-i18n="port_c1_t">„Peters Bäckerei“ demo</a>
+              <a class="zl-btn" href="#contact" data-i18n="claim_cta">Zatraži ponudu</a>
+            </div>
+          </article>
+
+          <article class="zl-col">
+            <h3 data-i18n="p_prem_t">„PREMIUM“ paket</h3>
+            <p data-i18n="p_prem_l1">Custom dizajn & animacije, do 12 video klipova (do 45 sekundi) godišnje.</p>
+            <ul class="zl-list">
+              <li data-i18n="p_prem_li1">Landing stranica + 30-sekundni video, spremno za pokretanje kampanje.</li>
+              <li data-i18n="p_prem_li2">Mjesečni update sa 1–2 nova videa.</li>
+              <li data-i18n="p_prem_li3">Jednostavan izveštaj + sugestije za kampanje.</li>
+            </ul>
+            <div class="price">
+              od 3.990&nbsp;€ <span data-i18n="p_prem_l2">— 30-day kampanja + izveštaj.</span>
+            </div>
+            <div class="zl-note" data-i18n="claim_cta">
+              Besplatni uvodni razgovor — vidimo da li je uopšte potrebno i isplativo da ulazite u veće kampanje.
+            </div>
+            <div class="zl-btn-row">
+              <a class="zl-btn primary" href="#contact" data-i18n="claim_cta">Zakaži besplatan razgovor</a>
+              <a class="zl-btn" href="#konditionen" data-i18n="p_prem_l2">Konditionen & Preise</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="trust">
+        <h2 data-i18n="trust_title">Zašto klijenti veruju D&M timu.</h2>
+        <p class="sub" data-i18n="trust_sub">
+          Tri linije odbrane: dobra priprema, konkretni uzorci i ugovor u kom piše šta je vaš deo, a šta je naš.
+        </p>
+
+        <div class="trust-grid">
+          <article class="trust-card">
+            <h3 data-i18n="trust_h1">Tri nivoa dokaza pre nego što uopšte pričamo o budžetu.</h3>
+            <p data-i18n="trust_p1">Za svaki ozbiljniji projekat pripremamo jasan mini-dosije: primere iz vaše branše, jedan ili više prototipova i okvirni plan isporuke.</p>
+            <div class="logos">
+              <span class="logo-pill" data-i18n="trust_l1">„Startni“ PDF sa primerima iz prakse</span>
+              <span class="logo-pill" data-i18n="trust_l2">Live demo stranice koje već rade</span>
+              <span class="logo-pill" data-i18n="trust_l3">Kratki video primeri po branšama</span>
+            </div>
+          </article>
+
+          <article class="trust-card">
+            <h3 data-i18n="trust_h2">Transparentan ugovor i nema „sitnih slova“.</h3>
+            <p data-i18n="trust_p2">Sve što radimo definišemo u ugovoru o autorskom delu: obim, rokovi, broj revizija i način plaćanja. Vi ste mirni, mi znamo okvir.</p>
+            <ul class="zl-list">
+              <li data-i18n="trust_l4">40 % avans, 40 % nakon odobrenja dizajna, 20 % po isporuci.</li>
+              <li data-i18n="trust_l5">Reverse-Charge obračun za EU (po potrebi).</li>
+              <li data-i18n="trust_l6">Mogućnost rada po modulu — korak po korak.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <h2 data-i18n="faq_title">Pitanja koja najčešće dobijamo.</h2>
+        <p class="sub" data-i18n="faq_sub">Sve može i po dogovoru, ali je važno da od prvog dana znate okvir — vreme, obim i cenu.</p>
+
+        <div class="faq-grid">
+          <div class="faq-list">
+            <article class="faq-item">
+              <div class="faq-q" data-i18n="faq_q1">„Koliko vam treba da isporučite sajt?“</div>
+              <div class="faq-a" data-i18n="faq_a1">U proseku 2–4 nedelje, zavisi od obima i brzine povratnih informacija. Sajt „Start“ paket možemo završiti čak i brže, ali volimo da imate vremena da pogledate sve u miru.</div>
+            </article>
+            <article class="faq-item">
+              <div class="faq-q" data-i18n="faq_q2">„Šta mi tačno treba da vam pošaljemo?“</div>
+              <div class="faq-a" data-i18n="faq_a2">Ako imate logo, nekoliko fotografija i osnovne informacije o firmi — mi možemo da uradimo ostalo. Dobro je ako imate i jedan postojeći profil na društvenim mrežama da vidimo kako već komunicirate.</div>
+            </article>
+            <article class="faq-item">
+              <div class="faq-q" data-i18n="faq_q3">„Da li možemo prvo da krenemo sa manjim paketom?“</div>
+              <div class="faq-a" data-i18n="faq_a3">Naravno. Mnogi klijenti kreću od „Start“ paketa, pa kasnije dodajemo dodatne stranice, jezičke verzije ili video klipove. Sve je modularno.</div>
+            </article>
+          </div>
+
+          <div class="faq-list">
+            <article class="faq-item">
+              <div class="faq-q" data-i18n="faq_q4">„Radite li samo za DACH tržište?“</div>
+              <div class="faq-a" data-i18n="faq_a4">Fokus nam je DACH — Nemačka, Austrija i Švajcarska — ali možemo da pripremimo i verzije za domaće tržište, na srpskom jeziku.</div>
+            </article>
+            <article class="faq-item">
+              <div class="faq-q" data-i18n="faq_q5">„Šta ako mi se nešto ne dopadne?“</div>
+              <div class="faq-a" data-i18n="faq_a5">U svaki paket su uključene revizije: kod „Start“ paketa 2 kruga, kod „Pro“ i „Premium“ 3 ili više (po dogovoru). Cilj nam je da radimo dok ne dođemo do rešenja koje ima smisla za vaš biznis.</div>
+            </article>
+            <article class="faq-item">
+              <div class="faq-q" data-i18n="faq_q6">„Da li radite i copywriting (tekstove)?“</div>
+              <div class="faq-a" data-i18n="faq_a6">Da — pripremamo osnovne tekstove na nemačkom i srpskom (ili engleskom), prilagođene vašoj branši. Vi imate poslednju reč pre objave.</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- OPTIKA + BÄCKEREI KARUSEL -->
+      <section id="optik" class="op-sec">
+        <div class="op-wrap">
+          <header class="op-head">
+            <h2 data-i18n="opt_title">Optika — kratki demo</h2>
+            <p class="sub" data-i18n="opt_sub">AVATAR_Glaeser — intro klip za optiku.</p>
+          </header>
+          <div class="op-grid">
+            <figure class="op-card">
+              <video playsinline class="vid" controls preload="metadata" poster="/optika/poster-glaeser.jpg">
+                <source src="/optika/optikaAVATAR_Glaeser.mp4?v=20251105" type="video/mp4"/>
+              </video>
+
+              <!-- D&M Digitalenterprise – novogodišnja video čestitka -->
+              <video playsinline class="vid" controls preload="metadata" poster="/carousel-baeckerei-03-front.jpg.jpg" style="margin-top:16px">
+                <source src="/santa-dm-greeting.mp4?v=20251207" type="video/mp4"/>
+              </video>
+            </figure>
+
+            <div class="op-carousel" aria-label="D&M Bäckerei – foto primjeri">
+              <header>
+                <div>
+                  <h3 data-i18n="bakery_carousel_title_sr">D&M Bäckerei – foto primjeri</h3>
+                  <p data-i18n="bakery_carousel_title_de">D&M Bäckerei – Bildbeispiele</p>
+                  <p data-i18n="bakery_carousel_title_en" style="display:none;">D&M Bakery – photo examples</p>
+                </div>
+              </header>
+              <main>
+                <img id="bakerySlide" src="/carousel-baeckerei-01-front.jpg.png" alt="D&M Bakery – photo example">
+              </main>
+              <div class="op-dots" id="bakeryDots">
+                <button data-index="0" class="active" aria-label="Slide 1"></button>
+                <button data-index="1" aria-label="Slide 2"></button>
+                <button data-index="2" aria-label="Slide 3"></button>
+                <button data-index="3" aria-label="Slide 4"></button>
+                <button data-index="4" aria-label="Slide 5"></button>
               </div>
-              <div class="op-carousel-slide">
-                <img src="/carousel-baeckerei-02-front.jpg.jpg" alt="Peciva na tamnom mermeru – D&M Bäckerei">
-              </div>
-              <div class="op-carousel-slide">
-                <img src="/carousel-baeckerei-03-front.jpg.jpg" alt="Božićni hleb i kolači – D&M Bäckerei">
-              </div>
-              <div class="op-carousel-slide">
-                <img src="/carousel-baeckerei-04-front.jpg.jpg" alt="Pekarka u pekari – D&M Bäckerei">
-              </div>
-              <div class="op-carousel-slide">
-                <img src="/carousel-baeckerei-05-front.jpg.png" alt="Pekar posipa brašno – D&M Bäckerei">
+              <div class="op-caption">
+                <strong>D&M Bäckerei</strong> — warm, gemütlich und klar inszeniert für lokale Kundschaft.
               </div>
             </div>
           </div>
-          <div class="op-carousel-dots" id="bakeryCarouselDots">
-            <button class="op-carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
-            <button class="op-carousel-dot" data-slide="1" aria-label="Slide 2"></button>
-            <button class="op-carousel-dot" data-slide="2" aria-label="Slide 3"></button>
-            <button class="op-carousel-dot" data-slide="3" aria-label="Slide 4"></button>
-            <button class="op-carousel-dot" data-slide="4" aria-label="Slide 5"></button>
-          </div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h2 data-i18n="contact_title">Kontakt & sledeći koraci</h2>
+            <p data-i18n="contact_p1">Pišite nam poruku na nemačkom, srpskom ili engleskom — kratko opišite firmu, grad i šta želite da postignete novom stranicom ili videom.</p>
+            <ul class="contact-list">
+              <li data-i18n="contact_l1">Pošaljite link na postojeći sajt ili profil (ako postoji).</li>
+              <li data-i18n="contact_l2">Napišite u kom roku bi idealno želeli da sve bude gotovo.</li>
+              <li data-i18n="contact_l3">Ako već imate logo i fotografije, javite kojim redom da ih koristimo.</li>
+            </ul>
+            <div class="contact-actions">
+              <a href="mailto:dmdigitalenterprise.team@gmail.com">
+                <svg viewBox="0 0 20 20"><path d="M3.5 4.5h13A1.5 1.5 0 0 1 18 6v8a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 2 14V6A1.5 1.5 0 0 1 3.5 4.5Zm.34 1.5 5.74 4.11a1.25 1.25 0 0 0 1.44 0l5.74-4.11Z"/></svg>
+                dmdigitalenterprise.team@gmail.com
+              </a>
+              <a href="https://wa.me/381606890072" target="_blank" rel="noopener">
+                <svg viewBox="0 0 20 20"><path d="M10 1.67A8.33 8.33 0 0 0 3.1 15.06L2 18l3-1.07A8.32 8.32 0 1 0 10 1.67Zm0 1.66a6.67 6.67 0 0 1 5.78 9.93.83.83 0 0 1-.06.11 6.67 6.67 0 0 1-9.1 2.42l-.24-.15-1.78.63.6-1.7-.17-.28A6.67 6.67 0 0 1 10 3.33Zm-2 2.5a.5.5 0 0 0-.5.5 4.67 4.67 0 0 0 .54 2.16c.3.63.76 1.22 1.36 1.81.6.6 1.18 1.05 1.8 1.36a4.67 4.67 0 0 0 2.16.54.5.5 0 0 0 .5-.5v-1.35a.5.5 0 0 0-.39-.49l-1.47-.33a.5.5 0 0 0-.48.18l-.46.56a.5.5 0 0 1-.57.14 3.63 3.63 0 0 1-1.4-.9 3.63 3.63 0 0 1-.9-1.4.5.5 0 0 1 .14-.57l.56-.46a.5.5 0 0 0 .18-.48l-.33-1.47A.5.5 0 0 0 8 5.83Z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+            <p class="footnote" data-i18n="contact_note">Prvi razgovor je besplatan i ne obavezuje vas ni na šta — cilj je da vidimo da li smo uopšte pravi tim za vaš biznis.</p>
+          </article>
+
+          <article class="contact-card">
+            <h3>Impressum & pravne napomene</h3>
+            <p>Detaljnije informacije o uslovima saradnje, rokovima i načinu plaćanja nalaze se u dokumentu „Konditionen & Preise“.</p>
+            <ul class="contact-list">
+              <li><a href="/konditionen.html" target="_blank" rel="noopener">Konditionen &amp; Preise – D&M Digital Enterprise</a></li>
+              <li><a href="/impressum.html" target="_blank" rel="noopener">Impressum / Impressum (DE)</a></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <a class="whatsapp-fab" href="https://wa.me/381606890072" target="_blank" aria-label="WhatsApp">
+      <svg viewBox="0 0 32 32"><path d="M16.04 3C9.95 3 5 7.92 5 13.96c0 2.2.65 4.25 1.78 5.98L5 27l7.26-1.9a11.1 11.1 0 0 0 3.78.64c6.1 0 11.04-4.92 11.04-10.96C27.08 7.92 22.14 3 16.04 3Zm0 2c5.01 0 9.08 3.94 9.08 8.96 0 4.98-4.07 8.96-9.08 8.96-1.3 0-2.53-.26-3.65-.74l-.26-.11-4.2 1.1 1.12-4.02-.13-.21A8.6 8.6 0 0 1 6.96 13.96C6.96 8.94 11.03 5 16.04 5Zm-3.3 4.04a.7.7 0 0 0-.7.72c-.04.45-.1 1.14.17 1.86.28.76.82 1.75 1.8 2.73 1 1 2.24 1.7 3.05 2.02.75.3 1.34.26 1.79.16.39-.09 1.2-.49 1.37-.96.17-.46.17-.86.12-.94-.05-.08-.2-.13-.4-.22l-1.27-.6c-.2-.08-.34-.13-.49.13-.15.26-.57.74-.7.88-.13.15-.26.17-.48.06-.22-.11-.95-.35-1.8-1.1-.66-.58-1.1-1.3-1.24-1.52-.13-.23-.01-.34.1-.45.1-.1.22-.26.34-.39.11-.13.15-.21.22-.36.07-.15.04-.28-.02-.39-.06-.11-.5-1.2-.7-1.64-.18-.44-.37-.38-.5-.38Z"/></svg>
+    </a>
+
+    <footer class="foot">
+      <div class="foot-inner">
+        <div>© <span id="year"></span> D&M Digital Enterprise · All rights reserved.</div>
+        <div class="foot-links">
+          <a href="/datenschutz.html" target="_blank" rel="noopener" data-i18n="rights_d1">Datenschutz</a>
+          <a href="/impressum.html" target="_blank" rel="noopener" data-i18n="rights_i1">Impressum</a>
+          <a href="/konditionen.html" target="_blank" rel="noopener" data-i18n="rights_k1">Konditionen & Preise</a>
+        </div>
+        <div class="social">
+          <a href="https://www.facebook.com/profile.php?id=61583547136834" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M13 3h4a1 1 0 0 1 1 1v4h-3a1 1 0 0 0-1 1v3h4l-1 4h-3v5h-4v-5H8v-4h3v-3a5 5 0 0 1 5-5Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/d_mdigitalenterpriseteam/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm4 2.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm4.75-3.75a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25Z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/dejan-veljovic-3a2478374/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6a2.5 2.5 0 0 1 2.48-2.5ZM3 8h4v13H3Zm7 0h3.8v1.8h.05A4.16 4.16 0 0 1 18.6 8c3 0 3.6 2 3.6 4.6V21h-4v-6.2c0-1.5 0-3.4-2.1-3.4s-2.4 1.6-2.4 3.3V21h-4Z"/></svg>
+          </a>
         </div>
       </div>
-      <div class="op-ctas">
-        <a class="op-btn primary" href="https://wa.me/381606890072" target="_blank" rel="noopener" data-i18n="opt_whatsapp">WhatsApp / Proba</a>
-        <a class="op-btn" href="#contact" data-i18n="opt_book">Zakaži termin</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRUST -->
-  <section id="trust">
-    <h2 data-i18n="trust_title">Zašto nama veruju</h2>
-    <p class="sub" data-i18n="trust_sub">Tri kratka dokaza poverenja.</p>
-    <div class="cards">
-      <article class="card"><h3 data-i18n="trust1_t">Trojezično (DE · EN · SR)</h3><p class="sub" data-i18n="trust1_s">Bez vodenih žigova; skripte/titlovi na tri jezika.</p></article>
-      <article class="card"><h3 data-i18n="trust2_t">Brza isporuka</h3><p class="sub" data-i18n="trust2_s">Prvi nacrt u 3–5 dana, final u 2–4 nedelje.</p></article>
-      <article class="card"><h3 data-i18n="trust3_t">Video + web = rezultat</h3><p class="sub" data-i18n="trust3_s">Kratki avatar + landing → jasna poruka i više upita.</p></article>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="faq">
-    <h2 data-i18n="faq_title">Česta pitanja</h2>
-    <div class="cards">
-      <article class="card"><h3 data-i18n="faq1_q">Koliko brzo isporučujete?</h3><p class="sub" data-i18n="faq1_a">2–4 nedelje — u zavisnosti od saradnje i odobrenja.</p></article>
-      <article class="card"><h3 data-i18n="faq2_q">Šta je potrebno sa vaše strane?</h3><p class="sub" data-i18n="faq2_a">Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.</p></article>
-      <article class="card"><h3 data-i18n="faq3_q">Koliko okvirno košta?</h3><p class="sub" data-i18n="faq3_a">Početna cena od X €; tačnu procenu šaljemo nakon 24-časovne procene.</p></article>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2 data-i18n="contact_title">Kontakt</h2>
-    <p class="sub">dmdigitalenterprise.team@gmail.com · +381 606890072</p>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div>© 2025 D&M Digital — <span data-i18n="rights">Sva prava zadržana</span></div>
-    <div class="center">
-      <a href="/impressum.html">Impressum</a> ·
-      <a href="/datenschutz.html">Datenschutzerklärung</a> ·
-      <a href="/konditionen.html">Konditionen & Preise</a>
-    </div>
-    <div class="right">Design & code: M&D</div>
+    </footer>
   </div>
-</footer>
 
-<a href="https://wa.me/381606890072" class="wa-fab" aria-label="WhatsApp chat" target="_blank" rel="noopener" title="WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <path d="M20.5 12a8.5 8.5 0 0 1-12 7.6L4 20l.5-4.4A8.5 8.5 0 1 1 20.5 12Z" stroke="currentColor"/>
-    <path d="M9.5 9.3c.2-.6.6-.6.9-.6.3 0 .8 0 .9.8.1.5 0 .7 0 .8 0 .1-.2.4-.3.5-.2.2-.3.3-.1.6.2.3.8 1.3 1.9 1.8 1 .5 1.2.3 1.5 0 .3-.3.6-.8.7-.9.1-.1.2-.1.4 0 .2.1 1 .5 1.2.6.2.1.3.2.3.3 0 .2-.1 1.1-.8 1.8-.8.7-1.7.7-2.4.6-.8-.1-1.8-.5-2.9-1.4-1.1-.9-2.1-2.5-2.3-2.9-.2-.4-.5-1.2-.5-1.7 0-.5.3-.8.5-1Z" fill="currentColor"/>
-  </svg>
-</a>
-
-<script>
-  /* I18N */
-  var T={
-    en:{nav_services:"Services",nav_packages:"Packages",nav_portfolio:"Portfolio",nav_optik:"Optics",nav_contact:"Contact",cta_top:"Request a quote",
-      badge_stack:"Digital design • Video • Web",hero_title:"Simple — so people remember you.",hero_sub:"Websites, short video ads and smart marketing in German, Serbian and English.",cta_portfolio:"View portfolio",cta_services:"Services",note_menu:"Transparent nav is always on; semi-transparent on scroll on request.",note_video:"Language also selects the video version; sound is on.",
+  <script>
+    /* I18N */
+    var T={
+      en:{nav_services:"Services",nav_packages:"Packages",nav_portfolio:"Portfolio",nav_optik:"Optics",nav_contact:"Contact",cta_top:"Request a quote",
+      badge_stack:"Digital design • Video • Web",hero_title:"Simple – so people remember you.",hero_sub:"Websites, short video ads and smart marketing in German, Serbian and English.",
       services_title:"What we do (focused on results)",services_sub:"Three pillars that deliver fast impact.",
       s_tag_web:"Web",s_tag_video:"Video",s_tag_marketing:"Marketing",
       s_card1_t:"Fast, modern websites",s_card1_s:"Landing pages, presentations, contact forms, with conversion tracking.",
       s_card2_t:"Short video ads",s_card2_s:"15–45s formats, DE/EN/SR captions, optimized for social.",
       s_card3_t:"Campaigns & ads",s_card3_s:"Facebook/Instagram/Google, content calendar, hashtags and CTAs.",
-      sec_products_title:"Packages (Start — Pro — Premium)",sec_products_sub:"Fixed prices by module, clear scope.",
-      p_start_t:"START package",p_start_li1:"One-page (up to 5 sections)",p_start_li2:"Contact (mailto)",p_start_li3:"Basic SEO meta tags",
-      p_pro_t:"PRO package",p_pro_li1:"Multi-page + portfolio",p_pro_li2:"Short video (up to 30s)",p_pro_li3:"Ad prep + 10 hashtags",
-      p_premium_t:"PREMIUM package",p_prem_li1:"Custom design & animations",p_prem_li2:"2 ad videos (up to 45s)",p_prem_li3:"30-day campaign + report",
+      sec_products_title:"Packages (Start – Pro – Premium)",sec_products_sub:"Fixed prices by module, clear scope.",
+      p_start_t:"“START” package",p_start_l1:"One-page (up to 5 sections)",p_start_l1c:"Contact (mailto)",p_start_l1b:"Basic SEO meta tags",
+      p_pro_t:"PRO package",p_pro_l1:"Multi-page + portfolio",p_pro_l1b:"Short video (up to 30s)",p_pro_l1c:"Ad prep + 10 hashtags",
+      p_prem_t:"PREMIUM package",p_prem_l1:"Custom design & animations",p_prem_l2:"12 ad videos (up to 45s)",p_prem_l3:"30-day campaign + report",
       claim_title:"More customers for your bakery",claim_sub:"Clear landing page + 30-second video, ready in 2–4 weeks.",claim_cta:"Free quick consultation",
-      port_title:"Examples & prototypes",port_sub:"Live links coming soon.",port_c1_t:"Peter’s Bakery",port_c1_s:"Simple site with transparent menu.",port_c2_t:"D&M intro video",port_c2_s:"Branded intro without watermark.",port_c3_t:"CoreAlliance logo",port_c3_s:"Minimal logos for menus & hero.",port_btn_pdf:"Open PDF",
-      dv_title:"Demo — Video samples",dv_sub:"2 short samples: Peter, Sandra.",dv_c1_t:"Peter’s bakery",dv_c1_s:"Seasonal short ad (social format).",dv_c3_t:"Sandra — marketing advantages",dv_c3_s:"Short pitch about the benefits of good marketing.",
-      gold_title:"Jewelry — Personal Advice",gold_sub:"4C explained + 3 suggestions. WhatsApp or 1-click appointment.",zl_cap_4c:"4C in 30s — clear & short.",zl_cap_style:"Which style: Solitaire, Halo or Classic?",gold_whatsapp:"WhatsApp Advice",gold_book:"Book appointment",
-      opt_title:"Optics — short demo",opt_sub:"AVATAR_Glaeser — intro clip for an optics store.",opt_whatsapp:"WhatsApp / Try-on",opt_book:"Book appointment",
-      trust_title:"Why clients trust us",trust_sub:"Three short proof points.",trust1_t:"Trilingual (DE · EN · SR)",trust1_s:"No watermarks; scripts/subtitles in three languages.",trust2_t:"Fast delivery",trust2_s:"First draft in 3–5 days, final in 2–4 weeks.",trust3_t:"Video + web = results",trust3_s:"Short avatar + landing → clearer message & more inquiries.",
-      faq_title:"FAQ",faq1_q:"How fast do you deliver?",faq1_a:"2–4 weeks — depending on collaboration and approvals.",faq2_q:"What do you need from us?",faq2_a:"Logo, 5–8 photos and 3–4 key points — we handle the rest.",faq3_q:"Roughly how much does it cost?",faq3_a:"Starting price from X €; exact quote after our 24-hour assessment.",
-      bakery_carousel_title:"D&M Bakery – photo examples",contact_title:"Contact",rights:"All rights reserved"},
-    de:{nav_services:"Leistungen",nav_packages:"Pakete",nav_portfolio:"Portfolio",nav_optik:"Optik",nav_contact:"Kontakt",cta_top:"Angebot anfragen",
-      badge_stack:"Digitales Design • Video • Web",hero_title:"Einfach – damit man sich an Sie erinnert.",hero_sub:"Websites, kurze Videoanzeigen und smartes Marketing auf Deutsch, Serbisch und Englisch.",cta_portfolio:"Portfolio ansehen",cta_services:"Leistungen",note_menu:"Transparente Navigation ist immer sichtbar. Halbtransparent beim Scrollen gern auf Wunsch.",note_video:"Mit der Sprache wählen Sie die Videoversion; Ton ist aktiv.",
-      services_title:"Was wir machen (mit Fokus auf Ergebnisse)",services_sub:"Drei Module, die schnell Wirkung zeigen.",
+      port_title:"Examples & prototypes",port_sub:"Live links coming soon.",port_c1_t:"Peter’s Bakery",port_c1_s:"Simple site with transparent menu.",port_c2_t:"D&M into videos",port_c2_s:"Seasonal short ad (social format).",dv_c1_t:"Sandra – marketing example",gold_title:"Jewelry – Personal Advice",gold_sub:"4C explained + 3 suggestions. WhatsApp or 1-click appointment.",zl_cap_4c:"4C in 30s – clear & short.",zl_cap_style:"Why clients trust us",trust_title:"Why clients trust us",trust_sub:"Three levels: smart proof points, structured onboarding and collaboration on content.",trust_h1:"Three short proof points before we even talk about budget.",trust_p1:"Examples from your industry, one or two prototypes, clear offer with modules.",trust_l1:"Short strategy call",trust_l2:"Demo section",trust_l3:"3-step onboarding",trust_h2:"Transparent collaboration & contract",trust_p2:"You always know what is included, what the timeline is and how we collaborate.",trust_l4:"No monthly retainers",trust_l5:"Modular work",trust_l6:"EU-friendly billing",faq_title:"FAQ",faq_sub:"Key questions we always clarify first.",faq_q1:"“How fast can you deliver?”",faq_a1:"Usually 2–4 weeks depending on collaboration and approvals.",faq_q2:"“What do you need from us?”",faq_a2:"Logo, 5–8 photos and short description — we do the rest.",faq_q3:"“Do you do only DACH?”",faq_a3:"Mostly DACH, but we can help with EN & SR content as well.",faq_q4:"“What about copywriting?”",faq_a4:"We adapt and write content for you.",faq_q5:"“Is there a long contract?”",faq_a5:"No. We agree per project and milestone.",faq_q6:"“Can we start small?”",faq_a6:"Yes. Start with a landing page, extend later.",opt_title:"Optics — short demo",opt_sub:"AVATAR_Glaeser intro clip for an optics store.",faq_q7:"“What about rights?”",faq_a7:"You own the final deliverables (within agreed scope).",rights_d1:"Datenschutz",rights_i1:"Impressum",rights_k1:"Konditionen & Preise"},
+      de:{nav_services:"Leistungen",nav_packages:"Pakete",nav_portfolio:"Portfolio",nav_optik:"Optik",nav_contact:"Kontakt",cta_top:"Angebot anfragen",
+      badge_stack:"Digital Design • Video • Web",hero_title:"Einfach – so bleiben Sie im Kopf.",hero_sub:"Websites, Short-Video-Ads und smartes Marketing auf Deutsch, Serbisch und Englisch.",
+      services_title:"Was wir tun (fokussiert auf Ergebnis)",services_sub:"Drei Säulen, die schnell Wirkung bringen.",
       s_tag_web:"Web",s_tag_video:"Video",s_tag_marketing:"Marketing",
-      s_card1_t:"Schnelle, moderne Websites",s_card1_s:"Landingpages, Präsentationen, Kontaktformulare – mit Conversion-Tracking.",
-      s_card2_t:"Kurze Video-Ads",s_card2_s:"15–45 s, DE/EN/SR-Untertitel, für Social optimiert.",
-      s_card3_t:"Kampagnen & Anzeigen",s_card3_s:"Facebook/Instagram/Google, Content-Kalender, Hashtags und CTAs.",
-      sec_products_title:"Pakete (Start — Pro — Premium)",sec_products_sub:"Festpreise pro Modul – klarer Umfang.",
-      p_start_t:"START-Paket",p_start_li1:"One-Pager (bis 5 Sektionen)",p_start_li2:"Kontakt (mailto)",p_start_li3:"Basis-SEO-Metatags",
-      p_pro_t:"PRO-Paket",p_pro_li1:"Mehrseitig + Portfolio",p_pro_li2:"Kurzvideo (bis 30 s)",p_pro_li3:"Anzeigenvorbereitung + 10 Hashtags",
-      p_premium_t:"PREMIUM-Paket",p_prem_li1:"Individuelles Design & Animationen",p_prem_li2:"2 Werbevideos (bis 45 s)",p_prem_li3:"30-Tage-Kampagne + Report",
-      claim_title:"Mehr Kunden für Ihre Bäckerei",claim_sub:"Klare Landingpage + 30-Sekunden-Video, bereit in 2–4 Wochen.",claim_cta:"Kostenlose Kurzberatung",
-      port_title:"Beispiele & Prototypen",port_sub:"Live-Links folgen in Kürze.",port_c1_t:"Bäckerei Peter",port_c1_s:"Einfache Seite mit transparenter Navigation.",port_c2_t:"D&M Intro-Video",port_c2_s:"Gebrandetes Intro ohne Wasserzeichen.",port_c3_t:"CoreAlliance Logo",port_c3_s:"Minimale Logos für Menüs & Hero.",port_btn_pdf:"PDF öffnen",
-      dv_title:"Demo — Video-Beispiele",dv_sub:"2 kurze Beispiele: Peter, Sandra.",dv_c1_t:"Bäckerei Peter",dv_c1_s:"Saisonaler Kurz-Spot (Social-Format).",dv_c3_t:"Sandra — Marketing-Vorteile",dv_c3_s:"Kurzpitch über die Vorteile guten Marketings.",
-      gold_title:"Goldschmiede – persönliche Beratung",gold_sub:"4C erklärt + 3 Vorschläge. WhatsApp oder Termin mit 1 Klick.",zl_cap_4c:"4C in 30 Sek. — klar & kurz.",zl_cap_style:"Welcher Stil: Solitaire, Halo oder Classic?",gold_whatsapp:"WhatsApp-Beratung",gold_book:"Termin buchen",
-      opt_title:"Optik — kurzer Demo-Clip",opt_sub:"AVATAR_Glaeser — Intro für ein Optik-Geschäft.",opt_whatsapp:"WhatsApp / Anprobe",opt_book:"Termin buchen",
-      trust_title:"Warum man uns vertraut",trust_sub:"Drei kurze Belege.",trust1_t:"Dreisprachig (DE · EN · SR)",trust1_s:"Keine Wasserzeichen; Skripte/Untertitel in drei Sprachen.",trust2_t:"Schnelle Lieferung",trust2_s:"Erster Entwurf in 3–5 Tagen, final in 2–4 Wochen.",trust3_t:"Video + web = Ergebnis",trust3_s:"Kurzer Avatar + Landing → klarere Botschaft, mehr Anfragen.",
-      faq_title:"FAQ",faq1_q:"Wie schnell liefern Sie?",faq1_a:"2–4 Wochen — abhängig von Zusammenarbeit und Freigaben.",faq2_q:"Was benötigen Sie von uns?",faq2_a:"Logo, 5–8 Fotos und 3–4 Kernpunkte — den Rest übernehmen wir.",faq3_q:"Was kostet es ungefähr?",faq3_a:"Ab X €; exaktes Angebot nach unserer 24-h-Einschätzung.",
-      bakery_carousel_title:"D&M Bäckerei – Bildbeispiele",contact_title:"Kontakt",rights:"Alle Rechte vorbehalten"},
-    sr:{nav_services:"Usluge",nav_packages:"Paketi",nav_portfolio:"Portfolio",nav_optik:"Optika",nav_contact:"Kontakt",cta_top:"Zatraži ponudu",
-      badge_stack:"Digitalni dizajn • Video • Web",hero_title:"Jednostavno — pravimo da vas pamte.",hero_sub:"Web stranice, kratke video reklame i pametan marketing na nemačkom, srpskom i engleskom.",cta_portfolio:"Pogledaj portfolio",cta_services:"Usluge",note_menu:"Transparentan meni je stalno uključen; poluprovidan na skrol po želji.",note_video:"Jezik menja verziju videa; zvuk je uključen.",
-      services_title:"Šta radimo (sa fokusom na rezultate)",services_sub:"Tri stuba ponude koji najbrže donose efekat.",
-      s_tag_web:"Web",s_tag_video:"Video",s_tag_marketing:"Marketing",
-      s_card1_t:"Brze, moderne web stranice",s_card1_s:"Landing stranice, prezentacije, kontakt forme uz praćenje konverzija.",
-      s_card2_t:"Kratke video reklame",s_card2_s:"Formati 15–45 s, titlovi na DE/SR/EN, optimizovano za društvene mreže.",
-      s_card3_t:"Kampanje i oglasi",s_card3_s:"Facebook/Instagram/Google, kalendar sadržaja, hashtagovi i CTA poruke.",
-      sec_products_title:"Paketi (Start — Pro — Premium)",sec_products_sub:"Fiksne cene po modulu – jasan obim.",
-      p_start_t:"START paket",p_start_li1:"One-page (do 5 sekcija)",p_start_li2:"Kontakt (mailto)",p_start_li3:"Osnovni SEO meta tagovi",
-      p_pro_t:"PRO paket",p_pro_li1:"Višestrana + portfolio",p_pro_li2:"Kratak video (do 30 s)",p_pro_li3:"Priprema oglasa + 10 hashtagova",
-      p_premium_t:"PREMIUM paket",p_prem_li1:"Prilagođen dizajn & animacije",p_prem_li2:"2 video oglasa (do 45 s)",p_prem_li3:"Kampanja 30 dana + izveštaj",
-      claim_title:"Više kupaca za vašu pekaru",claim_sub:"Jasna landing stranica + 30-sekundni video, spremno za 2–4 nedelje.",claim_cta:"Besplatno brzo savetovanje",
-      port_title:"Primeri i prototipi",port_sub:"Linkovi uživo uskoro.",port_c1_t:"Pekar Peter",port_c1_s:"Jednostavan sajt sa transparentnim menijem.",port_c2_t:"D&M intro video",port_c2_s:"Brendirani uvodni video bez vodenog žiga.",port_c3_t:"CoreAlliance logo",port_c3_s:"Minimal logotipi za menije i hero sekcije.",port_btn_pdf:"Otvori PDF",
-      dv_title:"Demo — Video uzorci",dv_sub:"2 kratka primera: Peter i Sandra.",dv_c1_t:"Pekara Peter",dv_c1_s:"Sezonska kratka reklama (social format).",dv_c3_t:"Sandra — marketinške prednosti",dv_c3_s:"Kratak pitch o benefitima dobrog marketinga.",
-      gold_title:"Zlatar – lična pomoć",gold_sub:"4C objašnjenje + 3 predloga. WhatsApp ili termin u 1 kliku.",zl_cap_4c:"4C za 30 sek — jasno & kratko.",zl_cap_style:"Koji stil: Solitaire, Halo ili Classic?",gold_whatsapp:"WhatsApp Savet",gold_book:"Zakaži termin",
-      opt_title:"Optika — kratki demo",opt_sub:"AVATAR_Glaeser — intro klip za optiku.",opt_whatsapp:"WhatsApp / Proba",opt_book:"Zakaži termin",
-      trust_title:"Zašto nama veruju",trust_sub:"Tri kratka dokaza poverenja.",trust1_t:"Trojezično (DE · EN · SR)",trust1_s:"Bez vodenih žigova; skripte/titlovi na tri jezika.",trust2_t:"Brza isporuka",trust2_s:"Prvi nacrt u 3–5 dana, final u 2–4 nedelje.",trust3_t:"Video + web = rezultat",trust3_s:"Kratki avatar + landing → jasna poruka i više upita.",
-      faq_title:"Česta pitanja",faq1_q:"Koliko brzo isporučujete?",faq1_a:"2–4 nedelje — u zavisnosti od saradnje i odobrenja.",faq2_q:"Šta je potrebno sa vaše strane?",faq2_a:"Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.",faq3_q:"Koliko okvirno košta?",faq3_a:"Početna cena od X €; tačnu procenu šaljemo nakon 24-časovne procene.",
-      bakery_carousel_title:"D&M Bäckerei – foto primeri",contact_title:"Kontakt",rights:"Sva prava zadržana"}
-  };
-
-  // HERO (tri jezika)
-  var HERO_SRC={de:"/avatar-de.mp4",en:"/avatar-eng.mp4",sr:"/avatar-srb.mp4"};
-  var VERSION="20251105";
-
-  function qs(name){var m=location.search.match(new RegExp('[?&]'+name+'=([^&]+)'));return m?decodeURIComponent(m[1]):null}
-  function normalizeLang(x){if(!x)return"sr";x=x.toLowerCase();if(x.indexOf("de")===0)return"de";if(x.indexOf("en")===0)return"en";return"sr"}
-  function applyI18n(lang){
-    var D=T[lang]||T.sr;
-    document.querySelectorAll("[data-i18n]").forEach(function(n){var k=n.getAttribute("data-i18n");if(D[k]) n.textContent=D[k]});
-    document.querySelectorAll(".lang button").forEach(function(b){b.classList.toggle("active",b.getAttribute("data-setlang")===lang)});
-  }
-  function setHero(lang){
-    var hv=document.getElementById("heroVideo"), s=document.getElementById("heroSrc");
-    var url=(HERO_SRC[lang]||HERO_SRC.sr)+"?v="+VERSION;
-    if(s.getAttribute("src")!==url){try{hv.pause()}catch(e){} s.setAttribute("src",url); hv.load();}
-  }
-  function setLangAll(lang){lang=normalizeLang(lang);applyI18n(lang);setHero(lang);try{localStorage.setItem("lang",lang)}catch(e){};document.documentElement.lang=lang}
-  (function(){var L=normalizeLang(qs("lang")||(function(){try{return localStorage.getItem("lang")}catch(e){return null}})()||document.documentElement.lang);setLangAll(L)})();
-  document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-setlang]");if(!b)return;var L=b.getAttribute("data-setlang");history.replaceState(null,"",location.pathname+"?lang="+L);setLangAll(L);});
-
-  (function () {
-    var track = document.getElementById('bakeryCarouselTrack');
-    var dotsWrap = document.getElementById('bakeryCarouselDots');
-    if (!track || !dotsWrap) return;
-    var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('.op-carousel-dot'));
-    if (!dots.length) return;
-
-    var index = 0;
-
-    function update() {
-      track.style.transform = 'translateX(-' + (index * 100) + '%)';
-      dots.forEach(function(dot, i){
-        dot.classList.toggle('active', i === index);
+      opt_title:"Optik — kurzer Demo-Clip",opt_sub:"AVATAR_Glaeser – Intro-Clip für ein Optikgeschäft."}
+    };
+    (function(){
+      var lang='sr';
+      var els=document.querySelectorAll('[data-i18n]');
+      function setLang(l){
+        lang=l;
+        document.querySelectorAll('#langSwitch button').forEach(function(b){
+          b.classList.toggle('active',b.getAttribute('data-setlang')===l);
+        });
+        els.forEach(function(el){
+          var key=el.getAttribute('data-i18n');
+          if(T[lang]&&T[lang][key]) el.textContent=T[lang][key];
+        });
+      }
+      document.querySelectorAll('#langSwitch button').forEach(function(b){
+        b.addEventListener('click',function(){
+          setLang(b.getAttribute('data-setlang'));
+        });
       });
-    }
+      var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+      setLang('sr');
 
-    function next() {
-      index = (index + 1) % dots.length;
-      update();
-    }
-
-    var timer = setInterval(next, 5000);
-
-    function resetTimer() {
-      clearInterval(timer);
-      timer = setInterval(next, 5000);
-    }
-
-    dots.forEach(function(dot, i){
-      dot.addEventListener('click', function(){
-        index = i;
-        update();
-        resetTimer();
+      var slides=[
+        "/carousel-baeckerei-01-front.jpg.png",
+        "/carousel-baeckerei-02-front.jpg.jpg",
+        "/carousel-baeckerei-03-front.jpg.jpg",
+        "/carousel-baeckerei-04-front.jpg.jpg",
+        "/carousel-baeckerei-05-front.jpg.png"
+      ];
+      var slideIndex=0;
+      var imgEl=document.getElementById('bakerySlide');
+      var dots=document.querySelectorAll('#bakeryDots button');
+      function showSlide(i){
+        slideIndex=i;
+        if(imgEl) imgEl.src=slides[i];
+        dots.forEach(function(d,idx){d.classList.toggle('active',idx===i);});
+      }
+      dots.forEach(function(d){
+        d.addEventListener('click',function(){
+          var i=parseInt(d.getAttribute('data-index'),10);
+          showSlide(i);
+        });
       });
-    });
-  })();
-</script>
+      showSlide(0);
+    })();
+  </script>
 </body>
 </html>
