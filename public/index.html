@@ -182,6 +182,28 @@
     .wa-fab{position:fixed;right:16px;bottom:16px;z-index:50;width:56px;height:56px;display:grid;place-items:center;border-radius:999px;color:#0b0b0b;background:#22c55e;border:1px solid rgba(255,255,255,.15);box-shadow:0 12px 28px rgba(0,0,0,.35)}
     .wa-fab:hover{filter:brightness(1.05)}
     @media (min-width:980px){.wa-fab{bottom:22px;right:22px}}
+
+    /* OPTIKA: 2 videa levo = ista visina kao karusel desno */
+    #optik .op-grid{ align-items: stretch; }
+    #optik .op-card{ height: 100%; }
+
+    #optik .video-grid{
+      height: 100%;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 18px;
+    }
+
+    /* samo u optici gasimo 16:9 “zaključavanje” da bi stalo u 2 reda */
+    #optik video.vid{
+      height: 100%;
+      aspect-ratio: auto;
+      object-fit: cover;
+    }
+
+    #optik .op-carousel{ height: 100%; }
+    #optik .op-carousel-inner{ flex: 1; }
+    #optik .op-carousel-slide img{ height: 100%; object-fit: cover; }
   </style>
 </head>
 <body>
@@ -454,14 +476,19 @@
   <section id="optik" class="op-sec">
     <div class="op-wrap">
       <header class="op-head">
-        <h2 data-i18n="opt_title">Optika — kratki demo</h2>
-        <p class="sub" data-i18n="opt_sub">AVATAR_Glaeser — intro klip za optiku.</p>
+        <h2>D&M Digitalenterprise</h2>
       </header>
       <div class="op-grid">
         <figure class="op-card">
-          <video playsinline class="vid" controls preload="metadata" poster="/optika/poster-glaeser.jpg">
-            <source src="/optika/optikaAVATAR_Glaeser.mp4?v=20251105" type="video/mp4"/>
-          </video>
+          <div class="video-grid">
+            <video playsinline class="vid" controls preload="metadata" poster="/optika/poster-glaeser.jpg">
+              <source src="/optika/optikaAVATAR_Glaeser.mp4?v=20251105" type="video/mp4"/>
+            </video>
+
+            <video playsinline class="vid" controls preload="metadata" poster="/optika/sandra_perfekt.jpg">
+              <source src="/optika/sandra_perfekt.mp4?v=20251212" type="video/mp4"/>
+            </video>
+          </div>
         </figure>
 
         <div class="op-carousel" aria-label="D&M Bäckerei – foto primeri">
@@ -660,6 +687,7 @@
 
     function update() {
       track.style.transform = 'translateX(-' + (index * 100) + '%)';
+      dots.forci
       dots.forEach(function(dot, i){
         dot.classList.toggle('active', i === index);
       });
