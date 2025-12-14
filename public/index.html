@@ -96,8 +96,9 @@
     .zl-btn,.op-btn{padding:10px 16px;border-radius:999px;border:1px solid var(--line);text-decoration:none}
     .zl-btn.primary,.op-btn.primary{background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;border-color:transparent;font-weight:700}
 
-    /* ✅ FIX: ukloni default margin od figure (zbog mobilnog suženja videa) */
-    .zl-card, .op-card { margin: 0; }
+    /* ✅ FIX: ukloni default figure margin (mobilno suženje videa u <figure>) */
+    figure{margin:0}
+    .zl-card, .op-card { margin:0 !important; width:100%; }
 
     .op-sec{padding:44px 0;background:#0e1116}
     .op-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
