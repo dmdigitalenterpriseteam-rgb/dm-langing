@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://dmdigitalenterprise.vercel.app/</loc>
+    <loc>https://www.dmdigitalenterprise.com/</loc>
     <lastmod>2025-11-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://dmdigitalenterprise.vercel.app/impressum.html</loc>
+    <loc>https://www.dmdigitalenterprise.com/impressum.html</loc>
     <lastmod>2025-11-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
-    <loc>https://dmdigitalenterprise.vercel.app/datenschutz.html</loc>
+    <loc>https://www.dmdigitalenterprise.com/datenschutz.html</loc>
     <lastmod>2025-11-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+
   <url>
-    <loc>https://dmdigitalenterprise.vercel.app/konditionen.html</loc>
+    <loc>https://www.dmdigitalenterprise.com/konditionen.html</loc>
     <lastmod>2025-11-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+
 </urlset>
