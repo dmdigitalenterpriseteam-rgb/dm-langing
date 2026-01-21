@@ -1,0 +1,12 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "dmdigitalenterprise.com" }
+      ],
+      "destination": "https://www.dmdigitalenterprise.com/$1",
+      "permanent": true
+    }
+  ]
+}
