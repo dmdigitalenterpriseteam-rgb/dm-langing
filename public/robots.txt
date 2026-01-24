@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://dmdigitalenterprise.vercel.app/sitemap.xml
-Host: dmdigitalenterprise.vercel.app
+
+Sitemap: https://www.dmdigitalenterprise.com/sitemap.xml
+Host: www.dmdigitalenterprise.com
+
