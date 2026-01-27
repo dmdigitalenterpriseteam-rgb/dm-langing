@@ -2,6 +2,7 @@
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },
     { "source": "/index-safe.html", "destination": "/", "permanent": true },
+    { "source": "/index-heavy.html", "destination": "/", "permanent": true },
 
     { "source": "/impressum", "destination": "/impressum.html", "permanent": true },
     { "source": "/konditionen", "destination": "/konditionen.html", "permanent": true },
