@@ -6,13 +6,7 @@
 
     { "source": "/impressum", "destination": "/impressum.html", "permanent": true },
     { "source": "/konditionen", "destination": "/konditionen.html", "permanent": true },
-    { "source": "/datenschutz", "destination": "/datenschutz.html", "permanent": true },
-
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "dmdigitalenterprise.com" }],
-      "destination": "https://www.dmdigitalenterprise.com/$1",
-      "permanent": true
-    }
+    { "source": "/datenschutz", "destination": "/datenschutz.html", "permanent": true }
   ]
 }
+
