@@ -9,9 +9,9 @@
     { "source": "/datenschutz", "destination": "/datenschutz.html", "permanent": true },
 
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [{ "type": "host", "value": "dmdigitalenterprise.vercel.app" }],
-      "destination": "https://www.dmdigitalenterprise.com/$1",
+      "destination": "https://www.dmdigitalenterprise.com/:path*",
       "permanent": true
     }
   ]
