@@ -35,6 +35,12 @@
     img,video{max-width:100%;height:auto;display:block}
     figure{margin:0} /* ✅ KLJUČNO: skida default 40px margin i vraća centar/širinu */
     section{padding:44px 0;scroll-margin-top:90px}
+
+    /* Performance: sekcije ispod prvog ekrana se renderuju tek kada im se korisnik približi */
+    #services,#products,#claim,#portfolio,#demo-videos,#goldschmiede,#optik,#trust,#faq,#contact{
+      content-visibility:auto;
+      contain-intrinsic-size:800px;
+    }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1400px;margin:0 auto;padding:20px}
     header{position:sticky;top:0;background:rgba(14,17,22,.72);
@@ -497,7 +503,7 @@
     <div class="portfolio-featured">
       <article class="project-card project-card-featured">
         <a href="https://duo-grande.vercel.app/" target="_blank" rel="noopener" aria-label="Open DUO GRANDE website">
-          <img src="/assets/portfolio/portfolio_duo_grande.jpg"
+          <img loading="lazy" decoding="async" src="/assets/portfolio/portfolio_duo_grande.jpg"
                alt="DUO GRANDE premium furniture website preview">
         </a>
 
@@ -522,7 +528,7 @@
     <div class="project-grid">
       <article class="project-card">
         <a href="https://floor-master-solutions.vercel.app/" target="_blank" rel="noopener" aria-label="Open Floor Master Solutions website">
-          <img src="/assets/portfolio/portfolio_fms.jpg"
+          <img loading="lazy" decoding="async" src="/assets/portfolio/portfolio_fms.jpg"
                alt="Floor Master Solutions industrial B2B website preview">
         </a>
 
@@ -545,7 +551,7 @@
 
       <article class="project-card">
         <a href="#portfolio" aria-label="BIG BAG COMPANY preview">
-          <img src="/assets/portfolio/portfolio_big_bag.jpg"
+          <img loading="lazy" decoding="async" src="/assets/portfolio/portfolio_big_bag.jpg"
                alt="BIG BAG COMPANY brand and website concept preview">
         </a>
 
@@ -567,7 +573,7 @@
 
       <article class="project-card">
         <a href="https://udruzenje-srba-iz-stare-hercegovine.vercel.app/" target="_blank" rel="noopener" aria-label="Open Association website">
-          <img src="/assets/portfolio/portfolio_udruzenje.jpg"
+          <img loading="lazy" decoding="async" src="/assets/portfolio/portfolio_udruzenje.jpg"
                alt="Association website preview">
         </a>
 
@@ -600,7 +606,7 @@
       <article class="card">
         <h3 data-i18n="dv_c1_t">Peter’s bakery</h3>
         <p class="sub" data-i18n="dv_c1_s">Seasonal short ad (social format).</p>
-        <video playsinline class="vid" controls preload="metadata">
+        <video playsinline class="vid" controls preload="none">
           <source src="/peters-baeckerei.mp4?v=20251107" type="video/mp4"/>
         </video>
       </article>
@@ -608,7 +614,7 @@
       <article class="card">
         <h3 data-i18n="dv_c3_t">Sandra — marketing advantages</h3>
         <p class="sub" data-i18n="dv_c3_s">Short pitch about the benefits of good marketing.</p>
-        <video playsinline class="vid" controls preload="metadata">
+        <video playsinline class="vid" controls preload="none">
           <source src="/sandra-enterprise.mp4?v=20251107" type="video/mp4"/>
         </video>
       </article>
@@ -625,14 +631,14 @@
 
       <div class="zl-grid">
         <figure class="zl-card">
-          <video playsinline controls preload="metadata" poster="/zlatar/poster-4C.jpg">
+          <video playsinline controls preload="none" poster="/zlatar/poster-4C.jpg">
             <source src="/zlatar/zlatarAVATAR_4C.mp4?v=20251107" type="video/mp4"/>
           </video>
           <figcaption data-i18n="zl_cap_4c">4C za 30 sek — jasno & kratko.</figcaption>
         </figure>
 
         <figure class="zl-card">
-          <video playsinline controls preload="metadata" poster="/zlatar/poster-ringwahl.jpg">
+          <video playsinline controls preload="none" poster="/zlatar/poster-ringwahl.jpg">
             <source src="/zlatar/zlatarAVATAR_Ringwahl.mp4?v=20251107" type="video/mp4"/>
           </video>
           <figcaption data-i18n="zl_cap_style">Koji stil: Solitaire, Halo ili Classic?</figcaption>
@@ -655,11 +661,11 @@
       <div class="op-grid">
         <figure class="op-card">
           <div class="video-grid">
-            <video playsinline class="vid" controls preload="metadata" poster="/optika/poster-glaeser.jpg">
+            <video playsinline class="vid" controls preload="none" poster="/optika/poster-glaeser.jpg">
               <source src="/optika/optikaAVATAR_Glaeser.mp4?v=20251105" type="video/mp4"/>
             </video>
 
-            <video playsinline class="vid" controls preload="metadata" poster="/optika/sandra_perfekt.jpg">
+            <video playsinline class="vid" controls preload="none" poster="/optika/sandra_perfekt.jpg">
               <source src="/optika/sandra_perfekt.mp4?v=20251212" type="video/mp4"/>
             </video>
           </div>
@@ -670,19 +676,19 @@
           <div class="op-carousel-inner">
             <div class="op-carousel-track" id="bakeryCarouselTrack">
               <div class="op-carousel-slide">
-                <img src="/carousel-baeckerei-01-front.jpg.png" alt="D&M Bäckerei – 3D logo i pekar">
+                <img loading="lazy" decoding="async" src="/carousel-baeckerei-01-front.jpg.png" alt="D&M Bäckerei – 3D logo i pekar">
               </div>
               <div class="op-carousel-slide">
-                <img src="/carousel-baeckerei-02-front.jpg.jpg" alt="Peciva na tamnom mermeru – D&M Bäckerei">
+                <img loading="lazy" decoding="async" src="/carousel-baeckerei-02-front.jpg.jpg" alt="Peciva na tamnom mermeru – D&M Bäckerei">
               </div>
               <div class="op-carousel-slide">
-                <img src="/carousel-baeckerei-03-front.jpg.jpg" alt="Božićni hleb i kolači – D&M Bäckerei">
+                <img loading="lazy" decoding="async" src="/carousel-baeckerei-03-front.jpg.jpg" alt="Božićni hleb i kolači – D&M Bäckerei">
               </div>
               <div class="op-carousel-slide">
-                <img src="/carousel-baeckerei-04-front.jpg.jpg" alt="Pekarka u pekari – D&M Bäckerei">
+                <img loading="lazy" decoding="async" src="/carousel-baeckerei-04-front.jpg.jpg" alt="Pekarka u pekari – D&M Bäckerei">
               </div>
               <div class="op-carousel-slide">
-                <img src="/carousel-baeckerei-05-front.jpg.png" alt="Pekar posipa brašno – D&M Bäckerei">
+                <img loading="lazy" decoding="async" src="/carousel-baeckerei-05-front.jpg.png" alt="Pekar posipa brašno – D&M Bäckerei">
               </div>
             </div>
           </div>
