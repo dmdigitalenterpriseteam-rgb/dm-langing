@@ -37,7 +37,7 @@
     section{padding:44px 0;scroll-margin-top:90px}
 
     /* Performance: sekcije ispod prvog ekrana se renderuju tek kada im se korisnik približi */
-    #services,#products,#claim,#portfolio,#demo-videos,#goldschmiede,#optik,#trust,#faq,#contact{
+    #services,#products,#claim,#portfolio,#creative-concepts,#demo-videos,#goldschmiede,#optik,#trust,#faq,#contact{
       content-visibility:auto;
       contain-intrinsic-size:800px;
     }
@@ -151,6 +151,139 @@
 
     .project-card-featured h3{
       font-size:clamp(1.6rem,4vw,2.6rem);
+    }
+
+
+    /* CREATIVE CONCEPTS / BOUTIQUE ART DIRECTION */
+    .concepts-pro{
+      padding-top:36px;
+      padding-bottom:58px;
+    }
+
+    .concepts-head{
+      max-width:860px;
+      margin-bottom:24px;
+    }
+
+    .concepts-head h2{
+      margin-top:10px;
+    }
+
+    .concept-card{
+      position:relative;
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:minmax(0,1.08fr) minmax(340px,.92fr);
+      gap:0;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:28px;
+      background:
+        radial-gradient(circle at top left,rgba(159,168,254,.16),transparent 34%),
+        radial-gradient(circle at bottom right,rgba(98,224,198,.10),transparent 32%),
+        linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+      box-shadow:0 24px 70px rgba(0,0,0,.42);
+    }
+
+    .concept-visual{
+      position:relative;
+      min-height:460px;
+      overflow:hidden;
+      background:#070a0f;
+    }
+
+    .concept-visual::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg,transparent 58%,rgba(14,17,22,.72));
+      pointer-events:none;
+    }
+
+    .concept-visual img{
+      width:100%;
+      height:100%;
+      min-height:460px;
+      object-fit:cover;
+      filter:saturate(1.05) contrast(1.04);
+      transform:scale(1.01);
+      transition:transform .45s ease, filter .45s ease;
+    }
+
+    .concept-card:hover .concept-visual img{
+      transform:scale(1.035);
+      filter:saturate(1.12) contrast(1.07);
+    }
+
+    .concept-content{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      padding:34px;
+      position:relative;
+      z-index:1;
+    }
+
+    .concept-kicker{
+      color:#d8c7a0;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-size:12px;
+      margin-bottom:10px;
+    }
+
+    .concept-content h3{
+      margin:0 0 10px;
+      font-size:clamp(1.8rem,4.4vw,3.2rem);
+      line-height:1.02;
+    }
+
+    .concept-subtitle{
+      color:#d8c7a0;
+      font-size:clamp(1rem,2vw,1.25rem);
+      margin:0 0 16px;
+    }
+
+    .concept-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:8px 0 20px;
+    }
+
+    .concept-tags .badge{
+      border-color:rgba(216,199,160,.34);
+      background:rgba(216,199,160,.08);
+      color:#eadfca;
+    }
+
+    .concept-thumbs{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .concept-thumbs img{
+      width:100%;
+      aspect-ratio:16/10;
+      object-fit:cover;
+      border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 10px 28px rgba(0,0,0,.32);
+      transition:transform .25s ease, filter .25s ease;
+    }
+
+    .concept-thumbs img:hover{
+      transform:translateY(-2px);
+      filter:saturate(1.1) contrast(1.05);
+    }
+
+    .concept-note{
+      margin-top:18px;
+      color:#b7c1ce;
+      font-size:14px;
+      border-left:2px solid rgba(216,199,160,.55);
+      padding-left:12px;
     }
 
     /* 🔵 Social icons (HEADER) – POJAČANO */
@@ -279,6 +412,31 @@
       .project-card-featured img{
         min-height:auto;
         aspect-ratio:16/9;
+      }
+
+      .concept-card{
+        grid-template-columns:1fr;
+      }
+
+      .concept-visual{
+        min-height:auto;
+      }
+
+      .concept-visual::after{
+        background:linear-gradient(180deg,transparent 62%,rgba(14,17,22,.82));
+      }
+
+      .concept-visual img{
+        min-height:auto;
+        aspect-ratio:16/10;
+      }
+
+      .concept-content{
+        padding:24px;
+      }
+
+      .concept-thumbs{
+        grid-template-columns:repeat(2,1fr);
       }
 
       footer .wrap{grid-template-columns:1fr;text-align:center}
@@ -596,6 +754,61 @@
     </div>
   </section>
 
+
+  <!-- CREATIVE CONCEPTS -->
+  <section id="creative-concepts" class="concepts-pro">
+    <div class="concepts-head">
+      <span class="badge" data-i18n="concept_badge">Creative Concepts</span>
+      <h2 data-i18n="concept_title">Creative Concepts</h2>
+      <p class="sub" data-i18n="concept_intro">
+        Boutique visual studies, luxury product storytelling and premium art direction.
+      </p>
+    </div>
+
+    <article class="concept-card">
+      <div class="concept-visual">
+        <img loading="lazy" decoding="async"
+             src="/assets/retro_3.jpeg"
+             alt="ATELIER LUCIA vintage luxury collage handbag concept">
+      </div>
+
+      <div class="concept-content">
+        <div class="concept-kicker" data-i18n="concept_kicker">Pilot Concept / Art Direction</div>
+        <h3>ATELIER LUCIA</h3>
+        <p class="concept-subtitle">Vintage Luxury Collage Collection</p>
+        <p class="sub" data-i18n="concept_lucia_text">
+          A boutique visual concept exploring vintage-inspired collage aesthetics, luxury product design
+          and fashion-driven brand storytelling.
+        </p>
+
+        <div class="concept-tags">
+          <span class="badge" data-i18n="concept_tag_1">Visual Concept</span>
+          <span class="badge" data-i18n="concept_tag_2">Luxury Product Design</span>
+          <span class="badge" data-i18n="concept_tag_3">Brand Storytelling</span>
+          <span class="badge" data-i18n="concept_tag_4">Art Direction</span>
+        </div>
+
+        <div class="stack">
+          <a class="btn-min btn-grad"
+             href="/assets/atelier_lucia.pdf"
+             target="_blank" rel="noopener"
+             data-i18n="concept_btn_pdf">View concept PDF</a>
+        </div>
+
+        <p class="concept-note" data-i18n="concept_note">
+          A small art-driven design study showing how visual identity can become a premium product experience.
+        </p>
+      </div>
+    </article>
+
+    <div class="concept-thumbs" aria-label="ATELIER LUCIA concept gallery">
+      <img loading="lazy" decoding="async" src="/assets/retro_1.jpeg" alt="ATELIER LUCIA round luxury case concept">
+      <img loading="lazy" decoding="async" src="/assets/retro_2.jpeg" alt="ATELIER LUCIA vintage suitcase concept">
+      <img loading="lazy" decoding="async" src="/assets/retro_3.jpeg" alt="ATELIER LUCIA handbag concept">
+      <img loading="lazy" decoding="async" src="/assets/retro_4.jpeg" alt="ATELIER LUCIA luxury box concept">
+    </div>
+  </section>
+
   <!-- DEMO VIDEOS -->
   <section id="demo-videos">
     <h2 data-i18n="dv_title">Demo — Video samples</h2>
@@ -788,6 +1001,17 @@
       project_udruzenje_text:"Cultural and heritage website with cinematic hero design, membership form integration, historical storytelling and structured presentation of community values.",
       project_btn_open:"Open project",
       project_btn_concept:"Concept preview",
+      concept_badge:"Creative Concepts",
+      concept_title:"Creative Concepts",
+      concept_intro:"Boutique visual studies, luxury product storytelling and premium art direction.",
+      concept_kicker:"Pilot Concept / Art Direction",
+      concept_lucia_text:"A boutique visual concept exploring vintage-inspired collage aesthetics, luxury product design and fashion-driven brand storytelling.",
+      concept_tag_1:"Visual Concept",
+      concept_tag_2:"Luxury Product Design",
+      concept_tag_3:"Brand Storytelling",
+      concept_tag_4:"Art Direction",
+      concept_btn_pdf:"View concept PDF",
+      concept_note:"A small art-driven design study showing how visual identity can become a premium product experience.",
       port_c1_t:"Peter’s Bakery",port_c1_s:"Simple site with transparent menu.",
       port_c2_t:"D&M intro video",port_c2_s:"Branded intro without watermark.",
       port_c3_t:"Butterfly Nails — full website",
@@ -825,6 +1049,17 @@
       project_udruzenje_text:"Kultur- und Heritage-Website mit filmischem Hero-Design, integrierter Beitrittserklärung, historischem Storytelling und strukturierter Präsentation gemeinschaftlicher Werte.",
       project_btn_open:"Projekt öffnen",
       project_btn_concept:"Konzept ansehen",
+      concept_badge:"Kreative Konzepte",
+      concept_title:"Kreative Konzepte",
+      concept_intro:"Boutique Visual Studies, Luxury Product Storytelling und hochwertige Art Direction.",
+      concept_kicker:"Pilotkonzept / Art Direction",
+      concept_lucia_text:"Ein Boutique-Visual-Konzept, das Vintage-Collage-Ästhetik, Luxury Product Design und Fashion-getriebenes Brand Storytelling verbindet.",
+      concept_tag_1:"Visual Concept",
+      concept_tag_2:"Luxury Product Design",
+      concept_tag_3:"Brand Storytelling",
+      concept_tag_4:"Art Direction",
+      concept_btn_pdf:"Konzept-PDF ansehen",
+      concept_note:"Eine kleine designorientierte Art Study, die zeigt, wie visuelle Identität zu einem hochwertigen Produkterlebnis werden kann.",
       port_c1_t:"Bäckerei Peter",port_c1_s:"Einfache Seite mit transparenter Navigation.",port_c2_t:"D&M Intro-Video",port_c2_s:"Gebrandetes Intro ohne Wasserzeichen.",
       port_c3_t:"Butterfly Nails — komplette Website",
       port_c3_s:"Echte Nagelstudio-Website — dezente Optik, Portfolio und WhatsApp-Kontakt.",
@@ -861,6 +1096,17 @@
       project_udruzenje_text:"Kulturna i heritage web stranica sa filmski postavljenom hero sekcijom, integrisanom pristupnicom, istorijskim narativom i jasnim prikazom vrednosti zajednice.",
       project_btn_open:"Otvori projekat",
       project_btn_concept:"Pogledaj koncept",
+      concept_badge:"Kreativni koncepti",
+      concept_title:"Kreativni koncepti",
+      concept_intro:"Boutique vizuelne studije, luxury product storytelling i premium art direction.",
+      concept_kicker:"Pilot koncept / Art direction",
+      concept_lucia_text:"Boutique vizuelni koncept koji istražuje vintage collage estetiku, luxury product design i modno vođen brand storytelling.",
+      concept_tag_1:"Vizuelni koncept",
+      concept_tag_2:"Luxury product design",
+      concept_tag_3:"Brand storytelling",
+      concept_tag_4:"Art direction",
+      concept_btn_pdf:"Otvori concept PDF",
+      concept_note:"Mala art studija koja pokazuje kako vizuelni identitet može postati premium iskustvo proizvoda.",
       port_c1_t:"Pekar Peter",port_c1_s:"Jednostavan sajt sa transparentnim menijem.",port_c2_t:"D&M intro video",port_c2_s:"Brendirani uvodni video bez vodenog žiga.",
       port_c3_t:"Butterfly Nails – kompletna stranica",
       port_c3_s:"Stvarna stranica za salon noktiju – nežne pozadine, portfolio i WhatsApp kontakt.",
