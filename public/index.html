@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sr">
+<html lang="de">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -11,19 +11,48 @@
   gtag('js', new Date());
   gtag('config', 'G-7LWKLNLDHE');
 </script>
- <title>D&M Digitalenterprise</title>
-  <link rel="canonical" href="https://dmdigitalenterprise.com/">
-  <meta name="description" content="Web, video i marketing — DE/SR/EN."/>
+ <title>Webdesign mit Video für Unternehmen | D&M Digitalenterprise</title>
+  <link rel="canonical" href="https://www.dmdigitalenterprise.com/">
+  <meta name="description" content="D&M Digitalenterprise entwickelt schnelle Websites, Video-first Landingpages und mehrsprachige Webauftritte für Unternehmen, Handwerker, Industrie und Produktkataloge."/>
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="512x512" href="/favicon.png">
 <link rel="preload" as="image" href="/hero-robot.jpg" fetchpriority="high">
   <!-- OG -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="D&M Digitalenterprise – Webdesign & Video für DACH">
-  <meta property="og:description" content="Landing stranice, kratki video-avatari, Google profili. Brza isporuka i merljivi rezultati.">
-  <meta property="og:url" content="https://dmdigitalenterprise.com/">
-<meta property="og:image" content="https://dmdigitalenterprise.com/og-image.png">
+  <meta property="og:title" content="Webdesign mit Video für Unternehmen | D&M Digitalenterprise">
+  <meta property="og:description" content="Schnelle, moderne Websites, Video-first Landingpages und mehrsprachige Webauftritte für Unternehmen in der DACH-Region.">
+  <meta property="og:url" content="https://www.dmdigitalenterprise.com/">
+<meta property="og:image" content="https://www.dmdigitalenterprise.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Webdesign mit Video für Unternehmen | D&M Digitalenterprise">
+  <meta name="twitter:description" content="Schnelle, moderne Websites, Video-first Landingpages und mehrsprachige Webauftritte für Unternehmen in der DACH-Region.">
+  <meta name="twitter:image" content="https://www.dmdigitalenterprise.com/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "D&M Digitalenterprise",
+    "url": "https://www.dmdigitalenterprise.com/",
+    "logo": "https://www.dmdigitalenterprise.com/favicon.png",
+    "description": "Schnelle Video-first Websites, Landingpages und mehrsprachige Webauftritte für Unternehmen.",
+    "areaServed": ["Germany", "Austria", "Switzerland", "Serbia"],
+    "availableLanguage": ["de", "en", "sr"],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "info@dmdigitalenterprise.com",
+      "telephone": "+381606890072",
+      "availableLanguage": ["German", "English", "Serbian"]
+    }],
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61583547136843",
+      "https://www.instagram.com/d_mdigitalenterpriseteam/",
+      "https://www.linkedin.com/in/dejan-veljovic-3a2478374/"
+    ]
+  }
+  </script>
 
   <style>
     :root{--bg:#0e1116;--card:#151a22;--line:rgba(255,255,255,.08);
@@ -37,7 +66,7 @@
     section{padding:44px 0;scroll-margin-top:90px}
 
     /* Performance: sekcije ispod prvog ekrana se renderuju tek kada im se korisnik približi */
-    #services,#products,#claim,#portfolio,#creative-concepts,#demo-videos,#goldschmiede,#optik,#trust,#faq,#contact{
+    #services,#products,#top-trio,#portfolio,#creative-concepts,#trust,#faq,#contact{
       content-visibility:auto;
       contain-intrinsic-size:800px;
     }
@@ -119,6 +148,75 @@
     .project-card:hover img{
       transform:scale(1.025);
       filter:saturate(1.08) contrast(1.04);
+    }
+
+
+    .project-fallback{
+      min-height:245px;
+      aspect-ratio:16/9;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:22px;
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 18% 18%,rgba(98,224,198,.23),transparent 30%),
+        radial-gradient(circle at 85% 10%,rgba(159,168,254,.25),transparent 28%),
+        linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.018));
+      transition:transform .35s ease, filter .35s ease;
+    }
+
+    .project-fallback::before{
+      content:"";
+      position:absolute;
+      inset:16px;
+      border:1px solid rgba(255,255,255,.11);
+      border-radius:18px;
+      pointer-events:none;
+    }
+
+    .project-card:hover .project-fallback{
+      transform:scale(1.025);
+      filter:saturate(1.08) contrast(1.04);
+    }
+
+    .project-fallback strong{
+      font-size:clamp(1.6rem,4vw,2.7rem);
+      line-height:1;
+      letter-spacing:.04em;
+      position:relative;
+      z-index:1;
+    }
+
+    .project-fallback span,
+    .project-fallback small{
+      position:relative;
+      z-index:1;
+      color:#cfd8e3;
+    }
+
+    .project-fallback small{
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:12px;
+      margin-bottom:10px;
+      color:#9fb8ff;
+    }
+
+    .project-fallback-adles{
+      background:
+        radial-gradient(circle at 16% 14%,rgba(103,190,128,.30),transparent 30%),
+        radial-gradient(circle at 86% 18%,rgba(148,115,255,.24),transparent 30%),
+        linear-gradient(135deg,rgba(32,66,45,.72),rgba(12,17,26,.96));
+    }
+
+    .project-fallback-neba{
+      background:
+        radial-gradient(circle at 18% 20%,rgba(255,255,255,.22),transparent 26%),
+        radial-gradient(circle at 88% 12%,rgba(98,224,198,.19),transparent 30%),
+        linear-gradient(135deg,rgba(52,58,67,.72),rgba(10,13,18,.98));
     }
 
     .project-content{
@@ -340,75 +438,6 @@
       height:18px;
     }
 
-    /* Zlatar & Optika */
-    .zl-sec{padding:44px 0;background:#0b0f14}
-    .zl-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-    .zl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .zl-card video,.op-card video{width:100%;border-radius:16px;border:1px solid var(--line);background:#0a0f14;box-shadow:0 10px 26px rgba(0,0,0,.35)}
-    .zl-card figcaption,.op-card figcaption{font-size:14px;opacity:.85;margin-top:8px}
-    .zl-ctas,.op-ctas{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap}
-    .zl-btn,.op-btn{padding:10px 16px;border-radius:999px;border:1px solid var(--line);text-decoration:none}
-    .zl-btn.primary,.op-btn.primary{background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;border-color:transparent;font-weight:700}
-
-    .op-sec{padding:44px 0;background:#0e1116}
-    .op-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-    .op-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1.45fr);gap:18px}
-
-    .op-carousel{
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid var(--line);
-      background:#05070b;
-      display:flex;
-      flex-direction:column;
-    }
-
-    .op-carousel-title{
-      font-size:16px;
-      font-weight:600;
-      padding:12px 16px 4px;
-    }
-
-    .op-carousel-inner{position:relative;}
-
-    .op-carousel-track{
-      display:flex;
-      transition:transform .5s ease-in-out;
-    }
-
-    .op-carousel-slide{min-width:100%;}
-
-    .op-carousel-slide img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    .op-carousel-dots{
-      display:flex;
-      justify-content:center;
-      gap:8px;
-      padding:8px 0 12px;
-      background:#05070b;
-    }
-
-    .op-carousel-dot{
-      width:10px;
-      height:10px;
-      border-radius:999px;
-      border:1px solid var(--muted);
-      background:transparent;
-      cursor:pointer;
-      opacity:.6;
-    }
-
-    .op-carousel-dot.active{
-      background:var(--brand1);
-      border-color:var(--brand1);
-      opacity:1;
-    }
-
     /* ✅ Video layout helper (stabilno i za ugnježdene i za "direktne" klase) */
     .video-grid{display:grid;gap:18px;justify-items:stretch}
     .video-grid.row-land{grid-template-columns:1fr}
@@ -471,28 +500,6 @@
     .wa-fab{position:fixed;right:16px;bottom:16px;z-index:50;width:56px;height:56px;display:grid;place-items:center;border-radius:999px;color:#0b0b0b;background:#22c55e;border:1px solid rgba(255,255,255,.15);box-shadow:0 12px 28px rgba(0,0,0,.35)}
     .wa-fab:hover{filter:brightness(1.05)}
     @media (min-width:980px){.wa-fab{bottom:22px;right:22px}}
-
-    /* OPTIKA: 2 videa levo = ista visina kao karusel desno */
-    #optik .op-grid{ align-items: stretch; }
-    #optik .op-card{ height: 100%; }
-
-    #optik .video-grid{
-      height: 100%;
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      gap: 18px;
-    }
-
-    /* samo u optici gasimo 16:9 “zaključavanje” da bi stalo u 2 reda */
-    #optik video.vid{
-      height: 100%;
-      aspect-ratio: auto;
-      object-fit: cover;
-    }
-
-    #optik .op-carousel{ height: 100%; }
-    #optik .op-carousel-inner{ flex: 1; }
-    #optik .op-carousel-slide img{ height: 100%; object-fit: cover; }
   </style>
 </head>
 <body>
@@ -506,7 +513,7 @@
       <a href="#services" data-i18n="nav_services">Services</a>
       <a href="#products" data-i18n="nav_packages">Packages</a>
       <a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a>
-      <a href="#optik" data-i18n="nav_optik">Optics</a>
+      <a href="#creative-concepts" data-i18n="nav_optik">Konzepte</a>
       <a href="#contact" data-i18n="nav_contact">Contact</a>
     </nav>
     <div class="spacer"></div>
@@ -544,9 +551,9 @@
     </div>
 
     <div class="lang">
+      <button data-setlang="de" class="active">DE</button>
       <button data-setlang="en">EN</button>
-      <button data-setlang="de">DE</button>
-      <button data-setlang="sr" class="active">SRB</button>
+      <button data-setlang="sr">SRB</button>
     </div>
     <a class="btn" href="#contact" data-i18n="cta_top">Request a quote</a>
   </div>
@@ -556,25 +563,27 @@
   <!-- HERO -->
   <section class="grid-2" id="hero">
     <div>
-      <span class="badge" data-i18n="badge_stack">Digital design • Video • Web</span>
-      <h1 data-i18n="hero_title">Jednostavno — pravimo da vas pamte.</h1>
-      <p class="lead" data-i18n="hero_sub">Web stranice, kratke video reklame i pametan marketing na nemačkom, srpskom i engleskom.</p>
+      <span class="badge" data-i18n="badge_stack">Video-first Webdesign • Landingpages • Mehrsprachige Websites</span>
+      <h1 data-i18n="hero_title">Webdesign mit Video für Unternehmen, die professionell auftreten wollen.</h1>
+      <p class="lead" data-i18n="hero_sub">D&M Digitalenterprise entwickelt schnelle, visuell starke Websites, Landingpages und kurze Werbevideos für Handwerker, Industrie, Möbelhersteller und Unternehmen in der DACH-Region.</p>
       <div class="row">
-        <a class="btn" href="#portfolio" data-i18n="cta_portfolio">View portfolio</a>
-        <a class="btn ghost" href="#services" data-i18n="cta_services">Services</a>
+        <a class="btn" href="#portfolio" data-i18n="cta_portfolio">Portfolio ansehen</a>
+        <a class="btn ghost" href="#services" data-i18n="cta_services">Leistungen</a>
       </div>
-      <p class="note" data-i18n="note_menu">Transparent nav is always on; semi-transparent on scroll on request.</p>
+      <p class="note" data-i18n="note_menu">Schnelle Seiten, klare Botschaft und ein visueller Auftritt, der Vertrauen aufbaut.</p>
     </div>
     <div>
       <video playsinline id="heroVideo" class="vid" controls preload="none" poster="/hero-robot.jpg" aria-label="Hero video">
   <source id="heroSrc" src="/avatar-srb.mp4?v=20251105" type="video/mp4" />
 </video>
-      <p class="note" data-i18n="note_video">Language also selects the video version; sound is on.</p>
+      <p class="note" data-i18n="note_video">Video erklärt in Sekunden, wofür Ihr Unternehmen steht.</p>
     </div>
   </section>
 
   <!-- TOP 3x 9:16 (traženo da stoji GORE) -->
   <section id="top-trio">
+    <h2 data-i18n="video_examples_title">Video-first Beispiele</h2>
+    <p class="sub" data-i18n="video_examples_sub">Kurze Videoformate, die eine Botschaft schnell verständlich machen — ideal für Websites, LinkedIn, Instagram und Präsentationen.</p>
     <div class="trio-916">
       <video playsinline class="vid-916" controls preload="metadata" poster="/posters/Avatar_musko_de1.jpg" aria-label="Avatar 9:16 #1">
         <source src="/Avatar_musko_de1.mp4?v=20260518" type="video/mp4" />
@@ -592,34 +601,34 @@
 
   <!-- SERVICES -->
   <section id="services">
-    <h2 data-i18n="services_title">What we do (focused on results)</h2>
-    <p class="sub" data-i18n="services_sub">Three pillars that deliver fast impact.</p>
+    <h2 data-i18n="services_title">Leistungen für einen digitalen Auftritt, der verkauft</h2>
+    <p class="sub" data-i18n="services_sub">Struktur, Design und Video — abgestimmt auf klare Anfragen.</p>
     <div class="cards">
       <article class="card">
         <span class="badge" data-i18n="s_tag_web">Web</span>
-        <h3 data-i18n="s_card1_t">Brze, moderne web stranice</h3>
-        <p class="sub" data-i18n="s_card1_s">Landing stranice, prezentacije, kontakt forme uz praćenje konverzija.</p>
+        <h3 data-i18n="s_card1_t">Websites & Landingpages</h3>
+        <p class="sub" data-i18n="s_card1_s">Schnelle, responsive Websites mit klarer Struktur, Kontaktwegen und sauberer technischer Basis.</p>
       </article>
       <article class="card">
         <span class="badge" data-i18n="s_tag_video">Video</span>
-        <h3 data-i18n="s_card2_t">Kratke video reklame</h3>
-        <p class="sub" data-i18n="s_card2_s">Formati 15–45 s, titlovi na DE/SR/EN, optimizovano za društvene mreže.</p>
+        <h3 data-i18n="s_card2_t">Video-first Präsentation</h3>
+        <p class="sub" data-i18n="s_card2_s">Kurze Videos, Hero-Clips und Social-Formate, die Ihr Angebot schneller verständlich machen.</p>
       </article>
       <article class="card">
         <span class="badge" data-i18n="s_tag_marketing">Marketing</span>
-        <h3 data-i18n="s_card3_t">Kampanje i oglasi</h3>
-        <p class="sub" data-i18n="s_card3_s">Facebook/Instagram/Google, kalendar sadržaja, hashtagovi i CTA poruke.</p>
+        <h3 data-i18n="s_card3_t">Mehrsprachige Inhalte & SEO-Grundlage</h3>
+        <p class="sub" data-i18n="s_card3_s">Texte, Meta-Daten und Inhalte auf Deutsch, Englisch und Serbisch — passend für DACH und regionale Märkte.</p>
       </article>
     </div>
   </section>
 
   <!-- PRODUCTS -->
   <section id="products">
-    <h2 data-i18n="sec_products_title">Paketi (Start — Pro — Premium)</h2>
-    <p class="sub" data-i18n="sec_products_sub">Fiksne cene po modulu – jasan obim.</p>
+    <h2 data-i18n="sec_products_title">Pakete für Websites, Landingpages und digitale Präsentationen</h2>
+    <p class="sub" data-i18n="sec_products_sub">Klarer Umfang, transparente Preise und ein sauberer Ablauf vom ersten Entwurf bis zur Veröffentlichung.</p>
     <div class="cards">
       <article class="card">
-        <h3 data-i18n="p_start_t">START paket</h3>
+        <h3 data-i18n="p_start_t">START-Paket</h3>
         <ul class="list">
           <li data-i18n="p_start_li1">One-page (do 5 sekcija)</li>
           <li data-i18n="p_start_li2">Kontakt (mailto)</li>
@@ -627,7 +636,7 @@
         </ul>
       </article>
       <article class="card">
-        <h3 data-i18n="p_pro_t">PRO paket</h3>
+        <h3 data-i18n="p_pro_t">PRO-Paket</h3>
         <ul class="list">
           <li data-i18n="p_pro_li1">Višestrana + portfolio</li>
           <li data-i18n="p_pro_li2">Kratak video (do 30 s)</li>
@@ -635,7 +644,7 @@
         </ul>
       </article>
       <article class="card">
-        <h3 data-i18n="p_premium_t">PREMIUM paket</h3>
+        <h3 data-i18n="p_premium_t">PREMIUM-Paket</h3>
         <ul class="list">
           <li data-i18n="p_prem_li1">Prilagođen dizajn & animacije</li>
           <li data-i18n="p_prem_li2">2 video oglasa (do 45 s)</li>
@@ -643,13 +652,6 @@
         </ul>
       </article>
     </div>
-  </section>
-
-  <!-- CLAIM -->
-  <section id="claim">
-    <h2 data-i18n="claim_title">Više kupaca za vašu pekaru</h2>
-    <p class="sub" data-i18n="claim_sub">Jasna landing stranica + 30-sekundni video, spremno za 2–4 nedelje.</p>
-    <a class="btn btn-grad" href="#contact" data-i18n="claim_cta">Besplatno brzo savetovanje</a>
   </section>
 
   <!-- PORTFOLIO -->
@@ -756,6 +758,53 @@
           </div>
         </div>
       </article>
+
+
+      <article class="project-card">
+        <a href="https://www.adles.ba/" target="_blank" rel="noopener" aria-label="Open ADLES website" class="project-fallback project-fallback-adles">
+          <small data-i18n="project_adles_visual">Multilingual catalog website</small>
+          <strong>ADLES</strong>
+          <span>BS · EN · DE</span>
+        </a>
+
+        <div class="project-content">
+          <span class="badge" data-i18n="project_adles_tag">Multilingual Catalog Website</span>
+          <h3>ADLES</h3>
+          <p class="sub" data-i18n="project_adles_text">
+            Multilingual website for modular houses, log cabins and wooden structures, with a large product catalog, categories, galleries and video presentation.
+          </p>
+
+          <div class="stack">
+            <a class="btn-min btn-grad"
+               href="https://www.adles.ba/"
+               target="_blank" rel="noopener"
+               data-i18n="project_btn_open">Open project</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <a href="https://www.nebasd.com/" target="_blank" rel="noopener" aria-label="Open NEBA GRADJ.SD website" class="project-fallback project-fallback-neba">
+          <small data-i18n="project_neba_visual">Construction & finishing works</small>
+          <strong>NEBA SD</strong>
+          <span>Građevinski radovi · Projekti · Galerija</span>
+        </a>
+
+        <div class="project-content">
+          <span class="badge" data-i18n="project_neba_tag">Construction & Trade Website</span>
+          <h3>NEBA GRAĐ.SD</h3>
+          <p class="sub" data-i18n="project_neba_text">
+            Website for ceramic works, floor and wall coverings, gypsum-board systems and finishing construction work, with clear local positioning, projects and gallery.
+          </p>
+
+          <div class="stack">
+            <a class="btn-min btn-grad"
+               href="https://www.nebasd.com/"
+               target="_blank" rel="noopener"
+               data-i18n="project_btn_open">Open project</a>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -810,118 +859,6 @@
     </article>
   </section>
 
-
-  <!-- DEMO VIDEOS -->
-  <section id="demo-videos">
-    <h2 data-i18n="dv_title">Demo — Video samples</h2>
-    <p class="sub" data-i18n="dv_sub">2 kratka primera: Peter i Sandra.</p>
-
-    <!-- ✅ ISPRAVKA: nema više unutrašnjeg wrappera; klasa ide direktno na video-grid -->
-    <div class="video-grid row-land-2">
-      <article class="card">
-        <h3 data-i18n="dv_c1_t">Peter’s bakery</h3>
-        <p class="sub" data-i18n="dv_c1_s">Seasonal short ad (social format).</p>
-        <video playsinline class="vid" controls preload="metadata">
-          <source src="/peters-baeckerei.mp4?v=20251107" type="video/mp4"/>
-        </video>
-      </article>
-
-      <article class="card">
-        <h3 data-i18n="dv_c3_t">Sandra — marketing advantages</h3>
-        <p class="sub" data-i18n="dv_c3_s">Short pitch about the benefits of good marketing.</p>
-        <video playsinline class="vid" controls preload="metadata">
-          <source src="/sandra-enterprise.mp4?v=20251107" type="video/mp4"/>
-        </video>
-      </article>
-    </div>
-  </section>
-
-  <!-- ZLATAR -->
-  <section id="goldschmiede" class="zl-sec">
-    <div class="zl-wrap">
-      <header class="zl-head">
-        <h2 data-i18n="gold_title">Zlatar – lična pomoć</h2>
-        <p class="sub" data-i18n="gold_sub">4C objašnjenje + 3 predloga. WhatsApp ili termin u 1 kliku.</p>
-      </header>
-
-      <div class="zl-grid">
-        <figure class="zl-card">
-          <video playsinline controls preload="none" poster="/zlatar/poster-4C.jpg">
-            <source src="/zlatar/zlatarAVATAR_4C.mp4?v=20251107" type="video/mp4"/>
-          </video>
-          <figcaption data-i18n="zl_cap_4c">4C za 30 sek — jasno & kratko.</figcaption>
-        </figure>
-
-        <figure class="zl-card">
-          <video playsinline controls preload="none" poster="/zlatar/poster-ringwahl.jpg">
-            <source src="/zlatar/zlatarAVATAR_Ringwahl.mp4?v=20251107" type="video/mp4"/>
-          </video>
-          <figcaption data-i18n="zl_cap_style">Koji stil: Solitaire, Halo ili Classic?</figcaption>
-        </figure>
-      </div>
-
-      <div class="zl-ctas">
-        <a class="zl-btn primary" href="https://wa.me/381606890072" target="_blank" rel="noopener" data-i18n="gold_whatsapp">WhatsApp Savet</a>
-        <a class="zl-btn" href="#contact" data-i18n="gold_book">Zakaži termin</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- OPTIKA + BÄCKEREI KARUSEL -->
-  <section id="optik" class="op-sec">
-    <div class="op-wrap">
-      <header class="op-head">
-        <h2>D&M Digitalenterprise</h2>
-      </header>
-      <div class="op-grid">
-        <figure class="op-card">
-          <div class="video-grid">
-            <video playsinline class="vid" controls preload="none" poster="/optika/poster-glaeser.jpg">
-              <source src="/optika/optikaAVATAR_Glaeser.mp4?v=20251105" type="video/mp4"/>
-            </video>
-
-            <video playsinline class="vid" controls preload="none" poster="/optika/sandra_perfekt.jpg">
-              <source src="/optika/sandra_perfekt.mp4?v=20251212" type="video/mp4"/>
-            </video>
-          </div>
-        </figure>
-
-        <div class="op-carousel" aria-label="D&M Bäckerei – foto primeri">
-          <h3 class="op-carousel-title" data-i18n="bakery_carousel_title">D&M Bäckerei – foto primeri</h3>
-          <div class="op-carousel-inner">
-            <div class="op-carousel-track" id="bakeryCarouselTrack">
-              <div class="op-carousel-slide">
-                <img loading="lazy" decoding="async" src="/carousel-baeckerei-01-front.jpg.png" alt="D&M Bäckerei – 3D logo i pekar">
-              </div>
-              <div class="op-carousel-slide">
-                <img loading="lazy" decoding="async" src="/carousel-baeckerei-02-front.jpg.jpg" alt="Peciva na tamnom mermeru – D&M Bäckerei">
-              </div>
-              <div class="op-carousel-slide">
-                <img loading="lazy" decoding="async" src="/carousel-baeckerei-03-front.jpg.jpg" alt="Božićni hleb i kolači – D&M Bäckerei">
-              </div>
-              <div class="op-carousel-slide">
-                <img loading="lazy" decoding="async" src="/carousel-baeckerei-04-front.jpg.jpg" alt="Pekarka u pekari – D&M Bäckerei">
-              </div>
-              <div class="op-carousel-slide">
-                <img loading="lazy" decoding="async" src="/carousel-baeckerei-05-front.jpg.png" alt="Pekar posipa brašno – D&M Bäckerei">
-              </div>
-            </div>
-          </div>
-          <div class="op-carousel-dots" id="bakeryCarouselDots">
-            <button class="op-carousel-dot active" data-slide="0" aria-label="Slide 1"></button>
-            <button class="op-carousel-dot" data-slide="1" aria-label="Slide 2"></button>
-            <button class="op-carousel-dot" data-slide="2" aria-label="Slide 3"></button>
-            <button class="op-carousel-dot" data-slide="3" aria-label="Slide 4"></button>
-            <button class="op-carousel-dot" data-slide="4" aria-label="Slide 5"></button>
-          </div>
-        </div>
-      </div>
-      <div class="op-ctas">
-        <a class="op-btn primary" href="https://wa.me/381606890072" target="_blank" rel="noopener" data-i18n="opt_whatsapp">WhatsApp / Proba</a>
-        <a class="op-btn" href="#contact" data-i18n="opt_book">Zakaži termin</a>
-      </div>
-    </div>
-  </section>
 
   <!-- TRUST -->
   <section id="trust">
@@ -978,21 +915,20 @@
 <script>
   /* I18N */
   var T={
-    en:{nav_services:"Services",nav_packages:"Packages",nav_portfolio:"Portfolio",nav_optik:"Optics",nav_contact:"Contact",cta_top:"Request a quote",
-      badge_stack:"Digital design • Video • Web",hero_title:"Simple — so people remember you.",hero_sub:"Websites, short video ads and smart marketing in German, Serbian and English.",cta_portfolio:"View portfolio",cta_services:"Services",note_menu:"Transparent nav is always on; semi-transparent on scroll on request.",note_video:"Language also selects the video version; sound is on.",
-      services_title:"What we do (focused on results)",services_sub:"Three pillars that deliver fast impact.",
+    en:{nav_services:"Services",nav_packages:"Packages",nav_portfolio:"Portfolio",nav_optik:"Concepts",nav_contact:"Contact",cta_top:"Request a quote",
+      badge_stack:"Video-first web design • Landing pages • Multilingual websites",hero_title:"Web design with video for companies that want to look professional.",hero_sub:"D&M Digitalenterprise builds fast, visually strong websites, landing pages and short promo videos for trades, industry, furniture brands and product catalogues.",cta_portfolio:"View portfolio",cta_services:"Services",note_menu:"Fast pages, clear messaging and a visual presentation that builds trust.",video_examples_title:"Video-first examples",video_examples_sub:"Short video formats that make a message clear fast — ideal for websites, LinkedIn, Instagram and presentations.",note_video:"Video explains in seconds what your company stands for.",
+      services_title:"Services for a digital presence that sells",services_sub:"Structure, design and video — aligned for clear inquiries.",
       s_tag_web:"Web",s_tag_video:"Video",s_tag_marketing:"Marketing",
-      s_card1_t:"Fast, modern websites",s_card1_s:"Landing pages, presentations, contact forms, with conversion tracking.",
-      s_card2_t:"Short video ads",s_card2_s:"15–45s formats, DE/EN/SR captions, optimized for social.",
-      s_card3_t:"Campaigns & ads",s_card3_s:"Facebook/Instagram/Google, content calendar, hashtags and CTAs.",
-      sec_products_title:"Packages (Start — Pro — Premium)",sec_products_sub:"Fixed prices by module, clear scope.",
+      s_card1_t:"Websites & landing pages",s_card1_s:"Fast, responsive websites with clear structure, contact paths and a clean technical base.",
+      s_card2_t:"Video-first presentation",s_card2_s:"Short videos, hero clips and social formats that make your offer easier to understand.",
+      s_card3_t:"Multilingual content & SEO base",s_card3_s:"Texts, metadata and content in German, English and Serbian — suitable for DACH and regional markets.",
+      sec_products_title:"Packages for websites, landing pages and digital presentations",sec_products_sub:"Clear scope, transparent prices and a clean workflow from first draft to publication.",
       p_start_t:"START package",p_start_li1:"One-page (up to 5 sections)",p_start_li2:"Contact (mailto)",p_start_li3:"Basic SEO meta tags",
       p_pro_t:"PRO package",p_pro_li1:"Multi-page + portfolio",p_pro_li2:"Short video (up to 30s)",p_pro_li3:"Ad prep + 10 hashtags",
       p_premium_t:"PREMIUM package",p_prem_li1:"Custom design & animations",p_prem_li2:"2 ad videos (up to 45s)",p_prem_li3:"30-day campaign + report",
-      claim_title:"More customers for your bakery",claim_sub:"Clear landing page + 30-second video, ready in 2–4 weeks.",claim_cta:"Free quick consultation",
       port_title:"Selected Projects",
       portfolio_badge:"Selected Projects",
-      portfolio_intro:"Real digital projects — designed, structured and developed by D&M Digitalenterprise.",
+      portfolio_intro:"Real digital projects — designed, structured and developed by D&M Digitalenterprise, including multilingual catalog and trade websites.",
       project_duo_tag:"Premium Furniture Website",
       project_duo_text:"A complete premium furniture website with strong visual identity, product structure, galleries, catalog sections and mobile-focused presentation.",
       project_fms_tag:"Industrial B2B Website",
@@ -1001,6 +937,12 @@
       project_bigbag_text:"Brand and website concept for jumbo bag distribution, focused on strong first impression, clean product communication and high-impact industrial visuals.",
       project_udruzenje_tag:"Cultural Association Website",
       project_udruzenje_text:"Cultural and heritage website with cinematic hero design, membership form integration, historical storytelling and structured presentation of community values.",
+      project_adles_visual:"Multilingual catalog website",
+      project_adles_tag:"Multilingual Catalog Website",
+      project_adles_text:"Multilingual website for modular houses, log cabins and wooden structures, with a large product catalog, categories, galleries and video presentation.",
+      project_neba_visual:"Construction & finishing works",
+      project_neba_tag:"Construction & Trade Website",
+      project_neba_text:"Website for ceramic works, floor and wall coverings, gypsum-board systems and finishing construction work, with clear local positioning, projects and gallery.",
       project_btn_open:"Open project",
       project_btn_concept:"Concept preview",
       concept_badge:"Creative Concepts",
@@ -1013,33 +955,22 @@
       concept_tag2:"Brand Storytelling",
       concept_tag3:"Art Direction",
       concept_btn:"View Concept PDF",
-      port_c1_t:"Peter’s Bakery",port_c1_s:"Simple site with transparent menu.",
-      port_c2_t:"D&M intro video",port_c2_s:"Branded intro without watermark.",
-      port_c3_t:"Butterfly Nails — full website",
-      port_c3_s:"Real nail salon site — soft visuals, portfolio, and WhatsApp contact.",
-      port_c3_btn:"Open website",
-      port_btn_pdf:"Open PDF",
-      dv_title:"Demo — Video samples",dv_sub:"2 short samples: Peter, Sandra.",dv_c1_t:"Peter’s bakery",dv_c1_s:"Seasonal short ad (social format).",dv_c3_t:"Sandra — marketing advantages",dv_c3_s:"Short pitch about the benefits of good marketing.",
-      gold_title:"Jewelry — Personal Advice",gold_sub:"4C explained + 3 suggestions. WhatsApp or 1-click appointment.",zl_cap_4c:"4C in 30s — clear & short.",zl_cap_style:"Which style: Solitaire, Halo or Classic?",gold_whatsapp:"WhatsApp Advice",gold_book:"Book appointment",
-      opt_title:"Optics — short demo",opt_sub:"AVATAR_Glaeser — intro clip for an optics store.",opt_whatsapp:"WhatsApp / Try-on",opt_book:"Book appointment",
       trust_title:"Why clients trust us",trust_sub:"Three short proof points.",trust1_t:"Trilingual (DE · EN · SR)",trust1_s:"No watermarks; scripts/subtitles in three languages.",trust2_t:"Fast delivery",trust2_s:"First draft in 3–5 days, final in 2–4 weeks.",trust3_t:"Video + web = results",trust3_s:"Short avatar + landing → clearer message & more inquiries.",
-      faq_title:"FAQ",faq1_q:"How fast do you deliver?",faq1_a:"2–4 weeks — depending on collaboration and approvals.",faq2_q:"What do you need from us?",faq2_a:"Logo, 5–8 photos and 3–4 key points — we handle the rest.",faq3_q:"Roughly how much does it cost?",faq3_a:"Starting prices: Start 850 €, Pro 1,990 €, Premium 3,990 €; exact quote after a short call.",
-      bakery_carousel_title:"D&M Bakery – photo examples",contact_title:"Contact",rights:"All rights reserved"},
-    de:{nav_services:"Leistungen",nav_packages:"Pakete",nav_portfolio:"Portfolio",nav_optik:"Optik",nav_contact:"Kontakt",cta_top:"Angebot anfragen",
-      badge_stack:"Digitales Design • Video • Web",hero_title:"Einfach – damit man sich an Sie erinnert.",hero_sub:"Websites, kurze Videoanzeigen und smartes Marketing auf Deutsch, Serbisch und Englisch.",cta_portfolio:"Portfolio ansehen",cta_services:"Leistungen",note_menu:"Transparente Navigation ist immer sichtbar. Halbtransparent beim Scrollen gern auf Wunsch.",note_video:"Mit der Sprache wählen Sie die Videoversion; Ton ist aktiv.",
-      services_title:"Was wir machen (mit Fokus auf Ergebnisse)",services_sub:"Drei Module, die schnell Wirkung zeigen.",
+      faq_title:"FAQ",faq1_q:"How fast do you deliver?",faq1_a:"2–4 weeks — depending on collaboration and approvals.",faq2_q:"What do you need from us?",faq2_a:"Logo, 5–8 photos and 3–4 key points — we handle the rest.",faq3_q:"Roughly how much does it cost?",faq3_a:"Starting prices: Start 850 €, Pro 1,990 €, Premium 3,990 €; exact quote after a short call.",contact_title:"Contact",rights:"All rights reserved"},
+    de:{nav_services:"Leistungen",nav_packages:"Pakete",nav_portfolio:"Portfolio",nav_optik:"Konzepte",nav_contact:"Kontakt",cta_top:"Angebot anfragen",
+      badge_stack:"Video-first Webdesign • Landingpages • Mehrsprachige Websites",hero_title:"Webdesign mit Video für Unternehmen, die professionell auftreten wollen.",hero_sub:"D&M Digitalenterprise entwickelt schnelle, visuell starke Websites, Landingpages und kurze Werbevideos für Handwerker, Industrie, Möbelhersteller und Unternehmen in der DACH-Region.",cta_portfolio:"Portfolio ansehen",cta_services:"Leistungen",note_menu:"Schnelle Seiten, klare Botschaft und ein visueller Auftritt, der Vertrauen aufbaut.",video_examples_title:"Video-first Beispiele",video_examples_sub:"Kurze Videoformate, die eine Botschaft schnell verständlich machen — ideal für Websites, LinkedIn, Instagram und Präsentationen.",note_video:"Video erklärt in Sekunden, wofür Ihr Unternehmen steht.",
+      services_title:"Leistungen für einen digitalen Auftritt, der verkauft",services_sub:"Struktur, Design und Video — abgestimmt auf klare Anfragen.",
       s_tag_web:"Web",s_tag_video:"Video",s_tag_marketing:"Marketing",
-      s_card1_t:"Schnelle, moderne Websites",s_card1_s:"Landingpages, Präsentationen, Kontaktformulare – mit Conversion-Tracking.",
-      s_card2_t:"Kurze Video-Ads",s_card2_s:"15–45 s, DE/EN/SR-Untertitel, für Social optimiert.",
-      s_card3_t:"Kampagnen & Anzeigen",s_card3_s:"Facebook/Instagram/Google, Content-Kalender, Hashtags und CTAs.",
-      sec_products_title:"Pakete (Start — Pro — Premium)",sec_products_sub:"Festpreise pro Modul – klarer Umfang.",
+      s_card1_t:"Websites & Landingpages",s_card1_s:"Schnelle, responsive Websites mit klarer Struktur, Kontaktwegen und sauberer technischer Basis.",
+      s_card2_t:"Video-first Präsentation",s_card2_s:"Kurze Videos, Hero-Clips und Social-Formate, die Ihr Angebot schneller verständlich machen.",
+      s_card3_t:"Mehrsprachige Inhalte & SEO-Grundlage",s_card3_s:"Texte, Meta-Daten und Inhalte auf Deutsch, Englisch und Serbisch — passend für DACH und regionale Märkte.",
+      sec_products_title:"Pakete für Websites, Landingpages und digitale Präsentationen",sec_products_sub:"Klarer Umfang, transparente Preise und ein sauberer Ablauf vom ersten Entwurf bis zur Veröffentlichung.",
       p_start_t:"START-Paket",p_start_li1:"One-Pager (bis 5 Sektionen)",p_start_li2:"Kontakt (mailto)",p_start_li3:"Basis-SEO-Metatags",
       p_pro_t:"PRO-Paket",p_pro_li1:"Mehrseitig + Portfolio",p_pro_li2:"Kurzvideo (bis 30 s)",p_pro_li3:"Anzeigenvorbereitung + 10 Hashtags",
       p_premium_t:"PREMIUM-Paket",p_prem_li1:"Individuelles Design & Animationen",p_prem_li2:"2 Werbevideos (bis 45 s)",p_prem_li3:"30-Tage-Kampagne + Report",
-      claim_title:"Mehr Kunden für Ihre Bäckerei",claim_sub:"Klare Landingpage + 30-Sekunden-Video, bereit in 2–4 Wochen.",claim_cta:"Kostenlose Kurzberatung",
       port_title:"Ausgewählte Projekte",
       portfolio_badge:"Ausgewählte Projekte",
-      portfolio_intro:"Reale digitale Projekte — konzipiert, strukturiert und umgesetzt von D&M Digitalenterprise.",
+      portfolio_intro:"Reale digitale Projekte — konzipiert, strukturiert und umgesetzt von D&M Digitalenterprise, inklusive mehrsprachiger Katalogseiten und Handwerker-Websites.",
       project_duo_tag:"Premium-Möbelwebsite",
       project_duo_text:"Eine komplette Premium-Möbelwebsite mit starker visueller Identität, Produktstruktur, Galerien, Katalogbereichen und mobil fokussierter Präsentation.",
       project_fms_tag:"Industrielle B2B-Website",
@@ -1048,6 +979,12 @@
       project_bigbag_text:"Brand- und Website-Konzept für Big-Bag-Vertrieb, mit Fokus auf starken ersten Eindruck, klare Produktkommunikation und wirkungsvolle Industrie-Visuals.",
       project_udruzenje_tag:"Kultur- und Vereinswebsite",
       project_udruzenje_text:"Kultur- und Heritage-Website mit filmischem Hero-Design, integrierter Beitrittserklärung, historischem Storytelling und strukturierter Präsentation gemeinschaftlicher Werte.",
+      project_adles_visual:"Mehrsprachige Katalog-Website",
+      project_adles_tag:"Mehrsprachige Katalog-Website",
+      project_adles_text:"Mehrsprachige Website für Fertighäuser, Blockhäuser und Holzobjekte, mit großem Produktkatalog, Kategorien, Galerien und Videopräsentation.",
+      project_neba_visual:"Bau & Ausbauarbeiten",
+      project_neba_tag:"Bau- & Handwerker-Website",
+      project_neba_text:"Website für Keramikarbeiten, Boden- und Wandbeläge, Gipskarton-Systeme und abschließende Bauarbeiten, mit klarer lokaler Positionierung, Projekten und Galerie.",
       project_btn_open:"Projekt öffnen",
       project_btn_concept:"Konzept ansehen",
       concept_badge:"Kreative Konzepte",
@@ -1060,32 +997,22 @@
       concept_tag2:"Brand Storytelling",
       concept_tag3:"Art Direction",
       concept_btn:"Konzept-PDF öffnen",
-      port_c1_t:"Bäckerei Peter",port_c1_s:"Einfache Seite mit transparenter Navigation.",port_c2_t:"D&M Intro-Video",port_c2_s:"Gebrandetes Intro ohne Wasserzeichen.",
-      port_c3_t:"Butterfly Nails — komplette Website",
-      port_c3_s:"Echte Nagelstudio-Website — dezente Optik, Portfolio und WhatsApp-Kontakt.",
-      port_c3_btn:"Website öffnen",
-      port_btn_pdf:"PDF öffnen",
-      dv_title:"Demo — Video-Beispiele",dv_sub:"2 kurze Beispiele: Peter, Sandra.",dv_c1_t:"Bäckerei Peter",dv_c1_s:"Saisonaler Kurz-Spot (Social-Format).",dv_c3_t:"Sandra — Marketing-Vorteile",dv_c3_s:"Kurzpitch über die Vorteile guten Marketings.",
-      gold_title:"Goldschmiede – persönliche Beratung",gold_sub:"4C erklärt + 3 Vorschläge. WhatsApp oder Termin mit 1 Klick.",zl_cap_4c:"4C in 30 Sek. — klar & kurz.",zl_cap_style:"Welcher Stil: Solitaire, Halo oder Classic?",gold_whatsapp:"WhatsApp-Beratung",gold_book:"Termin buchen",
-      opt_title:"Optik — kurzer Demo-Clip",opt_sub:"AVATAR_Glaeser — Intro für ein Optik-Geschäft.",opt_whatsapp:"WhatsApp / Anprobe",opt_book:"Termin buchen",
       trust_title:"Warum man uns vertraut",trust_sub:"Drei kurze Belege.",trust1_t:"Dreisprachig (DE · EN · SR)",trust1_s:"Keine Wasserzeichen; Skripte/Untertitel in drei Sprachen.",trust2_t:"Schnelle Lieferung",trust2_s:"Erster Entwurf in 3–5 Tagen, final in 2–4 Wochen.",trust3_t:"Video + web = Ergebnis",trust3_s:"Kurzer Avatar + Landing → klarere Botschaft, mehr Anfragen.",
-      faq_title:"FAQ",faq1_q:"Wie schnell liefern Sie?",faq1_a:"2–4 Wochen — abhängig von Zusammenarbeit und Freigaben.",faq2_q:"Was benötigen Sie von uns?",faq2_a:"Logo, 5–8 Fotos und 3–4 Kernpunkte — den Rest übernehmen wir.",faq3_q:"Was kostet es ungefähr?",faq3_a:"Einstiegspreise: Start 850 €, Pro 1.990 €, Premium 3.990 €; exaktes Angebot nach einem kurzen Gespräch.",
-      bakery_carousel_title:"D&M Bäckerei – Bildbeispiele",contact_title:"Kontakt",rights:"Alle Rechte vorbehalten"},
-    sr:{nav_services:"Usluge",nav_packages:"Paketi",nav_portfolio:"Portfolio",nav_optik:"Optika",nav_contact:"Kontakt",cta_top:"Zatraži ponudu",
-      badge_stack:"Digitalni dizajn • Video • Web",hero_title:"Jednostavno — pravimo da vas pamte.",hero_sub:"Web stranice, kratke video reklame i pametan marketing na nemačkom, srpskom i engleskom.",cta_portfolio:"Pogledaj portfolio",cta_services:"Usluge",note_menu:"Transparentan meni je stalno uključen; poluprovidan na skrol po želji.",note_video:"Jezik menja verziju videa; zvuk je uključen.",
-      services_title:"Šta radimo (sa fokusom na rezultate)",services_sub:"Tri stuba ponude koji najbrže donose efekat.",
+      faq_title:"FAQ",faq1_q:"Wie schnell liefern Sie?",faq1_a:"2–4 Wochen — abhängig von Zusammenarbeit und Freigaben.",faq2_q:"Was benötigen Sie von uns?",faq2_a:"Logo, 5–8 Fotos und 3–4 Kernpunkte — den Rest übernehmen wir.",faq3_q:"Was kostet es ungefähr?",faq3_a:"Einstiegspreise: Start 850 €, Pro 1.990 €, Premium 3.990 €; exaktes Angebot nach einem kurzen Gespräch.",contact_title:"Kontakt",rights:"Alle Rechte vorbehalten"},
+    sr:{nav_services:"Usluge",nav_packages:"Paketi",nav_portfolio:"Portfolio",nav_optik:"Koncepti",nav_contact:"Kontakt",cta_top:"Zatraži ponudu",
+      badge_stack:"Video-first web dizajn • Landing stranice • Višejezični sajtovi",hero_title:"Web dizajn sa videom za firme koje žele profesionalan nastup.",hero_sub:"D&M Digitalenterprise izrađuje brze, vizuelno snažne web stranice, landing stranice i kratke reklamne video formate za zanate, industriju, nameštaj i kataloge proizvoda.",cta_portfolio:"Pogledaj portfolio",cta_services:"Usluge",note_menu:"Brze stranice, jasna poruka i vizuelni nastup koji gradi poverenje.",video_examples_title:"Video-first primeri",video_examples_sub:"Kratki video formati koji brzo objašnjavaju poruku — idealno za web stranice, LinkedIn, Instagram i prezentacije.",note_video:"Video za nekoliko sekundi objašnjava šta vaša firma predstavlja.",
+      services_title:"Usluge za digitalni nastup koji prodaje",services_sub:"Struktura, dizajn i video — usklađeno za jasne upite.",
       s_tag_web:"Web",s_tag_video:"Video",s_tag_marketing:"Marketing",
-      s_card1_t:"Brze, moderne web stranice",s_card1_s:"Landing stranice, prezentacije, kontakt forme uz praćenje konverzija.",
-      s_card2_t:"Kratke video reklame",s_card2_s:"Formati 15–45 s, titlovi na DE/SR/EN, optimizovano za društvene mreže.",
-      s_card3_t:"Kampanje i oglasi",s_card3_s:"Facebook/Instagram/Google, kalendar sadržaja, hashtagovi i CTA poruke.",
-      sec_products_title:"Paketi (Start — Pro — Premium)",sec_products_sub:"Fiksne cene po modulu – jasan obim.",
+      s_card1_t:"Web stranice i landing stranice",s_card1_s:"Brze, responzivne stranice sa jasnom strukturom, kontakt putanjama i čistom tehničkom osnovom.",
+      s_card2_t:"Video-first prezentacija",s_card2_s:"Kratki video formati, hero klipovi i social sadržaj koji vašu ponudu čine razumljivijom.",
+      s_card3_t:"Višejezični sadržaj i SEO osnova",s_card3_s:"Tekstovi, meta podaci i sadržaj na nemačkom, engleskom i srpskom — za DACH i regionalna tržišta.",
+      sec_products_title:"Paketi za web stranice, landing stranice i digitalne prezentacije",sec_products_sub:"Jasan obim, transparentne cene i čist tok rada od prvog nacrta do objave.",
       p_start_t:"START paket",p_start_li1:"One-page (do 5 sekcija)",p_start_li2:"Kontakt (mailto)",p_start_li3:"Osnovni SEO meta tagovi",
       p_pro_t:"PRO paket",p_pro_li1:"Višestrana + portfolio",p_pro_li2:"Kratak video (do 30 s)",p_pro_li3:"Priprema oglasa + 10 hashtagova",
       p_premium_t:"PREMIUM paket",p_prem_li1:"Prilagođen dizajn & animacije",p_prem_li2:"2 video oglasa (do 45 s)",p_prem_li3:"Kampanja 30 dana + izveštaj",
-      claim_title:"Više kupaca za vašu pekaru",claim_sub:"Jasna landing stranica + 30-sekundni video, spremno za 2–4 nedelje.",claim_cta:"Besplatno brzo savetovanje",
       port_title:"Odabrani projekti",
       portfolio_badge:"Odabrani projekti",
-      portfolio_intro:"Realizovani digitalni projekti — osmišljeni, strukturisani i izrađeni od strane D&M Digitalenterprise.",
+      portfolio_intro:"Realizovani digitalni projekti — osmišljeni, strukturisani i izrađeni od strane D&M Digitalenterprise, uključujući višejezične kataloge i web stranice za zanate i građevinu.",
       project_duo_tag:"Premium web stranica za nameštaj",
       project_duo_text:"Kompletna premium web stranica za nameštaj sa snažnim vizuelnim identitetom, strukturom proizvoda, galerijama, katalozima i mobilno fokusiranom prezentacijom.",
       project_fms_tag:"Industrijska B2B web stranica",
@@ -1094,6 +1021,12 @@
       project_bigbag_text:"Brand i website koncept za distribuciju džambo vreća, sa fokusom na snažan prvi utisak, jasnu komunikaciju proizvoda i jak industrijski vizuelni nastup.",
       project_udruzenje_tag:"Kulturno-udruženička web stranica",
       project_udruzenje_text:"Kulturna i heritage web stranica sa filmski postavljenom hero sekcijom, integrisanom pristupnicom, istorijskim narativom i jasnim prikazom vrednosti zajednice.",
+      project_adles_visual:"Višejezična katalog stranica",
+      project_adles_tag:"Višejezična katalog web stranica",
+      project_adles_text:"Višejezična web stranica za montažne kuće, brvnare i drvene objekte, sa velikim katalogom proizvoda, kategorijama, galerijama i video prezentacijom.",
+      project_neba_visual:"Građevinski i završni radovi",
+      project_neba_tag:"Web stranica za građevinu i zanate",
+      project_neba_text:"Web stranica za keramičarske radove, podne i zidne obloge, gips-karton sisteme i završne građevinske radove, sa jasnim lokalnim pozicioniranjem, projektima i galerijom.",
       project_btn_open:"Otvori projekat",
       project_btn_concept:"Pogledaj koncept",
       concept_badge:"Kreativni koncepti",
@@ -1106,17 +1039,8 @@
       concept_tag2:"Brand Storytelling",
       concept_tag3:"Art Direction",
       concept_btn:"Otvori concept PDF",
-      port_c1_t:"Pekar Peter",port_c1_s:"Jednostavan sajt sa transparentnim menijem.",port_c2_t:"D&M intro video",port_c2_s:"Brendirani uvodni video bez vodenog žiga.",
-      port_c3_t:"Butterfly Nails – kompletna stranica",
-      port_c3_s:"Stvarna stranica za salon noktiju – nežne pozadine, portfolio i WhatsApp kontakt.",
-      port_c3_btn:"Otvori sajt",
-      port_btn_pdf:"Otvori PDF",
-      dv_title:"Demo — Video uzorci",dv_sub:"2 kratka primera: Peter i Sandra.",dv_c1_t:"Pekara Peter",dv_c1_s:"Sezonska kratka reklama (social format).",dv_c3_t:"Sandra — marketinške prednosti",dv_c3_s:"Kratak pitch o benefitima dobrog marketinga.",
-      gold_title:"Zlatar – lična pomoć",gold_sub:"4C objašnjenje + 3 predloga. WhatsApp ili termin u 1 kliku.",zl_cap_4c:"4C za 30 sek — jasno & kratko.",zl_cap_style:"Koji stil: Solitaire, Halo ili Classic?",gold_whatsapp:"WhatsApp Savet",gold_book:"Zakaži termin",
-      opt_title:"Optika — kratki demo",opt_sub:"AVATAR_Glaeser — intro klip za optiku.",opt_whatsapp:"WhatsApp / Proba",opt_book:"Zakaži termin",
       trust_title:"Zašto nama veruju",trust_sub:"Tri kratka dokaza poverenja.",trust1_t:"Trojezično (DE · EN · SR)",trust1_s:"Bez vodenih žigova; skripte/titlovi na tri jezika.",trust2_t:"Brza isporuka",trust2_s:"Prvi nacrt u 3–5 dana, final u 2–4 nedelje.",trust3_t:"Video + web = rezultat",trust3_s:"Kratki avatar + landing → jasna poruka i više upita.",
-      faq_title:"Česta pitanja",faq1_q:"Koliko brzo isporučujete?",faq1_a:"2–4 nedelje — u zavisnosti od saradnje i odobrenja.",faq2_q:"Šta je potrebno sa vaše strane?",faq2_a:"Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.",faq3_q:"Koliko okvirno košta?",faq3_a:"Početne cene: Start 850 €, Pro 1.990 €, Premium 3.990 €; tačnu ponudu šaljemo nakon kratkog razgovora.",
-      bakery_carousel_title:"D&M Bäckerei – foto primeri",contact_title:"Kontakt",rights:"Sva prava zadržana"}
+      faq_title:"Česta pitanja",faq1_q:"Koliko brzo isporučujete?",faq1_a:"2–4 nedelje — u zavisnosti od saradnje i odobrenja.",faq2_q:"Šta je potrebno sa vaše strane?",faq2_a:"Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.",faq3_q:"Koliko okvirno košta?",faq3_a:"Početne cene: Start 850 €, Pro 1.990 €, Premium 3.990 €; tačnu ponudu šaljemo nakon kratkog razgovora.",contact_title:"Kontakt",rights:"Sva prava zadržana"}
   };
 
   // HERO (tri jezika)
@@ -1138,43 +1062,6 @@
   function setLangAll(lang){lang=normalizeLang(lang);applyI18n(lang);setHero(lang);try{localStorage.setItem("lang",lang)}catch(e){};document.documentElement.lang=lang}
   (function(){var L=normalizeLang(qs("lang")||(function(){try{return localStorage.getItem("lang")}catch(e){return null}})()||document.documentElement.lang);setLangAll(L)})();
   document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-setlang]");if(!b)return;var L=b.getAttribute("data-setlang");history.replaceState(null,"",location.pathname+"?lang="+L);setLangAll(L);});
-
-  (function () {
-    var track = document.getElementById('bakeryCarouselTrack');
-    var dotsWrap = document.getElementById('bakeryCarouselDots');
-    if (!track || !dotsWrap) return;
-    var dots = Array.prototype.slice.call(dotsWrap.querySelectorAll('.op-carousel-dot'));
-    if (!dots.length) return;
-
-    var index = 0;
-
-    function update() {
-      track.style.transform = 'translateX(-' + (index * 100) + '%)';
-      dots.forEach(function(dot, i){
-        dot.classList.toggle('active', i === index);
-      });
-    }
-
-    function next() {
-      index = (index + 1) % dots.length;
-      update();
-    }
-
-    var timer = setInterval(next, 5000);
-
-    function resetTimer() {
-      clearInterval(timer);
-      timer = setInterval(next, 5000);
-    }
-
-    dots.forEach(function(dot, i){
-      dot.addEventListener('click', function(){
-        index = i;
-        update();
-        resetTimer();
-      });
-    });
-  })();
 </script>
 </body>
 </html>
