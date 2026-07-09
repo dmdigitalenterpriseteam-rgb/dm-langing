@@ -150,6 +150,18 @@
       filter:saturate(1.08) contrast(1.04);
     }
 
+    /* Full-page hero screenshots must not be cropped. */
+    .project-card img.portfolio-fullshot{
+      aspect-ratio:1586/770;
+      object-fit:contain;
+      background:#080b10;
+    }
+
+    .project-card:hover img.portfolio-fullshot{
+      transform:none;
+      filter:saturate(1.06) contrast(1.03);
+    }
+
 
     .project-fallback{
       min-height:245px;
@@ -762,7 +774,7 @@
 
       <article class="project-card">
         <a href="https://www.adles.ba/" target="_blank" rel="noopener" aria-label="Open ADLES website">
-          <img loading="lazy" decoding="async" src="/assets/portfolio/portfolio_adles.jpg"
+          <img class="portfolio-fullshot" loading="lazy" decoding="async" src="/assets/portfolio/portfolio_adles.jpg"
                alt="ADLES multilingual catalog website preview">
         </a>
 
@@ -784,7 +796,7 @@
 
       <article class="project-card">
         <a href="https://www.nebasd.com/" target="_blank" rel="noopener" aria-label="Open NEBA GRADJ.SD website">
-          <img loading="lazy" decoding="async" src="/assets/portfolio/portfolio_neba.jpg"
+          <img class="portfolio-fullshot" loading="lazy" decoding="async" src="/assets/portfolio/portfolio_neba.jpg"
                alt="NEBA GRAĐ.SD construction website preview">
         </a>
 
