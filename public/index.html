@@ -66,7 +66,7 @@
     section{padding:44px 0;scroll-margin-top:90px}
 
     /* Performance: sekcije ispod prvog ekrana se renderuju tek kada im se korisnik približi */
-    #services,#products,#top-trio,#portfolio,#creative-concepts,#trust,#faq,#contact{
+    #services,#products,#top-trio,#portfolio,#creative-concepts,#demo-videos,#branch-concepts,#trust,#faq,#contact{
       content-visibility:auto;
       contain-intrinsic-size:800px;
     }
@@ -465,6 +465,7 @@
     @media (max-width:980px){
       .grid-2{grid-template-columns:1fr}
       .cards{grid-template-columns:1fr}
+      .branch-grid{grid-template-columns:1fr}
 
       .project-grid{
         grid-template-columns:1fr;
@@ -499,6 +500,73 @@
         display:block;
         margin:0 auto;
       }
+    }
+
+
+
+    /* VIDEO & BRANCH CONCEPTS */
+    .demo-pro,
+    .branch-pro{
+      padding-top:52px;
+      padding-bottom:56px;
+    }
+
+    .demo-pro::before,
+    .branch-pro::before{
+      content:"";
+      display:block;
+      height:1px;
+      width:100%;
+      margin:0 0 42px;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);
+    }
+
+    .demo-head,
+    .branch-head{
+      max-width:860px;
+      margin-bottom:24px;
+    }
+
+    .demo-head h2,
+    .branch-head h2{
+      margin-top:10px;
+    }
+
+    .branch-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+      align-items:start;
+    }
+
+    .branch-card{
+      overflow:hidden;
+    }
+
+    .branch-card .video-grid{
+      grid-template-columns:1fr;
+      margin-top:18px;
+    }
+
+    .branch-card figure{
+      margin:0;
+    }
+
+    .branch-card figcaption{
+      font-size:14px;
+      color:#cbd5e1;
+      opacity:.88;
+      margin-top:8px;
+    }
+
+    .concept-note{
+      margin-top:18px;
+      color:#aeb9c8;
+      font-size:14px;
+    }
+
+    @media (max-width:980px){
+      .branch-grid{grid-template-columns:1fr}
     }
 
     /* Footer (van @media) */
@@ -870,6 +938,95 @@
   </section>
 
 
+
+  <!-- VIDEO & AVATAR DEMOS -->
+  <section id="demo-videos" class="demo-pro">
+    <div class="demo-head">
+      <span class="badge" data-i18n="dv_badge">Video &amp; Avatar Demos</span>
+      <h2 data-i18n="dv_title">Video &amp; Avatar Demo-Beispiele</h2>
+      <p class="sub" data-i18n="dv_sub">
+        Short demo formats that show how quickly a company, offer or service can be explained through video.
+      </p>
+    </div>
+
+    <div class="video-grid row-land-2">
+      <article class="card">
+        <span class="badge">Demo Video</span>
+        <h3 data-i18n="dv_c1_t">Peter’s Bakery</h3>
+        <p class="sub" data-i18n="dv_c1_s">Seasonal short ad concept for social media and landing page presentation.</p>
+        <video playsinline class="vid" controls preload="metadata">
+          <source src="/peters-baeckerei.mp4?v=20251107" type="video/mp4"/>
+        </video>
+      </article>
+
+      <article class="card">
+        <span class="badge">Avatar Pitch</span>
+        <h3 data-i18n="dv_c3_t">Sandra — Marketing Advantages</h3>
+        <p class="sub" data-i18n="dv_c3_s">Short avatar pitch about the benefits of clear digital marketing.</p>
+        <video playsinline class="vid" controls preload="metadata">
+          <source src="/sandra-enterprise.mp4?v=20251107" type="video/mp4"/>
+        </video>
+      </article>
+    </div>
+  </section>
+
+  <!-- BRANCHEN-KONZEPTE -->
+  <section id="branch-concepts" class="branch-pro">
+    <div class="branch-head">
+      <span class="badge" data-i18n="branch_badge">Industry Concepts</span>
+      <h2 data-i18n="branch_title">Branchen-Konzepte</h2>
+      <p class="sub" data-i18n="branch_intro">
+        Compact visual studies for different business fields — useful for websites, consultations and social media campaigns.
+      </p>
+    </div>
+
+    <div class="branch-grid">
+      <article class="card branch-card">
+        <span class="badge">Goldschmiede</span>
+        <h3 data-i18n="gold_title">Goldschmiede – persönliche Beratung</h3>
+        <p class="sub" data-i18n="gold_sub">4C explained and style guidance — a demo for high-trust advisory businesses.</p>
+
+        <div class="video-grid">
+          <figure>
+            <video playsinline class="vid" controls preload="none" poster="/zlatar/poster-4C.jpg">
+              <source src="/zlatar/zlatarAVATAR_4C.mp4?v=20251107" type="video/mp4"/>
+            </video>
+            <figcaption data-i18n="zl_cap_4c">4C in 30 seconds — clear and short.</figcaption>
+          </figure>
+
+          <figure>
+            <video playsinline class="vid" controls preload="none" poster="/zlatar/poster-ringwahl.jpg">
+              <source src="/zlatar/zlatarAVATAR_Ringwahl.mp4?v=20251107" type="video/mp4"/>
+            </video>
+            <figcaption data-i18n="zl_cap_style">Which style: Solitaire, Halo or Classic?</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="card branch-card">
+        <span class="badge">Optik</span>
+        <h3 data-i18n="opt_title">Optik — kurzer Demo-Clip</h3>
+        <p class="sub" data-i18n="opt_sub">Short demo videos for an optics store — practical advice, trust and product explanation.</p>
+
+        <div class="video-grid">
+          <figure>
+            <video playsinline class="vid" controls preload="none" poster="/optika/poster-glaeser.jpg">
+              <source src="/optika/optikaAVATAR_Glaeser.mp4?v=20251105" type="video/mp4"/>
+            </video>
+            <figcaption data-i18n="opt_cap_glaeser">Lens advice explained in a simple video format.</figcaption>
+          </figure>
+
+          <figure>
+            <video playsinline class="vid" controls preload="none" poster="/optika/sandra_perfekt.jpg">
+              <source src="/optika/sandra_perfekt.mp4?v=20251212" type="video/mp4"/>
+            </video>
+            <figcaption data-i18n="opt_cap_sandra">Avatar presentation for clear customer communication.</figcaption>
+          </figure>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <!-- TRUST -->
   <section id="trust">
     <h2 data-i18n="trust_title">Zašto nama veruju</h2>
@@ -965,6 +1122,8 @@
       concept_tag2:"Brand Storytelling",
       concept_tag3:"Art Direction",
       concept_btn:"View Concept PDF",
+      dv_badge:"Video & Avatar Demos",dv_title:"Video & Avatar Demo Examples",dv_sub:"Short demo formats that show how quickly a company, offer or service can be explained through video.",dv_c1_t:"Peter’s Bakery",dv_c1_s:"Seasonal short ad concept for social media and landing page presentation.",dv_c3_t:"Sandra — Marketing Advantages",dv_c3_s:"Short avatar pitch about the benefits of clear digital marketing.",
+      branch_badge:"Industry Concepts",branch_title:"Industry Concepts",branch_intro:"Compact visual studies for different business fields — useful for websites, consultations and social media campaigns.",gold_title:"Jewelry — Personal Advice",gold_sub:"4C explained and style guidance — a demo for high-trust advisory businesses.",zl_cap_4c:"4C in 30 seconds — clear and short.",zl_cap_style:"Which style: Solitaire, Halo or Classic?",opt_title:"Optics — Short Demo Clip",opt_sub:"Short demo videos for an optics store — practical advice, trust and product explanation.",opt_cap_glaeser:"Lens advice explained in a simple video format.",opt_cap_sandra:"Avatar presentation for clear customer communication.",
       trust_title:"Why clients trust us",trust_sub:"Three short proof points.",trust1_t:"Trilingual (DE · EN · SR)",trust1_s:"No watermarks; scripts/subtitles in three languages.",trust2_t:"Fast delivery",trust2_s:"First draft in 3–5 days, final in 2–4 weeks.",trust3_t:"Video + web = results",trust3_s:"Short avatar + landing → clearer message & more inquiries.",
       faq_title:"FAQ",faq1_q:"How fast do you deliver?",faq1_a:"2–4 weeks — depending on collaboration and approvals.",faq2_q:"What do you need from us?",faq2_a:"Logo, 5–8 photos and 3–4 key points — we handle the rest.",faq3_q:"Roughly how much does it cost?",faq3_a:"Starting prices: Start 850 €, Pro 1,990 €, Premium 3,990 €; exact quote after a short call.",contact_title:"Contact",rights:"All rights reserved"},
     de:{nav_services:"Leistungen",nav_packages:"Pakete",nav_portfolio:"Portfolio",nav_optik:"Konzepte",nav_contact:"Kontakt",cta_top:"Angebot anfragen",
@@ -1007,6 +1166,8 @@
       concept_tag2:"Brand Storytelling",
       concept_tag3:"Art Direction",
       concept_btn:"Konzept-PDF öffnen",
+      dv_badge:"Video & Avatar Demos",dv_title:"Video- & Avatar-Demo-Beispiele",dv_sub:"Kurze Demoformate, die zeigen, wie schnell ein Unternehmen, Angebot oder eine Dienstleistung durch Video erklärt werden kann.",dv_c1_t:"Bäckerei Peter",dv_c1_s:"Saisonales Kurzspot-Konzept für Social Media und Landingpage-Präsentation.",dv_c3_t:"Sandra — Marketing-Vorteile",dv_c3_s:"Kurzer Avatar-Pitch über den Nutzen klaren digitalen Marketings.",
+      branch_badge:"Branchen-Konzepte",branch_title:"Branchen-Konzepte",branch_intro:"Kompakte visuelle Studien für unterschiedliche Geschäftsfelder — geeignet für Websites, Beratung und Social-Media-Kampagnen.",gold_title:"Goldschmiede – persönliche Beratung",gold_sub:"4C-Erklärung und Stilberatung — ein Demo für beratungsintensive Unternehmen mit hohem Vertrauensfaktor.",zl_cap_4c:"4C in 30 Sekunden — klar und kurz.",zl_cap_style:"Welcher Stil: Solitaire, Halo oder Classic?",opt_title:"Optik — kurzer Demo-Clip",opt_sub:"Kurze Demo-Videos für ein Optik-Geschäft — Beratung, Vertrauen und Produkterklärung.",opt_cap_glaeser:"Gläserberatung in einem einfachen Videoformat erklärt.",opt_cap_sandra:"Avatar-Präsentation für klare Kundenkommunikation.",
       trust_title:"Warum man uns vertraut",trust_sub:"Drei kurze Belege.",trust1_t:"Dreisprachig (DE · EN · SR)",trust1_s:"Keine Wasserzeichen; Skripte/Untertitel in drei Sprachen.",trust2_t:"Schnelle Lieferung",trust2_s:"Erster Entwurf in 3–5 Tagen, final in 2–4 Wochen.",trust3_t:"Video + web = Ergebnis",trust3_s:"Kurzer Avatar + Landing → klarere Botschaft, mehr Anfragen.",
       faq_title:"FAQ",faq1_q:"Wie schnell liefern Sie?",faq1_a:"2–4 Wochen — abhängig von Zusammenarbeit und Freigaben.",faq2_q:"Was benötigen Sie von uns?",faq2_a:"Logo, 5–8 Fotos und 3–4 Kernpunkte — den Rest übernehmen wir.",faq3_q:"Was kostet es ungefähr?",faq3_a:"Einstiegspreise: Start 850 €, Pro 1.990 €, Premium 3.990 €; exaktes Angebot nach einem kurzen Gespräch.",contact_title:"Kontakt",rights:"Alle Rechte vorbehalten"},
     sr:{nav_services:"Usluge",nav_packages:"Paketi",nav_portfolio:"Portfolio",nav_optik:"Koncepti",nav_contact:"Kontakt",cta_top:"Zatraži ponudu",
@@ -1049,6 +1210,8 @@
       concept_tag2:"Brand Storytelling",
       concept_tag3:"Art Direction",
       concept_btn:"Otvori concept PDF",
+      dv_badge:"Video i avatar demo",dv_title:"Video i avatar demo primeri",dv_sub:"Kratki demo formati koji pokazuju koliko brzo firma, ponuda ili usluga mogu da se objasne kroz video.",dv_c1_t:"Peter’s Bakery",dv_c1_s:"Sezonski kratki reklamni koncept za društvene mreže i landing page prezentaciju.",dv_c3_t:"Sandra — marketinške prednosti",dv_c3_s:"Kratak avatar pitch o koristima jasnog digitalnog marketinga.",
+      branch_badge:"Koncepti za delatnosti",branch_title:"Koncepti za različite delatnosti",branch_intro:"Kompaktne vizuelne studije za različite oblasti poslovanja — za web stranice, savetovanje i kampanje na društvenim mrežama.",gold_title:"Zlatar – lična pomoć",gold_sub:"4C objašnjenje i izbor stila — demo za delatnosti u kojima je poverenje najvažnije.",zl_cap_4c:"4C za 30 sekundi — jasno i kratko.",zl_cap_style:"Koji stil: Solitaire, Halo ili Classic?",opt_title:"Optika — kratki demo klip",opt_sub:"Kratki demo video formati za optiku — savetovanje, poverenje i objašnjenje proizvoda.",opt_cap_glaeser:"Savet za stakla objašnjen kroz jednostavan video format.",opt_cap_sandra:"Avatar prezentacija za jasnu komunikaciju sa kupcima.",
       trust_title:"Zašto nama veruju",trust_sub:"Tri kratka dokaza poverenja.",trust1_t:"Trojezično (DE · EN · SR)",trust1_s:"Bez vodenih žigova; skripte/titlovi na tri jezika.",trust2_t:"Brza isporuka",trust2_s:"Prvi nacrt u 3–5 dana, final u 2–4 nedelje.",trust3_t:"Video + web = rezultat",trust3_s:"Kratki avatar + landing → jasna poruka i više upita.",
       faq_title:"Česta pitanja",faq1_q:"Koliko brzo isporučujete?",faq1_a:"2–4 nedelje — u zavisnosti od saradnje i odobrenja.",faq2_q:"Šta je potrebno sa vaše strane?",faq2_a:"Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.",faq3_q:"Koliko okvirno košta?",faq3_a:"Početne cene: Start 850 €, Pro 1.990 €, Premium 3.990 €; tačnu ponudu šaljemo nakon kratkog razgovora.",contact_title:"Kontakt",rights:"Sva prava zadržana"}
   };
