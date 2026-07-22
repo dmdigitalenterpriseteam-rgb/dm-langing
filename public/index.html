@@ -66,7 +66,7 @@
     section{padding:44px 0;scroll-margin-top:90px}
 
     /* Performance: sekcije ispod prvog ekrana se renderuju tek kada im se korisnik približi */
-    #services,#products,#top-trio,#portfolio,#creative-concepts,#demo-videos,#branch-concepts,#trust,#faq,#contact{
+    #services,#video-first-teaser,#products,#top-trio,#portfolio,#creative-concepts,#demo-videos,#branch-concepts,#trust,#faq,#contact{
       content-visibility:auto;
       contain-intrinsic-size:800px;
     }
@@ -88,6 +88,19 @@
     .lead{color:var(--muted);max-width:720px}
     .row{display:flex;gap:12px;margin-top:18px}
     .note{margin-top:14px;background:#0d131a;border:1px solid var(--line);padding:12px 16px;border-radius:14px;color:#c7d0dc}
+
+    .seo-route{
+      display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;
+      padding:24px;border:1px solid rgba(159,168,254,.26);border-radius:20px;
+      background:
+        radial-gradient(circle at 12% 20%,rgba(98,224,198,.11),transparent 34%),
+        radial-gradient(circle at 92% 10%,rgba(159,168,254,.13),transparent 32%),
+        linear-gradient(135deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+      box-shadow:0 16px 42px rgba(0,0,0,.24);
+    }
+    .seo-route h3{margin:8px 0 7px;font-size:clamp(1.2rem,2.6vw,1.75rem)}
+    .seo-route p{margin:0;color:var(--muted);max-width:820px}
+    @media(max-width:760px){.seo-route{grid-template-columns:1fr}.seo-route .btn{width:100%;text-align:center}}
 
     /* Video */
     video.vid{width:100%;aspect-ratio:16/9;background:#0a0f14;border:1px solid var(--line);border-radius:18px;object-fit:cover}
@@ -591,6 +604,7 @@
     </div>
     <nav class="stack">
       <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="/video-first-webdesign.html" data-i18n="nav_video_first">Video-first</a>
       <a href="#products" data-i18n="nav_packages">Packages</a>
       <a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a>
       <a href="/projekte.html" data-i18n="nav_projects">Projects</a>
@@ -700,6 +714,18 @@
         <h3 data-i18n="s_card3_t">Mehrsprachige Inhalte & SEO-Grundlage</h3>
         <p class="sub" data-i18n="s_card3_s">Texte, Meta-Daten und Inhalte auf Deutsch, Englisch und Serbisch — passend für DACH und regionale Märkte.</p>
       </article>
+    </div>
+  </section>
+
+  <!-- VIDEO-FIRST SEO ROUTE -->
+  <section id="video-first-teaser" aria-labelledby="video-first-teaser-title">
+    <div class="seo-route">
+      <div>
+        <span class="badge" data-i18n="vf_teaser_badge">Unsere Spezialisierung</span>
+        <h3 id="video-first-teaser-title" data-i18n="vf_teaser_title">Video-first Webdesign für Unternehmen</h3>
+        <p data-i18n="vf_teaser_text">Erfahren Sie, wie D&M Digitalenterprise Strategie, visuelle Wirkung, Video und technische Performance zu einem klaren digitalen Auftritt verbindet.</p>
+      </div>
+      <a class="btn" href="/video-first-webdesign.html" data-i18n="vf_teaser_btn">Video-first Webdesign entdecken</a>
     </div>
   </section>
 
@@ -1071,7 +1097,8 @@
     <div class="center">
       <a href="/impressum.html">Impressum</a> ·
       <a href="/datenschutz.html">Datenschutzerklärung</a> ·
-      <a href="/konditionen.html">Konditionen & Preise</a>
+      <a href="/konditionen.html">Konditionen & Preise</a> ·
+      <a href="/video-first-webdesign.html">Video-first Webdesign</a>
     </div>
     <div class="right">Design & code: D&M Digitalenterprise</div>
   </div>
@@ -1087,8 +1114,8 @@
 <script>
   /* I18N */
   var T={
-    en:{nav_services:"Services",nav_packages:"Packages",nav_portfolio:"Portfolio",nav_projects:"Projects",nav_optik:"Concepts",nav_contact:"Contact",cta_top:"Request a quote",
-      badge_stack:"Video-first web design • Landing pages • Multilingual websites",hero_title:"Web design with video for companies that want to look professional.",hero_sub:"D&M Digitalenterprise builds fast, visually strong websites, landing pages and short promo videos for trades, industry, furniture brands and product catalogues.",cta_portfolio:"View portfolio",cta_services:"Services",note_menu:"Fast pages, clear messaging and a visual presentation that builds trust.",video_examples_title:"Video-first examples",video_examples_sub:"Short video formats that make a message clear fast — ideal for websites, LinkedIn, Instagram and presentations.",note_video:"Video explains in seconds what your company stands for.",
+    en:{nav_services:"Services",nav_video_first:"Video-first",nav_packages:"Packages",nav_portfolio:"Portfolio",nav_projects:"Projects",nav_optik:"Concepts",nav_contact:"Contact",cta_top:"Request a quote",
+      badge_stack:"Video-first web design • Landing pages • Multilingual websites",hero_title:"Web design with video for companies that want to look professional.",hero_sub:"D&M Digitalenterprise builds fast, visually strong websites, landing pages and short promo videos for trades, industry, furniture brands and product catalogues.",cta_portfolio:"View portfolio",cta_services:"Services",note_menu:"Fast pages, clear messaging and a visual presentation that builds trust.",video_examples_title:"Video-first examples",video_examples_sub:"Short video formats that make a message clear fast — ideal for websites, LinkedIn, Instagram and presentations.",note_video:"Video explains in seconds what your company stands for.",vf_teaser_badge:"Our specialization",vf_teaser_title:"Video-first web design for companies",vf_teaser_text:"See how D&M Digitalenterprise combines strategy, visual impact, video and technical performance into a clear digital presence.",vf_teaser_btn:"Explore video-first web design",
       services_title:"Services for a digital presence that sells",services_sub:"Structure, design and video — aligned for clear inquiries.",
       s_tag_web:"Web",s_tag_video:"Video",s_tag_marketing:"Marketing",
       s_card1_t:"Websites & landing pages",s_card1_s:"Fast, responsive websites with clear structure, contact paths and a clean technical base.",
@@ -1131,8 +1158,8 @@
       branch_badge:"Industry Concepts",branch_title:"Industry Concepts",branch_intro:"Compact visual studies for different business fields — useful for websites, consultations and social media campaigns.",gold_title:"Jewelry — Personal Advice",gold_sub:"4C explained and style guidance — a demo for high-trust advisory businesses.",zl_cap_4c:"4C in 30 seconds — clear and short.",zl_cap_style:"Which style: Solitaire, Halo or Classic?",opt_title:"Optics — Short Demo Clip",opt_sub:"Short demo videos for an optics store — practical advice, trust and product explanation.",opt_cap_glaeser:"Lens advice explained in a simple video format.",opt_cap_sandra:"Avatar presentation for clear customer communication.",
       trust_title:"Why clients trust us",trust_sub:"Three short proof points.",trust1_t:"Trilingual (DE · EN · SR)",trust1_s:"No watermarks; scripts/subtitles in three languages.",trust2_t:"Fast delivery",trust2_s:"First draft in 3–5 days, final in 2–4 weeks.",trust3_t:"Video + web = results",trust3_s:"Short avatar + landing → clearer message & more inquiries.",
       faq_title:"FAQ",faq1_q:"How fast do you deliver?",faq1_a:"2–4 weeks — depending on collaboration and approvals.",faq2_q:"What do you need from us?",faq2_a:"Logo, 5–8 photos and 3–4 key points — we handle the rest.",faq3_q:"Roughly how much does it cost?",faq3_a:"Starting prices: Start 850 €, Pro 1,990 €, Premium 3,990 €; exact quote after a short call.",contact_title:"Contact",rights:"All rights reserved"},
-    de:{nav_services:"Leistungen",nav_packages:"Pakete",nav_portfolio:"Portfolio",nav_projects:"Projekte",nav_optik:"Konzepte",nav_contact:"Kontakt",cta_top:"Angebot anfragen",
-      badge_stack:"Video-first Webdesign • Landingpages • Mehrsprachige Websites",hero_title:"Webdesign mit Video für Unternehmen, die professionell auftreten wollen.",hero_sub:"D&M Digitalenterprise entwickelt schnelle, visuell starke Websites, Landingpages und kurze Werbevideos für Handwerker, Industrie, Möbelhersteller und Unternehmen in der DACH-Region.",cta_portfolio:"Portfolio ansehen",cta_services:"Leistungen",note_menu:"Schnelle Seiten, klare Botschaft und ein visueller Auftritt, der Vertrauen aufbaut.",video_examples_title:"Video-first Beispiele",video_examples_sub:"Kurze Videoformate, die eine Botschaft schnell verständlich machen — ideal für Websites, LinkedIn, Instagram und Präsentationen.",note_video:"Video erklärt in Sekunden, wofür Ihr Unternehmen steht.",
+    de:{nav_services:"Leistungen",nav_video_first:"Video-first",nav_packages:"Pakete",nav_portfolio:"Portfolio",nav_projects:"Projekte",nav_optik:"Konzepte",nav_contact:"Kontakt",cta_top:"Angebot anfragen",
+      badge_stack:"Video-first Webdesign • Landingpages • Mehrsprachige Websites",hero_title:"Webdesign mit Video für Unternehmen, die professionell auftreten wollen.",hero_sub:"D&M Digitalenterprise entwickelt schnelle, visuell starke Websites, Landingpages und kurze Werbevideos für Handwerker, Industrie, Möbelhersteller und Unternehmen in der DACH-Region.",cta_portfolio:"Portfolio ansehen",cta_services:"Leistungen",note_menu:"Schnelle Seiten, klare Botschaft und ein visueller Auftritt, der Vertrauen aufbaut.",video_examples_title:"Video-first Beispiele",video_examples_sub:"Kurze Videoformate, die eine Botschaft schnell verständlich machen — ideal für Websites, LinkedIn, Instagram und Präsentationen.",note_video:"Video erklärt in Sekunden, wofür Ihr Unternehmen steht.",vf_teaser_badge:"Unsere Spezialisierung",vf_teaser_title:"Video-first Webdesign für Unternehmen",vf_teaser_text:"Erfahren Sie, wie D&M Digitalenterprise Strategie, visuelle Wirkung, Video und technische Performance zu einem klaren digitalen Auftritt verbindet.",vf_teaser_btn:"Video-first Webdesign entdecken",
       services_title:"Leistungen für einen digitalen Auftritt, der verkauft",services_sub:"Struktur, Design und Video — abgestimmt auf klare Anfragen.",
       s_tag_web:"Web",s_tag_video:"Video",s_tag_marketing:"Marketing",
       s_card1_t:"Websites & Landingpages",s_card1_s:"Schnelle, responsive Websites mit klarer Struktur, Kontaktwegen und sauberer technischer Basis.",
@@ -1175,8 +1202,8 @@
       branch_badge:"Branchen-Konzepte",branch_title:"Branchen-Konzepte",branch_intro:"Kompakte visuelle Studien für unterschiedliche Geschäftsfelder — geeignet für Websites, Beratung und Social-Media-Kampagnen.",gold_title:"Goldschmiede – persönliche Beratung",gold_sub:"4C-Erklärung und Stilberatung — ein Demo für beratungsintensive Unternehmen mit hohem Vertrauensfaktor.",zl_cap_4c:"4C in 30 Sekunden — klar und kurz.",zl_cap_style:"Welcher Stil: Solitaire, Halo oder Classic?",opt_title:"Optik — kurzer Demo-Clip",opt_sub:"Kurze Demo-Videos für ein Optik-Geschäft — Beratung, Vertrauen und Produkterklärung.",opt_cap_glaeser:"Gläserberatung in einem einfachen Videoformat erklärt.",opt_cap_sandra:"Avatar-Präsentation für klare Kundenkommunikation.",
       trust_title:"Warum man uns vertraut",trust_sub:"Drei kurze Belege.",trust1_t:"Dreisprachig (DE · EN · SR)",trust1_s:"Keine Wasserzeichen; Skripte/Untertitel in drei Sprachen.",trust2_t:"Schnelle Lieferung",trust2_s:"Erster Entwurf in 3–5 Tagen, final in 2–4 Wochen.",trust3_t:"Video + web = Ergebnis",trust3_s:"Kurzer Avatar + Landing → klarere Botschaft, mehr Anfragen.",
       faq_title:"FAQ",faq1_q:"Wie schnell liefern Sie?",faq1_a:"2–4 Wochen — abhängig von Zusammenarbeit und Freigaben.",faq2_q:"Was benötigen Sie von uns?",faq2_a:"Logo, 5–8 Fotos und 3–4 Kernpunkte — den Rest übernehmen wir.",faq3_q:"Was kostet es ungefähr?",faq3_a:"Einstiegspreise: Start 850 €, Pro 1.990 €, Premium 3.990 €; exaktes Angebot nach einem kurzen Gespräch.",contact_title:"Kontakt",rights:"Alle Rechte vorbehalten"},
-    sr:{nav_services:"Usluge",nav_packages:"Paketi",nav_portfolio:"Portfolio",nav_projects:"Projekti",nav_optik:"Koncepti",nav_contact:"Kontakt",cta_top:"Zatraži ponudu",
-      badge_stack:"Video-first web dizajn • Landing stranice • Višejezični sajtovi",hero_title:"Web dizajn sa videom za firme koje žele profesionalan nastup.",hero_sub:"D&M Digitalenterprise izrađuje brze, vizuelno snažne web stranice, landing stranice i kratke reklamne video formate za zanate, industriju, nameštaj i kataloge proizvoda.",cta_portfolio:"Pogledaj portfolio",cta_services:"Usluge",note_menu:"Brze stranice, jasna poruka i vizuelni nastup koji gradi poverenje.",video_examples_title:"Video-first primeri",video_examples_sub:"Kratki video formati koji brzo objašnjavaju poruku — idealno za web stranice, LinkedIn, Instagram i prezentacije.",note_video:"Video za nekoliko sekundi objašnjava šta vaša firma predstavlja.",
+    sr:{nav_services:"Usluge",nav_video_first:"Video-first",nav_packages:"Paketi",nav_portfolio:"Portfolio",nav_projects:"Projekti",nav_optik:"Koncepti",nav_contact:"Kontakt",cta_top:"Zatraži ponudu",
+      badge_stack:"Video-first web dizajn • Landing stranice • Višejezični sajtovi",hero_title:"Web dizajn sa videom za firme koje žele profesionalan nastup.",hero_sub:"D&M Digitalenterprise izrađuje brze, vizuelno snažne web stranice, landing stranice i kratke reklamne video formate za zanate, industriju, nameštaj i kataloge proizvoda.",cta_portfolio:"Pogledaj portfolio",cta_services:"Usluge",note_menu:"Brze stranice, jasna poruka i vizuelni nastup koji gradi poverenje.",video_examples_title:"Video-first primeri",video_examples_sub:"Kratki video formati koji brzo objašnjavaju poruku — idealno za web stranice, LinkedIn, Instagram i prezentacije.",note_video:"Video za nekoliko sekundi objašnjava šta vaša firma predstavlja.",vf_teaser_badge:"Naša specijalnost",vf_teaser_title:"Video-first web dizajn za kompanije",vf_teaser_text:"Pogledajte kako D&M Digitalenterprise povezuje strategiju, vizuelni utisak, video i tehničke performanse u jasan digitalni nastup.",vf_teaser_btn:"Saznajte više o video-first dizajnu",
       services_title:"Usluge za digitalni nastup koji prodaje",services_sub:"Struktura, dizajn i video — usklađeno za jasne upite.",
       s_tag_web:"Web",s_tag_video:"Video",s_tag_marketing:"Marketing",
       s_card1_t:"Web stranice i landing stranice",s_card1_s:"Brze, responzivne stranice sa jasnom strukturom, kontakt putanjama i čistom tehničkom osnovom.",
