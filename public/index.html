@@ -11,23 +11,24 @@
   gtag('js', new Date());
   gtag('config', 'G-7LWKLNLDHE');
 </script>
- <title>Webdesign mit Video für Unternehmen | D&M Digitalenterprise</title>
+ <title>Video-first Webdesign für Handwerk, Holzbau &amp; Industrie | D&amp;M Digitalenterprise</title>
   <link rel="canonical" href="https://www.dmdigitalenterprise.com/">
-  <meta name="description" content="D&M Digitalenterprise entwickelt schnelle Websites, Video-first Landingpages und mehrsprachige Webauftritte für Unternehmen, Handwerker, Industrie und Produktkataloge."/>
+  <meta name="description" content="D&amp;M Digitalenterprise entwickelt schnelle, mehrsprachige Websites, Video-first Landingpages und Produktkataloge für Handwerk, Holzbau, Industrie und technische B2B-Unternehmen in der DACH-Region."/>
   <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0e1116">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
   <link rel="apple-touch-icon" sizes="512x512" href="/favicon.png">
 <link rel="preload" as="image" href="/hero-robot.jpg" fetchpriority="high">
   <!-- OG -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Webdesign mit Video für Unternehmen | D&M Digitalenterprise">
-  <meta property="og:description" content="Schnelle, moderne Websites, Video-first Landingpages und mehrsprachige Webauftritte für Unternehmen in der DACH-Region.">
+  <meta property="og:title" content="Video-first Webdesign für Handwerk, Holzbau &amp; Industrie | D&amp;M Digitalenterprise">
+  <meta property="og:description" content="Schnelle, mehrsprachige Websites, Video-first Landingpages und Produktkataloge für Handwerk, Holzbau, Industrie und technische B2B-Unternehmen in der DACH-Region.">
   <meta property="og:url" content="https://www.dmdigitalenterprise.com/">
 <meta property="og:image" content="https://www.dmdigitalenterprise.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Webdesign mit Video für Unternehmen | D&M Digitalenterprise">
-  <meta name="twitter:description" content="Schnelle, moderne Websites, Video-first Landingpages und mehrsprachige Webauftritte für Unternehmen in der DACH-Region.">
+  <meta name="twitter:title" content="Video-first Webdesign für Handwerk, Holzbau &amp; Industrie | D&amp;M Digitalenterprise">
+  <meta name="twitter:description" content="Schnelle, mehrsprachige Websites, Video-first Landingpages und Produktkataloge für Handwerk, Holzbau, Industrie und technische B2B-Unternehmen in der DACH-Region.">
   <meta name="twitter:image" content="https://www.dmdigitalenterprise.com/og-image.png">
   <script type="application/ld+json">
   {
@@ -36,7 +37,8 @@
     "name": "D&M Digitalenterprise",
     "url": "https://www.dmdigitalenterprise.com/",
     "logo": "https://www.dmdigitalenterprise.com/favicon.png",
-    "description": "Schnelle Video-first Websites, Landingpages und mehrsprachige Webauftritte für Unternehmen.",
+    "description": "Schnelle, mehrsprachige Video-first Websites, Landingpages und Produktkataloge für Handwerk, Holzbau, Industrie und technische B2B-Unternehmen.",
+    "serviceType": ["Webdesign", "Landingpages", "Video-first Webdesign", "Mehrsprachige Websites", "Digitale Produktkataloge"],
     "areaServed": ["Germany", "Austria", "Switzerland", "Serbia"],
     "availableLanguage": ["de", "en", "sr"],
     "contactPoint": [{
@@ -62,7 +64,7 @@
       font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
     html{scroll-behavior:smooth}
     img,video{max-width:100%;height:auto;display:block}
-    figure{margin:0} /* ✅ KLJUČNO: skida default 40px margin i vraća centar/širinu */
+    figure{margin:0} /* Remove the default figure margin so media remains aligned. */
     section{padding:44px 0;scroll-margin-top:90px}
 
     /* Performance: sekcije ispod prvog ekrana se renderuju tek kada im se korisnik približi */
@@ -82,6 +84,11 @@
       background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;font-weight:700;cursor:pointer}
     .ghost{background:transparent;color:var(--text)}
     .badge{display:inline-block;background:#0d131a;border:1px solid var(--line);padding:6px 10px;border-radius:999px;color:#c3ccd7;font-size:13px}
+    .lang{display:flex;align-items:center;gap:6px;padding:3px;border:1px solid var(--line);border-radius:999px;background:rgba(8,12,18,.55)}
+    .lang button{min-width:40px;height:34px;padding:0 9px;border:0;border-radius:999px;background:transparent;color:var(--muted);font:inherit;font-size:13px;font-weight:700;cursor:pointer}
+    .lang button:hover{color:var(--text)}
+    .lang button.active{background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221}
+    a:focus-visible,button:focus-visible{outline:3px solid rgba(98,224,198,.72);outline-offset:3px}
     h1{font-size:clamp(1.6rem,4.8vw,3.2rem);line-height:1.12;margin:12px 0 8px}
     h2{font-size:clamp(1.25rem,3.8vw,2.125rem);margin:0 0 8px}
     .sub{color:var(--muted);margin:0 0 20px}
@@ -433,7 +440,7 @@
       }
     }
 
-    /* 🔵 Social icons (HEADER) – POJAČANO */
+    /* Social icons in the header. */
     .social{
       display:flex;
       align-items:center;
@@ -463,17 +470,29 @@
       height:18px;
     }
 
-    /* ✅ Video layout helper (stabilno i za ugnježdene i za "direktne" klase) */
+    /* Stable video layout helper for direct and nested grid classes. */
     .video-grid{display:grid;gap:18px;justify-items:stretch}
     .video-grid.row-land{grid-template-columns:1fr}
     .video-grid.row-land-2{grid-template-columns:1fr 1fr}
 
-    /* fallback ako negde ostane ugnježden wrapper */
+    /* Fallback for a nested wrapper. */
     .video-grid .row-land{display:grid;grid-template-columns:1fr;gap:18px}
     .video-grid .row-land-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 
     /* TOP trio 9:16 */
     .trio-916{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+    @media (max-width:760px){
+      .wrap{padding-left:16px;padding-right:16px}
+      .nav{gap:12px}
+      .brand{width:100%}
+      .nav nav.stack{order:5;width:100%;flex-wrap:nowrap;overflow-x:auto;padding:4px 0 2px;scrollbar-width:thin}
+      .nav nav.stack a{white-space:nowrap}
+      .nav>.btn{width:100%;text-align:center;order:6}
+      .social{margin-left:auto;margin-right:0}
+      .row{flex-wrap:wrap}
+      .row .btn{flex:1 1 190px;text-align:center}
+    }
 
     @media (max-width:980px){
       .grid-2{grid-template-columns:1fr}
@@ -602,18 +621,18 @@
       <img src="https://raw.githubusercontent.com/dmdigitalenterpriseteam-rgb/dm-langing/main/logo-md%402x.png" alt="D&M Digitalenterprise" style="height:24px"/>
       D&M Digitalenterprise
     </div>
-    <nav class="stack">
-      <a href="#services" data-i18n="nav_services">Services</a>
+    <nav class="stack" aria-label="Hauptnavigation">
+      <a href="#services" data-i18n="nav_services">Leistungen</a>
       <a href="/video-first-webdesign.html" data-i18n="nav_video_first">Video-first</a>
-      <a href="#products" data-i18n="nav_packages">Packages</a>
-      <a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a>
-      <a href="/projekte.html" data-i18n="nav_projects">Projects</a>
+      <a href="#products" data-i18n="nav_packages">Pakete</a>
+      <a href="#portfolio" data-i18n="nav_portfolio">Referenzen</a>
+      <a href="/projekte.html" data-i18n="nav_projects">Projektberichte</a>
       <a href="#creative-concepts" data-i18n="nav_optik">Konzepte</a>
-      <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <a href="#contact" data-i18n="nav_contact">Kontakt</a>
     </nav>
     <div class="spacer"></div>
 
-    <!-- FB + IG + LinkedIn ikone u headeru (ISPRAVLJENO: nema ugnježdenih <a>) -->
+    <!-- Facebook, Instagram and LinkedIn links. -->
     <div class="social">
       <a href="https://www.facebook.com/profile.php?id=61583547136843"
          target="_blank" rel="noopener" aria-label="Facebook"
@@ -645,12 +664,12 @@
       </a>
     </div>
 
-    <div class="lang">
-      <button data-setlang="de" class="active">DE</button>
-      <button data-setlang="en">EN</button>
-      <button data-setlang="sr">SRB</button>
+    <div class="lang" role="group" aria-label="Sprache auswählen">
+      <button type="button" data-setlang="de" class="active" aria-pressed="true" aria-label="Deutsch">DE</button>
+      <button type="button" data-setlang="en" aria-pressed="false" aria-label="English">EN</button>
+      <button type="button" data-setlang="sr" aria-pressed="false" aria-label="Srpski">SRB</button>
     </div>
-    <a class="btn" href="#contact" data-i18n="cta_top">Request a quote</a>
+    <a class="btn" href="#contact" data-i18n="cta_top" data-track="header_quote">Angebot anfragen</a>
   </div>
 </header>
 
@@ -660,25 +679,25 @@
     <div>
       <span class="badge" data-i18n="badge_stack">Video-first Webdesign • Landingpages • Mehrsprachige Websites</span>
       <h1 data-i18n="hero_title">Webdesign mit Video für Unternehmen, die professionell auftreten wollen.</h1>
-      <p class="lead" data-i18n="hero_sub">D&M Digitalenterprise entwickelt schnelle, visuell starke Websites, Landingpages und kurze Werbevideos für Handwerker, Industrie, Möbelhersteller und Unternehmen in der DACH-Region.</p>
+      <p class="lead" data-i18n="hero_sub">D&amp;M Digitalenterprise entwickelt schnelle, visuell starke Websites, Landingpages und Produktkataloge für Handwerksbetriebe, Holzbau, Industrie und technische B2B-Unternehmen in der DACH-Region.</p>
       <div class="row">
-        <a class="btn" href="#portfolio" data-i18n="cta_portfolio">Portfolio ansehen</a>
+        <a class="btn" href="#portfolio" data-i18n="cta_portfolio">Referenzen ansehen</a>
         <a class="btn ghost" href="#services" data-i18n="cta_services">Leistungen</a>
       </div>
-      <p class="note" data-i18n="note_menu">Schnelle Seiten, klare Botschaft und ein visueller Auftritt, der Vertrauen aufbaut.</p>
+      <p class="note" data-i18n="note_menu">Schnelle Seiten, klare Botschaften und direkte Kontaktwege — für einen Auftritt, der Vertrauen schafft.</p>
     </div>
     <div>
-      <video playsinline id="heroVideo" class="vid" controls preload="none" poster="/hero-robot.jpg" aria-label="Hero video">
-  <source id="heroSrc" src="/avatar-srb.mp4?v=20251105" type="video/mp4" />
+      <video playsinline id="heroVideo" class="vid" controls preload="none" poster="/hero-robot.jpg" aria-label="Video-Präsentation von D&amp;M Digitalenterprise">
+  <source id="heroSrc" src="/avatar-de.mp4?v=20251105" type="video/mp4" />
 </video>
-      <p class="note" data-i18n="note_video">Video erklärt in Sekunden, wofür Ihr Unternehmen steht.</p>
+      <p class="note" data-i18n="note_video">Video zeigt in wenigen Sekunden, wofür Ihr Unternehmen steht.</p>
     </div>
   </section>
 
-  <!-- TOP 3x 9:16 (traženo da stoji GORE) -->
+  <!-- Featured vertical video examples. -->
   <section id="top-trio">
     <h2 data-i18n="video_examples_title">Video-first Beispiele</h2>
-    <p class="sub" data-i18n="video_examples_sub">Kurze Videoformate, die eine Botschaft schnell verständlich machen — ideal für Websites, LinkedIn, Instagram und Präsentationen.</p>
+    <p class="sub" data-i18n="video_examples_sub">Kurze Videoformate, die Angebote schnell verständlich machen — für Websites, LinkedIn, Instagram und Präsentationen.</p>
     <div class="trio-916">
       <video playsinline class="vid-916" controls preload="metadata" poster="/posters/Avatar_musko_de1.jpg" aria-label="Avatar 9:16 #1">
         <source src="/Avatar_musko_de1.mp4?v=20260518" type="video/mp4" />
@@ -696,23 +715,23 @@
 
   <!-- SERVICES -->
   <section id="services">
-    <h2 data-i18n="services_title">Leistungen für einen digitalen Auftritt, der verkauft</h2>
-    <p class="sub" data-i18n="services_sub">Struktur, Design und Video — abgestimmt auf klare Anfragen.</p>
+    <h2 data-i18n="services_title">Leistungen für einen klaren digitalen Auftritt</h2>
+    <p class="sub" data-i18n="services_sub">Struktur, Design und Video — ausgerichtet auf verständliche Angebote und direkte Kontaktwege.</p>
     <div class="cards">
       <article class="card">
         <span class="badge" data-i18n="s_tag_web">Web</span>
-        <h3 data-i18n="s_card1_t">Websites & Landingpages</h3>
-        <p class="sub" data-i18n="s_card1_s">Schnelle, responsive Websites mit klarer Struktur, Kontaktwegen und sauberer technischer Basis.</p>
+        <h3 data-i18n="s_card1_t">Websites &amp; Landingpages</h3>
+        <p class="sub" data-i18n="s_card1_s">Schnelle, responsive Websites mit klarer Struktur, verständlicher Nutzerführung und sauberer technischer Basis.</p>
       </article>
       <article class="card">
         <span class="badge" data-i18n="s_tag_video">Video</span>
         <h3 data-i18n="s_card2_t">Video-first Präsentation</h3>
-        <p class="sub" data-i18n="s_card2_s">Kurze Videos, Hero-Clips und Social-Formate, die Ihr Angebot schneller verständlich machen.</p>
+        <p class="sub" data-i18n="s_card2_s">Kurze Videos, Hero-Clips und Social-Media-Formate, die Ihr Angebot schneller verständlich machen.</p>
       </article>
       <article class="card">
-        <span class="badge" data-i18n="s_tag_marketing">Marketing</span>
-        <h3 data-i18n="s_card3_t">Mehrsprachige Inhalte & SEO-Grundlage</h3>
-        <p class="sub" data-i18n="s_card3_s">Texte, Meta-Daten und Inhalte auf Deutsch, Englisch und Serbisch — passend für DACH und regionale Märkte.</p>
+        <span class="badge" data-i18n="s_tag_marketing">Inhalte &amp; SEO</span>
+        <h3 data-i18n="s_card3_t">Mehrsprachige Inhalte &amp; SEO-Grundlage</h3>
+        <p class="sub" data-i18n="s_card3_s">Texte, Meta-Daten und Inhalte auf Deutsch, Englisch und Serbisch — für DACH und regionale Märkte.</p>
       </article>
     </div>
   </section>
@@ -723,7 +742,7 @@
       <div>
         <span class="badge" data-i18n="vf_teaser_badge">Unsere Spezialisierung</span>
         <h3 id="video-first-teaser-title" data-i18n="vf_teaser_title">Video-first Webdesign für Unternehmen</h3>
-        <p data-i18n="vf_teaser_text">Erfahren Sie, wie D&M Digitalenterprise Strategie, visuelle Wirkung, Video und technische Performance zu einem klaren digitalen Auftritt verbindet.</p>
+        <p data-i18n="vf_teaser_text">Erfahren Sie, wie D&amp;M Digitalenterprise Strategie, visuelle Wirkung, Video und technische Performance zu einem klaren digitalen Auftritt verbindet.</p>
       </div>
       <a class="btn" href="/video-first-webdesign.html" data-i18n="vf_teaser_btn">Video-first Webdesign entdecken</a>
     </div>
@@ -732,30 +751,30 @@
   <!-- PRODUCTS -->
   <section id="products">
     <h2 data-i18n="sec_products_title">Pakete für Websites, Landingpages und digitale Präsentationen</h2>
-    <p class="sub" data-i18n="sec_products_sub">Klarer Umfang, transparente Preise und ein sauberer Ablauf vom ersten Entwurf bis zur Veröffentlichung.</p>
+    <p class="sub" data-i18n="sec_products_sub">Klarer Leistungsumfang, transparente Preise und ein strukturierter Ablauf vom ersten Entwurf bis zur Veröffentlichung.</p>
     <div class="cards">
       <article class="card">
         <h3 data-i18n="p_start_t">START-Paket</h3>
         <ul class="list">
-          <li data-i18n="p_start_li1">One-page (do 5 sekcija)</li>
-          <li data-i18n="p_start_li2">Kontakt (mailto)</li>
-          <li data-i18n="p_start_li3">Osnovni SEO meta tagovi</li>
+          <li data-i18n="p_start_li1">One-Pager mit bis zu 5 Sektionen</li>
+          <li data-i18n="p_start_li2">Direkte Kontaktmöglichkeiten</li>
+          <li data-i18n="p_start_li3">Basis-SEO und Meta-Daten</li>
         </ul>
       </article>
       <article class="card">
         <h3 data-i18n="p_pro_t">PRO-Paket</h3>
         <ul class="list">
-          <li data-i18n="p_pro_li1">Višestrana + portfolio</li>
-          <li data-i18n="p_pro_li2">Kratak video (do 30 s)</li>
-          <li data-i18n="p_pro_li3">Priprema oglasa + 10 hashtagova</li>
+          <li data-i18n="p_pro_li1">Mehrseitige Website mit Portfolio</li>
+          <li data-i18n="p_pro_li2">Kurzvideo mit bis zu 30 Sekunden</li>
+          <li data-i18n="p_pro_li3">Vorbereitung einer Werbeanzeige inkl. 10 relevanter Hashtags</li>
         </ul>
       </article>
       <article class="card">
         <h3 data-i18n="p_premium_t">PREMIUM-Paket</h3>
         <ul class="list">
-          <li data-i18n="p_prem_li1">Prilagođen dizajn & animacije</li>
-          <li data-i18n="p_prem_li2">2 video oglasa (do 45 s)</li>
-          <li data-i18n="p_prem_li3">Kampanja 30 dana + izveštaj</li>
+          <li data-i18n="p_prem_li1">Individuelles Design und Animationen</li>
+          <li data-i18n="p_prem_li2">2 Werbevideos mit bis zu 45 Sekunden</li>
+          <li data-i18n="p_prem_li3">30-Tage-Kampagne inkl. Auswertung</li>
         </ul>
       </article>
     </div>
@@ -764,11 +783,9 @@
   <!-- PORTFOLIO -->
   <section id="portfolio" class="portfolio-pro">
     <div class="portfolio-head">
-      <span class="badge" data-i18n="portfolio_badge">Selected Projects</span>
-      <h2 data-i18n="port_title">Selected Projects</h2>
-      <p class="sub" data-i18n="portfolio_intro">
-        Real digital projects — designed, structured and developed by D&amp;M Digitalenterprise.
-      </p>
+      <span class="badge" data-i18n="portfolio_badge">Realisierte Projekte</span>
+      <h2 data-i18n="port_title">Ausgewählte Referenzen</h2>
+      <p class="sub" data-i18n="portfolio_intro">Reale digitale Projekte — konzipiert, strukturiert und umgesetzt von D&amp;M Digitalenterprise, darunter mehrsprachige Katalogseiten, Handwerker-Websites und industrielle B2B-Präsentationen.</p>
     </div>
 
     <div class="portfolio-featured">
@@ -779,18 +796,15 @@
         </a>
 
         <div class="project-content">
-          <span class="badge" data-i18n="project_duo_tag">Premium Furniture Website</span>
+          <span class="badge" data-i18n="project_duo_tag">Premium-Website für Möbel</span>
           <h3>DUO GRANDE</h3>
-          <p class="sub" data-i18n="project_duo_text">
-            A complete premium furniture website with strong visual identity, product structure,
-            galleries, catalog sections and mobile-focused presentation.
-          </p>
+          <p class="sub" data-i18n="project_duo_text">Eine vollständige Premium-Website für Möbel mit starker visueller Identität, klarer Produktstruktur, Galerien, Katalogbereichen und mobil optimierter Präsentation.</p>
 
           <div class="stack">
             <a class="btn-min btn-grad"
                href="https://duogrande.com/"
                target="_blank" rel="noopener"
-               data-i18n="project_btn_open">Open project</a>
+               data-i18n="project_btn_open" data-track="project_open">Projekt öffnen</a>
           </div>
         </div>
       </article>
@@ -804,18 +818,15 @@
         </a>
 
         <div class="project-content">
-          <span class="badge" data-i18n="project_fms_tag">Industrial B2B Website</span>
+          <span class="badge" data-i18n="project_fms_tag">Industrielle B2B-Website</span>
           <h3>Floor Master Solutions</h3>
-          <p class="sub" data-i18n="project_fms_text">
-            Industrial B2B presentation for professional floor preparation equipment, with structured
-            product categories, catalog access and clear technical communication.
-          </p>
+          <p class="sub" data-i18n="project_fms_text">Industrielle B2B-Präsentation für professionelle Bodenbearbeitungstechnik mit strukturierten Produktkategorien, Katalogzugang und klarer technischer Kommunikation.</p>
 
           <div class="stack">
             <a class="btn-min btn-grad"
                href="https://floorms.rs/"
                target="_blank" rel="noopener"
-               data-i18n="project_btn_open">Open project</a>
+               data-i18n="project_btn_open" data-track="project_open">Projekt öffnen</a>
           </div>
         </div>
       </article>
@@ -827,18 +838,15 @@
         </a>
 
         <div class="project-content">
-          <span class="badge" data-i18n="project_bigbag_tag">Brand &amp; Website Concept</span>
+          <span class="badge" data-i18n="project_bigbag_tag">Marken- und Website-Konzept</span>
           <h3>BIG BAG COMPANY</h3>
-          <p class="sub" data-i18n="project_bigbag_text">
-            Brand and website concept for jumbo bag distribution, focused on strong first impression,
-            clean product communication and high-impact industrial visuals.
-          </p>
+          <p class="sub" data-i18n="project_bigbag_text">Marken- und Website-Konzept für den Vertrieb von Big Bags — mit starkem ersten Eindruck, klarer Produktkommunikation und wirkungsvollen Industrie-Visuals.</p>
 
           <div class="stack">
             <a class="btn-min btn-grad"
                href="https://www.dzambovrece.vip/"
                target="_blank" rel="noopener"
-               data-i18n="project_btn_open">Open project</a>
+               data-i18n="project_btn_open" data-track="project_open">Projekt öffnen</a>
           </div>
         </div>
       </article>
@@ -850,18 +858,15 @@
         </a>
 
         <div class="project-content">
-          <span class="badge" data-i18n="project_udruzenje_tag">Cultural Association Website</span>
+          <span class="badge" data-i18n="project_udruzenje_tag">Kultur- und Vereinswebsite</span>
           <h3>Udruženje Srba iz Stare Hercegovine</h3>
-          <p class="sub" data-i18n="project_udruzenje_text">
-            Cultural and heritage website with cinematic hero design, membership form integration,
-            historical storytelling and structured presentation of community values.
-          </p>
+          <p class="sub" data-i18n="project_udruzenje_text">Kultur- und Vereinswebsite mit filmischem Hero-Design, integrierter Beitrittserklärung, historischem Storytelling und strukturierter Darstellung der Vereinswerte.</p>
 
           <div class="stack">
             <a class="btn-min btn-grad"
                href="https://udruzenje-srba-iz-stare-hercegovine.vercel.app/"
                target="_blank" rel="noopener"
-               data-i18n="project_btn_open">Open project</a>
+               data-i18n="project_btn_open" data-track="project_open">Projekt öffnen</a>
           </div>
         </div>
       </article>
@@ -874,17 +879,15 @@
         </a>
 
         <div class="project-content">
-          <span class="badge" data-i18n="project_adles_tag">Multilingual Catalog Website</span>
+          <span class="badge" data-i18n="project_adles_tag">Mehrsprachige Katalog-Website</span>
           <h3>ADLES</h3>
-          <p class="sub" data-i18n="project_adles_text">
-            Multilingual website for modular houses, log cabins and wooden structures, with a large product catalog, categories, galleries and video presentation.
-          </p>
+          <p class="sub" data-i18n="project_adles_text">Mehrsprachige Website für Fertighäuser, Blockhäuser und Holzobjekte mit umfangreichem Produktkatalog, Kategorien, Galerien und Videopräsentation.</p>
 
           <div class="stack">
             <a class="btn-min btn-grad"
                href="https://www.adles.ba/"
                target="_blank" rel="noopener"
-               data-i18n="project_btn_open">Open project</a>
+               data-i18n="project_btn_open" data-track="project_open">Projekt öffnen</a>
           </div>
         </div>
       </article>
@@ -896,24 +899,22 @@
         </a>
 
         <div class="project-content">
-          <span class="badge" data-i18n="project_neba_tag">Construction & Trade Website</span>
+          <span class="badge" data-i18n="project_neba_tag">Bau- und Handwerker-Website</span>
           <h3>NEBA GRAĐ.SD</h3>
-          <p class="sub" data-i18n="project_neba_text">
-            Website for ceramic works, floor and wall coverings, gypsum-board systems and finishing construction work, with clear local positioning, projects and gallery.
-          </p>
+          <p class="sub" data-i18n="project_neba_text">Website für Keramikarbeiten, Boden- und Wandbeläge sowie Ausbauarbeiten — mit klarer lokaler Positionierung, Projektübersicht und Galerie.</p>
 
           <div class="stack">
             <a class="btn-min btn-grad"
                href="https://www.nebasd.com/"
                target="_blank" rel="noopener"
-               data-i18n="project_btn_open">Open project</a>
+               data-i18n="project_btn_open" data-track="project_open">Projekt öffnen</a>
           </div>
         </div>
       </article>
     </div>
 
     <div class="stack" style="margin-top:24px;justify-content:center">
-      <a class="btn btn-grad" href="/projekte.html" data-i18n="portfolio_more_btn">View all projects in detail</a>
+      <a class="btn btn-grad" href="/projekte.html" data-i18n="portfolio_more_btn" data-track="all_projects">Alle Projektberichte ansehen</a>
     </div>
   </section>
 
@@ -921,11 +922,9 @@
   <!-- CREATIVE CONCEPTS -->
   <section id="creative-concepts" class="concept-pro">
     <div class="concept-head">
-      <span class="badge" data-i18n="concept_badge">Creative Concepts</span>
-      <h2 data-i18n="concept_title">Creative Concepts</h2>
-      <p class="sub" data-i18n="concept_intro">
-        Boutique visual studies, luxury product storytelling and premium art direction.
-      </p>
+      <span class="badge" data-i18n="concept_badge">Kreative Konzepte</span>
+      <h2 data-i18n="concept_title">Kreative Konzepte</h2>
+      <p class="sub" data-i18n="concept_intro">Visuelle Studien, hochwertige Produktinszenierung und Art Direction für Marken mit besonderem Anspruch.</p>
     </div>
 
     <article class="concept-card">
@@ -935,19 +934,17 @@
          aria-label="Open ATELIER LUCIA concept PDF">
         <img loading="lazy" decoding="async" src="/assets/retro_1.jpeg"
              alt="ATELIER LUCIA vintage luxury collage collection preview">
-        <span class="concept-label" data-i18n="concept_label">Pilot Concept</span>
+        <span class="concept-label" data-i18n="concept_label">Pilotkonzept</span>
       </a>
 
       <div class="concept-content">
-        <div class="concept-kicker" data-i18n="concept_kicker">Boutique visual study</div>
+        <div class="concept-kicker" data-i18n="concept_kicker">Visuelle Markenstudie</div>
         <h3>ATELIER LUCIA</h3>
         <p class="concept-subtitle">Vintage Luxury Collage Collection</p>
-        <p class="sub" data-i18n="concept_text">
-          A pilot creative concept exploring vintage-inspired collage aesthetics, luxury product design and premium brand storytelling.
-        </p>
+        <p class="sub" data-i18n="concept_text">Ein kreatives Pilotkonzept mit Vintage-Collage-Ästhetik, hochwertiger Produktinszenierung und visuellem Brand Storytelling.</p>
 
         <div class="concept-tags" aria-label="Concept tags">
-          <span data-i18n="concept_tag1">Luxury Product Design</span>
+          <span data-i18n="concept_tag1">Produktdesign</span>
           <span data-i18n="concept_tag2">Brand Storytelling</span>
           <span data-i18n="concept_tag3">Art Direction</span>
         </div>
@@ -956,7 +953,7 @@
           <a class="btn-min btn-grad"
              href="/assets/atelier_lucia.pdf"
              target="_blank" rel="noopener"
-             data-i18n="concept_btn">View Concept PDF</a>
+             data-i18n="concept_btn" data-track="concept_pdf">Konzept-PDF öffnen</a>
         </div>
 
         <div class="concept-thumbs" aria-label="ATELIER LUCIA visual details">
@@ -973,18 +970,16 @@
   <!-- VIDEO & AVATAR DEMOS -->
   <section id="demo-videos" class="demo-pro">
     <div class="demo-head">
-      <span class="badge" data-i18n="dv_badge">Video &amp; Avatar Demos</span>
-      <h2 data-i18n="dv_title">Video &amp; Avatar Demo-Beispiele</h2>
-      <p class="sub" data-i18n="dv_sub">
-        Short demo formats that show how quickly a company, offer or service can be explained through video.
-      </p>
+      <span class="badge" data-i18n="dv_badge">Video- und Avatar-Demos</span>
+      <h2 data-i18n="dv_title">Video- und Avatar-Beispiele</h2>
+      <p class="sub" data-i18n="dv_sub">Kurze Demoformate, die zeigen, wie Unternehmen, Angebote und Dienstleistungen mit Video verständlich präsentiert werden können.</p>
     </div>
 
     <div class="video-grid row-land-2">
       <article class="card">
         <span class="badge">Demo Video</span>
-        <h3 data-i18n="dv_c1_t">Peter’s Bakery</h3>
-        <p class="sub" data-i18n="dv_c1_s">Seasonal short ad concept for social media and landing page presentation.</p>
+        <h3 data-i18n="dv_c1_t">Bäckerei Peter</h3>
+        <p class="sub" data-i18n="dv_c1_s">Saisonales Kurzspot-Konzept für Social Media und Landingpages.</p>
         <video playsinline class="vid" controls preload="metadata">
           <source src="/peters-baeckerei.mp4?v=20251107" type="video/mp4"/>
         </video>
@@ -992,8 +987,8 @@
 
       <article class="card">
         <span class="badge">Avatar Pitch</span>
-        <h3 data-i18n="dv_c3_t">Sandra — Marketing Advantages</h3>
-        <p class="sub" data-i18n="dv_c3_s">Short avatar pitch about the benefits of clear digital marketing.</p>
+        <h3 data-i18n="dv_c3_t">Sandra — Vorteile im Marketing</h3>
+        <p class="sub" data-i18n="dv_c3_s">Kurzer Avatar-Pitch über den Nutzen einer klaren digitalen Präsentation.</p>
         <video playsinline class="vid" controls preload="metadata">
           <source src="/sandra-enterprise.mp4?v=20251107" type="video/mp4"/>
         </video>
@@ -1004,54 +999,52 @@
   <!-- BRANCHEN-KONZEPTE -->
   <section id="branch-concepts" class="branch-pro">
     <div class="branch-head">
-      <span class="badge" data-i18n="branch_badge">Industry Concepts</span>
-      <h2 data-i18n="branch_title">Branchen-Konzepte</h2>
-      <p class="sub" data-i18n="branch_intro">
-        Compact visual studies for different business fields — useful for websites, consultations and social media campaigns.
-      </p>
+      <span class="badge" data-i18n="branch_badge">Branchen-Konzepte</span>
+      <h2 data-i18n="branch_title">Konzepte für unterschiedliche Branchen</h2>
+      <p class="sub" data-i18n="branch_intro">Kompakte visuelle Studien für beratungsintensive Geschäftsfelder — einsetzbar auf Websites, in Präsentationen und Social-Media-Kampagnen.</p>
     </div>
 
     <div class="branch-grid">
       <article class="card branch-card">
         <span class="badge">Goldschmiede</span>
-        <h3 data-i18n="gold_title">Goldschmiede – persönliche Beratung</h3>
-        <p class="sub" data-i18n="gold_sub">4C explained and style guidance — a demo for high-trust advisory businesses.</p>
+        <h3 data-i18n="gold_title">Goldschmiede — persönliche Beratung</h3>
+        <p class="sub" data-i18n="gold_sub">4C-Erklärung und Stilberatung — ein Beispiel für Unternehmen, bei denen Vertrauen und verständliche Beratung entscheidend sind.</p>
 
         <div class="video-grid">
           <figure>
             <video playsinline class="vid" controls preload="none" poster="/zlatar/poster-4C.jpg">
               <source src="/zlatar/zlatarAVATAR_4C.mp4?v=20251107" type="video/mp4"/>
             </video>
-            <figcaption data-i18n="zl_cap_4c">4C in 30 seconds — clear and short.</figcaption>
+            <figcaption data-i18n="zl_cap_4c">Die 4C in 30 Sekunden — klar und verständlich.</figcaption>
           </figure>
 
           <figure>
             <video playsinline class="vid" controls preload="none" poster="/zlatar/poster-ringwahl.jpg">
               <source src="/zlatar/zlatarAVATAR_Ringwahl.mp4?v=20251107" type="video/mp4"/>
             </video>
-            <figcaption data-i18n="zl_cap_style">Which style: Solitaire, Halo or Classic?</figcaption>
+            <figcaption data-i18n="zl_cap_style">Welcher Stil passt: Solitaire, Halo oder Classic?</figcaption>
           </figure>
         </div>
       </article>
 
       <article class="card branch-card">
         <span class="badge">Optik</span>
-        <h3 data-i18n="opt_title">Optik — kurzer Demo-Clip</h3>
-        <p class="sub" data-i18n="opt_sub">Short demo videos for an optics store — practical advice, trust and product explanation.</p>
+        <h3 data-i18n="opt_title">Optik — kurze Demo-Clips</h3>
+        <p class="sub" data-i18n="opt_sub">Kurze Videoformate für ein Optikgeschäft — für Beratung, Vertrauen und verständliche Produkterklärung.</p>
 
         <div class="video-grid">
           <figure>
             <video playsinline class="vid" controls preload="none" poster="/optika/poster-glaeser.jpg">
               <source src="/optika/optikaAVATAR_Glaeser.mp4?v=20251105" type="video/mp4"/>
             </video>
-            <figcaption data-i18n="opt_cap_glaeser">Lens advice explained in a simple video format.</figcaption>
+            <figcaption data-i18n="opt_cap_glaeser">Gläserberatung in einem einfachen Videoformat erklärt.</figcaption>
           </figure>
 
           <figure>
             <video playsinline class="vid" controls preload="none" poster="/optika/sandra_perfekt.jpg">
               <source src="/optika/sandra_perfekt.mp4?v=20251212" type="video/mp4"/>
             </video>
-            <figcaption data-i18n="opt_cap_sandra">Avatar presentation for clear customer communication.</figcaption>
+            <figcaption data-i18n="opt_cap_sandra">Avatar-Präsentation für eine klare Kundenkommunikation.</figcaption>
           </figure>
         </div>
       </article>
@@ -1060,51 +1053,55 @@
 
   <!-- TRUST -->
   <section id="trust">
-    <h2 data-i18n="trust_title">Zašto nama veruju</h2>
-    <p class="sub" data-i18n="trust_sub">Tri kratka dokaza poverenja.</p>
+    <h2 data-i18n="trust_title">Warum Unternehmen mit uns arbeiten</h2>
+    <p class="sub" data-i18n="trust_sub">Drei klare Grundlagen für eine verlässliche Zusammenarbeit.</p>
     <div class="cards">
-      <article class="card"><h3 data-i18n="trust1_t">Trojezično (DE · EN · SR)</h3><p class="sub" data-i18n="trust1_s">Bez vodenih žigova; skripte/titlovi na tri jezika.</p></article>
-      <article class="card"><h3 data-i18n="trust2_t">Brza isporuka</h3><p class="sub" data-i18n="trust2_s">Prvi nacrt u 3–5 dana, final u 2–4 nedelje.</p></article>
-      <article class="card"><h3 data-i18n="trust3_t">Video + web = rezultat</h3><p class="sub" data-i18n="trust3_s">Kratki avatar + landing → jasna poruka i više upita.</p></article>
+      <article class="card"><h3 data-i18n="trust1_t">Dreisprachige Umsetzung</h3><p class="sub" data-i18n="trust1_s">Inhalte und Benutzerführung auf Deutsch, Englisch und Serbisch.</p></article>
+      <article class="card"><h3 data-i18n="trust2_t">Klare Projektphasen</h3><p class="sub" data-i18n="trust2_s">Erster Entwurf in 3–5 Werktagen; die Veröffentlichung erfolgt nach abgestimmten Freigaben.</p></article>
+      <article class="card"><h3 data-i18n="trust3_t">Webdesign und Video aus einer Hand</h3><p class="sub" data-i18n="trust3_s">Ein konsistenter Auftritt für Website, Landingpage und Social Media.</p></article>
     </div>
   </section>
 
   <!-- FAQ -->
   <section id="faq" class="faq">
-    <h2 data-i18n="faq_title">Česta pitanja</h2>
+    <h2 data-i18n="faq_title">Häufige Fragen</h2>
     <div class="cards">
-      <article class="card"><h3 data-i18n="faq1_q">Koliko brzo isporučujete?</h3><p class="sub" data-i18n="faq1_a">2–4 nedelje — u zavisnosti od saradnje i odobrenja.</p></article>
-      <article class="card"><h3 data-i18n="faq2_q">Šta je potrebno sa vaše strane?</h3><p class="sub" data-i18n="faq2_a">Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.</p></article>
+      <article class="card"><h3 data-i18n="faq1_q">Wie lange dauert die Umsetzung?</h3><p class="sub" data-i18n="faq1_a">In der Regel 2–4 Wochen — abhängig vom Projektumfang, der Materialbereitstellung und den Freigaben.</p></article>
+      <article class="card"><h3 data-i18n="faq2_q">Welche Unterlagen werden benötigt?</h3><p class="sub" data-i18n="faq2_a">Logo, vorhandene Fotos und die wichtigsten Unternehmensinformationen. Fehlende Struktur und Texte erarbeiten wir gemeinsam.</p></article>
       <article class="card">
-        <h3 data-i18n="faq3_q">Koliko okvirno košta?</h3>
-        <p class="sub" data-i18n="faq3_a">
-          Početne cene: Start 850 €, Pro 1.990 €, Premium 3.990 €; tačnu ponudu šaljemo nakon kratkog razgovora.
-        </p>
+        <h3 data-i18n="faq3_q">Was kostet eine Website?</h3>
+        <p class="sub" data-i18n="faq3_a">Einstiegspreise: START 850 €, PRO 1.990 €, PREMIUM 3.990 €. Ein verbindliches Angebot erhalten Sie nach einem kurzen Vorgespräch.</p>
       </article>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact">
-    <h2 data-i18n="contact_title">Kontakt</h2>
-    <p class="sub">info@dmdigitalenterprise.com · +381 606890072</p>
+    <h2 data-i18n="contact_title">Lassen Sie uns über Ihr Projekt sprechen</h2>
+    <p class="sub" data-i18n="contact_sub">Schildern Sie kurz, was Ihr Unternehmen benötigt. Sie erhalten eine persönliche Rückmeldung — direkt und ohne unverbindliche Standardantworten.</p>
+    <div class="stack" aria-label="Kontaktmöglichkeiten">
+      <a class="btn" href="mailto:info@dmdigitalenterprise.com" data-i18n="contact_email" data-track="contact_email">E-Mail schreiben</a>
+      <a class="btn ghost" href="tel:+381606890072" data-i18n="contact_phone" data-track="contact_phone">Anrufen</a>
+      <a class="btn ghost" href="https://wa.me/381606890072" target="_blank" rel="noopener" data-i18n="contact_whatsapp" data-track="contact_whatsapp">WhatsApp öffnen</a>
+    </div>
+    <p class="note"><a href="mailto:info@dmdigitalenterprise.com">info@dmdigitalenterprise.com</a> · <a href="tel:+381606890072">+381 60 689 0072</a></p>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <div>© 2026 D&M Digitalenterprise — <span data-i18n="rights">Sva prava zadržana</span></div>
+    <div>© 2026 D&M Digitalenterprise — <span data-i18n="rights">Alle Rechte vorbehalten</span></div>
     <div class="center">
       <a href="/impressum.html">Impressum</a> ·
       <a href="/datenschutz.html">Datenschutzerklärung</a> ·
       <a href="/konditionen.html">Konditionen & Preise</a> ·
       <a href="/video-first-webdesign.html">Video-first Webdesign</a>
     </div>
-    <div class="right">Design & code: D&M Digitalenterprise</div>
+    <div class="right" data-i18n="footer_credit">Design &amp; Entwicklung: D&amp;M Digitalenterprise</div>
   </div>
 </footer>
 
-<a href="https://wa.me/381606890072" class="wa-fab" aria-label="WhatsApp chat" target="_blank" rel="noopener" title="WhatsApp">
+<a href="https://wa.me/381606890072" class="wa-fab" aria-label="D&amp;M Digitalenterprise über WhatsApp kontaktieren" target="_blank" rel="noopener" title="WhatsApp" data-track="whatsapp_fab">
   <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
     <path d="M20.5 12a8.5 8.5 0 0 1-12 7.6L4 20l.5-4.4A8.5 8.5 0 1 1 20.5 12Z" stroke="currentColor"/>
     <path d="M9.5 9.3c.2-.6.6-.6.9-.6.3 0 .8 0 .9.8.1.5 0 .7 0 .8 0 .1-.2.4-.3.5-.2.2-.3.3-.1.6.2.3.8 1.3 1.9 1.8 1 .5 1.2.3 1.5 0 .3-.3.6-.8.7-.9.1-.1.2-.1.4 0 .2.1 1 .5 1.2.6.2.1.3.2.3.3 0 .2-.1 1.1-.8 1.8-.8.7-1.7.7-2.4.6-.8-.1-1.8-.5-2.9-1.4-1.1-.9-2.1-2.5-2.3-2.9-.2-.4-.5-1.2-.5-1.7 0-.5.3-.8.5-1Z" fill="currentColor"/>
@@ -1114,159 +1111,434 @@
 <script>
   /* I18N */
   var T={
-    en:{nav_services:"Services",nav_video_first:"Video-first",nav_packages:"Packages",nav_portfolio:"Portfolio",nav_projects:"Projects",nav_optik:"Concepts",nav_contact:"Contact",cta_top:"Request a quote",
-      badge_stack:"Video-first web design • Landing pages • Multilingual websites",hero_title:"Web design with video for companies that want to look professional.",hero_sub:"D&M Digitalenterprise builds fast, visually strong websites, landing pages and short promo videos for trades, industry, furniture brands and product catalogues.",cta_portfolio:"View portfolio",cta_services:"Services",note_menu:"Fast pages, clear messaging and a visual presentation that builds trust.",video_examples_title:"Video-first examples",video_examples_sub:"Short video formats that make a message clear fast — ideal for websites, LinkedIn, Instagram and presentations.",note_video:"Video explains in seconds what your company stands for.",vf_teaser_badge:"Our specialization",vf_teaser_title:"Video-first web design for companies",vf_teaser_text:"See how D&M Digitalenterprise combines strategy, visual impact, video and technical performance into a clear digital presence.",vf_teaser_btn:"Explore video-first web design",
-      services_title:"Services for a digital presence that sells",services_sub:"Structure, design and video — aligned for clear inquiries.",
-      s_tag_web:"Web",s_tag_video:"Video",s_tag_marketing:"Marketing",
-      s_card1_t:"Websites & landing pages",s_card1_s:"Fast, responsive websites with clear structure, contact paths and a clean technical base.",
-      s_card2_t:"Video-first presentation",s_card2_s:"Short videos, hero clips and social formats that make your offer easier to understand.",
-      s_card3_t:"Multilingual content & SEO base",s_card3_s:"Texts, metadata and content in German, English and Serbian — suitable for DACH and regional markets.",
-      sec_products_title:"Packages for websites, landing pages and digital presentations",sec_products_sub:"Clear scope, transparent prices and a clean workflow from first draft to publication.",
-      p_start_t:"START package",p_start_li1:"One-page (up to 5 sections)",p_start_li2:"Contact (mailto)",p_start_li3:"Basic SEO meta tags",
-      p_pro_t:"PRO package",p_pro_li1:"Multi-page + portfolio",p_pro_li2:"Short video (up to 30s)",p_pro_li3:"Ad prep + 10 hashtags",
-      p_premium_t:"PREMIUM package",p_prem_li1:"Custom design & animations",p_prem_li2:"2 ad videos (up to 45s)",p_prem_li3:"30-day campaign + report",
-      port_title:"Selected Projects",
-      portfolio_badge:"Selected Projects",
-      portfolio_intro:"Real digital projects — designed, structured and developed by D&M Digitalenterprise, including multilingual catalog and trade websites.",
-      project_duo_tag:"Premium Furniture Website",
-      project_duo_text:"A complete premium furniture website with strong visual identity, product structure, galleries, catalog sections and mobile-focused presentation.",
-      project_fms_tag:"Industrial B2B Website",
-      project_fms_text:"Industrial B2B presentation for professional floor preparation equipment, with structured product categories, catalog access and clear technical communication.",
-      project_bigbag_tag:"Brand & Website Concept",
-      project_bigbag_text:"Brand and website concept for jumbo bag distribution, focused on strong first impression, clean product communication and high-impact industrial visuals.",
-      project_udruzenje_tag:"Cultural Association Website",
-      project_udruzenje_text:"Cultural and heritage website with cinematic hero design, membership form integration, historical storytelling and structured presentation of community values.",
-      project_adles_visual:"Multilingual catalog website",
-      project_adles_tag:"Multilingual Catalog Website",
-      project_adles_text:"Multilingual website for modular houses, log cabins and wooden structures, with a large product catalog, categories, galleries and video presentation.",
-      project_neba_visual:"Construction & finishing works",
-      project_neba_tag:"Construction & Trade Website",
-      project_neba_text:"Website for ceramic works, floor and wall coverings, gypsum-board systems and finishing construction work, with clear local positioning, projects and gallery.",
-      project_btn_open:"Open project",portfolio_more_btn:"View all projects in detail",
-      project_btn_concept:"Concept preview",
-      concept_badge:"Creative Concepts",
-      concept_title:"Creative Concepts",
-      concept_intro:"Boutique visual studies, luxury product storytelling and premium art direction.",
-      concept_label:"Pilot Concept",
-      concept_kicker:"Boutique visual study",
-      concept_text:"A pilot creative concept exploring vintage-inspired collage aesthetics, luxury product design and premium brand storytelling.",
-      concept_tag1:"Luxury Product Design",
-      concept_tag2:"Brand Storytelling",
-      concept_tag3:"Art Direction",
-      concept_btn:"View Concept PDF",
-      dv_badge:"Video & Avatar Demos",dv_title:"Video & Avatar Demo Examples",dv_sub:"Short demo formats that show how quickly a company, offer or service can be explained through video.",dv_c1_t:"Peter’s Bakery",dv_c1_s:"Seasonal short ad concept for social media and landing page presentation.",dv_c3_t:"Sandra — Marketing Advantages",dv_c3_s:"Short avatar pitch about the benefits of clear digital marketing.",
-      branch_badge:"Industry Concepts",branch_title:"Industry Concepts",branch_intro:"Compact visual studies for different business fields — useful for websites, consultations and social media campaigns.",gold_title:"Jewelry — Personal Advice",gold_sub:"4C explained and style guidance — a demo for high-trust advisory businesses.",zl_cap_4c:"4C in 30 seconds — clear and short.",zl_cap_style:"Which style: Solitaire, Halo or Classic?",opt_title:"Optics — Short Demo Clip",opt_sub:"Short demo videos for an optics store — practical advice, trust and product explanation.",opt_cap_glaeser:"Lens advice explained in a simple video format.",opt_cap_sandra:"Avatar presentation for clear customer communication.",
-      trust_title:"Why clients trust us",trust_sub:"Three short proof points.",trust1_t:"Trilingual (DE · EN · SR)",trust1_s:"No watermarks; scripts/subtitles in three languages.",trust2_t:"Fast delivery",trust2_s:"First draft in 3–5 days, final in 2–4 weeks.",trust3_t:"Video + web = results",trust3_s:"Short avatar + landing → clearer message & more inquiries.",
-      faq_title:"FAQ",faq1_q:"How fast do you deliver?",faq1_a:"2–4 weeks — depending on collaboration and approvals.",faq2_q:"What do you need from us?",faq2_a:"Logo, 5–8 photos and 3–4 key points — we handle the rest.",faq3_q:"Roughly how much does it cost?",faq3_a:"Starting prices: Start 850 €, Pro 1,990 €, Premium 3,990 €; exact quote after a short call.",contact_title:"Contact",rights:"All rights reserved"},
-    de:{nav_services:"Leistungen",nav_video_first:"Video-first",nav_packages:"Pakete",nav_portfolio:"Portfolio",nav_projects:"Projekte",nav_optik:"Konzepte",nav_contact:"Kontakt",cta_top:"Angebot anfragen",
-      badge_stack:"Video-first Webdesign • Landingpages • Mehrsprachige Websites",hero_title:"Webdesign mit Video für Unternehmen, die professionell auftreten wollen.",hero_sub:"D&M Digitalenterprise entwickelt schnelle, visuell starke Websites, Landingpages und kurze Werbevideos für Handwerker, Industrie, Möbelhersteller und Unternehmen in der DACH-Region.",cta_portfolio:"Portfolio ansehen",cta_services:"Leistungen",note_menu:"Schnelle Seiten, klare Botschaft und ein visueller Auftritt, der Vertrauen aufbaut.",video_examples_title:"Video-first Beispiele",video_examples_sub:"Kurze Videoformate, die eine Botschaft schnell verständlich machen — ideal für Websites, LinkedIn, Instagram und Präsentationen.",note_video:"Video erklärt in Sekunden, wofür Ihr Unternehmen steht.",vf_teaser_badge:"Unsere Spezialisierung",vf_teaser_title:"Video-first Webdesign für Unternehmen",vf_teaser_text:"Erfahren Sie, wie D&M Digitalenterprise Strategie, visuelle Wirkung, Video und technische Performance zu einem klaren digitalen Auftritt verbindet.",vf_teaser_btn:"Video-first Webdesign entdecken",
-      services_title:"Leistungen für einen digitalen Auftritt, der verkauft",services_sub:"Struktur, Design und Video — abgestimmt auf klare Anfragen.",
-      s_tag_web:"Web",s_tag_video:"Video",s_tag_marketing:"Marketing",
-      s_card1_t:"Websites & Landingpages",s_card1_s:"Schnelle, responsive Websites mit klarer Struktur, Kontaktwegen und sauberer technischer Basis.",
-      s_card2_t:"Video-first Präsentation",s_card2_s:"Kurze Videos, Hero-Clips und Social-Formate, die Ihr Angebot schneller verständlich machen.",
-      s_card3_t:"Mehrsprachige Inhalte & SEO-Grundlage",s_card3_s:"Texte, Meta-Daten und Inhalte auf Deutsch, Englisch und Serbisch — passend für DACH und regionale Märkte.",
-      sec_products_title:"Pakete für Websites, Landingpages und digitale Präsentationen",sec_products_sub:"Klarer Umfang, transparente Preise und ein sauberer Ablauf vom ersten Entwurf bis zur Veröffentlichung.",
-      p_start_t:"START-Paket",p_start_li1:"One-Pager (bis 5 Sektionen)",p_start_li2:"Kontakt (mailto)",p_start_li3:"Basis-SEO-Metatags",
-      p_pro_t:"PRO-Paket",p_pro_li1:"Mehrseitig + Portfolio",p_pro_li2:"Kurzvideo (bis 30 s)",p_pro_li3:"Anzeigenvorbereitung + 10 Hashtags",
-      p_premium_t:"PREMIUM-Paket",p_prem_li1:"Individuelles Design & Animationen",p_prem_li2:"2 Werbevideos (bis 45 s)",p_prem_li3:"30-Tage-Kampagne + Report",
-      port_title:"Ausgewählte Projekte",
-      portfolio_badge:"Ausgewählte Projekte",
-      portfolio_intro:"Reale digitale Projekte — konzipiert, strukturiert und umgesetzt von D&M Digitalenterprise, inklusive mehrsprachiger Katalogseiten und Handwerker-Websites.",
-      project_duo_tag:"Premium-Möbelwebsite",
-      project_duo_text:"Eine komplette Premium-Möbelwebsite mit starker visueller Identität, Produktstruktur, Galerien, Katalogbereichen und mobil fokussierter Präsentation.",
-      project_fms_tag:"Industrielle B2B-Website",
-      project_fms_text:"Industrielle B2B-Präsentation für professionelle Bodenbearbeitungstechnik, mit strukturierten Produktkategorien, Katalogzugang und klarer technischer Kommunikation.",
-      project_bigbag_tag:"Brand- & Website-Konzept",
-      project_bigbag_text:"Brand- und Website-Konzept für Big-Bag-Vertrieb, mit Fokus auf starken ersten Eindruck, klare Produktkommunikation und wirkungsvolle Industrie-Visuals.",
-      project_udruzenje_tag:"Kultur- und Vereinswebsite",
-      project_udruzenje_text:"Kultur- und Heritage-Website mit filmischem Hero-Design, integrierter Beitrittserklärung, historischem Storytelling und strukturierter Präsentation gemeinschaftlicher Werte.",
-      project_adles_visual:"Mehrsprachige Katalog-Website",
-      project_adles_tag:"Mehrsprachige Katalog-Website",
-      project_adles_text:"Mehrsprachige Website für Fertighäuser, Blockhäuser und Holzobjekte, mit großem Produktkatalog, Kategorien, Galerien und Videopräsentation.",
-      project_neba_visual:"Bau & Ausbauarbeiten",
-      project_neba_tag:"Bau- & Handwerker-Website",
-      project_neba_text:"Website für Keramikarbeiten, Boden- und Wandbeläge, Gipskarton-Systeme und abschließende Bauarbeiten, mit klarer lokaler Positionierung, Projekten und Galerie.",
-      project_btn_open:"Projekt öffnen",portfolio_more_btn:"Alle Projekte im Detail ansehen",
-      project_btn_concept:"Konzept ansehen",
-      concept_badge:"Kreative Konzepte",
-      concept_title:"Kreative Konzepte",
-      concept_intro:"Boutique Visual Studies, Luxury Product Storytelling und hochwertige Art Direction.",
-      concept_label:"Pilotkonzept",
-      concept_kicker:"Boutique Visual Study",
-      concept_text:"Ein kreatives Pilotkonzept rund um Vintage-Collage-Ästhetik, Luxury Product Design und hochwertiges Brand Storytelling.",
-      concept_tag1:"Luxury Product Design",
-      concept_tag2:"Brand Storytelling",
-      concept_tag3:"Art Direction",
-      concept_btn:"Konzept-PDF öffnen",
-      dv_badge:"Video & Avatar Demos",dv_title:"Video- & Avatar-Demo-Beispiele",dv_sub:"Kurze Demoformate, die zeigen, wie schnell ein Unternehmen, Angebot oder eine Dienstleistung durch Video erklärt werden kann.",dv_c1_t:"Bäckerei Peter",dv_c1_s:"Saisonales Kurzspot-Konzept für Social Media und Landingpage-Präsentation.",dv_c3_t:"Sandra — Marketing-Vorteile",dv_c3_s:"Kurzer Avatar-Pitch über den Nutzen klaren digitalen Marketings.",
-      branch_badge:"Branchen-Konzepte",branch_title:"Branchen-Konzepte",branch_intro:"Kompakte visuelle Studien für unterschiedliche Geschäftsfelder — geeignet für Websites, Beratung und Social-Media-Kampagnen.",gold_title:"Goldschmiede – persönliche Beratung",gold_sub:"4C-Erklärung und Stilberatung — ein Demo für beratungsintensive Unternehmen mit hohem Vertrauensfaktor.",zl_cap_4c:"4C in 30 Sekunden — klar und kurz.",zl_cap_style:"Welcher Stil: Solitaire, Halo oder Classic?",opt_title:"Optik — kurzer Demo-Clip",opt_sub:"Kurze Demo-Videos für ein Optik-Geschäft — Beratung, Vertrauen und Produkterklärung.",opt_cap_glaeser:"Gläserberatung in einem einfachen Videoformat erklärt.",opt_cap_sandra:"Avatar-Präsentation für klare Kundenkommunikation.",
-      trust_title:"Warum man uns vertraut",trust_sub:"Drei kurze Belege.",trust1_t:"Dreisprachig (DE · EN · SR)",trust1_s:"Keine Wasserzeichen; Skripte/Untertitel in drei Sprachen.",trust2_t:"Schnelle Lieferung",trust2_s:"Erster Entwurf in 3–5 Tagen, final in 2–4 Wochen.",trust3_t:"Video + web = Ergebnis",trust3_s:"Kurzer Avatar + Landing → klarere Botschaft, mehr Anfragen.",
-      faq_title:"FAQ",faq1_q:"Wie schnell liefern Sie?",faq1_a:"2–4 Wochen — abhängig von Zusammenarbeit und Freigaben.",faq2_q:"Was benötigen Sie von uns?",faq2_a:"Logo, 5–8 Fotos und 3–4 Kernpunkte — den Rest übernehmen wir.",faq3_q:"Was kostet es ungefähr?",faq3_a:"Einstiegspreise: Start 850 €, Pro 1.990 €, Premium 3.990 €; exaktes Angebot nach einem kurzen Gespräch.",contact_title:"Kontakt",rights:"Alle Rechte vorbehalten"},
-    sr:{nav_services:"Usluge",nav_video_first:"Video-first",nav_packages:"Paketi",nav_portfolio:"Portfolio",nav_projects:"Projekti",nav_optik:"Koncepti",nav_contact:"Kontakt",cta_top:"Zatraži ponudu",
-      badge_stack:"Video-first web dizajn • Landing stranice • Višejezični sajtovi",hero_title:"Web dizajn sa videom za firme koje žele profesionalan nastup.",hero_sub:"D&M Digitalenterprise izrađuje brze, vizuelno snažne web stranice, landing stranice i kratke reklamne video formate za zanate, industriju, nameštaj i kataloge proizvoda.",cta_portfolio:"Pogledaj portfolio",cta_services:"Usluge",note_menu:"Brze stranice, jasna poruka i vizuelni nastup koji gradi poverenje.",video_examples_title:"Video-first primeri",video_examples_sub:"Kratki video formati koji brzo objašnjavaju poruku — idealno za web stranice, LinkedIn, Instagram i prezentacije.",note_video:"Video za nekoliko sekundi objašnjava šta vaša firma predstavlja.",vf_teaser_badge:"Naša specijalnost",vf_teaser_title:"Video-first web dizajn za kompanije",vf_teaser_text:"Pogledajte kako D&M Digitalenterprise povezuje strategiju, vizuelni utisak, video i tehničke performanse u jasan digitalni nastup.",vf_teaser_btn:"Saznajte više o video-first dizajnu",
-      services_title:"Usluge za digitalni nastup koji prodaje",services_sub:"Struktura, dizajn i video — usklađeno za jasne upite.",
-      s_tag_web:"Web",s_tag_video:"Video",s_tag_marketing:"Marketing",
-      s_card1_t:"Web stranice i landing stranice",s_card1_s:"Brze, responzivne stranice sa jasnom strukturom, kontakt putanjama i čistom tehničkom osnovom.",
-      s_card2_t:"Video-first prezentacija",s_card2_s:"Kratki video formati, hero klipovi i social sadržaj koji vašu ponudu čine razumljivijom.",
-      s_card3_t:"Višejezični sadržaj i SEO osnova",s_card3_s:"Tekstovi, meta podaci i sadržaj na nemačkom, engleskom i srpskom — za DACH i regionalna tržišta.",
-      sec_products_title:"Paketi za web stranice, landing stranice i digitalne prezentacije",sec_products_sub:"Jasan obim, transparentne cene i čist tok rada od prvog nacrta do objave.",
-      p_start_t:"START paket",p_start_li1:"One-page (do 5 sekcija)",p_start_li2:"Kontakt (mailto)",p_start_li3:"Osnovni SEO meta tagovi",
-      p_pro_t:"PRO paket",p_pro_li1:"Višestrana + portfolio",p_pro_li2:"Kratak video (do 30 s)",p_pro_li3:"Priprema oglasa + 10 hashtagova",
-      p_premium_t:"PREMIUM paket",p_prem_li1:"Prilagođen dizajn & animacije",p_prem_li2:"2 video oglasa (do 45 s)",p_prem_li3:"Kampanja 30 dana + izveštaj",
-      port_title:"Odabrani projekti",
-      portfolio_badge:"Odabrani projekti",
-      portfolio_intro:"Realizovani digitalni projekti — osmišljeni, strukturisani i izrađeni od strane D&M Digitalenterprise, uključujući višejezične kataloge i web stranice za zanate i građevinu.",
-      project_duo_tag:"Premium web stranica za nameštaj",
-      project_duo_text:"Kompletna premium web stranica za nameštaj sa snažnim vizuelnim identitetom, strukturom proizvoda, galerijama, katalozima i mobilno fokusiranom prezentacijom.",
-      project_fms_tag:"Industrijska B2B web stranica",
-      project_fms_text:"Industrijska B2B prezentacija za profesionalnu opremu za pripremu podova, sa jasnim kategorijama proizvoda, pristupom katalozima i preglednom tehničkom komunikacijom.",
-      project_bigbag_tag:"Brand & website koncept",
-      project_bigbag_text:"Brand i website koncept za distribuciju džambo vreća, sa fokusom na snažan prvi utisak, jasnu komunikaciju proizvoda i jak industrijski vizuelni nastup.",
-      project_udruzenje_tag:"Kulturno-udruženička web stranica",
-      project_udruzenje_text:"Kulturna i heritage web stranica sa filmski postavljenom hero sekcijom, integrisanom pristupnicom, istorijskim narativom i jasnim prikazom vrednosti zajednice.",
-      project_adles_visual:"Višejezična katalog stranica",
-      project_adles_tag:"Višejezična katalog web stranica",
-      project_adles_text:"Višejezična web stranica za montažne kuće, brvnare i drvene objekte, sa velikim katalogom proizvoda, kategorijama, galerijama i video prezentacijom.",
-      project_neba_visual:"Građevinski i završni radovi",
-      project_neba_tag:"Web stranica za građevinu i zanate",
-      project_neba_text:"Web stranica za keramičarske radove, podne i zidne obloge, gips-karton sisteme i završne građevinske radove, sa jasnim lokalnim pozicioniranjem, projektima i galerijom.",
-      project_btn_open:"Otvori projekat",portfolio_more_btn:"Pogledaj sve projekte detaljno",
-      project_btn_concept:"Pogledaj koncept",
-      concept_badge:"Kreativni koncepti",
-      concept_title:"Kreativni koncepti",
-      concept_intro:"Boutique vizuelne studije, luxury product storytelling i premium art direction.",
-      concept_label:"Pilot koncept",
-      concept_kicker:"Boutique vizuelna studija",
-      concept_text:"Pilot kreativni koncept koji istražuje vintage collage estetiku, luxury product design i premium brand storytelling.",
-      concept_tag1:"Luxury Product Design",
-      concept_tag2:"Brand Storytelling",
-      concept_tag3:"Art Direction",
-      concept_btn:"Otvori concept PDF",
-      dv_badge:"Video i avatar demo",dv_title:"Video i avatar demo primeri",dv_sub:"Kratki demo formati koji pokazuju koliko brzo firma, ponuda ili usluga mogu da se objasne kroz video.",dv_c1_t:"Peter’s Bakery",dv_c1_s:"Sezonski kratki reklamni koncept za društvene mreže i landing page prezentaciju.",dv_c3_t:"Sandra — marketinške prednosti",dv_c3_s:"Kratak avatar pitch o koristima jasnog digitalnog marketinga.",
-      branch_badge:"Koncepti za delatnosti",branch_title:"Koncepti za različite delatnosti",branch_intro:"Kompaktne vizuelne studije za različite oblasti poslovanja — za web stranice, savetovanje i kampanje na društvenim mrežama.",gold_title:"Zlatar – lična pomoć",gold_sub:"4C objašnjenje i izbor stila — demo za delatnosti u kojima je poverenje najvažnije.",zl_cap_4c:"4C za 30 sekundi — jasno i kratko.",zl_cap_style:"Koji stil: Solitaire, Halo ili Classic?",opt_title:"Optika — kratki demo klip",opt_sub:"Kratki demo video formati za optiku — savetovanje, poverenje i objašnjenje proizvoda.",opt_cap_glaeser:"Savet za stakla objašnjen kroz jednostavan video format.",opt_cap_sandra:"Avatar prezentacija za jasnu komunikaciju sa kupcima.",
-      trust_title:"Zašto nama veruju",trust_sub:"Tri kratka dokaza poverenja.",trust1_t:"Trojezično (DE · EN · SR)",trust1_s:"Bez vodenih žigova; skripte/titlovi na tri jezika.",trust2_t:"Brza isporuka",trust2_s:"Prvi nacrt u 3–5 dana, final u 2–4 nedelje.",trust3_t:"Video + web = rezultat",trust3_s:"Kratki avatar + landing → jasna poruka i više upita.",
-      faq_title:"Česta pitanja",faq1_q:"Koliko brzo isporučujete?",faq1_a:"2–4 nedelje — u zavisnosti od saradnje i odobrenja.",faq2_q:"Šta je potrebno sa vaše strane?",faq2_a:"Logo, 5–8 fotografija i 3–4 ključne stavke — ostalo radimo mi.",faq3_q:"Koliko okvirno košta?",faq3_a:"Početne cene: Start 850 €, Pro 1.990 €, Premium 3.990 €; tačnu ponudu šaljemo nakon kratkog razgovora.",contact_title:"Kontakt",rights:"Sva prava zadržana"}
-  };
+    "en": {
+        "nav_services": "Services",
+        "nav_video_first": "Video-first",
+        "nav_packages": "Packages",
+        "nav_portfolio": "References",
+        "nav_projects": "Case studies",
+        "nav_optik": "Concepts",
+        "nav_contact": "Contact",
+        "cta_top": "Request a quote",
+        "badge_stack": "Video-first web design • Landing pages • Multilingual websites",
+        "hero_title": "Web design with video for companies that want to look professional.",
+        "hero_sub": "D&M Digitalenterprise builds fast, visually strong websites, landing pages and product catalogues for trades, timber construction, industry and technical B2B companies in the DACH region.",
+        "cta_portfolio": "View portfolio",
+        "cta_services": "Services",
+        "note_menu": "Fast pages, clear messages and direct contact paths — for a presence that builds trust.",
+        "video_examples_title": "Video-first examples",
+        "video_examples_sub": "Short video formats that make a message clear fast — ideal for websites, LinkedIn, Instagram and presentations.",
+        "note_video": "Video explains in seconds what your company stands for.",
+        "vf_teaser_badge": "Our specialization",
+        "vf_teaser_title": "Video-first web design for companies",
+        "vf_teaser_text": "See how D&M Digitalenterprise combines strategy, visual impact, video and technical performance into a clear digital presence.",
+        "vf_teaser_btn": "Explore video-first web design",
+        "services_title": "Services for a clear digital presence",
+        "services_sub": "Structure, design and video — focused on understandable offers and direct contact paths.",
+        "s_tag_web": "Web",
+        "s_tag_video": "Video",
+        "s_tag_marketing": "Content & SEO",
+        "s_card1_t": "Websites & landing pages",
+        "s_card1_s": "Fast, responsive websites with clear structure, contact paths and a clean technical base.",
+        "s_card2_t": "Video-first presentation",
+        "s_card2_s": "Short videos, hero clips and social formats that make your offer easier to understand.",
+        "s_card3_t": "Multilingual content & SEO base",
+        "s_card3_s": "Texts, metadata and content in German, English and Serbian — suitable for DACH and regional markets.",
+        "sec_products_title": "Packages for websites, landing pages and digital presentations",
+        "sec_products_sub": "Clear scope, transparent prices and a clean workflow from first draft to publication.",
+        "p_start_t": "START package",
+        "p_start_li1": "One-page website with up to 5 sections",
+        "p_start_li2": "Direct contact options",
+        "p_start_li3": "Basic SEO and metadata",
+        "p_pro_t": "PRO package",
+        "p_pro_li1": "Multi-page website with portfolio",
+        "p_pro_li2": "Short video up to 30 seconds",
+        "p_pro_li3": "Preparation of one ad incl. 10 relevant hashtags",
+        "p_premium_t": "PREMIUM package",
+        "p_prem_li1": "Custom design and animations",
+        "p_prem_li2": "2 promotional videos up to 45 seconds",
+        "p_prem_li3": "30-day campaign incl. evaluation",
+        "port_title": "Selected references",
+        "portfolio_badge": "Completed projects",
+        "portfolio_intro": "Real digital projects — designed, structured and developed by D&M Digitalenterprise, including multilingual catalog and trade websites.",
+        "project_duo_tag": "Premium Furniture Website",
+        "project_duo_text": "A complete premium furniture website with strong visual identity, product structure, galleries, catalog sections and mobile-focused presentation.",
+        "project_fms_tag": "Industrial B2B Website",
+        "project_fms_text": "Industrial B2B presentation for professional floor preparation equipment, with structured product categories, catalog access and clear technical communication.",
+        "project_bigbag_tag": "Brand & Website Concept",
+        "project_bigbag_text": "Brand and website concept for jumbo bag distribution, focused on strong first impression, clean product communication and high-impact industrial visuals.",
+        "project_udruzenje_tag": "Cultural Association Website",
+        "project_udruzenje_text": "Cultural and heritage website with cinematic hero design, membership form integration, historical storytelling and structured presentation of community values.",
+        "project_adles_visual": "Multilingual catalog website",
+        "project_adles_tag": "Multilingual Catalog Website",
+        "project_adles_text": "Multilingual website for modular houses, log cabins and wooden structures, with a large product catalog, categories, galleries and video presentation.",
+        "project_neba_visual": "Construction & finishing works",
+        "project_neba_tag": "Construction & Trade Website",
+        "project_neba_text": "Website for ceramic works, floor and wall coverings, gypsum-board systems and finishing construction work, with clear local positioning, projects and gallery.",
+        "project_btn_open": "Open project",
+        "portfolio_more_btn": "View all case studies",
+        "project_btn_concept": "Concept preview",
+        "concept_badge": "Creative Concepts",
+        "concept_title": "Creative Concepts",
+        "concept_intro": "Boutique visual studies, luxury product storytelling and premium art direction.",
+        "concept_label": "Pilot Concept",
+        "concept_kicker": "Boutique visual study",
+        "concept_text": "A pilot creative concept exploring vintage-inspired collage aesthetics, luxury product design and premium brand storytelling.",
+        "concept_tag1": "Luxury Product Design",
+        "concept_tag2": "Brand Storytelling",
+        "concept_tag3": "Art Direction",
+        "concept_btn": "View Concept PDF",
+        "dv_badge": "Video & Avatar Demos",
+        "dv_title": "Video & Avatar Demo Examples",
+        "dv_sub": "Short demo formats that show how quickly a company, offer or service can be explained through video.",
+        "dv_c1_t": "Peter’s Bakery",
+        "dv_c1_s": "Seasonal short ad concept for social media and landing page presentation.",
+        "dv_c3_t": "Sandra — Marketing Advantages",
+        "dv_c3_s": "Short avatar pitch about the benefits of clear digital marketing.",
+        "branch_badge": "Industry Concepts",
+        "branch_title": "Industry Concepts",
+        "branch_intro": "Compact visual studies for different business fields — useful for websites, consultations and social media campaigns.",
+        "gold_title": "Jewelry — Personal Advice",
+        "gold_sub": "4C explained and style guidance — a demo for high-trust advisory businesses.",
+        "zl_cap_4c": "4C in 30 seconds — clear and short.",
+        "zl_cap_style": "Which style: Solitaire, Halo or Classic?",
+        "opt_title": "Optics — Short Demo Clip",
+        "opt_sub": "Short demo videos for an optics store — practical advice, trust and product explanation.",
+        "opt_cap_glaeser": "Lens advice explained in a simple video format.",
+        "opt_cap_sandra": "Avatar presentation for clear customer communication.",
+        "trust_title": "Why companies work with us",
+        "trust_sub": "Three clear foundations for reliable cooperation.",
+        "trust1_t": "Trilingual delivery",
+        "trust1_s": "Content and user guidance in German, English and Serbian.",
+        "trust2_t": "Clear project phases",
+        "trust2_s": "First draft in 3–5 business days; publication follows agreed approvals.",
+        "trust3_t": "Web design and video from one source",
+        "trust3_s": "A consistent presence across website, landing page and social media.",
+        "faq_title": "Frequently asked questions",
+        "faq1_q": "How long does implementation take?",
+        "faq1_a": "Usually 2–4 weeks, depending on scope, delivery of materials and approvals.",
+        "faq2_q": "What materials are required?",
+        "faq2_a": "Logo, available photos and the most important company information. We develop missing structure and copy together.",
+        "faq3_q": "How much does a website cost?",
+        "faq3_a": "Starting prices: START €850, PRO €1,990, PREMIUM €3,990. You receive a binding quote after a short initial discussion.",
+        "contact_title": "Let’s discuss your project",
+        "rights": "All rights reserved",
+        "contact_sub": "Tell us briefly what your company needs. You will receive a personal reply — direct and without a generic automated response.",
+        "contact_email": "Send an email",
+        "contact_phone": "Call",
+        "contact_whatsapp": "Open WhatsApp",
+        "footer_credit": "Design & development: D&M Digitalenterprise"
+    },
+    "de": {
+        "nav_services": "Leistungen",
+        "nav_video_first": "Video-first",
+        "nav_packages": "Pakete",
+        "nav_portfolio": "Referenzen",
+        "nav_projects": "Projektberichte",
+        "nav_optik": "Konzepte",
+        "nav_contact": "Kontakt",
+        "cta_top": "Angebot anfragen",
+        "badge_stack": "Video-first Webdesign • Landingpages • Mehrsprachige Websites",
+        "hero_title": "Webdesign mit Video für Unternehmen, die professionell auftreten wollen.",
+        "hero_sub": "D&M Digitalenterprise entwickelt schnelle, visuell starke Websites, Landingpages und Produktkataloge für Handwerksbetriebe, Holzbau, Industrie und technische B2B-Unternehmen in der DACH-Region.",
+        "cta_portfolio": "Referenzen ansehen",
+        "cta_services": "Leistungen",
+        "note_menu": "Schnelle Seiten, klare Botschaften und direkte Kontaktwege — für einen Auftritt, der Vertrauen schafft.",
+        "video_examples_title": "Video-first Beispiele",
+        "video_examples_sub": "Kurze Videoformate, die Angebote schnell verständlich machen — für Websites, LinkedIn, Instagram und Präsentationen.",
+        "note_video": "Video zeigt in wenigen Sekunden, wofür Ihr Unternehmen steht.",
+        "vf_teaser_badge": "Unsere Spezialisierung",
+        "vf_teaser_title": "Video-first Webdesign für Unternehmen",
+        "vf_teaser_text": "Erfahren Sie, wie D&M Digitalenterprise Strategie, visuelle Wirkung, Video und technische Performance zu einem klaren digitalen Auftritt verbindet.",
+        "vf_teaser_btn": "Video-first Webdesign entdecken",
+        "services_title": "Leistungen für einen klaren digitalen Auftritt",
+        "services_sub": "Struktur, Design und Video — ausgerichtet auf verständliche Angebote und direkte Kontaktwege.",
+        "s_tag_web": "Web",
+        "s_tag_video": "Video",
+        "s_tag_marketing": "Inhalte & SEO",
+        "s_card1_t": "Websites & Landingpages",
+        "s_card1_s": "Schnelle, responsive Websites mit klarer Struktur, verständlicher Nutzerführung und sauberer technischer Basis.",
+        "s_card2_t": "Video-first Präsentation",
+        "s_card2_s": "Kurze Videos, Hero-Clips und Social-Media-Formate, die Ihr Angebot schneller verständlich machen.",
+        "s_card3_t": "Mehrsprachige Inhalte & SEO-Grundlage",
+        "s_card3_s": "Texte, Meta-Daten und Inhalte auf Deutsch, Englisch und Serbisch — für DACH und regionale Märkte.",
+        "sec_products_title": "Pakete für Websites, Landingpages und digitale Präsentationen",
+        "sec_products_sub": "Klarer Leistungsumfang, transparente Preise und ein strukturierter Ablauf vom ersten Entwurf bis zur Veröffentlichung.",
+        "p_start_t": "START-Paket",
+        "p_start_li1": "One-Pager mit bis zu 5 Sektionen",
+        "p_start_li2": "Direkte Kontaktmöglichkeiten",
+        "p_start_li3": "Basis-SEO und Meta-Daten",
+        "p_pro_t": "PRO-Paket",
+        "p_pro_li1": "Mehrseitige Website mit Portfolio",
+        "p_pro_li2": "Kurzvideo mit bis zu 30 Sekunden",
+        "p_pro_li3": "Vorbereitung einer Werbeanzeige inkl. 10 relevanter Hashtags",
+        "p_premium_t": "PREMIUM-Paket",
+        "p_prem_li1": "Individuelles Design und Animationen",
+        "p_prem_li2": "2 Werbevideos mit bis zu 45 Sekunden",
+        "p_prem_li3": "30-Tage-Kampagne inkl. Auswertung",
+        "port_title": "Ausgewählte Referenzen",
+        "portfolio_badge": "Realisierte Projekte",
+        "portfolio_intro": "Reale digitale Projekte — konzipiert, strukturiert und umgesetzt von D&M Digitalenterprise, darunter mehrsprachige Katalogseiten, Handwerker-Websites und industrielle B2B-Präsentationen.",
+        "project_duo_tag": "Premium-Website für Möbel",
+        "project_duo_text": "Eine vollständige Premium-Website für Möbel mit starker visueller Identität, klarer Produktstruktur, Galerien, Katalogbereichen und mobil optimierter Präsentation.",
+        "project_fms_tag": "Industrielle B2B-Website",
+        "project_fms_text": "Industrielle B2B-Präsentation für professionelle Bodenbearbeitungstechnik mit strukturierten Produktkategorien, Katalogzugang und klarer technischer Kommunikation.",
+        "project_bigbag_tag": "Marken- und Website-Konzept",
+        "project_bigbag_text": "Marken- und Website-Konzept für den Vertrieb von Big Bags — mit starkem ersten Eindruck, klarer Produktkommunikation und wirkungsvollen Industrie-Visuals.",
+        "project_udruzenje_tag": "Kultur- und Vereinswebsite",
+        "project_udruzenje_text": "Kultur- und Vereinswebsite mit filmischem Hero-Design, integrierter Beitrittserklärung, historischem Storytelling und strukturierter Darstellung der Vereinswerte.",
+        "project_adles_visual": "Mehrsprachige Katalog-Website",
+        "project_adles_tag": "Mehrsprachige Katalog-Website",
+        "project_adles_text": "Mehrsprachige Website für Fertighäuser, Blockhäuser und Holzobjekte mit umfangreichem Produktkatalog, Kategorien, Galerien und Videopräsentation.",
+        "project_neba_visual": "Bau & Ausbauarbeiten",
+        "project_neba_tag": "Bau- und Handwerker-Website",
+        "project_neba_text": "Website für Keramikarbeiten, Boden- und Wandbeläge sowie Ausbauarbeiten — mit klarer lokaler Positionierung, Projektübersicht und Galerie.",
+        "project_btn_open": "Projekt öffnen",
+        "portfolio_more_btn": "Alle Projektberichte ansehen",
+        "project_btn_concept": "Konzept ansehen",
+        "concept_badge": "Kreative Konzepte",
+        "concept_title": "Kreative Konzepte",
+        "concept_intro": "Visuelle Studien, hochwertige Produktinszenierung und Art Direction für Marken mit besonderem Anspruch.",
+        "concept_label": "Pilotkonzept",
+        "concept_kicker": "Visuelle Markenstudie",
+        "concept_text": "Ein kreatives Pilotkonzept mit Vintage-Collage-Ästhetik, hochwertiger Produktinszenierung und visuellem Brand Storytelling.",
+        "concept_tag1": "Produktdesign",
+        "concept_tag2": "Brand Storytelling",
+        "concept_tag3": "Art Direction",
+        "concept_btn": "Konzept-PDF öffnen",
+        "dv_badge": "Video- und Avatar-Demos",
+        "dv_title": "Video- und Avatar-Beispiele",
+        "dv_sub": "Kurze Demoformate, die zeigen, wie Unternehmen, Angebote und Dienstleistungen mit Video verständlich präsentiert werden können.",
+        "dv_c1_t": "Bäckerei Peter",
+        "dv_c1_s": "Saisonales Kurzspot-Konzept für Social Media und Landingpages.",
+        "dv_c3_t": "Sandra — Vorteile im Marketing",
+        "dv_c3_s": "Kurzer Avatar-Pitch über den Nutzen einer klaren digitalen Präsentation.",
+        "branch_badge": "Branchen-Konzepte",
+        "branch_title": "Konzepte für unterschiedliche Branchen",
+        "branch_intro": "Kompakte visuelle Studien für beratungsintensive Geschäftsfelder — einsetzbar auf Websites, in Präsentationen und Social-Media-Kampagnen.",
+        "gold_title": "Goldschmiede — persönliche Beratung",
+        "gold_sub": "4C-Erklärung und Stilberatung — ein Beispiel für Unternehmen, bei denen Vertrauen und verständliche Beratung entscheidend sind.",
+        "zl_cap_4c": "Die 4C in 30 Sekunden — klar und verständlich.",
+        "zl_cap_style": "Welcher Stil passt: Solitaire, Halo oder Classic?",
+        "opt_title": "Optik — kurze Demo-Clips",
+        "opt_sub": "Kurze Videoformate für ein Optikgeschäft — für Beratung, Vertrauen und verständliche Produkterklärung.",
+        "opt_cap_glaeser": "Gläserberatung in einem einfachen Videoformat erklärt.",
+        "opt_cap_sandra": "Avatar-Präsentation für eine klare Kundenkommunikation.",
+        "trust_title": "Warum Unternehmen mit uns arbeiten",
+        "trust_sub": "Drei klare Grundlagen für eine verlässliche Zusammenarbeit.",
+        "trust1_t": "Dreisprachige Umsetzung",
+        "trust1_s": "Inhalte und Benutzerführung auf Deutsch, Englisch und Serbisch.",
+        "trust2_t": "Klare Projektphasen",
+        "trust2_s": "Erster Entwurf in 3–5 Werktagen; die Veröffentlichung erfolgt nach abgestimmten Freigaben.",
+        "trust3_t": "Webdesign und Video aus einer Hand",
+        "trust3_s": "Ein konsistenter Auftritt für Website, Landingpage und Social Media.",
+        "faq_title": "Häufige Fragen",
+        "faq1_q": "Wie lange dauert die Umsetzung?",
+        "faq1_a": "In der Regel 2–4 Wochen — abhängig vom Projektumfang, der Materialbereitstellung und den Freigaben.",
+        "faq2_q": "Welche Unterlagen werden benötigt?",
+        "faq2_a": "Logo, vorhandene Fotos und die wichtigsten Unternehmensinformationen. Fehlende Struktur und Texte erarbeiten wir gemeinsam.",
+        "faq3_q": "Was kostet eine Website?",
+        "faq3_a": "Einstiegspreise: START 850 €, PRO 1.990 €, PREMIUM 3.990 €. Ein verbindliches Angebot erhalten Sie nach einem kurzen Vorgespräch.",
+        "contact_title": "Lassen Sie uns über Ihr Projekt sprechen",
+        "rights": "Alle Rechte vorbehalten",
+        "contact_sub": "Schildern Sie kurz, was Ihr Unternehmen benötigt. Sie erhalten eine persönliche Rückmeldung — direkt und ohne unverbindliche Standardantworten.",
+        "contact_email": "E-Mail schreiben",
+        "contact_phone": "Anrufen",
+        "contact_whatsapp": "WhatsApp öffnen",
+        "footer_credit": "Design & Entwicklung: D&M Digitalenterprise"
+    },
+    "sr": {
+        "nav_services": "Usluge",
+        "nav_video_first": "Video-first",
+        "nav_packages": "Paketi",
+        "nav_portfolio": "Reference",
+        "nav_projects": "Studije projekata",
+        "nav_optik": "Koncepti",
+        "nav_contact": "Kontakt",
+        "cta_top": "Zatraži ponudu",
+        "badge_stack": "Video-first web dizajn • Landing stranice • Višejezični sajtovi",
+        "hero_title": "Web dizajn sa videom za firme koje žele profesionalan nastup.",
+        "hero_sub": "D&M Digitalenterprise izrađuje brze, vizuelno snažne web stranice, landing stranice i kataloge proizvoda za zanatske firme, drvogradnju, industriju i tehničke B2B kompanije u DACH regionu.",
+        "cta_portfolio": "Pogledaj portfolio",
+        "cta_services": "Usluge",
+        "note_menu": "Brze stranice, jasne poruke i direktni kontakt putevi — za nastup koji gradi poverenje.",
+        "video_examples_title": "Video-first primeri",
+        "video_examples_sub": "Kratki video formati koji brzo objašnjavaju poruku — idealno za web stranice, LinkedIn, Instagram i prezentacije.",
+        "note_video": "Video za nekoliko sekundi objašnjava šta vaša firma predstavlja.",
+        "vf_teaser_badge": "Naša specijalnost",
+        "vf_teaser_title": "Video-first web dizajn za kompanije",
+        "vf_teaser_text": "Pogledajte kako D&M Digitalenterprise povezuje strategiju, vizuelni utisak, video i tehničke performanse u jasan digitalni nastup.",
+        "vf_teaser_btn": "Saznajte više o video-first dizajnu",
+        "services_title": "Usluge za jasan digitalni nastup",
+        "services_sub": "Struktura, dizajn i video — usmereni na razumljivu ponudu i direktne kontakt puteve.",
+        "s_tag_web": "Web",
+        "s_tag_video": "Video",
+        "s_tag_marketing": "Sadržaj i SEO",
+        "s_card1_t": "Web stranice i landing stranice",
+        "s_card1_s": "Brze, responzivne stranice sa jasnom strukturom, kontakt putanjama i čistom tehničkom osnovom.",
+        "s_card2_t": "Video-first prezentacija",
+        "s_card2_s": "Kratki video formati, hero klipovi i social sadržaj koji vašu ponudu čine razumljivijom.",
+        "s_card3_t": "Višejezični sadržaj i SEO osnova",
+        "s_card3_s": "Tekstovi, meta podaci i sadržaj na nemačkom, engleskom i srpskom — za DACH i regionalna tržišta.",
+        "sec_products_title": "Paketi za web stranice, landing stranice i digitalne prezentacije",
+        "sec_products_sub": "Jasan obim, transparentne cene i čist tok rada od prvog nacrta do objave.",
+        "p_start_t": "START paket",
+        "p_start_li1": "One-page stranica sa do 5 sekcija",
+        "p_start_li2": "Direktne mogućnosti kontakta",
+        "p_start_li3": "Osnovni SEO i meta podaci",
+        "p_pro_t": "PRO paket",
+        "p_pro_li1": "Višestranična web stranica sa portfoliom",
+        "p_pro_li2": "Kratak video do 30 sekundi",
+        "p_pro_li3": "Priprema jednog oglasa sa 10 relevantnih hashtagova",
+        "p_premium_t": "PREMIUM paket",
+        "p_prem_li1": "Individualni dizajn i animacije",
+        "p_prem_li2": "2 reklamna videa do 45 sekundi",
+        "p_prem_li3": "Kampanja od 30 dana sa analizom",
+        "port_title": "Odabrane reference",
+        "portfolio_badge": "Realizovani projekti",
+        "portfolio_intro": "Realizovani digitalni projekti — osmišljeni, strukturisani i izrađeni od strane D&M Digitalenterprise, uključujući višejezične kataloge i web stranice za zanate i građevinu.",
+        "project_duo_tag": "Premium web stranica za nameštaj",
+        "project_duo_text": "Kompletna premium web stranica za nameštaj sa snažnim vizuelnim identitetom, strukturom proizvoda, galerijama, katalozima i mobilno fokusiranom prezentacijom.",
+        "project_fms_tag": "Industrijska B2B web stranica",
+        "project_fms_text": "Industrijska B2B prezentacija za profesionalnu opremu za pripremu podova, sa jasnim kategorijama proizvoda, pristupom katalozima i preglednom tehničkom komunikacijom.",
+        "project_bigbag_tag": "Brand & website koncept",
+        "project_bigbag_text": "Brand i website koncept za distribuciju džambo vreća, sa fokusom na snažan prvi utisak, jasnu komunikaciju proizvoda i jak industrijski vizuelni nastup.",
+        "project_udruzenje_tag": "Kulturno-udruženička web stranica",
+        "project_udruzenje_text": "Kulturna i heritage web stranica sa filmski postavljenom hero sekcijom, integrisanom pristupnicom, istorijskim narativom i jasnim prikazom vrednosti zajednice.",
+        "project_adles_visual": "Višejezična katalog stranica",
+        "project_adles_tag": "Višejezična katalog web stranica",
+        "project_adles_text": "Višejezična web stranica za montažne kuće, brvnare i drvene objekte, sa velikim katalogom proizvoda, kategorijama, galerijama i video prezentacijom.",
+        "project_neba_visual": "Građevinski i završni radovi",
+        "project_neba_tag": "Web stranica za građevinu i zanate",
+        "project_neba_text": "Web stranica za keramičarske radove, podne i zidne obloge, gips-karton sisteme i završne građevinske radove, sa jasnim lokalnim pozicioniranjem, projektima i galerijom.",
+        "project_btn_open": "Otvori projekat",
+        "portfolio_more_btn": "Pogledaj sve studije projekata",
+        "project_btn_concept": "Pogledaj koncept",
+        "concept_badge": "Kreativni koncepti",
+        "concept_title": "Kreativni koncepti",
+        "concept_intro": "Boutique vizuelne studije, luxury product storytelling i premium art direction.",
+        "concept_label": "Pilot koncept",
+        "concept_kicker": "Boutique vizuelna studija",
+        "concept_text": "Pilot kreativni koncept koji istražuje vintage collage estetiku, luxury product design i premium brand storytelling.",
+        "concept_tag1": "Luxury Product Design",
+        "concept_tag2": "Brand Storytelling",
+        "concept_tag3": "Art Direction",
+        "concept_btn": "Otvori concept PDF",
+        "dv_badge": "Video i avatar demo",
+        "dv_title": "Video i avatar demo primeri",
+        "dv_sub": "Kratki demo formati koji pokazuju koliko brzo firma, ponuda ili usluga mogu da se objasne kroz video.",
+        "dv_c1_t": "Peter’s Bakery",
+        "dv_c1_s": "Sezonski kratki reklamni koncept za društvene mreže i landing page prezentaciju.",
+        "dv_c3_t": "Sandra — marketinške prednosti",
+        "dv_c3_s": "Kratak avatar pitch o koristima jasnog digitalnog marketinga.",
+        "branch_badge": "Koncepti za delatnosti",
+        "branch_title": "Koncepti za različite delatnosti",
+        "branch_intro": "Kompaktne vizuelne studije za različite oblasti poslovanja — za web stranice, savetovanje i kampanje na društvenim mrežama.",
+        "gold_title": "Zlatar – lična pomoć",
+        "gold_sub": "4C objašnjenje i izbor stila — demo za delatnosti u kojima je poverenje najvažnije.",
+        "zl_cap_4c": "4C za 30 sekundi — jasno i kratko.",
+        "zl_cap_style": "Koji stil: Solitaire, Halo ili Classic?",
+        "opt_title": "Optika — kratki demo klip",
+        "opt_sub": "Kratki demo video formati za optiku — savetovanje, poverenje i objašnjenje proizvoda.",
+        "opt_cap_glaeser": "Savet za stakla objašnjen kroz jednostavan video format.",
+        "opt_cap_sandra": "Avatar prezentacija za jasnu komunikaciju sa kupcima.",
+        "trust_title": "Zašto kompanije rade sa nama",
+        "trust_sub": "Tri jasne osnove za pouzdanu saradnju.",
+        "trust1_t": "Trojezična realizacija",
+        "trust1_s": "Sadržaj i korisničko vođenje na nemačkom, engleskom i srpskom jeziku.",
+        "trust2_t": "Jasne faze projekta",
+        "trust2_s": "Prvi nacrt za 3–5 radnih dana; objava sledi nakon dogovorenih odobrenja.",
+        "trust3_t": "Web dizajn i video na jednom mestu",
+        "trust3_s": "Usklađen nastup na web stranici, landing stranici i društvenim mrežama.",
+        "faq_title": "Česta pitanja",
+        "faq1_q": "Koliko traje realizacija?",
+        "faq1_a": "Najčešće 2–4 nedelje, u zavisnosti od obima projekta, dostavljenog materijala i odobrenja.",
+        "faq2_q": "Koji materijal je potreban?",
+        "faq2_a": "Logo, postojeće fotografije i najvažnije informacije o firmi. Nedostajuću strukturu i tekstove izrađujemo zajedno.",
+        "faq3_q": "Koliko košta web stranica?",
+        "faq3_a": "Početne cene: START 850 €, PRO 1.990 €, PREMIUM 3.990 €. Obavezujuću ponudu dobijate nakon kratkog uvodnog razgovora.",
+        "contact_title": "Razgovarajmo o vašem projektu",
+        "rights": "Sva prava zadržana",
+        "contact_sub": "Ukratko opišite šta je potrebno vašoj firmi. Dobićete ličan odgovor — direktno i bez generičke automatske poruke.",
+        "contact_email": "Pošalji e-mail",
+        "contact_phone": "Pozovi",
+        "contact_whatsapp": "Otvori WhatsApp",
+        "footer_credit": "Dizajn i izrada: D&M Digitalenterprise"
+    }
+};
 
   // HERO (tri jezika)
   var HERO_SRC={de:"/avatar-de.mp4",en:"/avatar-eng.mp4",sr:"/avatar-srb.mp4"};
   var VERSION="20251105";
 
-  function qs(name){var m=location.search.match(new RegExp('[?&]'+name+'=([^&]+)'));return m?decodeURIComponent(m[1]):null}
-  function normalizeLang(x){if(!x)return"sr";x=x.toLowerCase();if(x.indexOf("de")===0)return"de";if(x.indexOf("en")===0)return"en";return"sr"}
+  var META={
+    de:{title:"Video-first Webdesign für Handwerk, Holzbau & Industrie | D&M Digitalenterprise",description:"D&M Digitalenterprise entwickelt schnelle, mehrsprachige Websites, Video-first Landingpages und Produktkataloge für Handwerk, Holzbau, Industrie und technische B2B-Unternehmen in der DACH-Region."},
+    en:{title:"Video-first web design for trades, timber construction & industry | D&M Digitalenterprise",description:"D&M Digitalenterprise builds fast multilingual websites, video-first landing pages and product catalogues for trades, timber construction, industry and technical B2B companies."},
+    sr:{title:"Video-first web dizajn za zanate, drvogradnju i industriju | D&M Digitalenterprise",description:"D&M Digitalenterprise izrađuje brze višejezične web stranice, video-first landing stranice i kataloge proizvoda za zanate, drvogradnju, industriju i tehničke B2B kompanije."}
+  };
+  function qs(name){return new URLSearchParams(location.search).get(name)}
+  function normalizeLang(x){
+    if(!x)return"de";
+    x=String(x).toLowerCase();
+    if(x.indexOf("en")===0)return"en";
+    if(x.indexOf("sr")===0)return"sr";
+    return"de";
+  }
+  function setMeta(lang){
+    var M=META[lang]||META.de;
+    document.title=M.title;
+    ["meta[name='description']","meta[property='og:description']","meta[name='twitter:description']"].forEach(function(sel){var n=document.querySelector(sel);if(n)n.setAttribute("content",M.description)});
+    ["meta[property='og:title']","meta[name='twitter:title']"].forEach(function(sel){var n=document.querySelector(sel);if(n)n.setAttribute("content",M.title)});
+  }
   function applyI18n(lang){
-    var D=T[lang]||T.sr;
-    document.querySelectorAll("[data-i18n]").forEach(function(n){var k=n.getAttribute("data-i18n");if(D[k]) n.textContent=D[k]});
-    document.querySelectorAll(".lang button").forEach(function(b){b.classList.toggle("active",b.getAttribute("data-setlang")===lang)});
+    var D=T[lang]||T.de;
+    document.querySelectorAll("[data-i18n]").forEach(function(n){
+      var k=n.getAttribute("data-i18n");
+      if(Object.prototype.hasOwnProperty.call(D,k))n.textContent=D[k];
+    });
+    document.querySelectorAll(".lang button").forEach(function(b){
+      var active=b.getAttribute("data-setlang")===lang;
+      b.classList.toggle("active",active);
+      b.setAttribute("aria-pressed",active?"true":"false");
+    });
+    setMeta(lang);
   }
   function setHero(lang){
-    var hv=document.getElementById("heroVideo"), s=document.getElementById("heroSrc");
-    var url=(HERO_SRC[lang]||HERO_SRC.sr)+"?v="+VERSION;
-    if(s.getAttribute("src")!==url){try{hv.pause()}catch(e){} s.setAttribute("src",url); hv.load();}
+    var hv=document.getElementById("heroVideo"),s=document.getElementById("heroSrc");
+    if(!hv||!s)return;
+    var url=(HERO_SRC[lang]||HERO_SRC.de)+"?v="+VERSION;
+    if(s.getAttribute("src")!==url){try{hv.pause()}catch(e){}s.setAttribute("src",url);hv.load();}
   }
-  function setLangAll(lang){lang=normalizeLang(lang);applyI18n(lang);setHero(lang);try{localStorage.setItem("lang",lang)}catch(e){};document.documentElement.lang=lang}
-  (function(){var L=normalizeLang(qs("lang")||(function(){try{return localStorage.getItem("lang")}catch(e){return null}})()||document.documentElement.lang);setLangAll(L)})();
-  document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest("[data-setlang]");if(!b)return;var L=b.getAttribute("data-setlang");history.replaceState(null,"",location.pathname+"?lang="+L);setLangAll(L);});
+  function setLangAll(lang){
+    lang=normalizeLang(lang);
+    applyI18n(lang);
+    setHero(lang);
+    document.documentElement.lang=lang;
+    try{localStorage.setItem("lang",lang)}catch(e){}
+  }
+  (function(){
+    var saved=null;
+    try{saved=localStorage.getItem("lang")}catch(e){}
+    setLangAll(qs("lang")||saved||"de");
+  })();
+  document.addEventListener("click",function(e){
+    var b=e.target.closest&&e.target.closest("[data-setlang]");
+    if(b){
+      var L=normalizeLang(b.getAttribute("data-setlang"));
+      var u=new URL(location.href);
+      u.searchParams.set("lang",L);
+      history.replaceState(null,"",u.pathname+u.search+u.hash);
+      setLangAll(L);
+      return;
+    }
+    var tracked=e.target.closest&&e.target.closest("[data-track]");
+    if(tracked&&typeof window.gtag==="function"){
+      window.gtag("event","contact_or_project_click",{
+        item_id:tracked.getAttribute("data-track"),
+        link_url:tracked.href||""
+      });
+    }
+  });
 </script>
 </body>
 </html>
