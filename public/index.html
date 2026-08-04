@@ -182,6 +182,20 @@
       filter:saturate(1.06) contrast(1.03);
     }
 
+    /* Floor Master Solutions preview: show the complete screenshot without cropping. */
+    .project-card img.portfolio-fms-fullshot{
+      width:100%;
+      height:auto;
+      aspect-ratio:auto;
+      object-fit:contain;
+      background:#080b10;
+    }
+
+    .project-card:hover img.portfolio-fms-fullshot{
+      transform:none;
+      filter:saturate(1.06) contrast(1.03);
+    }
+
 
     .project-fallback{
       min-height:245px;
@@ -833,7 +847,7 @@
 
       <article class="project-card">
         <a href="https://floorms.rs/" target="_blank" rel="noopener" aria-label="Open Floor Master Solutions website">
-          <img loading="lazy" decoding="async" src="/assets/portfolio/portfolio_fms.jpg"
+          <img class="portfolio-fms-fullshot" loading="lazy" decoding="async" src="/assets/portfolio/portfolio_fms.jpg"
                alt="Floor Master Solutions industrial B2B website preview">
         </a>
 
