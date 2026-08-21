@@ -778,11 +778,11 @@
         <source src="/Avatar_musko_de1.mp4?v=20260518" type="video/mp4" />
       </video>
 
-      <video playsinline class="vid-916" controls preload="metadata" poster="/posters/avatar_iv_video_de.jpg" aria-label="Avatar 9:16 #2">
+      <video playsinline class="vid-916" controls preload="none" poster="/posters/avatar_iv_video_de.jpg" aria-label="Avatar 9:16 #2">
         <source src="/avatar_iv_video_de.mp4?v=20260518" type="video/mp4" />
       </video>
 
-      <video playsinline class="vid-916" controls preload="metadata" poster="/posters/Avatar_musko_de2%20(1).jpg" aria-label="Avatar 9:16 #3">
+      <video playsinline class="vid-916" controls preload="none" poster="/posters/Avatar_musko_de2%20(1).jpg" aria-label="Avatar 9:16 #3">
         <source src="/Avatar_musko_de2.mp4?v=20260518" type="video/mp4" />
       </video>
     </div>
@@ -1126,7 +1126,7 @@
         <span class="badge">Demo Video</span>
         <h3 data-i18n="dv_c1_t">Bäckerei Peter</h3>
         <p class="sub" data-i18n="dv_c1_s">Saisonales Kurzspot-Konzept für Social Media und Landingpages.</p>
-        <video playsinline class="vid" controls preload="metadata">
+        <video playsinline class="vid" controls preload="none">
           <source src="/peters-baeckerei.mp4?v=20251107" type="video/mp4"/>
         </video>
       </article>
@@ -1242,7 +1242,8 @@
       <a href="/datenschutz.html">Datenschutzerklärung</a> ·
       <a href="/konditionen.html">Konditionen & Preise</a> ·
       <a href="/video-first-webdesign.html">Video-first Webdesign</a> ·
-      <a href="/izrada-web-sajtova-balkan.html" data-i18n="footer_balkan">Web dizajn Balkan</a>
+      <a href="/izrada-web-sajtova-balkan.html" data-i18n="footer_balkan">Web dizajn Balkan</a> ·
+      <a id="servicesHubLink" href="/digitale-leistungen.html" data-i18n="footer_services">Digitale Leistungen</a>
     </div>
     <div class="right" data-i18n="footer_credit">Design &amp; Entwicklung: D&amp;M Digitalenterprise</div>
   </div>
@@ -1271,6 +1272,7 @@
         "balkan_text": "Professional business websites, multilingual websites, video-first presentations and digital catalogs for companies in Serbia, Bosnia and Herzegovina, Montenegro and the wider region.",
         "balkan_btn": "Web design for the Balkans",
         "footer_balkan": "Balkan web design",
+        "footer_services": "Digital services",
         "cta_top": "Request a quote",
         "badge_stack": "Premium web design • Custom website development • DACH region",
         "hero_title": "Professional web design for companies that want to make a powerful first impression.",
@@ -1414,6 +1416,7 @@
         "balkan_text": "Professionelle Unternehmenswebsites, mehrsprachige Websites, Video-first Präsentationen und digitale Kataloge für Firmen in Serbien, Bosnien und Herzegowina, Montenegro und der weiteren Region.",
         "balkan_btn": "Webdesign für den Balkan",
         "footer_balkan": "Webdesign Balkan",
+        "footer_services": "Digitale Leistungen",
         "cta_top": "Angebot anfragen",
         "badge_stack": "Premium Webdesign • Individuelle Webentwicklung • DACH-Region",
         "hero_title": "Professionelles Webdesign für Unternehmen, die einen starken ersten Eindruck hinterlassen wollen.",
@@ -1557,6 +1560,7 @@
         "balkan_text": "Profesionalni poslovni sajtovi, višejezične web stranice, video-first prezentacije i digitalni katalozi za firme u Srbiji, Bosni i Hercegovini, Crnoj Gori i širem regionu.",
         "balkan_btn": "Web dizajn za Balkan",
         "footer_balkan": "Web dizajn Balkan",
+        "footer_services": "Digitalne usluge",
         "cta_top": "Zatraži ponudu",
         "badge_stack": "Premijum web dizajn • Individualni web razvoj • DACH region",
         "hero_title": "Profesionalni web dizajn za firme koje žele da ostave snažan prvi utisak.",
@@ -1690,6 +1694,7 @@
 };
 
   // HERO (tri jezika)
+  var SERVICES_HUB={de:"/digitale-leistungen.html",en:"/digital-services.html",sr:"/digitalne-usluge.html"};
   var HERO_SRC={de:"/avatar-de.mp4",en:"/avatar-eng.mp4",sr:"/avatar-srb.mp4"};
   var VERSION="20251105";
 
@@ -1723,6 +1728,8 @@
       b.classList.toggle("active",active);
       b.setAttribute("aria-pressed",active?"true":"false");
     });
+    var servicesHub=document.getElementById("servicesHubLink");
+    if(servicesHub)servicesHub.setAttribute("href",SERVICES_HUB[lang]||SERVICES_HUB.de);
     setMeta(lang);
   }
   function setHero(lang){
