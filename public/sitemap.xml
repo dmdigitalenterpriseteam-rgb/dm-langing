@@ -2,98 +2,137 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.dmdigitalenterprise.com/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-08-27</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.dmdigitalenterprise.com/projekte.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-27</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.dmdigitalenterprise.com/projekte/adles.html</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-27</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dmdigitalenterprise.com/projekte/floor-master-solutions.html</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-27</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dmdigitalenterprise.com/projekte/neba-grad-sd.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-27</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dmdigitalenterprise.com/projekte/dadjo.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-27</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dmdigitalenterprise.com/projekte/duo-grande.html</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-27</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dmdigitalenterprise.com/projekte/srpski-kovin.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-27</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.dmdigitalenterprise.com/video-first-webdesign.html</loc>
-    <lastmod>2026-07-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.dmdigitalenterprise.com/impressum.html</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.dmdigitalenterprise.com/datenschutz.html</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.dmdigitalenterprise.com/konditionen.html</loc>
-    <lastmod>2026-07-10</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.dmdigitalenterprise.com/izrada-web-sajtova-balkan.html</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.dmdigitalenterprise.com/digitalne-usluge.html</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-08-27</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.dmdigitalenterprise.com/digitale-leistungen.html</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-08-27</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dmdigitalenterprise.com/digitalne-usluge.html</loc>
+    <lastmod>2026-08-27</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.dmdigitalenterprise.com/digital-services.html</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-08-27</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.dmdigitalenterprise.com/izrada-web-sajtova-balkan.html</loc>
+    <lastmod>2026-08-27</lastmod>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dmdigitalenterprise.com/website-erstellen-lassen.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dmdigitalenterprise.com/webdesign-kmu.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dmdigitalenterprise.com/webdesign-handwerk.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dmdigitalenterprise.com/webdesign-industrie-b2b.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dmdigitalenterprise.com/mehrsprachige-website-erstellen-lassen.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dmdigitalenterprise.com/webdesign-agentur-deutschland.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dmdigitalenterprise.com/webdesign-oesterreich.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.dmdigitalenterprise.com/webdesign-schweiz.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.dmdigitalenterprise.com/izrada-web-sajtova-srbija.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.dmdigitalenterprise.com/izrada-web-stranica-bih.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.dmdigitalenterprise.com/web-dizajn-crna-gora.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.dmdigitalenterprise.com/impressum.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.dmdigitalenterprise.com/datenschutz.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.dmdigitalenterprise.com/konditionen.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <priority>0.4</priority>
   </url>
 </urlset>

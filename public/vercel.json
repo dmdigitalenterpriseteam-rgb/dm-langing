@@ -36,6 +36,132 @@
       "permanent": true
     },
     {
+      "source": "/projekte",
+      "destination": "/projekte.html",
+      "permanent": true
+    },
+    {
+      "source": "/digitale-leistungen",
+      "destination": "/digitale-leistungen.html",
+      "permanent": true
+    },
+    {
+      "source": "/digitalne-usluge",
+      "destination": "/digitalne-usluge.html",
+      "permanent": true
+    },
+    {
+      "source": "/digital-services",
+      "destination": "/digital-services.html",
+      "permanent": true
+    },
+    {
+      "source": "/izrada-web-sajtova-balkan",
+      "destination": "/izrada-web-sajtova-balkan.html",
+      "permanent": true
+    },
+    {
+      "source": "/lokalni-start",
+      "destination": "/lokalni-start.html",
+      "permanent": true
+    },
+    {
+      "source": "/website-erstellen-lassen",
+      "destination": "/website-erstellen-lassen.html",
+      "permanent": true
+    },
+    {
+      "source": "/webdesign-kmu",
+      "destination": "/webdesign-kmu.html",
+      "permanent": true
+    },
+    {
+      "source": "/webdesign-handwerk",
+      "destination": "/webdesign-handwerk.html",
+      "permanent": true
+    },
+    {
+      "source": "/webdesign-industrie-b2b",
+      "destination": "/webdesign-industrie-b2b.html",
+      "permanent": true
+    },
+    {
+      "source": "/mehrsprachige-website-erstellen-lassen",
+      "destination": "/mehrsprachige-website-erstellen-lassen.html",
+      "permanent": true
+    },
+    {
+      "source": "/webdesign-agentur-deutschland",
+      "destination": "/webdesign-agentur-deutschland.html",
+      "permanent": true
+    },
+    {
+      "source": "/webdesign-oesterreich",
+      "destination": "/webdesign-oesterreich.html",
+      "permanent": true
+    },
+    {
+      "source": "/webdesign-schweiz",
+      "destination": "/webdesign-schweiz.html",
+      "permanent": true
+    },
+    {
+      "source": "/izrada-web-sajtova-srbija",
+      "destination": "/izrada-web-sajtova-srbija.html",
+      "permanent": true
+    },
+    {
+      "source": "/izrada-web-stranica-bih",
+      "destination": "/izrada-web-stranica-bih.html",
+      "permanent": true
+    },
+    {
+      "source": "/web-dizajn-crna-gora",
+      "destination": "/web-dizajn-crna-gora.html",
+      "permanent": true
+    },
+    {
+      "source": "/projekte/adles",
+      "destination": "/projekte/adles.html",
+      "permanent": true
+    },
+    {
+      "source": "/projekte/floor-master-solutions",
+      "destination": "/projekte/floor-master-solutions.html",
+      "permanent": true
+    },
+    {
+      "source": "/projekte/neba-grad-sd",
+      "destination": "/projekte/neba-grad-sd.html",
+      "permanent": true
+    },
+    {
+      "source": "/projekte/dadjo",
+      "destination": "/projekte/dadjo.html",
+      "permanent": true
+    },
+    {
+      "source": "/projekte/duo-grande",
+      "destination": "/projekte/duo-grande.html",
+      "permanent": true
+    },
+    {
+      "source": "/projekte/srpski-kovin",
+      "destination": "/projekte/srpski-kovin.html",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "dmdigitalenterprise.com"
+        }
+      ],
+      "destination": "https://www.dmdigitalenterprise.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
