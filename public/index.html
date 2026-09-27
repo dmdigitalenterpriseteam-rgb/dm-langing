@@ -93,6 +93,45 @@
     .btn-grad{border:none;background:linear-gradient(90deg,var(--brand1),var(--brand2));color:#081221;font-weight:700}
 
 
+
+    /* PLATFORM / APP DISTINCTION */
+    .platform-zone{
+      margin:18px 0 28px;
+      padding:22px;
+      border:1px solid rgba(245,196,81,.28);
+      border-radius:24px;
+      background:linear-gradient(180deg,rgba(245,196,81,.07),rgba(255,255,255,.018));
+      box-shadow:0 22px 60px rgba(0,0,0,.22);
+    }
+    .platform-zone-head,.website-zone-head{
+      display:flex;align-items:flex-end;justify-content:space-between;gap:18px;
+      margin:0 0 18px;
+    }
+    .platform-zone-head h3,.website-zone-head h3{margin:6px 0 0;font-size:clamp(1.35rem,2vw,1.9rem)}
+    .platform-zone-head p,.website-zone-head p{max-width:760px;margin:0;color:var(--muted)}
+    .project-card.platform-card{
+      border-color:rgba(245,196,81,.34);
+      background:linear-gradient(180deg,rgba(245,196,81,.055),rgba(10,14,20,.94));
+      box-shadow:0 18px 42px rgba(0,0,0,.26);
+    }
+    .project-card.platform-card .badge{
+      background:rgba(245,196,81,.11);
+      border-color:rgba(245,196,81,.38);
+      color:#ffe39b;
+    }
+    .platform-proof{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+    .platform-proof span{
+      font-size:.78rem;font-weight:700;letter-spacing:.02em;
+      padding:7px 10px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.035);color:#dfe5ec;
+    }
+    .website-zone-head{margin:34px 0 18px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08)}
+
+
+    .footer-legal-priority{font-weight:800;color:#f4f6f8}
+    .footer-legal-priority:hover{color:#f3c969}
+    .footer-trust-note{display:block;margin-top:8px;font-size:.78rem;color:var(--muted)}
+
     /* PREMIUM PORTFOLIO / SELECTED PROJECTS */
     .portfolio-pro{
       padding-top:56px;
@@ -785,43 +824,60 @@
     <div class="portfolio-head">
       <span class="badge" data-i18n="portfolio_badge">Realisierte Projekte</span>
       <h2 data-i18n="port_title">Ausgewählte Referenzen</h2>
-      <p class="sub" data-i18n="portfolio_intro">Reale digitale Projekte — von Unternehmenswebsites bis zu mehrsprachigen Plattformen mit Membership, PayPal und Android-App. Keine Konzeptgrafiken: echte, veröffentlichte Arbeit.</p>
+      <p class="sub" data-i18n="portfolio_intro">Reale digitale Projekte — klar getrennt in vollständige Plattformen/Apps und Unternehmenswebsites. Konzipiert, strukturiert und umgesetzt von D&amp;M Digitalenterprise.</p>
     </div>
 
-    <div class="project-grid" style="margin-bottom:22px">
-      <article class="project-card">
+    <div class="platform-zone">
+      <div class="platform-zone-head">
+        <div>
+          <span class="badge" data-i18n="platform_zone_badge">Digitale Plattformen &amp; Apps</span>
+          <h3 data-i18n="platform_zone_title">Mehr als eine Website: komplette digitale Produkte.</h3>
+        </div>
+        <p data-i18n="platform_zone_text">Backend, Datenbank, Admin-Workflows, Mitgliedschaften, Zahlungen, Automatisierung, SEO und App-Anbindung — als zusammenhängendes System.</p>
+      </div>
+      <div class="project-grid" style="margin-bottom:0">
+      <article class="project-card platform-card">
         <a href="/projekte/sos-majstori.html" aria-label="SOS MAJSTORI 0–24 Case Study">
           <img class="portfolio-fullshot" loading="lazy" decoding="async" src="/assets/portfolio/sos_majstori.webp" alt="SOS MAJSTORI 0–24 Plattform und Android-App">
         </a>
         <div class="project-content">
           <span class="badge" data-i18n="project_sos_tag">Plattform · Android-App · PayPal</span>
           <h3>SOS MAJSTORI 0–24</h3>
-          <p class="sub" data-i18n="project_sos_text">Service-Plattform mit Suche nach Ort und Gewerk, Admin-Workflow, lokaler SEO-Struktur, PayPal-Funktion und Android-App im Google-Play-Ökosystem.</p>
+          <p class="sub" data-i18n="project_sos_text">Nationale Service-Plattform mit 77 Städten/Gemeinden und 18 Kategorien. Fachkräfte geben ihre Daten ein und erhalten automatisch eine eigene Profilkarte/Präsentation; dazu Admin-Freigabe, lokale SEO-Struktur, direkte Kontaktwege, PayPal und Android-App im Google-Play-Ökosystem.</p><div class="platform-proof"><span data-i18n="proof_backend">Backend &amp; Datenbank</span><span data-i18n="proof_admin">Admin-Workflow</span><span data-i18n="proof_app">Android-App</span><span data-i18n="proof_seo">Local SEO</span></div>
           <div class="stack"><a class="btn-min btn-grad" href="https://sosmajstori.com/" target="_blank" rel="noopener" data-i18n="project_btn_open" data-track="project_open_sos">Projekt öffnen</a><a class="btn-min" href="/projekte/sos-majstori.html" data-i18n="project_btn_case" data-track="case_study_sos">Case Study ansehen</a></div>
         </div>
       </article>
-      <article class="project-card">
+      <article class="project-card platform-card">
         <a href="/projekte/antiq-art-house.html" aria-label="ANTIQ ART HOUSE Case Study">
           <img class="portfolio-fullshot" loading="lazy" decoding="async" src="/assets/portfolio/antiq_art_house.webp" alt="ANTIQ ART HOUSE internationale Kunst- und Antiquitätenplattform">
         </a>
         <div class="project-content">
           <span class="badge" data-i18n="project_antiq_tag">International · Membership · PayPal</span>
           <h3>ANTIQ ART HOUSE</h3>
-          <p class="sub" data-i18n="project_antiq_text">Mehrsprachige Premium-Plattform für Kunst und Antiquitäten mit Profilen, Inseraten, Mitgliedschaft und PayPal.</p>
+          <p class="sub" data-i18n="project_antiq_text">Internationale Premium-Plattform für Kunst, Antiquitäten und Sammlerstücke mit Ausstellerprofilen, Inseraten, Mitgliedschaft, PayPal, Admin-Moderation und automatischer AI-Übersetzung von Inseraten zwischen SR, DE und EN.</p><div class="platform-proof"><span data-i18n="proof_membership">Membership</span><span data-i18n="proof_translate">AI-Übersetzung</span><span data-i18n="proof_paypal">PayPal</span><span data-i18n="proof_moderation">Moderation</span></div>
           <div class="stack"><a class="btn-min btn-grad" href="https://antiqarthouse.com/en" target="_blank" rel="noopener" data-i18n="project_btn_open" data-track="project_open_antiq">Projekt öffnen</a><a class="btn-min" href="/projekte/antiq-art-house.html" data-i18n="project_btn_case" data-track="case_study_antiq">Case Study ansehen</a></div>
         </div>
       </article>
-      <article class="project-card">
+      <article class="project-card platform-card">
         <a href="/projekte/tajni-kanal-x.html" aria-label="TAJNI KANAL X Case Study">
           <img class="portfolio-fullshot" loading="lazy" decoding="async" src="/assets/portfolio/tajni_kanal_x.webp" alt="TAJNI KANAL X Membership Plattform">
         </a>
         <div class="project-content">
           <span class="badge" data-i18n="project_tkx_tag">Membership · Video-first · PayPal</span>
           <h3>TAJNI KANAL X</h3>
-          <p class="sub" data-i18n="project_tkx_text">Mehrsprachige Premium Content-Plattform mit Video-first UX, Mitgliedschaft, PayPal und personalisierten digitalen Angeboten.</p>
+          <p class="sub" data-i18n="project_tkx_text">Mehrsprachige Premium Content- und Membership-Plattform mit Video-first UX, geschütztem Mitgliederbereich, PayPal und personalisierten digitalen Zusatzangeboten.</p><div class="platform-proof"><span data-i18n="proof_video">Video-first UX</span><span data-i18n="proof_membership">Membership</span><span data-i18n="proof_paypal">PayPal</span><span data-i18n="proof_multilang">Mehrsprachig</span></div>
           <div class="stack"><a class="btn-min btn-grad" href="https://tajnikanalx.com/de/" target="_blank" rel="noopener" data-i18n="project_btn_open" data-track="project_open_tkx">Projekt öffnen</a><a class="btn-min" href="/projekte/tajni-kanal-x.html" data-i18n="project_btn_case" data-track="case_study_tkx">Case Study ansehen</a></div>
         </div>
       </article>
+      </div>
+    </div>
+
+    <div class="website-zone-head">
+      <div>
+        <span class="badge" data-i18n="website_zone_badge">Websites &amp; Markenauftritte</span>
+        <h3 data-i18n="website_zone_title">Unternehmenswebsites mit eigener visueller und funktionaler Logik.</h3>
+      </div>
+      <p data-i18n="website_zone_text">Von Premium-Markenauftritten über mehrsprachige Kataloge bis zu technischen B2B-Seiten — jeweils passend zur Branche, Zielgruppe und Aufgabe.</p>
     </div>
 
     <div class="portfolio-featured">
@@ -1195,11 +1251,12 @@
   <div class="wrap">
     <div>© 2026 D&M Digitalenterprise — <span data-i18n="rights">Alle Rechte vorbehalten</span></div>
     <div class="center">
-      <a href="/impressum.html">Impressum</a> ·
-      <a href="/datenschutz.html">Datenschutzerklärung</a> ·
-      <a href="/konditionen.html">Konditionen & Preise</a> ·
+      <a class="footer-legal-priority" href="/impressum.html" data-i18n="footer_impressum">Impressum</a> ·
+      <a class="footer-legal-priority" href="/datenschutz.html" data-i18n="footer_privacy">Datenschutzerklärung</a> ·
+      <a href="/konditionen.html" data-i18n="footer_terms">Konditionen &amp; Preise</a> ·
       <a href="/video-first-webdesign.html">Video-first Webdesign</a> ·
-      <a href="/seo-optimierung-unternehmen.html">SEO Optimierung</a>
+      <a href="/seo-optimierung-unternehmen.html" data-i18n="footer_seo">SEO Optimierung</a>
+      <span class="footer-trust-note" data-i18n="footer_trust_note">Für DACH-Kunden transparent und direkt erreichbar: Impressum &amp; Datenschutz.</span>
     </div>
     <div class="right" data-i18n="footer_credit">Design &amp; Entwicklung: D&amp;M Digitalenterprise</div>
   </div>
@@ -1264,7 +1321,7 @@
         "p_prem_li3": "30-day campaign incl. evaluation",
         "port_title": "Selected references",
         "portfolio_badge": "Completed projects",
-        "portfolio_intro": "Real digital projects — from company websites to multilingual platforms with memberships, PayPal and an Android app. Published work, not concept mockups.","experience_title":"25+ years of design experience behind D&M","experience_sub":"The tools changed. The eye for design did not.","experience1_t":"From prepress to AI","experience1_s":"Dejan Veljović's design roots go back to prepress and graphic work in Austria in the 1990s.","experience2_t":"Continuity, not invented agency history","experience2_s":"D&M is a young digital business. The personal experience with design, print, illustration and visual communication is much older.","experience3_t":"Web, platforms, video & SEO","experience3_s":"Today D&M combines that experience with modern web technology, video-first UX, AI workflows and digital platforms.","check_badge":"Free website check","check_title":"Check first. Decide later.","check_text":"Send us your URL. You will receive three concrete points we would check or improve first — no obligation and no generic sales pitch.","check_btn":"Start website check","seo_badge":"SEO for companies","seo_title":"Visibility is only the beginning.","seo_text":"Technical SEO, local SEO, Core Web Vitals, search intent and internal linking — with the goal of bringing the right search to the right page and then to contact.","seo_btn":"View SEO services","project_sos_tag":"Platform · Android app · PayPal","project_sos_text":"Service platform with location and trade search, admin workflow, local SEO structure, PayPal and an Android app in the Google Play ecosystem.","project_antiq_tag":"International · Membership · PayPal","project_antiq_text":"Multilingual premium platform for art and antiques with profiles, listings, membership and PayPal.","project_tkx_tag":"Membership · Video-first · PayPal","project_tkx_text":"Multilingual premium content platform with video-first UX, membership, PayPal and personalized digital offers",
+        "portfolio_intro": "Real digital projects — clearly separated into complete digital platforms/apps and business websites. Published work, not concept mockups.","platform_zone_badge":"Digital platforms & apps","platform_zone_title":"More than a website: complete digital products.","platform_zone_text":"Backend, database, admin workflows, memberships, payments, automation, SEO and app integration — built as one connected system.","website_zone_badge":"Websites & brand experiences","website_zone_title":"Business websites with their own visual and functional logic.","website_zone_text":"From premium brand websites and multilingual catalogues to technical B2B presentations — each shaped around the industry, audience and task.","proof_backend":"Backend & database","proof_admin":"Admin workflow","proof_app":"Android app","proof_seo":"Local SEO","proof_membership":"Membership","proof_translate":"AI translation","proof_paypal":"PayPal","proof_moderation":"Moderation","proof_video":"Video-first UX","proof_multilang":"Multilingual","experience_title":"25+ years of design experience behind D&M","experience_sub":"The tools changed. The eye for design did not.","experience1_t":"From prepress to AI","experience1_s":"Dejan Veljović's design roots go back to prepress and graphic work in Austria in the 1990s.","experience2_t":"Continuity, not invented agency history","experience2_s":"D&M is a young digital business. The personal experience with design, print, illustration and visual communication is much older.","experience3_t":"Web, platforms, video & SEO","experience3_s":"Today D&M combines that experience with modern web technology, video-first UX, AI workflows and digital platforms.","check_badge":"Free website check","check_title":"Check first. Decide later.","check_text":"Send us your URL. You will receive three concrete points we would check or improve first — no obligation and no generic sales pitch.","check_btn":"Start website check","seo_badge":"SEO for companies","seo_title":"Visibility is only the beginning.","seo_text":"Technical SEO, local SEO, Core Web Vitals, search intent and internal linking — with the goal of bringing the right search to the right page and then to contact.","seo_btn":"View SEO services","project_sos_tag":"Platform · Android app · PayPal","project_sos_text":"National service platform covering 77 cities/municipalities and 18 categories. Professionals enter their data and automatically receive their own profile card/presentation, with admin approval, local SEO structure, direct contact flows, PayPal and an Android app in the Google Play ecosystem.","project_antiq_tag":"International · Membership · PayPal","project_antiq_text":"International premium platform for art, antiques and collectibles with exhibitor profiles, listings, membership, PayPal, admin moderation and automatic AI translation of listings between Serbian, German and English.","project_tkx_tag":"Membership · Video-first · PayPal","project_tkx_text":"Multilingual premium content and membership platform with video-first UX, protected member area, PayPal and personalized digital add-on offers",
         "project_duo_tag": "Premium Furniture Website",
         "project_duo_text": "A complete premium furniture website with strong visual identity, product structure, galleries, catalog sections and mobile-focused presentation.",
         "project_kovin_tag": "Cultural Heritage Website",
@@ -1387,7 +1444,20 @@
         "p_prem_li3": "30-Tage-Kampagne inkl. Auswertung",
         "port_title": "Ausgewählte Referenzen",
         "portfolio_badge": "Realisierte Projekte",
-        "portfolio_intro": "Reale digitale Projekte — konzipiert, strukturiert und umgesetzt von D&M Digitalenterprise, darunter mehrsprachige Katalogseiten, Handwerker-Websites und industrielle B2B-Präsentationen.",
+        "portfolio_intro": "Reale digitale Projekte — klar getrennt in vollständige Plattformen/Apps und Unternehmenswebsites. Konzipiert, strukturiert und umgesetzt von D&M Digitalenterprise.",
+        "platform_zone_badge":"Digitale Plattformen & Apps",
+        "platform_zone_title":"Mehr als eine Website: komplette digitale Produkte.",
+        "platform_zone_text":"Backend, Datenbank, Admin-Workflows, Mitgliedschaften, Zahlungen, Automatisierung, SEO und App-Anbindung — als zusammenhängendes System.",
+        "website_zone_badge":"Websites & Markenauftritte",
+        "website_zone_title":"Unternehmenswebsites mit eigener visueller und funktionaler Logik.",
+        "website_zone_text":"Von Premium-Markenauftritten über mehrsprachige Kataloge bis zu technischen B2B-Seiten — jeweils passend zur Branche, Zielgruppe und Aufgabe.",
+        "project_sos_tag":"Plattform · Android-App · PayPal",
+        "project_sos_text":"Nationale Service-Plattform mit 77 Städten/Gemeinden und 18 Kategorien. Fachkräfte geben ihre Daten ein und erhalten automatisch eine eigene Profilkarte/Präsentation; dazu Admin-Freigabe, lokale SEO-Struktur, direkte Kontaktwege, PayPal und Android-App im Google-Play-Ökosystem.",
+        "project_antiq_tag":"International · Membership · PayPal",
+        "project_antiq_text":"Internationale Premium-Plattform für Kunst, Antiquitäten und Sammlerstücke mit Ausstellerprofilen, Inseraten, Mitgliedschaft, PayPal, Admin-Moderation und automatischer AI-Übersetzung von Inseraten zwischen SR, DE und EN.",
+        "project_tkx_tag":"Membership · Video-first · PayPal",
+        "project_tkx_text":"Mehrsprachige Premium Content- und Membership-Plattform mit Video-first UX, geschütztem Mitgliederbereich, PayPal und personalisierten digitalen Zusatzangeboten.",
+        "proof_backend":"Backend & Datenbank","proof_admin":"Admin-Workflow","proof_app":"Android-App","proof_seo":"Local SEO","proof_membership":"Membership","proof_translate":"AI-Übersetzung","proof_paypal":"PayPal","proof_moderation":"Moderation","proof_video":"Video-first UX","proof_multilang":"Mehrsprachig",
         "project_duo_tag": "Premium-Website für Möbel",
         "project_duo_text": "Eine vollständige Premium-Website für Möbel mit starker visueller Identität, klarer Produktstruktur, Galerien, Katalogbereichen und mobil optimierter Präsentation.",
         "project_kovin_tag": "Cultural-Heritage-Website",
@@ -1459,7 +1529,7 @@
         "contact_email": "E-Mail schreiben",
         "contact_phone": "Anrufen",
         "contact_whatsapp": "WhatsApp öffnen",
-        "footer_credit": "Design & Entwicklung: D&M Digitalenterprise"
+        "footer_impressum":"Impressum","footer_privacy":"Datenschutzerklärung","footer_terms":"Konditionen & Preise","footer_seo":"SEO Optimierung","footer_trust_note":"Für DACH-Kunden transparent und direkt erreichbar: Impressum & Datenschutz.","footer_credit": "Design & Entwicklung: D&M Digitalenterprise"
     },
     "sr": {
         "nav_services": "Usluge",
@@ -1510,7 +1580,20 @@
         "p_prem_li3": "Kampanja od 30 dana sa analizom",
         "port_title": "Odabrane reference",
         "portfolio_badge": "Realizovani projekti",
-        "portfolio_intro": "Realizovani digitalni projekti — osmišljeni, strukturisani i izrađeni od strane D&M Digitalenterprise, uključujući višejezične kataloge i web stranice za zanate i građevinu.",
+        "portfolio_intro": "Realizovani digitalni projekti — jasno odvojeni na kompletne platforme/aplikacije i poslovne web stranice. Osmislio, strukturisao i izradio D&M Digitalenterprise.",
+        "platform_zone_badge":"Digitalne platforme i aplikacije",
+        "platform_zone_title":"Više od web stranice: kompletni digitalni proizvodi.",
+        "platform_zone_text":"Backend, baza podataka, admin tokovi, članstva, plaćanja, automatizacija, SEO i povezivanje sa aplikacijom — kao jedan sistem.",
+        "website_zone_badge":"Web stranice i brend prezentacije",
+        "website_zone_title":"Poslovne web stranice sa sopstvenom vizuelnom i funkcionalnom logikom.",
+        "website_zone_text":"Od premium brend prezentacija i višejezičnih kataloga do tehničkih B2B stranica — prilagođeno delatnosti, publici i cilju.",
+        "project_sos_tag":"Platforma · Android aplikacija · PayPal",
+        "project_sos_text":"Nacionalna servisna platforma sa 77 gradova/opština i 18 kategorija. Majstor unosi svoje podatke i automatski dobija sopstvenu karticu/prezentaciju; tu su i admin odobravanje, lokalna SEO struktura, direktan kontakt, PayPal i Android aplikacija u Google Play ekosistemu.",
+        "project_antiq_tag":"Internacionalno · Članstvo · PayPal",
+        "project_antiq_text":"Internacionalna premium platforma za umetnost, antikvitete i kolekcionarske predmete sa profilima izlagača, oglasima, članstvom, PayPal naplatom, admin moderacijom i automatskim AI prevodom oglasa između SR, DE i EN.",
+        "project_tkx_tag":"Članstvo · Video-first · PayPal",
+        "project_tkx_text":"Višejezična premium content i membership platforma sa video-first UX-om, zaštićenim članskim delom, PayPal-om i personalizovanim digitalnim ponudama.",
+        "proof_backend":"Backend i baza","proof_admin":"Admin tok","proof_app":"Android aplikacija","proof_seo":"Lokalni SEO","proof_membership":"Članstvo","proof_translate":"AI prevod","proof_paypal":"PayPal","proof_moderation":"Moderacija","proof_video":"Video-first UX","proof_multilang":"Višejezično",
         "project_duo_tag": "Premium web stranica za nameštaj",
         "project_duo_text": "Kompletna premium web stranica za nameštaj sa snažnim vizuelnim identitetom, strukturom proizvoda, galerijama, katalozima i mobilno fokusiranom prezentacijom.",
         "project_kovin_tag": "Web stranica kulturnog nasleđa",
@@ -1582,7 +1665,7 @@
         "contact_email": "Pošalji e-mail",
         "contact_phone": "Pozovi",
         "contact_whatsapp": "Otvori WhatsApp",
-        "footer_credit": "Dizajn i izrada: D&M Digitalenterprise"
+        "footer_impressum":"Impresum","footer_privacy":"Politika privatnosti","footer_terms":"Uslovi i cene","footer_seo":"SEO optimizacija","footer_trust_note":"Za DACH klijente pravne informacije su transparentno i direktno dostupne: Impressum i Datenschutz.","footer_credit": "Dizajn i izrada: D&M Digitalenterprise"
     }
 };
 
