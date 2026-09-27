@@ -151,6 +151,26 @@
       "permanent": true
     },
     {
+      "source": "/seo-optimierung-unternehmen",
+      "destination": "/seo-optimierung-unternehmen.html",
+      "permanent": true
+    },
+    {
+      "source": "/projekte/sos-majstori",
+      "destination": "/projekte/sos-majstori.html",
+      "permanent": true
+    },
+    {
+      "source": "/projekte/antiq-art-house",
+      "destination": "/projekte/antiq-art-house.html",
+      "permanent": true
+    },
+    {
+      "source": "/projekte/tajni-kanal-x",
+      "destination": "/projekte/tajni-kanal-x.html",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
